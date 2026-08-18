@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html lang="en"><head>
+<html lang="fr"><head>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3106160668387388" crossorigin="anonymous"></script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
-<title>Book Your Imsfrane Adventure | WhatsApp Booking</title>
-<meta content="Choose your activity, date and group size, then send your booking request directly by WhatsApp." name="description"/>
+<title>Réserver votre aventure à Imsfrane | Réservation WhatsApp</title>
+<meta content="Choisissez votre activité, la date et le nombre de participants, puis envoyez votre demande par WhatsApp." name="description"/>
 <meta content="#123522" name="theme-color"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -14,7 +14,7 @@
 <link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Playfair+Display:wght@600;700;800;900&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/><noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Playfair+Display:wght@600;700;800;900&amp;display=swap" rel="stylesheet"/></noscript>
 <link as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/><noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/></noscript>
 <link href="../css/core.min.css" rel="stylesheet"/><link href="../css/pages/booking.min.css" rel="stylesheet"/>
-<meta content="Imsfrane Cathédrale" name="author"/><meta content="index, follow, max-image-preview:large" name="robots"/><meta content="strict-origin-when-cross-origin" name="referrer"/><link href="https://imsfrane.com/en/booking.html" rel="canonical"/><link href="https://imsfrane.com/en/booking.html" hreflang="en" rel="alternate"/><link href="https://imsfrane.com/fr/booking.html" hreflang="fr" rel="alternate"/><link href="https://imsfrane.com/en/booking.html" hreflang="x-default" rel="alternate"/><link href="/images/favicon-192.png" rel="icon" sizes="192x192" type="image/png"/><link href="../images/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/><meta content="Imsfrane Cathédrale" property="og:site_name"/><meta content="Book Your Imsfrane Adventure | WhatsApp Booking" property="og:title"/><meta content="Choose your activity, date and group size, then send your booking request directly by WhatsApp." property="og:description"/><meta content="https://imsfrane.com/images/24.webp" property="og:image"/><meta content="https://imsfrane.com/en/booking.html" property="og:url"/><meta content="website" property="og:type"/><meta content="en_GB" property="og:locale"/><meta content="fr_FR" property="og:locale:alternate"/><meta content="summary_large_image" name="twitter:card"/><meta content="Book Your Imsfrane Adventure | WhatsApp Booking" name="twitter:title"/><meta content="Choose your activity, date and group size, then send your booking request directly by WhatsApp." name="twitter:description"/><meta content="https://imsfrane.com/images/24.webp" name="twitter:image"/><script type="application/ld+json">{
+<meta content="Imsfrane Cathédrale" name="author"/><meta content="index, follow, max-image-preview:large" name="robots"/><meta content="strict-origin-when-cross-origin" name="referrer"/><link href="https://imsfrane.com/fr/booking.html" rel="canonical"/><link href="https://imsfrane.com/en/booking.html" hreflang="en" rel="alternate"/><link href="https://imsfrane.com/fr/booking.html" hreflang="fr" rel="alternate"/><link href="https://imsfrane.com/en/booking.html" hreflang="x-default" rel="alternate"/><link href="/images/favicon-192.png" rel="icon" sizes="192x192" type="image/png"/><link href="../images/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/><meta content="Imsfrane Cathédrale" property="og:site_name"/><meta content="Réserver votre aventure à Imsfrane | Réservation WhatsApp" property="og:title"/><meta content="Choisissez votre activité, la date et le nombre de participants, puis envoyez votre demande par WhatsApp." property="og:description"/><meta content="https://imsfrane.com/images/24.webp" property="og:image"/><meta content="https://imsfrane.com/fr/booking.html" property="og:url"/><meta content="website" property="og:type"/><meta content="fr_FR" property="og:locale"/><meta content="en_GB" property="og:locale:alternate"/><meta content="summary_large_image" name="twitter:card"/><meta content="Réserver votre aventure à Imsfrane | Réservation WhatsApp" name="twitter:title"/><meta content="Choisissez votre activité, la date et le nombre de participants, puis envoyez votre demande par WhatsApp." name="twitter:description"/><meta content="https://imsfrane.com/images/24.webp" name="twitter:image"/><script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -63,12 +63,12 @@
     },
     {
       "@type": "WebPage",
-      "@id": "https://imsfrane.com/en/booking.html#webpage",
-      "url": "https://imsfrane.com/en/booking.html",
-      "name": "Book Your Imsfrane Adventure | WhatsApp Booking",
-      "description": "Choose your activity, date and group size, then send your booking request directly by WhatsApp.",
+      "@id": "https://imsfrane.com/fr/booking.html#webpage",
+      "url": "https://imsfrane.com/fr/booking.html",
+      "name": "Réserver votre aventure à Imsfrane | Réservation WhatsApp",
+      "description": "Choisissez votre activité, la date et le nombre de participants, puis envoyez votre demande par WhatsApp.",
       "image": "https://imsfrane.com/images/24.webp",
-      "inLanguage": "en",
+      "inLanguage": "fr",
       "isPartOf": {
         "@id": "https://imsfrane.com/#website"
       },
@@ -82,20 +82,20 @@
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "Home",
-          "item": "https://imsfrane.com/en/"
+          "name": "Accueil",
+          "item": "https://imsfrane.com/fr/"
         },
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Book your adventure",
-          "item": "https://imsfrane.com/en/booking.html"
+          "name": "Réservez votre aventure",
+          "item": "https://imsfrane.com/fr/booking.html"
         }
       ]
     },
     {
       "@type": "Service",
-      "name": "Book your adventure",
+      "name": "Réservez votre aventure",
       "provider": {
         "@id": "https://imsfrane.com/#business"
       },
@@ -103,54 +103,54 @@
         "@type": "Place",
         "name": "Imsfrane, Tilouguite, Morocco"
       },
-      "url": "https://imsfrane.com/en/booking.html"
+      "url": "https://imsfrane.com/fr/booking.html"
     }
   ]
-}</script></head><body class="page-booking" data-lang="en" data-nav-active="booking.html">
-<nav aria-label="Main navigation" class="main-navigation" id="mainNavigation" inert="">
-<div class="navigation-header"><strong>Imsfrane Cathédrale</strong><button aria-label="Close navigation menu" class="navigation-close" id="navigationClose" type="button"><i class="fa-solid fa-xmark"></i></button></div>
+}</script></head><body class="page-booking" data-lang="fr" data-nav-active="booking.html">
+<nav aria-label="Navigation principale" class="main-navigation" id="mainNavigation" inert="">
+<div class="navigation-header"><strong>Imsfrane Cathédrale</strong><button aria-label="Fermer le menu de navigation" class="navigation-close" id="navigationClose" type="button"><i class="fa-solid fa-xmark"></i></button></div>
 <ul class="navigation-list">
-<li><a class="" href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+<li><a class="" href="index.html"><i class="fa-solid fa-house"></i><span>Accueil</span></a></li>
 <li class="navigation-dropdown">
-<button aria-expanded="false" class="dropdown-toggle" type="button"><span><i class="fa-solid fa-person-hiking"></i><span>Activities</span></span><i class="fa-solid fa-chevron-down dropdown-icon"></i></button>
+<button aria-expanded="false" class="dropdown-toggle" type="button"><span><i class="fa-solid fa-person-hiking"></i><span>Activités</span></span><i class="fa-solid fa-chevron-down dropdown-icon"></i></button>
 <ul class="dropdown-menu">
 <li><a class="" href="rafting.html"><i class="fa-solid fa-water"></i><span>Rafting</span></a></li>
 <li><a class="" href="camping.html"><i class="fa-solid fa-campground"></i><span>Camping</span></a></li>
-<li><a class="" href="randonnee.html"><i class="fa-solid fa-person-hiking"></i><span>Hiking</span></a></li>
+<li><a class="" href="randonnee.html"><i class="fa-solid fa-person-hiking"></i><span>Randonnée</span></a></li>
 <li><a class="" href="vtt.html"><i class="fa-solid fa-bicycle"></i><span>VTT</span></a></li>
 <li><a class="" href="quad.html"><i class="fa-solid fa-motorcycle"></i><span>Quad</span></a></li>
-<li><a class="" href="hebergement.html"><i class="fa-solid fa-bed"></i><span>Accommodation</span></a></li>
+<li><a class="" href="hebergement.html"><i class="fa-solid fa-bed"></i><span>Hébergement</span></a></li>
 </ul>
 </li>
-<li><a class="" href="programme.html"><i class="fa-solid fa-route"></i><span>Programs</span></a></li>
-<li><a class="" href="memories.html"><i class="fa-solid fa-camera"></i><span>Gallery</span></a></li>
-<li><a class="" href="guide.html"><i class="fa-solid fa-map-location-dot"></i><span>Travel guide</span></a></li>
+<li><a class="" href="programme.html"><i class="fa-solid fa-route"></i><span>Programmes</span></a></li>
+<li><a class="" href="memories.html"><i class="fa-solid fa-camera"></i><span>Galerie</span></a></li>
+<li><a class="" href="guide.html"><i class="fa-solid fa-map-location-dot"></i><span>Guide pratique</span></a></li>
 <li><a class="" href="blog.html"><i class="fa-solid fa-newspaper"></i><span>Blog</span></a></li>
-<li><a class="" href="store.html"><i class="fa-solid fa-bag-shopping"></i><span>Store</span></a></li>
-<li><a class="active" href="booking.html"><i class="fa-regular fa-calendar-check"></i><span>Booking</span></a></li>
+<li><a class="" href="store.html"><i class="fa-solid fa-bag-shopping"></i><span>Boutique</span></a></li>
+<li><a class="active" href="booking.html"><i class="fa-regular fa-calendar-check"></i><span>Réservation</span></a></li>
 <li><a class="" href="contact.html"><i class="fa-solid fa-envelope"></i><span>Contact</span></a></li>
 </ul>
-<div class="navigation-contact"><p>Need help planning your stay?</p><a href="https://wa.me/212667772551" rel="noopener noreferrer" target="_blank"><i class="fa-brands fa-whatsapp"></i>+212 667 772 551</a></div>
+<div class="navigation-contact"><p>Besoin d’aide pour préparer votre séjour ?</p><a href="https://wa.me/212667772551" rel="noopener noreferrer" target="_blank"><i class="fa-brands fa-whatsapp"></i>+212 667 772 551</a></div>
 </nav>
 <header class="site-header" id="siteHeader">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3106160668387388" crossorigin="anonymous"></script>
 <div class="container header-inner">
-<a aria-label="Imsfrane Cathédrale home" class="brand" href="index.html">
+<a aria-label="Accueil Imsfrane Cathédrale" class="brand" href="index.html">
 <span class="brand-logo"><img alt="Logo Imsfrane Cathédrale" decoding="async" height="106" loading="lazy" src="../images/logo-104.webp" width="104"/></span>
-<span class="brand-content"><strong>Imsfrane Cathédrale</strong><small>Atlas Nature Adventures</small></span>
+<span class="brand-content"><strong>Imsfrane Cathédrale</strong><small>Aventures Nature dans l’Atlas</small></span>
 </a>
 <div class="header-actions">
-<div aria-label="Language selection" class="language-switcher" role="group">
-<a aria-current="page" class="language-button active" href="../en/booking.html" lang="en">EN</a>
-<a class="language-button" href="../fr/booking.html" lang="fr">FR</a>
+<div aria-label="Choix de la langue" class="language-switcher" role="group">
+<a class="language-button" href="../en/booking.html" lang="en">EN</a>
+<a aria-current="page" class="language-button active" href="../fr/booking.html" lang="fr">FR</a>
 </div>
-<a class="header-book-button" href="booking.html"><i class="fa-regular fa-calendar-check"></i><span>Book now</span></a>
-<button aria-controls="mainNavigation" aria-expanded="false" aria-label="Open navigation menu" class="menu-button" id="menuButton" type="button"><span></span><span></span><span></span></button>
+<a class="header-book-button" href="booking.html"><i class="fa-regular fa-calendar-check"></i><span>Réserver</span></a>
+<button aria-controls="mainNavigation" aria-expanded="false" aria-label="Ouvrir le menu de navigation" class="menu-button" id="menuButton" type="button"><span></span><span></span><span></span></button>
 </div>
 </div>
 </header>
 <div class="site-overlay" id="siteOverlay"></div>
-<a class="skip-link" href="#mainContent">Skip to content</a>
+<a class="skip-link" href="#mainContent">Aller au contenu</a>
 <!-- =====================================================
          HEADER
          ===================================================== -->
@@ -170,15 +170,15 @@
 <span class="booking-hero-label">
 <i class="fa-regular fa-calendar-check"></i>
 <span>
-                        Direct booking request
+                        Demande de réservation directe
                     </span>
 </span>
 <h1>
-                    Book your adventure
+                    Réservez votre aventure
                 </h1>
 <p>
-                    Choose your activity, date and group size.
-                    Your booking request will be sent directly through WhatsApp.
+                    Choisissez votre activité, votre date et le nombre
+                    de personnes. Votre demande sera envoyée directement par WhatsApp.
                 </p>
 </div>
 </section>
@@ -190,14 +190,14 @@
 <div class="booking-form-card">
 <div class="booking-form-heading">
 <span class="section-kicker">
-                            Booking information
+                            Informations de réservation
                         </span>
 <h2>
-                            Tell us about your trip
+                            Parlez-nous de votre séjour
                         </h2>
 <p>
-                            Complete the form below. We will confirm
-                            availability, the final price and meeting details.
+                            Remplissez le formulaire. Nous confirmerons
+                            la disponibilité, le tarif final et le point de rendez-vous.
                         </p>
 </div>
 <form class="booking-form" id="bookingForm">
@@ -206,7 +206,7 @@
 <label for="customerName">
 <i class="fa-solid fa-user"></i>
 <span>
-                                    Full name
+                                    Nom complet
                                 </span>
 </label>
 <input autocomplete="name" class="booking-input" id="customerName" maxlength="100" minlength="2" name="customerName" required="" type="text"/>
@@ -216,7 +216,7 @@
 <label for="customerPhone">
 <i class="fa-solid fa-phone"></i>
 <span>
-                                    Phone / WhatsApp
+                                    Téléphone / WhatsApp
                                 </span>
 </label>
 <input autocomplete="tel" class="booking-input" id="customerPhone" inputmode="tel" maxlength="25" minlength="7" name="customerPhone" placeholder="+212 6…" required="" type="tel"/>
@@ -226,12 +226,12 @@
 <label for="customerEmail">
 <i class="fa-solid fa-envelope"></i>
 <span>
-                                    Email address
+                                    Adresse e-mail
                                 </span>
 </label>
 <input autocomplete="email" class="booking-input" id="customerEmail" name="customerEmail" placeholder="name@example.com" type="email"/>
 <small class="booking-field-note">
-                                Optional
+                                Facultatif
                             </small>
 </div>
 <!-- COUNTRY -->
@@ -239,7 +239,7 @@
 <label for="customerCountry">
 <i class="fa-solid fa-earth-africa"></i>
 <span>
-                                    Country
+                                    Pays
                                 </span>
 </label>
 <input autocomplete="country-name" class="booking-input" id="customerCountry" name="customerCountry" type="text"/>
@@ -249,27 +249,27 @@
 <label for="bookingActivity">
 <i class="fa-solid fa-person-hiking"></i>
 <span>
-                                    Activity
+                                    Activité
                                 </span>
 </label>
-<select class="booking-select" id="bookingActivity" name="bookingActivity" required=""><option value="">Select an activity</option><option data-label-en="Rafting" data-label-fr="Rafting" value="rafting">Rafting</option><option data-label-en="Camping" data-label-fr="Camping" value="camping">Camping</option><option data-label-en="Hiking – summit (300 DH/group)" data-label-fr="Randonnée – sommet (300 DH/groupe)" value="hiking-summit">Hiking – summit (300 DH/group)</option><option data-label-en="Hiking – nature circuit (200 DH/group)" data-label-fr="Randonnée – circuit nature (200 DH/groupe)" value="hiking-circuit">Hiking – nature circuit (200 DH/group)</option><option data-label-en="VTT – 1 hour (50 DH/person)" data-label-fr="VTT – 1 heure (50 DH/personne)" value="vtt-1h">VTT – 1 hour (50 DH/person)</option><option data-label-en="VTT – 2 hours (100 DH/person)" data-label-fr="VTT – 2 heures (100 DH/personne)" value="vtt-2h">VTT – 2 hours (100 DH/person)</option><option data-label-en="VTT – full day (150 DH/person)" data-label-fr="VTT – journée (150 DH/personne)" value="vtt-day">VTT – full day (150 DH/person)</option><option data-label-en="Quad (250 DH/person)" data-label-fr="Quad (250 DH/personne)" value="quad">Quad (250 DH/person)</option><option data-label-en="3-day program (1,150 DH/person)" data-label-fr="Programme 3 jours (1 150 DH/personne)" value="programme3">3-day program (1,150 DH/person)</option><option data-label-en="Accommodation" data-label-fr="Hébergement" value="accommodation">Accommodation</option><option data-label-en="Tubing – quote on request" data-label-fr="Tubing – tarif sur demande" value="tubing">Tubing – quote on request</option><option data-label-en="Jet Ski – quote on request" data-label-fr="Jet Ski – tarif sur demande" value="jetski">Jet Ski – quote on request</option><option data-label-en="4x4 excursion – quote on request" data-label-fr="Excursion 4x4 – tarif sur demande" value="4x4">4x4 excursion – quote on request</option><option data-label-en="Custom program" data-label-fr="Programme personnalisé" value="custom">Custom program</option></select>
+<select class="booking-select" id="bookingActivity" name="bookingActivity" required=""><option value="">Choisissez une activité</option><option data-label-en="Rafting" data-label-fr="Rafting" value="rafting">Rafting</option><option data-label-en="Camping" data-label-fr="Camping" value="camping">Camping</option><option data-label-en="Hiking – summit (300 DH/group)" data-label-fr="Randonnée – sommet (300 DH/groupe)" value="hiking-summit">Randonnée – sommet (300 DH/groupe)</option><option data-label-en="Hiking – nature circuit (200 DH/group)" data-label-fr="Randonnée – circuit nature (200 DH/groupe)" value="hiking-circuit">Randonnée – circuit nature (200 DH/groupe)</option><option data-label-en="VTT – 1 hour (50 DH/person)" data-label-fr="VTT – 1 heure (50 DH/personne)" value="vtt-1h">VTT – 1 heure (50 DH/personne)</option><option data-label-en="VTT – 2 hours (100 DH/person)" data-label-fr="VTT – 2 heures (100 DH/personne)" value="vtt-2h">VTT – 2 heures (100 DH/personne)</option><option data-label-en="VTT – full day (150 DH/person)" data-label-fr="VTT – journée (150 DH/personne)" value="vtt-day">VTT – journée (150 DH/personne)</option><option data-label-en="Quad (250 DH/person)" data-label-fr="Quad (250 DH/personne)" value="quad">Quad (250 DH/personne)</option><option data-label-en="3-day program (1,150 DH/person)" data-label-fr="Programme 3 jours (1 150 DH/personne)" value="programme3">Programme 3 jours (1 150 DH/personne)</option><option data-label-en="Accommodation" data-label-fr="Hébergement" value="accommodation">Hébergement</option><option data-label-en="Tubing – quote on request" data-label-fr="Tubing – tarif sur demande" value="tubing">Tubing – tarif sur demande</option><option data-label-en="Jet Ski – quote on request" data-label-fr="Jet Ski – tarif sur demande" value="jetski">Jet Ski – tarif sur demande</option><option data-label-en="4x4 excursion – quote on request" data-label-fr="Excursion 4x4 – tarif sur demande" value="4x4">Excursion 4x4 – tarif sur demande</option><option data-label-en="Custom program" data-label-fr="Programme personnalisé" value="custom">Programme personnalisé</option></select>
 </div>
 <!-- RAFTING ROUTE -->
 <div class="booking-field rafting-route-field" id="raftingRouteField">
 <label for="raftingRoute">
 <i class="fa-solid fa-route"></i>
 <span>
-                                    Rafting route
+                                    Parcours rafting
                                 </span>
 </label>
-<select class="booking-select" id="raftingRoute" name="raftingRoute"><option value="">Select a rafting route</option><option data-label-en="12 km — 400 DH / person" data-label-fr="12 km — 400 DH / personne" value="12">12 km — 400 DH / person</option><option data-label-en="30 km — 800 DH / person" data-label-fr="30 km — 800 DH / personne" value="30">30 km — 800 DH / person</option><option data-label-en="50 km / 2 days — Sidi Youssef — 2,500 DH / person" data-label-fr="50 km / 2 jours — Sidi Youssef — 2 500 DH / personne" value="50-sidi">50 km / 2 days — Sidi Youssef — 2,500 DH / person</option><option data-label-en="50 km / 2 days — Bin El Ouidane — 3,000 DH / person" data-label-fr="50 km / 2 jours — Bin El Ouidane — 3 000 DH / personne" value="50-dam">50 km / 2 days — Bin El Ouidane — 3,000 DH / person</option></select>
-</div><div class="booking-field camping-tent-field" hidden="" id="campingTentField"><label for="campingTent"><i class="fa-solid fa-campground"></i><span>Tent size</span></label><select class="booking-select" id="campingTent" name="campingTent"><option value="">Select a tent</option><option data-label-en="Tent for 1 person — 60 DH" data-label-fr="Tente pour 1 personne — 60 DH" value="1">Tent for 1 person — 60 DH</option><option data-label-en="Tent for 2 people — 120 DH" data-label-fr="Tente pour 2 personnes — 120 DH" value="2">Tent for 2 people — 120 DH</option><option data-label-en="Tent for 3 people — 150 DH" data-label-fr="Tente pour 3 personnes — 150 DH" value="3">Tent for 3 people — 150 DH</option><option data-label-en="Tent for 4 people — 200 DH" data-label-fr="Tente pour 4 personnes — 200 DH" value="4">Tent for 4 people — 200 DH</option></select></div>
+<select class="booking-select" id="raftingRoute" name="raftingRoute"><option value="">Choisissez un parcours de rafting</option><option data-label-en="12 km — 400 DH / person" data-label-fr="12 km — 400 DH / personne" value="12">12 km — 400 DH / personne</option><option data-label-en="30 km — 800 DH / person" data-label-fr="30 km — 800 DH / personne" value="30">30 km — 800 DH / personne</option><option data-label-en="50 km / 2 days — Sidi Youssef — 2,500 DH / person" data-label-fr="50 km / 2 jours — Sidi Youssef — 2 500 DH / personne" value="50-sidi">50 km / 2 jours — Sidi Youssef — 2 500 DH / personne</option><option data-label-en="50 km / 2 days — Bin El Ouidane — 3,000 DH / person" data-label-fr="50 km / 2 jours — Bin El Ouidane — 3 000 DH / personne" value="50-dam">50 km / 2 jours — Bin El Ouidane — 3 000 DH / personne</option></select>
+</div><div class="booking-field camping-tent-field" hidden="" id="campingTentField"><label for="campingTent"><i class="fa-solid fa-campground"></i><span>Capacité de la tente</span></label><select class="booking-select" id="campingTent" name="campingTent"><option value="">Choisissez une tente</option><option data-label-en="Tent for 1 person — 60 DH" data-label-fr="Tente pour 1 personne — 60 DH" value="1">Tente pour 1 personne — 60 DH</option><option data-label-en="Tent for 2 people — 120 DH" data-label-fr="Tente pour 2 personnes — 120 DH" value="2">Tente pour 2 personnes — 120 DH</option><option data-label-en="Tent for 3 people — 150 DH" data-label-fr="Tente pour 3 personnes — 150 DH" value="3">Tente pour 3 personnes — 150 DH</option><option data-label-en="Tent for 4 people — 200 DH" data-label-fr="Tente pour 4 personnes — 200 DH" value="4">Tente pour 4 personnes — 200 DH</option></select></div>
 <!-- DATE -->
 <div class="booking-field">
 <label for="bookingDate">
 <i class="fa-regular fa-calendar"></i>
 <span>
-                                    Preferred date
+                                    Date souhaitée
                                 </span>
 </label>
 <input class="booking-input" id="bookingDate" name="bookingDate" required="" type="date"/>
@@ -279,12 +279,12 @@
 <label for="secondDate">
 <i class="fa-regular fa-calendar-plus"></i>
 <span>
-                                    Alternative date
+                                    Date alternative
                                 </span>
 </label>
 <input class="booking-input" id="secondDate" name="secondDate" type="date"/>
 <small class="booking-field-note">
-                                Optional
+                                Facultatif
                             </small>
 </div>
 <!-- PEOPLE -->
@@ -292,7 +292,7 @@
 <label for="bookingPeople">
 <i class="fa-solid fa-users"></i>
 <span>
-                                    Number of people
+                                    Nombre de personnes
                                 </span>
 </label>
 <input class="booking-input" id="bookingPeople" max="100" min="1" name="bookingPeople" required="" type="number" value="1"/>
@@ -302,7 +302,7 @@
 <label for="bookingChildren">
 <i class="fa-solid fa-child-reaching"></i>
 <span>
-                                    Number of children
+                                    Nombre d’enfants
                                 </span>
 </label>
 <input class="booking-input" id="bookingChildren" max="100" min="0" name="bookingChildren" type="number" value="0"/>
@@ -312,7 +312,7 @@
 <label for="meetingPoint">
 <i class="fa-solid fa-location-dot"></i>
 <span>
-                                    Starting point or accommodation
+                                    Point de départ ou hébergement
                                 </span>
 </label>
 <input class="booking-input" id="meetingPoint" name="meetingPoint" placeholder="Tilouguite, Imsfrane, Beni Mellal..." type="text"/>
@@ -322,56 +322,43 @@
 <label for="transportNeeded">
 <i class="fa-solid fa-van-shuttle"></i>
 <span>
-                                    Transport needed?
+                                    Besoin de transport ?
                                 </span>
 </label>
-<select class="booking-select" id="transportNeeded" name="transportNeeded"><option value="">Select an option</option><option data-label-en="No" data-label-fr="Non" value="no">No</option><option data-label-en="Yes" data-label-fr="Oui" value="yes">Yes</option><option data-label-en="Not sure yet" data-label-fr="Pas encore décidé" value="unsure">Not sure yet</option></select>
-</div>
-<!-- ACCOMMODATION -->
-<div class="booking-field">
-<label for="accommodationNeeded">
-<i class="fa-solid fa-bed"></i>
-<span>Accommodation needed?</span>
-</label>
-<select class="booking-select" id="accommodationNeeded" name="accommodationNeeded">
-<option value="">Select an option</option>
-<option data-label-en="No" data-label-fr="Non" value="no">No</option>
-<option data-label-en="Yes" data-label-fr="Oui" value="yes">Yes</option>
-<option data-label-en="Not sure yet" data-label-fr="Pas encore décidé" value="unsure">Not sure yet</option>
-</select>
+<select class="booking-select" id="transportNeeded" name="transportNeeded"><option value="">Choisissez une option</option><option data-label-en="No" data-label-fr="Non" value="no">Non</option><option data-label-en="Yes" data-label-fr="Oui" value="yes">Oui</option><option data-label-en="Not sure yet" data-label-fr="Pas encore décidé" value="unsure">Pas encore décidé</option></select>
 </div>
 <!-- LANGUAGE -->
 <div class="booking-field">
 <label for="preferredLanguage">
 <i class="fa-solid fa-language"></i>
 <span>
-                                    Preferred language
+                                    Langue préférée
                                 </span>
 </label>
-<select class="booking-select" id="preferredLanguage" name="preferredLanguage"><option value="">Select a language</option><option data-label-en="English" data-label-fr="Anglais" value="en">English</option><option data-label-en="French" data-label-fr="Français" value="fr">French</option><option data-label-en="Arabic" data-label-fr="Arabe" value="ar">Arabic</option></select>
+<select class="booking-select" id="preferredLanguage" name="preferredLanguage"><option value="">Choisissez une langue</option><option data-label-en="English" data-label-fr="Anglais" value="en">Anglais</option><option data-label-en="French" data-label-fr="Français" value="fr">Français</option><option data-label-en="Arabic" data-label-fr="Arabe" value="ar">Arabe</option></select>
 </div>
 <!-- NOTES -->
 <div class="booking-field booking-field-full">
 <label for="bookingNotes">
 <i class="fa-solid fa-message"></i>
 <span>
-                                    Additional information
+                                    Informations supplémentaires
                                 </span>
 </label>
-<textarea class="booking-textarea" id="bookingNotes" name="bookingNotes" placeholder="Tell us about your group, accommodation or special requests..."></textarea>
+<textarea class="booking-textarea" id="bookingNotes" name="bookingNotes" placeholder="Parlez-nous de votre groupe, de l’hébergement ou de vos demandes particulières…"></textarea>
 </div>
 <div aria-live="polite" class="booking-message" id="bookingMessage" role="alert"></div>
 <div class="booking-actions">
 <button class="booking-submit-button" type="submit">
 <i class="fa-brands fa-whatsapp"></i>
 <span>
-                                    Send booking on WhatsApp
+                                    Envoyer la demande sur WhatsApp
                                 </span>
 </button>
 <button class="booking-reset-button" type="reset">
 <i class="fa-solid fa-rotate-left"></i>
 <span>
-                                    Clear form
+                                    Effacer
                                 </span>
 </button>
 </div>
@@ -385,13 +372,13 @@
 <div class="booking-card-heading">
 <i class="fa-solid fa-receipt"></i>
 <h3>
-                                Booking summary
+                                Résumé de la demande
                             </h3>
 </div>
 <div class="booking-summary-list">
 <div class="booking-summary-row">
 <span>
-                                    Activity
+                                    Activité
                                 </span>
 <strong id="summaryActivity">
                                     —
@@ -399,7 +386,7 @@
 </div>
 <div class="booking-summary-row">
 <span>
-                                    Route
+                                    Parcours
                                 </span>
 <strong id="summaryRoute">
                                     —
@@ -415,7 +402,7 @@
 </div>
 <div class="booking-summary-row">
 <span>
-                                    People
+                                    Personnes
                                 </span>
 <strong id="summaryPeople">
                                     1
@@ -429,37 +416,33 @@
                                     No
                                 </strong>
 </div>
-<div class="booking-summary-row">
-<span>Accommodation</span>
-<strong id="summaryAccommodation">—</strong>
-</div>
 </div>
 <div class="booking-estimate">
 <span>
-                                Estimated activity price
+                                Estimation de l’activité
                             </span>
 <strong id="estimatedPrice">
                                 —
                             </strong>
 </div>
 <p class="booking-estimate-note">
-                            This is an initial estimate only. Transport,
-                            accommodation and special requests
-                            may change the final price.
+                            Ceci est une estimation initiale. Le transport,
+                            l’hébergementles demandes spéciales
+                            peuvent modifier le tarif final.
                         </p>
 </div>
 <div class="booking-help-card">
 <h3>
-                            Need a custom program?
+                            Besoin d’un programme personnalisé ?
                         </h3>
 <p>
-                            Contact us directly for multi-day trips,
-                            large groups or airport transfers.
+                            Contactez-nous directement pour les séjours,
+                            grands groupes ou transferts aéroport.
                         </p>
-<a class="booking-help-link" href="https://wa.me/212667772551?text=Hello%2C%20I%20would%20like%20a%20custom%20program%20in%20Imsfrane." rel="noopener noreferrer" target="_blank">
+<a class="booking-help-link" href="https://wa.me/212667772551?text=Bonjour%2C%20je%20souhaite%20un%20programme%20personnalis%C3%A9%20%C3%A0%20Imsfrane." rel="noopener noreferrer" target="_blank">
 <i class="fa-brands fa-whatsapp"></i>
 <span>
-                                Discuss your program
+                                Discuter du programme
                             </span>
 </a>
 </div>
@@ -467,32 +450,32 @@
 <div class="booking-card-heading">
 <i class="fa-solid fa-shield-heart"></i>
 <h3>
-                                Before you book
+                                Avant de réserver
                             </h3>
 </div>
 <ul class="booking-trust-list">
 <li>
 <i class="fa-solid fa-circle-check"></i>
 <span>
-                                    Availability is confirmed personally.
+                                    La disponibilité est confirmée personnellement.
                                 </span>
 </li>
 <li>
 <i class="fa-solid fa-circle-check"></i>
 <span>
-                                    Rafting depends on river and weather conditions.
+                                    Le rafting dépend de la rivière et de la météo.
                                 </span>
 </li>
 <li>
 <i class="fa-solid fa-circle-check"></i>
 <span>
-                                    Final meeting details are sent by WhatsApp.
+                                    Le point de rendez-vous est envoyé par WhatsApp.
                                 </span>
 </li>
 <li>
 <i class="fa-solid fa-circle-check"></i>
 <span>
-                                    Large groups should book in advance.
+                                    Les grands groupes doivent réserver à l’avance.
                                 </span>
 </li>
 </ul>
@@ -507,10 +490,10 @@
 <div class="container">
 <div class="section-heading">
 <span class="section-kicker">
-                        Simple booking
+                        Réservation simple
                     </span>
 <h2>
-                        How your booking works
+                        Comment fonctionne la réservation
                     </h2>
 </div>
 <div class="booking-process-grid">
@@ -519,11 +502,11 @@
                             1
                         </span>
 <h3>
-                            Complete the form
+                            Remplissez le formulaire
                         </h3>
 <p>
-                            Select your activity, preferred date
-                            and the number of participants.
+                            Choisissez l’activité, la date souhaitée
+                            et le nombre de participants.
                         </p>
 </article>
 <article class="booking-process-card">
@@ -531,11 +514,11 @@
                             2
                         </span>
 <h3>
-                            Send by WhatsApp
+                            Envoyez par WhatsApp
                         </h3>
 <p>
-                            Your information is converted into
-                            a clear booking message.
+                            Vos informations sont transformées
+                            en message de réservation clair.
                         </p>
 </article>
 <article class="booking-process-card">
@@ -543,11 +526,11 @@
                             3
                         </span>
 <h3>
-                            Receive confirmation
+                            Recevez la confirmation
                         </h3>
 <p>
-                            We confirm availability, final price
-                            and the meeting point directly with you.
+                            Nous confirmons la disponibilité,
+                            le tarif final et le point de rendez-vous.
                         </p>
 </article>
 </div>
@@ -566,16 +549,16 @@
                     Imsfrane Cathédrale
                 </span>
 <h2>
-                    Your Atlas adventure starts here
+                    Votre aventure dans l’Atlas commence ici
                 </h2>
 <p>
-                    Rafting, camping, hiking, VTT, quad
-                    and authentic local experiences.
+                    Rafting, camping, randonnée, VTT, quad
+                    et expériences locales authentiques.
                 </p>
 <a class="button button-primary" href="#bookingForm">
 <i class="fa-regular fa-calendar-check"></i>
 <span>
-                        Start your booking
+                        Commencer la réservation
                     </span>
 </a>
 </div>
@@ -587,20 +570,20 @@
 <footer class="site-footer">
 <div class="container footer-grid">
 <div class="footer-brand">
-<a class="brand" href="index.html"><span class="brand-logo"><img alt="Logo Imsfrane Cathédrale" decoding="async" height="106" loading="lazy" src="../images/logo-104.webp" width="104"/></span><span class="brand-content"><strong>Imsfrane Cathédrale</strong><small>Atlas Nature Adventures</small></span></a>
-<p>Authentic nature and adventure experiences in Tilouguite, Imsfrane and Oued Ahansal.</p>
-<div aria-label="Social media" class="footer-socials">
+<a class="brand" href="index.html"><span class="brand-logo"><img alt="Logo Imsfrane Cathédrale" decoding="async" height="106" loading="lazy" src="../images/logo-104.webp" width="104"/></span><span class="brand-content"><strong>Imsfrane Cathédrale</strong><small>Aventures Nature dans l’Atlas</small></span></a>
+<p>Expériences authentiques de nature et d’aventure à Tilouguite, Imsfrane et sur l’Oued Ahansal.</p>
+<div aria-label="Réseaux sociaux" class="footer-socials">
 <a aria-label="Facebook" href="https://www.facebook.com/imsfrane.cathedrale" rel="noopener noreferrer" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
 <a aria-label="Instagram" href="https://www.instagram.com/imsfrane_cathedrale" rel="noopener noreferrer" target="_blank"><i class="fa-brands fa-instagram"></i></a>
 <a aria-label="TikTok" href="https://www.tiktok.com/@imsfrane_cathedrale" rel="noopener noreferrer" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
 <a aria-label="WhatsApp" href="https://wa.me/212667772551" rel="noopener noreferrer" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
 </div>
 </div>
-<div class="footer-column"><h3>Activities</h3><ul>
-<li><a href="rafting.html">Rafting</a></li><li><a href="camping.html">Camping</a></li><li><a href="randonnee.html">Hiking</a></li><li><a href="vtt.html">VTT</a></li><li><a href="quad.html">Quad</a></li><li><a href="hebergement.html">Accommodation</a></li>
+<div class="footer-column"><h3>Activités</h3><ul>
+<li><a href="rafting.html">Rafting</a></li><li><a href="camping.html">Camping</a></li><li><a href="randonnee.html">Randonnée</a></li><li><a href="vtt.html">VTT</a></li><li><a href="quad.html">Quad</a></li><li><a href="hebergement.html">Hébergement</a></li>
 </ul></div>
-<div class="footer-column"><h3>Useful links</h3><ul>
-<li><a href="programme.html">Programs</a></li><li><a href="guide.html">Travel guide</a></li><li><a href="blog.html">Blog</a></li><li><a href="store.html">Store</a></li><li><a href="booking.html">Booking</a></li><li><a href="../sitemap.xml">Sitemap</a></li>
+<div class="footer-column"><h3>Liens utiles</h3><ul>
+<li><a href="programme.html">Programmes</a></li><li><a href="guide.html">Guide pratique</a></li><li><a href="blog.html">Blog</a></li><li><a href="store.html">Boutique</a></li><li><a href="booking.html">Réservation</a></li><li><a href="../sitemap.xml">Sitemap</a></li>
 </ul></div>
 <div class="footer-column"><h3>Contact</h3><ul class="footer-contact">
 <li><i class="fa-solid fa-location-dot"></i><span>Tilouguite, Azilal, Morocco</span></li>
@@ -608,8 +591,8 @@
 <li><i class="fa-solid fa-envelope"></i><a href="mailto:imsfraneinfo@gmail.com">imsfraneinfo@gmail.com</a></li>
 </ul></div>
 </div>
-<div class="footer-bottom"><div class="container footer-bottom-inner"><p>© <span id="currentYear">2026</span> Imsfrane Cathédrale. All rights reserved.</p><a href="../sitemap.xml">Sitemap</a></div></div>
+<div class="footer-bottom"><div class="container footer-bottom-inner"><p>© <span id="currentYear">2026</span> Imsfrane Cathédrale. Tous droits réservés.</p><a href="../sitemap.xml">Sitemap</a></div></div>
 </footer>
-<a aria-label="Contact on WhatsApp" class="floating-whatsapp" href="https://wa.me/212667772551" rel="noopener noreferrer" target="_blank"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span></a>
-<button aria-label="Back to top" class="back-to-top" id="backToTop" type="button"><i class="fa-solid fa-chevron-up"></i></button>
+<a aria-label="Contacter sur WhatsApp" class="floating-whatsapp" href="https://wa.me/212667772551" rel="noopener noreferrer" target="_blank"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span></a>
+<button aria-label="Retour en haut" class="back-to-top" id="backToTop" type="button"><i class="fa-solid fa-chevron-up"></i></button>
 <script defer="" src="../js/core.min.js"></script><script defer="" src="../js/pages/booking.min.js"></script></body></html>

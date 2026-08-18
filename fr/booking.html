@@ -327,6 +327,19 @@
 </label>
 <select class="booking-select" id="transportNeeded" name="transportNeeded"><option value="">Choisissez une option</option><option data-label-en="No" data-label-fr="Non" value="no">Non</option><option data-label-en="Yes" data-label-fr="Oui" value="yes">Oui</option><option data-label-en="Not sure yet" data-label-fr="Pas encore décidé" value="unsure">Pas encore décidé</option></select>
 </div>
+<!-- ACCOMMODATION -->
+<div class="booking-field">
+<label for="accommodationNeeded">
+<i class="fa-solid fa-bed"></i>
+<span>Besoin d’hébergement ?</span>
+</label>
+<select class="booking-select" id="accommodationNeeded" name="accommodationNeeded">
+<option value="">Choisissez une option</option>
+<option data-label-en="No" data-label-fr="Non" value="no">Non</option>
+<option data-label-en="Yes" data-label-fr="Oui" value="yes">Oui</option>
+<option data-label-en="Not sure yet" data-label-fr="Pas encore décidé" value="unsure">Pas encore décidé</option>
+</select>
+</div>
 <!-- LANGUAGE -->
 <div class="booking-field">
 <label for="preferredLanguage">
@@ -416,6 +429,10 @@
                                     No
                                 </strong>
 </div>
+<div class="booking-summary-row">
+<span>Hébergement</span>
+<strong id="summaryAccommodation">—</strong>
+</div>
 </div>
 <div class="booking-estimate">
 <span>
@@ -427,7 +444,7 @@
 </div>
 <p class="booking-estimate-note">
                             Ceci est une estimation initiale. Le transport,
-                            l’hébergementles demandes spéciales
+                            l’hébergement et les demandes spéciales
                             peuvent modifier le tarif final.
                         </p>
 </div>

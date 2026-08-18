@@ -327,19 +327,6 @@
 </label>
 <select class="booking-select" id="transportNeeded" name="transportNeeded"><option value="">Select an option</option><option data-label-en="No" data-label-fr="Non" value="no">No</option><option data-label-en="Yes" data-label-fr="Oui" value="yes">Yes</option><option data-label-en="Not sure yet" data-label-fr="Pas encore décidé" value="unsure">Not sure yet</option></select>
 </div>
-<!-- ACCOMMODATION -->
-<div class="booking-field">
-<label for="accommodationNeeded">
-<i class="fa-solid fa-bed"></i>
-<span>Accommodation needed?</span>
-</label>
-<select class="booking-select" id="accommodationNeeded" name="accommodationNeeded">
-<option value="">Select an option</option>
-<option data-label-en="No" data-label-fr="Non" value="no">No</option>
-<option data-label-en="Yes" data-label-fr="Oui" value="yes">Yes</option>
-<option data-label-en="Not sure yet" data-label-fr="Pas encore décidé" value="unsure">Not sure yet</option>
-</select>
-</div>
 <!-- LANGUAGE -->
 <div class="booking-field">
 <label for="preferredLanguage">
@@ -429,10 +416,6 @@
                                     No
                                 </strong>
 </div>
-<div class="booking-summary-row">
-<span>Accommodation</span>
-<strong id="summaryAccommodation">—</strong>
-</div>
 </div>
 <div class="booking-estimate">
 <span>
@@ -444,7 +427,7 @@
 </div>
 <p class="booking-estimate-note">
                             This is an initial estimate only. Transport,
-                            accommodation and special requests
+                            accommodationspecial requests
                             may change the final price.
                         </p>
 </div>
