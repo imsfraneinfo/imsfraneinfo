@@ -1,2 +1,2 @@
 google.com, pub-3106160668387388, DIRECT, f08c47fec0942fa0
-
+git add ads.txt
