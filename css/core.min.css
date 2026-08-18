@@ -100,3 +100,93 @@
         white-space:nowrap !important;
     }
 }
+/* Google reviews trust bar */
+.google-reviews-section {
+    padding: 14px 0 !important;
+    background: #fff !important;
+}
+
+.google-reviews-section .google-review-card {
+    display: flex !important;
+    min-height: 82px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 22px !important;
+    padding: 13px 22px !important;
+    border-radius: 18px !important;
+    box-shadow: 0 8px 24px rgba(13,36,25,.08) !important;
+}
+
+.google-reviews-section .google-review-score {
+    flex-direction: row !important;
+    gap: 9px !important;
+    padding: 0 !important;
+    background: transparent !important;
+    color: var(--green-900) !important;
+}
+
+.google-reviews-section .google-review-score strong {
+    color: var(--green-900) !important;
+    font-size: .95rem !important;
+    white-space: nowrap !important;
+}
+
+.google-reviews-section .google-stars {
+    font-size: .9rem !important;
+    white-space: nowrap !important;
+}
+
+.google-reviews-section .google-review-score small {
+    color: var(--gray-600) !important;
+    font-size: .72rem !important;
+    white-space: nowrap !important;
+}
+
+.google-reviews-section .google-review-copy {
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+}
+
+.google-reviews-section .section-kicker,
+.google-reviews-section .google-review-copy h2,
+.google-reviews-section .google-review-copy p {
+    display: none !important;
+}
+
+.google-reviews-section .button {
+    min-height: 38px !important;
+    padding: 8px 14px !important;
+    font-size: .72rem !important;
+}
+
+@media (max-width:700px) {
+    .google-reviews-section {
+        padding: 9px 0 !important;
+    }
+
+    .google-reviews-section .google-review-card {
+        flex-direction: column !important;
+        gap: 8px !important;
+        padding: 11px 12px !important;
+    }
+
+    .google-reviews-section .google-review-score {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+    }
+
+    .google-reviews-section .google-review-copy {
+        justify-content: center !important;
+    }
+}
+/* Space between Google Reviews and Start Your Journey */
+.google-reviews-section {
+    margin-bottom: 32px !important;
+}
+
+@media (max-width:700px) {
+    .google-reviews-section {
+        margin-bottom: 22px !important;
+    }
+}
