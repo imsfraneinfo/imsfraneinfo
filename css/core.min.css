@@ -190,3 +190,14 @@
         margin-bottom: 22px !important;
     }
 }
+/* 2026-10 desktop hero presentation: preserve full photos with matching blurred fill */
+@media (min-width:901px){
+  .hero-slider .slide{overflow:hidden!important;background-color:var(--green-950)!important;background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important}
+  .hero-slider .slide::before{content:"";position:absolute;inset:-36px;z-index:0;background-image:inherit;background-position:center;background-size:cover;background-repeat:no-repeat;filter:blur(26px);transform:scale(1.10);opacity:.68;pointer-events:none}
+  .hero-slider .slide>img{position:relative!important;z-index:1!important;display:block!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;background:transparent!important;filter:none!important;opacity:1!important}
+  .hero-slider .slide::after{content:"";position:absolute;inset:0;z-index:2;background:rgba(4,17,10,.10);pointer-events:none}
+  .hero-slider>[class*="hero-content"],.hero-slider>.hero-content,.hero-slider>[class*="hero-overlay"],.hero-slider>.slider-btn,.hero-slider>.slider-dots{z-index:5}
+  .booking-hero-background,.contact-hero-background{overflow:hidden!important;background-color:var(--green-950)!important;background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important}
+  .booking-hero-background::before,.contact-hero-background::before{content:"";position:absolute;inset:-36px;z-index:0;background-image:inherit;background-position:center;background-size:cover;background-repeat:no-repeat;filter:blur(26px);transform:scale(1.10);opacity:.68;pointer-events:none}
+  .booking-hero-background>img,.contact-hero-background>img{position:relative!important;z-index:1!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;background:transparent!important}
+}
