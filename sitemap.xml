@@ -342,4 +342,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://imsfrane.com/fr/vtt.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://imsfrane.com/en/vtt.html"/>
   </url>
+
+  <url><loc>https://imsfrane.com/fr/about.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://imsfrane.com/fr/about.html"/><xhtml:link rel="alternate" hreflang="en" href="https://imsfrane.com/en/about.html"/></url>
+  <url><loc>https://imsfrane.com/en/about.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://imsfrane.com/en/about.html"/><xhtml:link rel="alternate" hreflang="fr" href="https://imsfrane.com/fr/about.html"/></url>
 </urlset>
