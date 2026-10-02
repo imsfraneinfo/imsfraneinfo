@@ -1,0 +1,138 @@
+{
+  "settings": {
+    "phone": "+212 667 772 551",
+    "email": "imsfraneinfo@gmail.com",
+    "whatsapp": "212667772551"
+  },
+  "activities": {
+    "rafting": {
+      "fr": {
+        "title": "Aventures Rafting sur l’Oued Ahansal",
+        "description": "Choisissez un parcours découverte de 12 km,\n                    une aventure de 30 km ou une expédition\n                    de deux jours vers Bin El Ouidane.",
+        "prices": [
+          "400 DH",
+          "800 DH",
+          "À partir de 2 500 DH"
+        ]
+      },
+      "en": {
+        "title": "Rafting Adventures on Oued Ahansal",
+        "description": "Choose a 12 km discovery route,\n                    a 30 km adventure or a two-day\n                    50 km expedition toward Bin El Ouidane.",
+        "prices": [
+          "400 DH",
+          "800 DH",
+          "From 2 500 DH"
+        ]
+      }
+    },
+    "randonnee": {
+      "fr": {
+        "title": "Randonnées et Aventures à Imsfrane",
+        "description": "Choisissez le sommet d’Imsfrane\n                    ou découvrez trois sites naturels\n                    dans un seul circuit complet.",
+        "prices": [
+          "300 DH",
+          "200 DH"
+        ]
+      },
+      "en": {
+        "title": "Hiking Adventures in Imsfrane",
+        "description": "Choose the Imsfrane summit\n                    or discover three natural sites\n                    in one complete circuit.",
+        "prices": [
+          "300 DH",
+          "200 DH"
+        ]
+      }
+    },
+    "camping": {
+      "fr": {
+        "title": "Camping Sauvage Sous les Étoiles",
+        "description": "Une nuit authentique dans l’Atlas, entourée\n                            par la rivière, les montagnes et les étoiles.",
+        "prices": [
+          "60 DH",
+          "120 DH",
+          "150 DH",
+          "200 DH"
+        ]
+      },
+      "en": {
+        "title": "Wild Camping Under the Stars",
+        "description": "An authentic night in the Atlas Mountains,\n                            surrounded by the river, mountains and stars.",
+        "prices": [
+          "Tent for 1 person 60 DH",
+          "60 DH",
+          "Tent for 2 people 120 DH",
+          "120 DH",
+          "Tent for 3 people 150 DH",
+          "150 DH",
+          "Tent for 4 people 200 DH",
+          "200 DH"
+        ]
+      }
+    },
+    "vtt": {
+      "fr": {
+        "title": "Aventures VTT Guidées à Imsfrane",
+        "description": "Roulez le long de la rivière à travers Iminouarg,\n                    Tamga et Tilouguite avec notre guide local.",
+        "prices": [
+          "50 DH / personnene",
+          "100 DH / personnene",
+          "150 DH / personnene"
+        ]
+      },
+      "en": {
+        "title": "Guided VTT Adventures in Imsfrane",
+        "description": "Ride beside the river through Iminouarg,\n                    Tamga and Tilouguite with our local guide.",
+        "prices": [
+          "50 DH / person",
+          "100 DH / person",
+          "150 DH / person"
+        ]
+      }
+    },
+    "quad": {
+      "fr": {
+        "title": "Aventure en Quad dans l’Atlas",
+        "description": "Parcourez les pistes de montagne, les vallées,\n                    les villages traditionnels et les paysages panoramiques.",
+        "prices": [
+          "Prix par personne 250 DH",
+          "250 DH"
+        ]
+      },
+      "en": {
+        "title": "Quad Adventure in the Atlas",
+        "description": "Ride through mountain tracks, valleys,\n                    traditional villages and panoramic landscapes.",
+        "prices": [
+          "Price per person 250 DH",
+          "250 DH"
+        ]
+      }
+    },
+    "hebergement": {
+      "fr": {
+        "title": "Séjournez au Cœur de l’Atlas",
+        "description": "Une maison locale paisible entourée\n                    de montagnes, de rivière et de vie authentique.",
+        "prices": [
+          "60 DH",
+          "120 DH",
+          "150 DH",
+          "200 DH",
+          "À partir de 60 DH"
+        ]
+      },
+      "en": {
+        "title": "Stay in the Heart of the Atlas",
+        "description": "A peaceful local house surrounded by mountains,\n                    river landscapes and authentic village life.",
+        "prices": [
+          "Tent for 1 person 60 DH",
+          "60 DH",
+          "Tent for 2 people 120 DH",
+          "120 DH",
+          "Tent for 3 people 150 DH",
+          "150 DH",
+          "Tent for 4 people 200 DH",
+          "200 DH"
+        ]
+      }
+    }
+  }
+}
