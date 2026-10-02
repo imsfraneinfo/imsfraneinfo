@@ -1,0 +1,23 @@
+paths:
+  static: ''
+  uploads: images/uploads
+timezone: Africa/Casablanca
+markdown:
+  engine: commonmark
+  options: {}
+collections_config:
+  pages:
+    path: ''
+    icon: wysiwyg
+  admin:
+    path: admin
+    icon: ad
+  content:
+    path: content
+    icon: wysiwyg
+  en:
+    path: en
+    icon: ent
+  fr:
+    path: fr
+    icon: 1k
