@@ -33,100 +33,92 @@ public_folder: "/images/uploads"
 publish_mode: simple
 
 collections:
-  - name: "pages_fr"
-    label: "Pages Français"
+  - name: "blog_fr"
+    label: "📰 Blog Français"
+    files:
+      - label: "Gérer les articles"
+        name: "articles_fr"
+        file: "content/blog-fr.json"
+        format: "json"
+        fields:
+          - label: "Articles"
+            name: "articles"
+            widget: "list"
+            summary: "{{fields.title}} — {{fields.publish_at}}"
+            minimize_collapsed: true
+            fields:
+              - {label: "Titre", name: "title", widget: "string"}
+              - {label: "Identifiant URL (ex: rafting-printemps)", name: "slug", widget: "string", pattern: ['^[a-z0-9-]+$', 'Utilisez seulement lettres minuscules, chiffres et tirets']}
+              - {label: "Catégorie", name: "category", widget: "select", options: ["Montagne", "Rafting", "Randonnée", "Cascade", "Rivière", "Village", "Culture", "Conseils", "Autre"]}
+              - {label: "Image principale", name: "image", widget: "image"}
+              - {label: "Résumé", name: "summary", widget: "text"}
+              - {label: "Contenu de l’article", name: "body", widget: "markdown", buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"]}
+              - {label: "Date et heure de publication", name: "publish_at", widget: "datetime", date_format: "DD/MM/YYYY", time_format: "HH:mm", picker_utc: false}
+              - {label: "Publier", name: "published", widget: "boolean", default: true, hint: "Désactivez pour garder l’article caché. Si la date est future, il apparaîtra automatiquement à cette date."}
+              - {label: "Titre SEO", name: "seo_title", widget: "string", required: false}
+              - {label: "Description SEO", name: "seo_description", widget: "text", required: false}
+
+  - name: "blog_en"
+    label: "📰 English Blog"
+    files:
+      - label: "Manage articles"
+        name: "articles_en"
+        file: "content/blog-en.json"
+        format: "json"
+        fields:
+          - label: "Articles"
+            name: "articles"
+            widget: "list"
+            summary: "{{fields.title}} — {{fields.publish_at}}"
+            minimize_collapsed: true
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "URL slug (example: spring-rafting)", name: "slug", widget: "string", pattern: ['^[a-z0-9-]+$', 'Use lowercase letters, numbers and hyphens only']}
+              - {label: "Category", name: "category", widget: "select", options: ["Mountain", "Rafting", "Hiking", "Waterfall", "River", "Village", "Culture", "Tips", "Other"]}
+              - {label: "Main image", name: "image", widget: "image"}
+              - {label: "Summary", name: "summary", widget: "text"}
+              - {label: "Article content", name: "body", widget: "markdown", buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"]}
+              - {label: "Publication date and time", name: "publish_at", widget: "datetime", date_format: "DD/MM/YYYY", time_format: "HH:mm", picker_utc: false}
+              - {label: "Publish", name: "published", widget: "boolean", default: true, hint: "Turn off to keep hidden. A future date will make the article appear automatically at that time."}
+              - {label: "SEO title", name: "seo_title", widget: "string", required: false}
+              - {label: "SEO description", name: "seo_description", widget: "text", required: false}
+
+  - name: "advanced_fr"
+    label: "⚙️ Pages FR (avancé)"
     files:
       - label: "Accueil"
         name: "home_fr"
         file: "fr/index.html"
-        fields:
-          - {label: "HTML de la page", name: "body", widget: "code", default_language: "html", output_code_only: true}
-      - label: "Qui sommes-nous"
-        name: "about_fr"
-        file: "fr/about.html"
-        fields:
-          - {label: "HTML de la page", name: "body", widget: "code", default_language: "html", output_code_only: true}
+        fields: [{label: "HTML", name: "body", widget: "code", default_language: "html", output_code_only: true}]
       - label: "Rafting"
         name: "rafting_fr"
         file: "fr/rafting.html"
-        fields:
-          - {label: "HTML de la page", name: "body", widget: "code", default_language: "html", output_code_only: true}
+        fields: [{label: "HTML", name: "body", widget: "code", default_language: "html", output_code_only: true}]
       - label: "Randonnée"
         name: "randonnee_fr"
         file: "fr/randonnee.html"
-        fields:
-          - {label: "HTML de la page", name: "body", widget: "code", default_language: "html", output_code_only: true}
+        fields: [{label: "HTML", name: "body", widget: "code", default_language: "html", output_code_only: true}]
       - label: "Camping"
         name: "camping_fr"
         file: "fr/camping.html"
-        fields:
-          - {label: "HTML de la page", name: "body", widget: "code", default_language: "html", output_code_only: true}
+        fields: [{label: "HTML", name: "body", widget: "code", default_language: "html", output_code_only: true}]
       - label: "VTT"
         name: "vtt_fr"
         file: "fr/vtt.html"
-        fields:
-          - {label: "HTML de la page", name: "body", widget: "code", default_language: "html", output_code_only: true}
+        fields: [{label: "HTML", name: "body", widget: "code", default_language: "html", output_code_only: true}]
       - label: "Quad"
         name: "quad_fr"
         file: "fr/quad.html"
-        fields:
-          - {label: "HTML de la page", name: "body", widget: "code", default_language: "html", output_code_only: true}
-      - label: "Hébergement"
-        name: "hebergement_fr"
-        file: "fr/hebergement.html"
-        fields:
-          - {label: "HTML de la page", name: "body", widget: "code", default_language: "html", output_code_only: true}
-      - label: "Réservation"
-        name: "booking_fr"
-        file: "fr/booking.html"
-        fields:
-          - {label: "HTML de la page", name: "body", widget: "code", default_language: "html", output_code_only: true}
+        fields: [{label: "HTML", name: "body", widget: "code", default_language: "html", output_code_only: true}]
 
-  - name: "pages_en"
-    label: "English Pages"
+  - name: "advanced_en"
+    label: "⚙️ English Pages (advanced)"
     files:
       - label: "Home"
         name: "home_en"
         file: "en/index.html"
-        fields:
-          - {label: "Page HTML", name: "body", widget: "code", default_language: "html", output_code_only: true}
-      - label: "About Us"
-        name: "about_en"
-        file: "en/about.html"
-        fields:
-          - {label: "Page HTML", name: "body", widget: "code", default_language: "html", output_code_only: true}
+        fields: [{label: "HTML", name: "body", widget: "code", default_language: "html", output_code_only: true}]
       - label: "Rafting"
         name: "rafting_en"
         file: "en/rafting.html"
-        fields:
-          - {label: "Page HTML", name: "body", widget: "code", default_language: "html", output_code_only: true}
-      - label: "Hiking"
-        name: "hiking_en"
-        file: "en/randonnee.html"
-        fields:
-          - {label: "Page HTML", name: "body", widget: "code", default_language: "html", output_code_only: true}
-      - label: "Camping"
-        name: "camping_en"
-        file: "en/camping.html"
-        fields:
-          - {label: "Page HTML", name: "body", widget: "code", default_language: "html", output_code_only: true}
-      - label: "Mountain Bike"
-        name: "vtt_en"
-        file: "en/vtt.html"
-        fields:
-          - {label: "Page HTML", name: "body", widget: "code", default_language: "html", output_code_only: true}
-      - label: "Quad"
-        name: "quad_en"
-        file: "en/quad.html"
-        fields:
-          - {label: "Page HTML", name: "body", widget: "code", default_language: "html", output_code_only: true}
-      - label: "Accommodation"
-        name: "hebergement_en"
-        file: "en/hebergement.html"
-        fields:
-          - {label: "Page HTML", name: "body", widget: "code", default_language: "html", output_code_only: true}
-      - label: "Booking"
-        name: "booking_en"
-        file: "en/booking.html"
-        fields:
-          - {label: "Page HTML", name: "body", widget: "code", default_language: "html", output_code_only: true}
+        fields: [{label: "HTML", name: "body", widget: "code", default_language: "html", output_code_only: true}]
