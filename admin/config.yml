@@ -23,186 +23,83 @@ public_folder: "/images/uploads"
 publish_mode: simple
 
 collections:
-  - name: "easy_admin"
-    label: "Office Admin — FR + EN"
+  - name: "full_site"
+    label: "🌍 Site complet — FR + EN"
     files:
-      - label: "Contenu bilingue / Bilingual content"
+      - label: "Toutes les pages / All pages"
+        name: "all_pages"
+        file: "content/full-site.json"
+        format: "json"
+        fields:
+          - label: "Pages"
+            name: "pages"
+            widget: "list"
+            summary: "{{fields.label}}"
+            allow_add: false
+            allow_delete: false
+            fields:
+              - {label: "Nom de la page", name: "label", widget: "string"}
+              - {label: "ID", name: "name", widget: "hidden"}
+              - label: "✏️ Tous les textes — FR + EN"
+                name: "texts"
+                widget: "list"
+                summary: "{{fields.label}}"
+                allow_add: false
+                allow_delete: false
+                collapsed: true
+                fields:
+                  - {label: "Repère", name: "label", widget: "string", hint: "Aide pour reconnaître le texte"}
+                  - {label: "FR ID", name: "fr_id", widget: "hidden"}
+                  - {label: "EN ID", name: "en_id", widget: "hidden"}
+                  - {label: "🇫🇷 Français", name: "fr", widget: "text", required: false}
+                  - {label: "🇬🇧 English", name: "en", widget: "text", required: false}
+              - label: "🖼️ Toutes les images — FR + EN"
+                name: "images"
+                widget: "list"
+                summary: "{{fields.label}}"
+                allow_add: false
+                allow_delete: false
+                collapsed: true
+                fields:
+                  - {label: "Repère", name: "label", widget: "string"}
+                  - {label: "FR ID", name: "fr_id", widget: "hidden"}
+                  - {label: "EN ID", name: "en_id", widget: "hidden"}
+                  - {label: "🇫🇷 Image française", name: "fr", widget: "image", required: false}
+                  - {label: "🇬🇧 English image", name: "en", widget: "image", required: false}
+  - name: "blog_manager"
+    label: "📰 Blog — publier des articles"
+    files:
+      - label: "Articles FR + EN"
+        name: "posts"
+        file: "content/blog-posts.json"
+        format: "json"
+        fields:
+          - label: "Articles"
+            name: "posts"
+            widget: "list"
+            summary: "{{fields.title_fr}} / {{fields.title_en}}"
+            fields:
+              - {label: "Slug (ex: aventure-rafting-2026)", name: "slug", widget: "string"}
+              - {label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false}
+              - {label: "Image principale", name: "image", widget: "image"}
+              - {label: "🇫🇷 Titre", name: "title_fr", widget: "string"}
+              - {label: "🇬🇧 Title", name: "title_en", widget: "string"}
+              - {label: "🇫🇷 Résumé", name: "excerpt_fr", widget: "text"}
+              - {label: "🇬🇧 Summary", name: "excerpt_en", widget: "text"}
+              - {label: "🇫🇷 Article", name: "body_fr", widget: "markdown"}
+              - {label: "🇬🇧 Article", name: "body_en", widget: "markdown"}
+  - name: "quick_settings"
+    label: "⚙️ Contact & activités"
+    files:
+      - label: "Réglages rapides"
         name: "site_content"
         file: "content/site-content.json"
         format: "json"
         fields:
-          - label: "Contact (commun aux 2 langues)"
+          - label: "Contact"
             name: "settings"
             widget: "object"
-            collapsed: true
             fields:
-              - {label: "Téléphone / Phone", name: "phone", widget: "string"}
+              - {label: "Téléphone", name: "phone", widget: "string"}
               - {label: "Email", name: "email", widget: "string"}
-              - {label: "WhatsApp (sans +)", name: "whatsapp", widget: "string"}
-          - label: "Activités — Français + English"
-            name: "activities"
-            widget: "object"
-            collapsed: false
-            fields:
-              - label: "🌊 Rafting"
-                name: "rafting"
-                widget: "object"
-                collapsed: true
-                fields:
-                  - label: "🇫🇷 Français"
-                    name: "fr"
-                    widget: "object"
-                    collapsed: false
-                    fields:
-                      - {label: "Titre", name: "title", widget: "string"}
-                      - {label: "Description", name: "description", widget: "text"}
-                      - label: "Prix"
-                        name: "prices"
-                        widget: "list"
-                        field: {label: "Prix", name: "price", widget: "string"}
-                  - label: "🇬🇧 English"
-                    name: "en"
-                    widget: "object"
-                    collapsed: false
-                    fields:
-                      - {label: "Title", name: "title", widget: "string"}
-                      - {label: "Description", name: "description", widget: "text"}
-                      - label: "Prices"
-                        name: "prices"
-                        widget: "list"
-                        field: {label: "Price", name: "price", widget: "string"}
-              - label: "🥾 Randonnée / Hiking"
-                name: "randonnee"
-                widget: "object"
-                collapsed: true
-                fields:
-                  - label: "🇫🇷 Français"
-                    name: "fr"
-                    widget: "object"
-                    collapsed: false
-                    fields:
-                      - {label: "Titre", name: "title", widget: "string"}
-                      - {label: "Description", name: "description", widget: "text"}
-                      - label: "Prix"
-                        name: "prices"
-                        widget: "list"
-                        field: {label: "Prix", name: "price", widget: "string"}
-                  - label: "🇬🇧 English"
-                    name: "en"
-                    widget: "object"
-                    collapsed: false
-                    fields:
-                      - {label: "Title", name: "title", widget: "string"}
-                      - {label: "Description", name: "description", widget: "text"}
-                      - label: "Prices"
-                        name: "prices"
-                        widget: "list"
-                        field: {label: "Price", name: "price", widget: "string"}
-              - label: "⛺ Camping"
-                name: "camping"
-                widget: "object"
-                collapsed: true
-                fields:
-                  - label: "🇫🇷 Français"
-                    name: "fr"
-                    widget: "object"
-                    collapsed: false
-                    fields:
-                      - {label: "Titre", name: "title", widget: "string"}
-                      - {label: "Description", name: "description", widget: "text"}
-                      - label: "Prix"
-                        name: "prices"
-                        widget: "list"
-                        field: {label: "Prix", name: "price", widget: "string"}
-                  - label: "🇬🇧 English"
-                    name: "en"
-                    widget: "object"
-                    collapsed: false
-                    fields:
-                      - {label: "Title", name: "title", widget: "string"}
-                      - {label: "Description", name: "description", widget: "text"}
-                      - label: "Prices"
-                        name: "prices"
-                        widget: "list"
-                        field: {label: "Price", name: "price", widget: "string"}
-              - label: "🚵 VTT / Mountain Bike"
-                name: "vtt"
-                widget: "object"
-                collapsed: true
-                fields:
-                  - label: "🇫🇷 Français"
-                    name: "fr"
-                    widget: "object"
-                    collapsed: false
-                    fields:
-                      - {label: "Titre", name: "title", widget: "string"}
-                      - {label: "Description", name: "description", widget: "text"}
-                      - label: "Prix"
-                        name: "prices"
-                        widget: "list"
-                        field: {label: "Prix", name: "price", widget: "string"}
-                  - label: "🇬🇧 English"
-                    name: "en"
-                    widget: "object"
-                    collapsed: false
-                    fields:
-                      - {label: "Title", name: "title", widget: "string"}
-                      - {label: "Description", name: "description", widget: "text"}
-                      - label: "Prices"
-                        name: "prices"
-                        widget: "list"
-                        field: {label: "Price", name: "price", widget: "string"}
-              - label: "🏍️ Quad"
-                name: "quad"
-                widget: "object"
-                collapsed: true
-                fields:
-                  - label: "🇫🇷 Français"
-                    name: "fr"
-                    widget: "object"
-                    collapsed: false
-                    fields:
-                      - {label: "Titre", name: "title", widget: "string"}
-                      - {label: "Description", name: "description", widget: "text"}
-                      - label: "Prix"
-                        name: "prices"
-                        widget: "list"
-                        field: {label: "Prix", name: "price", widget: "string"}
-                  - label: "🇬🇧 English"
-                    name: "en"
-                    widget: "object"
-                    collapsed: false
-                    fields:
-                      - {label: "Title", name: "title", widget: "string"}
-                      - {label: "Description", name: "description", widget: "text"}
-                      - label: "Prices"
-                        name: "prices"
-                        widget: "list"
-                        field: {label: "Price", name: "price", widget: "string"}
-              - label: "🏡 Hébergement / Accommodation"
-                name: "hebergement"
-                widget: "object"
-                collapsed: true
-                fields:
-                  - label: "🇫🇷 Français"
-                    name: "fr"
-                    widget: "object"
-                    collapsed: false
-                    fields:
-                      - {label: "Titre", name: "title", widget: "string"}
-                      - {label: "Description", name: "description", widget: "text"}
-                      - label: "Prix"
-                        name: "prices"
-                        widget: "list"
-                        field: {label: "Prix", name: "price", widget: "string"}
-                  - label: "🇬🇧 English"
-                    name: "en"
-                    widget: "object"
-                    collapsed: false
-                    fields:
-                      - {label: "Title", name: "title", widget: "string"}
-                      - {label: "Description", name: "description", widget: "text"}
-                      - label: "Prices"
-                        name: "prices"
-                        widget: "list"
-                        field: {label: "Price", name: "price", widget: "string"}
+              - {label: "WhatsApp", name: "whatsapp", widget: "string"}

@@ -16845,3 +16845,6 @@ body[data-lang="en"] .lang-en, body[data-lang="fr"] .lang-fr { display: revert; 
         transition-duration: 0.01ms !important;
     }
 }
+
+/* CMS managed articles */
+.cms-blog-card img,.cms-article-hero{max-width:100%;height:auto;border-radius:14px}.cms-blog-card{margin:1.5rem 0}.cms-blog-card a{text-decoration:none;color:inherit}.cms-article-body{max-width:850px;margin:2rem auto;line-height:1.8}
