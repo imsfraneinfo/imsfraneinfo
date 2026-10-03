@@ -1,23 +1,80 @@
-paths:
-  static: ''
-  uploads: images/uploads
-timezone: Africa/Casablanca
-markdown:
-  engine: commonmark
-  options: {}
+# CloudCannon — Imsfrane Cathédrale (clean visual CMS)
 collections_config:
-  pages:
-    path: ''
-    icon: wysiwyg
-  admin:
-    path: admin
-    icon: ad
-  content:
-    path: content
-    icon: wysiwyg
-  en:
-    path: en
-    icon: ent
-  fr:
+  pages_fr:
     path: fr
-    icon: 1k
+    glob:
+      - "*.html"
+      - "!blog-*.html"
+      - "!article.html"
+    name: "🇫🇷 Pages du site"
+    icon: language
+    disable_add: true
+  articles_fr:
+    path: fr
+    glob:
+      - "blog-*.html"
+    name: "📝 Articles Français"
+    singular_name: "Article Français"
+    icon: edit_note
+    schemas:
+      article:
+        path: /.cloudcannon/schemas/article-fr.html
+        name: "Nouvel article FR"
+        icon: post_add
+    add_options:
+      - name: "Nouvel article FR"
+        schema: article
+        editor: visual
+  pages_en:
+    path: en
+    glob:
+      - "*.html"
+      - "!blog-*.html"
+      - "!article.html"
+    name: "🇬🇧 Site Pages"
+    icon: language
+    disable_add: true
+  articles_en:
+    path: en
+    glob:
+      - "blog-*.html"
+    name: "📝 English Articles"
+    singular_name: "English Article"
+    icon: edit_note
+    schemas:
+      article:
+        path: /.cloudcannon/schemas/article-en.html
+        name: "New English article"
+        icon: post_add
+    add_options:
+      - name: "New English article"
+        schema: article
+        editor: visual
+
+collection_groups:
+  - heading: "🇫🇷 Français"
+    collections: [pages_fr, articles_fr]
+  - heading: "🇬🇧 English"
+    collections: [pages_en, articles_en]
+
+paths:
+  uploads: /images
+  static: /
+
+_editables:
+  text:
+    bold: true
+    italic: true
+    link: true
+  block:
+    format: p h2 h3 h4
+    bold: true
+    italic: true
+    link: true
+    bulletedlist: true
+    numberedlist: true
+  image:
+    expandable: true
+    paths:
+      uploads: /images
+      static: /

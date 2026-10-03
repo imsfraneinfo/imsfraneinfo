@@ -1,0 +1,1 @@
+CloudCannon clean CMS: Pages FR/EN + Articles FR/EN. Legacy JSON content files are retained only for compatibility and are not shown as CMS collections. Visual editable regions are limited to safe leaf text and images to prevent Misplaced editable region warnings.
