@@ -1,4 +1,5 @@
-# CloudCannon — Imsfrane Cathédrale (clean visual CMS)
+# CloudCannon — Imsfrane Cathédrale
+# Simple visual CMS: pages + real HTML article collections (no JSON array CMS)
 collections_config:
   pages_fr:
     path: fr
@@ -6,56 +7,81 @@ collections_config:
       - "*.html"
       - "!blog-*.html"
       - "!article.html"
-    name: "🇫🇷 Pages du site"
+    name: "🇫🇷 Pages FR"
+    singular_name: "Page FR"
     icon: language
     disable_add: true
+    _enabled_editors:
+      - visual
+      - source
+
   articles_fr:
     path: fr
     glob:
       - "blog-*.html"
-    name: "📝 Articles Français"
-    singular_name: "Article Français"
+    name: "📝 Articles FR"
+    singular_name: "Article FR"
     icon: edit_note
+    disable_add_folder: true
+    _enabled_editors:
+      - visual
+      - source
     schemas:
-      article:
-        path: /.cloudcannon/schemas/article-fr.html
+      article_fr:
+        path: .cloudcannon/schemas/article-fr.html
         name: "Nouvel article FR"
         icon: post_add
     add_options:
       - name: "Nouvel article FR"
-        schema: article
+        icon: post_add
+        schema: article_fr
         editor: visual
+
   pages_en:
     path: en
     glob:
       - "*.html"
       - "!blog-*.html"
       - "!article.html"
-    name: "🇬🇧 Site Pages"
+    name: "🇬🇧 Pages EN"
+    singular_name: "Page EN"
     icon: language
     disable_add: true
+    _enabled_editors:
+      - visual
+      - source
+
   articles_en:
     path: en
     glob:
       - "blog-*.html"
-    name: "📝 English Articles"
-    singular_name: "English Article"
+    name: "📝 Articles EN"
+    singular_name: "Article EN"
     icon: edit_note
+    disable_add_folder: true
+    _enabled_editors:
+      - visual
+      - source
     schemas:
-      article:
-        path: /.cloudcannon/schemas/article-en.html
+      article_en:
+        path: .cloudcannon/schemas/article-en.html
         name: "New English article"
         icon: post_add
     add_options:
       - name: "New English article"
-        schema: article
+        icon: post_add
+        schema: article_en
         editor: visual
 
 collection_groups:
   - heading: "🇫🇷 Français"
-    collections: [pages_fr, articles_fr]
+    collections:
+      - pages_fr
+      - articles_fr
   - heading: "🇬🇧 English"
-    collections: [pages_en, articles_en]
+    collections:
+      - pages_en
+      - articles_en
 
 paths:
   uploads: /images
