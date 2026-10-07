@@ -25,18 +25,19 @@ collections_config:
     disable_add_folder: true
     _enabled_editors:
       - visual
-      - content
-      - data
+      - source
+    new_preview_url: /fr/blog-jebel-imsfrane.html
     schemas:
       article_fr:
         path: .cloudcannon/schemas/article-fr.html
         name: "Nouvel article FR"
         icon: post_add
+        new_preview_url: /fr/blog-jebel-imsfrane.html
     add_options:
       - name: "Nouvel article FR"
         icon: post_add
         schema: article_fr
-        editor: content
+        editor: visual
 
   pages_en:
     path: en
@@ -62,18 +63,19 @@ collections_config:
     disable_add_folder: true
     _enabled_editors:
       - visual
-      - content
-      - data
+      - source
+    new_preview_url: /en/blog-jebel-imsfrane.html
     schemas:
       article_en:
         path: .cloudcannon/schemas/article-en.html
         name: "New English article"
         icon: post_add
+        new_preview_url: /en/blog-jebel-imsfrane.html
     add_options:
       - name: "New English article"
         icon: post_add
         schema: article_en
-        editor: content
+        editor: visual
 
 collection_groups:
   - heading: "🇫🇷 Français"
