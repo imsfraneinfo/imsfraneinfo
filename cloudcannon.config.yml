@@ -25,7 +25,8 @@ collections_config:
     disable_add_folder: true
     _enabled_editors:
       - visual
-      - source
+      - content
+      - data
     schemas:
       article_fr:
         path: .cloudcannon/schemas/article-fr.html
@@ -35,7 +36,7 @@ collections_config:
       - name: "Nouvel article FR"
         icon: post_add
         schema: article_fr
-        editor: visual
+        editor: content
 
   pages_en:
     path: en
@@ -61,7 +62,8 @@ collections_config:
     disable_add_folder: true
     _enabled_editors:
       - visual
-      - source
+      - content
+      - data
     schemas:
       article_en:
         path: .cloudcannon/schemas/article-en.html
@@ -71,7 +73,7 @@ collections_config:
       - name: "New English article"
         icon: post_add
         schema: article_en
-        editor: visual
+        editor: content
 
 collection_groups:
   - heading: "🇫🇷 Français"
