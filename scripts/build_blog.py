@@ -47,7 +47,7 @@ def build_article(lang, data):
     body=mistune.html(data['body'])
     crumb='Accueil' if lang=='fr' else 'Home'
     cta='Réserver une expérience' if lang=='fr' else 'Book an experience'
-    main=f'<main class="standalone-article" id="mainContent"><div class="container"><nav class="article-breadcrumb"><a href="index.html">{crumb}</a> › <a href="blog.html">Blog</a> › {e(title)}</nav><article><img src="{e(img)}" alt="{e(title)}" loading="lazy" style="width:100%;height:auto;object-fit:cover"><h1>{e(title)}</h1><p class="article-date">{e(when)}</p><div class="cms-article-body">{body}</div><p><a class="button button-primary" href="booking.html">{cta}</a></p></article></div></main>'
+    main=f'<main class="standalone-article" id="mainContent"><div class="container"><nav class="article-breadcrumb"><a href="index.html">{crumb}</a> › <a href="blog.html">Blog</a> › {e(title)}</nav><article><img src="{e(img)}" alt="{e(title)}" loading="lazy" style="max-width:100%;height:auto;object-fit:contain"><h1>{e(title)}</h1><p class="article-date">{e(when)}</p><div class="cms-article-body">{body}</div><p><a class="button button-primary" href="booking.html">{cta}</a></p></article></div></main>'
     template,n=re.subn(r'<main\b[^>]*>.*?</main>',lambda _:main,template,count=1,flags=re.S)
     if n!=1: raise RuntimeError(f'No main element in {lang} article template')
     template=re.sub(r'<title\b[^>]*>.*?</title>',lambda _:f'<title>{e(title)} | Imsfrane</title>',template,count=1,flags=re.S)
@@ -59,7 +59,7 @@ def build_card(lang,data):
     slug=data['slug']; title=e(data.get('title') or slug); desc=e(data.get('description') or '')
     img=e(image_url(data.get('image'))); when=e(str(data.get('date') or '')[:10])
     read='Lire l’article' if lang=='fr' else 'Read article'
-    return f'<article class="blog-card"><div class="blog-card-image"><a href="blog-{e(slug)}.html"><img src="{img}" alt="{title}" loading="lazy" style="width:100%;height:100%;object-fit:cover"></a></div><div class="blog-card-content"><div class="blog-meta"><span>{when}</span></div><h2>{title}</h2><p>{desc}</p><a class="blog-read-button" href="blog-{e(slug)}.html"><span>{read}</span><i class="fa-solid fa-arrow-right"></i></a></div></article>'
+    return f'<article class="blog-card"><div class="blog-card-image"><a href="blog-{e(slug)}.html"><img src="{img}" alt="{title}" loading="lazy" style="width:100%;height:auto;object-fit:contain"></a></div><div class="blog-card-content"><div class="blog-meta"><span>{when}</span></div><h2>{title}</h2><p>{desc}</p><a class="blog-read-button" href="blog-{e(slug)}.html"><span>{read}</span><i class="fa-solid fa-arrow-right"></i></a></div></article>'
 
 def main():
     for lang in ('fr','en'):
