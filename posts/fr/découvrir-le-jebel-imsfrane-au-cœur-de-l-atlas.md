@@ -3,7 +3,7 @@ _schema: post
 title: Découvrir le Jebel Imsfrane, au cœur de l’Atlas
 description: Découvrez le Jebel Imsfrane, ses paysages spectaculaires et ses
   sentiers de randonnée dans la province d’Azilal.
-image:
+image: /images/1000254454.jpg
 date: 2026-10-08T00:00:00Z
 published: true
 ---
