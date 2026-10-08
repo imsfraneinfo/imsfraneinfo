@@ -1,0 +1,9 @@
+NEW BLOG WORKFLOW (FR/EN)
+CloudCannon > Nouveaux articles FR (or New articles EN) > Add > title, description, image, body > Save.
+CloudCannon syncs the Markdown file to GitHub main. GitHub Actions > Publish CloudCannon blog posts generates HTML and adds cards to blog pages.
+Wait for the GitHub Action to finish and for CloudCannon to sync before checking the live site.
+Existing HTML article collections remain editable but Add is disabled there.
+Only new Markdown collections create articles.
+For drafts set published: false. Future dates remain unpublished until another workflow run after the date (not automatically at midnight).
+Do not edit the generated cards between markers in fr/blog.html or en/blog.html.
+The action requires GitHub repository Settings > Actions > General > Workflow permissions > Read and write permissions.

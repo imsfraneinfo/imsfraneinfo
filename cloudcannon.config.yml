@@ -1,6 +1,42 @@
 # CloudCannon — Imsfrane Cathédrale
 # Simple visual CMS: pages + real HTML article collections (no JSON array CMS)
 collections_config:
+  new_posts_fr:
+    path: posts/fr
+    name: "✍️ Nouveaux articles FR"
+    singular_name: "Article FR"
+    icon: post_add
+    disable_add_folder: true
+    _enabled_editors:
+      - content
+      - source
+    schemas:
+      post:
+        path: .cloudcannon/schemas/new-post-fr.md
+        name: "Nouvel article FR"
+    add_options:
+      - name: "Nouvel article FR"
+        schema: post
+        editor: content
+
+  new_posts_en:
+    path: posts/en
+    name: "✍️ New articles EN"
+    singular_name: "Article EN"
+    icon: post_add
+    disable_add_folder: true
+    _enabled_editors:
+      - content
+      - source
+    schemas:
+      post:
+        path: .cloudcannon/schemas/new-post-en.md
+        name: "New article EN"
+    add_options:
+      - name: "New article EN"
+        schema: post
+        editor: content
+
   pages_fr:
     path: fr
     glob:
@@ -27,17 +63,7 @@ collections_config:
       - visual
       - source
     new_preview_url: /fr/blog-jebel-imsfrane.html
-    schemas:
-      article_fr:
-        path: .cloudcannon/schemas/article-fr.html
-        name: "Nouvel article FR"
-        icon: post_add
-        new_preview_url: /fr/blog-jebel-imsfrane.html
-    add_options:
-      - name: "Nouvel article FR"
-        icon: post_add
-        schema: article_fr
-        editor: visual
+    disable_add: true
 
   pages_en:
     path: en
@@ -65,27 +91,19 @@ collections_config:
       - visual
       - source
     new_preview_url: /en/blog-jebel-imsfrane.html
-    schemas:
-      article_en:
-        path: .cloudcannon/schemas/article-en.html
-        name: "New English article"
-        icon: post_add
-        new_preview_url: /en/blog-jebel-imsfrane.html
-    add_options:
-      - name: "New English article"
-        icon: post_add
-        schema: article_en
-        editor: visual
+    disable_add: true
 
 collection_groups:
   - heading: "🇫🇷 Français"
     collections:
       - pages_fr
       - articles_fr
+      - new_posts_fr
   - heading: "🇬🇧 English"
     collections:
       - pages_en
       - articles_en
+      - new_posts_en
 
 paths:
   uploads: /images
