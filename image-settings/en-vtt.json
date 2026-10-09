@@ -1,0 +1,113 @@
+{
+  "page": "en-vtt",
+  "images": [
+    {
+      "id": "photo-001",
+      "description": "Mountain biking in Imsfrane",
+      "source": "../images/1.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-002",
+      "description": "VTT route beside the river",
+      "source": "../images/IMG_4448-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-003",
+      "description": "Mountain bike in Iminouarg",
+      "source": "../images/31-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-004",
+      "description": "Guided VTT tour in Imsfrane",
+      "source": "../images/IMG_4826-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-005",
+      "description": "VTT route through Iminouarg, Tamga and Tilouguite",
+      "source": "../images/IMG_4832-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-006",
+      "description": "VTT activity in Imsfrane",
+      "source": "../images/1-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-007",
+      "description": "Mountain bike beside the river",
+      "source": "../images/IMG_4448-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-008",
+      "description": "Cycling route in Iminouarg",
+      "source": "../images/31-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-009",
+      "description": "Guided VTT tour",
+      "source": "../images/IMG_4826-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-010",
+      "description": "River road VTT route",
+      "source": "../images/IMG_4832-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-011",
+      "description": "Mountain cycling adventure",
+      "source": "../images/IMG_4850-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-012",
+      "description": "IMG_4850-800.webp",
+      "source": "../images/IMG_4850-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    }
+  ]
+}

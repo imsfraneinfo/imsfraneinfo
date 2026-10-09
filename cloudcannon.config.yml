@@ -1,6 +1,15 @@
 # CloudCannon — Imsfrane Cathédrale
 # Simple visual CMS: pages + real HTML article collections (no JSON array CMS)
 collections_config:
+  image_settings:
+    path: image-settings
+    name: "🖼️ Réglage des images / Image controls"
+    singular_name: "Page images"
+    icon: image
+    disable_add: true
+    _enabled_editors:
+      - data
+      - source
   new_posts_fr:
     path: posts/fr
     name: "✍️ Nouveaux articles FR"
@@ -94,6 +103,9 @@ collections_config:
     disable_add: true
 
 collection_groups:
+  - heading: "🖼️ Images — toutes les pages"
+    collections:
+      - image_settings
   - heading: "🇫🇷 Français"
     collections:
       - pages_fr
@@ -126,3 +138,31 @@ _editables:
     paths:
       uploads: /images
       static: /
+
+# Edit the per-page JSON in Image controls: position_x/y = 0–100,
+# zoom = 100–200, fit = cover or contain. The source image is unchanged.
+_inputs:
+  position_x:
+    type: range
+    options:
+      min: 0
+      max: 100
+      step: 1
+  position_y:
+    type: range
+    options:
+      min: 0
+      max: 100
+      step: 1
+  zoom:
+    type: range
+    options:
+      min: 100
+      max: 200
+      step: 1
+  fit:
+    type: select
+    options:
+      values:
+        - cover
+        - contain

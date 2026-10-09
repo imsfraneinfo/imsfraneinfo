@@ -1,0 +1,131 @@
+{
+  "page": "fr-rafting",
+  "images": [
+    {
+      "id": "photo-001",
+      "description": "Rafting adventure on Oued Ahansal",
+      "source": "../images/24.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-002",
+      "description": "Rafting team in the Atlas Mountains",
+      "source": "../images/23-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-003",
+      "description": "Guided rafting descent",
+      "source": "../images/25-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-004",
+      "description": "4x4 rafting transport",
+      "source": "../images/4x4-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-005",
+      "description": "12 km rafting route from Amougr to Tilouguite",
+      "source": "../images/24-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-006",
+      "description": "30 km rafting route from Isgli Bridge",
+      "source": "../images/25-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-007",
+      "description": "Two-day 50 km rafting expedition",
+      "source": "../images/IMG_5134-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-008",
+      "description": "Rafting on Oued Ahansal",
+      "source": "../images/24-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-009",
+      "description": "Rafting participants",
+      "source": "../images/23-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-010",
+      "description": "River rafting adventure",
+      "source": "../images/25-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-011",
+      "description": "Rafting transport",
+      "source": "../images/4x4-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-012",
+      "description": "Long rafting expedition",
+      "source": "../images/IMG_5134-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-013",
+      "description": "Oued Ahansal landscape",
+      "source": "../images/24-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-014",
+      "description": "25-800.webp",
+      "source": "../images/25-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    }
+  ]
+}

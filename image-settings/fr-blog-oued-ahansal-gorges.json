@@ -1,0 +1,14 @@
+{
+  "page": "fr-blog-oued-ahansal-gorges",
+  "images": [
+    {
+      "id": "photo-001",
+      "description": "Gorges de l’Oued Ahansal",
+      "source": "../images/blog-gorges-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "page": "fr-booking",
+  "images": [
+    {
+      "id": "photo-001",
+      "description": "Adventure in Imsfrane Cathédrale",
+      "source": "../images/24-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-002",
+      "description": "25-800.webp",
+      "source": "../images/25-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    }
+  ]
+}

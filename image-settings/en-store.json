@@ -1,0 +1,77 @@
+{
+  "page": "en-store",
+  "images": [
+    {
+      "id": "photo-001",
+      "description": "Natural Atlas honey",
+      "source": "../images/tamnt.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-002",
+      "description": "Traditional Atlas olive oil",
+      "source": "../images/zit.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-003",
+      "description": "Wild thyme from the Atlas Mountains",
+      "source": "../images/zaatar-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-004",
+      "description": "Natural honey from the Atlas Mountains",
+      "source": "../images/tamnt.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-005",
+      "description": "Traditional Atlas olive oil",
+      "source": "../images/zit.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-006",
+      "description": "Wild thyme from the Atlas Mountains",
+      "source": "../images/zaatar-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-007",
+      "description": "Natural Atlas products from Imsfrane",
+      "source": "../images/tamnt.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-008",
+      "description": "zaatar-800.webp",
+      "source": "../images/zaatar-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "page": "en-blog-jebel-imsfrane",
+  "images": [
+    {
+      "id": "photo-001",
+      "description": "Jebel Imsfrane – The Cathedral of the Atlas",
+      "source": "../images/blog-msfrane-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    }
+  ]
+}

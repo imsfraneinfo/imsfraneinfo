@@ -1,0 +1,122 @@
+{
+  "page": "fr-quad",
+  "images": [
+    {
+      "id": "photo-001",
+      "description": "Quad adventure in Imsfrane",
+      "source": "../images/quad.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-002",
+      "description": "Quad excursion on mountain tracks in Imsfrane",
+      "source": "../images/quad-solo-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-003",
+      "description": "Quad adventure in the Atlas Mountains",
+      "source": "../images/quad-biplace-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-004",
+      "description": "Quad tour near Tilouguite and Imsfrane",
+      "source": "../images/27-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-005",
+      "description": "Quad excursion around Imsfrane",
+      "source": "../images/quad-solo-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-006",
+      "description": "Discovery quad route near Tilouguite",
+      "source": "../images/quad-solo-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-007",
+      "description": "Mountain quad route in Imsfrane",
+      "source": "../images/quad-biplace-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-008",
+      "description": "Custom quad excursion in the Atlas",
+      "source": "../images/27-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-009",
+      "description": "Quad activity in Imsfrane",
+      "source": "../images/quad-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-010",
+      "description": "Quad excursion on Atlas mountain tracks",
+      "source": "../images/quad-solo-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-011",
+      "description": "Quad adventure near Tilouguite",
+      "source": "../images/quad-biplace-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-012",
+      "description": "Quad tour in the Imsfrane mountains",
+      "source": "../images/27-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-013",
+      "description": "27-800.webp",
+      "source": "../images/27-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    }
+  ]
+}

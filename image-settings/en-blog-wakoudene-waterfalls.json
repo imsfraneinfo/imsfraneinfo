@@ -1,0 +1,14 @@
+{
+  "page": "en-blog-wakoudene-waterfalls",
+  "images": [
+    {
+      "id": "photo-001",
+      "description": "Wakoudene Waterfalls",
+      "source": "../images/blog-cascades-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    }
+  ]
+}

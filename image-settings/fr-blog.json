@@ -1,0 +1,50 @@
+{
+  "page": "fr-blog",
+  "images": [
+    {
+      "id": "photo-001",
+      "description": "Jebel Imsfrane, montagnes de l’Atlas",
+      "source": "../images/IMG_5131.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-002",
+      "description": "Wakoudene Waterfalls",
+      "source": "../images/blog-cascades-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-003",
+      "description": "Ahansal River Gorges",
+      "source": "../images/blog-gorges-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-004",
+      "description": "Tilouguite village",
+      "source": "../images/blog-tilouguite-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-005",
+      "description": "Oued Ahansal",
+      "source": "../images/blog-oued-ahansal-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "page": "en-blog-oued-ahansal-gorges",
+  "images": [
+    {
+      "id": "photo-001",
+      "description": "Ahansal River Gorges",
+      "source": "../images/blog-gorges-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    }
+  ]
+}

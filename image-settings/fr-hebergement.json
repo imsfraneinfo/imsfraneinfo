@@ -1,0 +1,122 @@
+{
+  "page": "fr-hebergement",
+  "images": [
+    {
+      "id": "photo-001",
+      "description": "Local accommodation near Imsfrane",
+      "source": "../images/bab2.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-002",
+      "description": "House accommodation near Oued Ahansal",
+      "source": "../images/22-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-003",
+      "description": "Local house in Imsfrane",
+      "source": "../images/babmsfrane-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-004",
+      "description": "Accommodation in the Atlas Mountains",
+      "source": "../images/IMG_3580-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-005",
+      "description": "Local house accommodation in Imsfrane",
+      "source": "../images/babmsfrane-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-006",
+      "description": "Camping and Bivouac in Imsfrane",
+      "source": "../images/22-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-007",
+      "description": "Accommodation view in Imsfrane",
+      "source": "../images/bab2-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-008",
+      "description": "Local house near Oued Ahansal",
+      "source": "../images/bab3-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-009",
+      "description": "House in Imsfrane",
+      "source": "../images/babmsfrane-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-010",
+      "description": "Local accommodation in the Atlas",
+      "source": "../images/IMG_3580-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-011",
+      "description": "House exterior",
+      "source": "../images/bab2-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-012",
+      "description": "Accommodation surroundings",
+      "source": "../images/bab3-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-013",
+      "description": "bab2-800.webp",
+      "source": "../images/bab2-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    }
+  ]
+}

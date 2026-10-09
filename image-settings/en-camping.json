@@ -1,0 +1,77 @@
+{
+  "page": "en-camping",
+  "images": [
+    {
+      "id": "photo-001",
+      "description": "Camping tents in Imsfrane Cathédrale",
+      "source": "../images/camping-1.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-002",
+      "description": "Mountain camping landscape in Imsfrane",
+      "source": "../images/22-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-003",
+      "description": "Wild nature around Imsfrane",
+      "source": "../images/29-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-004",
+      "description": "Camping experience in Imsfrane",
+      "source": "../images/40-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-005",
+      "description": "Rafting Oued Ahansal",
+      "source": "../images/raft2-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-006",
+      "description": "Hiking in Imsfrane",
+      "source": "../images/19-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-007",
+      "description": "VTT in Imsfrane",
+      "source": "../images/vtt-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-008",
+      "description": "Quad in Imsfrane",
+      "source": "../images/quad-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    }
+  ]
+}

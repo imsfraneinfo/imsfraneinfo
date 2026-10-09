@@ -1,0 +1,122 @@
+{
+  "page": "en-randonnee",
+  "images": [
+    {
+      "id": "photo-001",
+      "description": "Hiking adventure in Imsfrane",
+      "source": "../images/17.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-002",
+      "description": "Mountain hiking near Imsfrane",
+      "source": "../images/18-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-003",
+      "description": "Atlas hiking landscape",
+      "source": "../images/20-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-004",
+      "description": "Jebel Imsfrane summit hike",
+      "source": "../images/guide-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-005",
+      "description": "Oued Ahansal complete nature circuit",
+      "source": "../images/randonnee-gorges-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-006",
+      "description": "Oued Ahansal gorges",
+      "source": "../images/randonnee-gorges-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-007",
+      "description": "Wakoudene waterfalls",
+      "source": "../images/randonnee-cascades-480.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-008",
+      "description": "Famous old truck near Imsfrane",
+      "source": "../images/contact-hero-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-009",
+      "description": "Jebel Imsfrane summit",
+      "source": "../images/guide-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-010",
+      "description": "Oued Ahansal gorges",
+      "source": "../images/randonnee-gorges-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-011",
+      "description": "Wakoudene waterfalls",
+      "source": "../images/randonnee-cascades-480.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-012",
+      "description": "Old truck near Imsfrane",
+      "source": "../images/contact-hero-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-013",
+      "description": "17-800.webp",
+      "source": "../images/17-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    }
+  ]
+}

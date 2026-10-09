@@ -1,0 +1,32 @@
+{
+  "page": "en-about",
+  "images": [
+    {
+      "id": "photo-001",
+      "description": "Imsfrane landscape in the High Atlas",
+      "source": "../images/21.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-002",
+      "description": "Nature and mountains around Imsfrane",
+      "source": "../images/25.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-003",
+      "description": "Rafting adventure in Imsfrane",
+      "source": "../images/rafting.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    }
+  ]
+}

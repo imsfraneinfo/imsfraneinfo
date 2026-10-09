@@ -1,0 +1,131 @@
+{
+  "page": "en-programme",
+  "images": [
+    {
+      "id": "photo-001",
+      "description": "Wild camping in Imsfrane",
+      "source": "../images/22.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-002",
+      "description": "Wild camping near Imsfrane Cathédrale",
+      "source": "../images/IMG_7364.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-003",
+      "description": "Campfire under the stars",
+      "source": "../images/IMG_7733-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-004",
+      "description": "Hiking to Imsfrane summit",
+      "source": "../images/19-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-005",
+      "description": "Wakoudene waterfalls",
+      "source": "../images/IMG_7430-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-006",
+      "description": "Wild camping in Imsfrane",
+      "source": "../images/22-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-007",
+      "description": "Wild camping arrival in Imsfrane",
+      "source": "../images/IMG_7364.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-008",
+      "description": "Hiking to Imsfrane summit",
+      "source": "../images/19-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-009",
+      "description": "Waterfalls and nature around Imsfrane",
+      "source": "../images/IMG_7430-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-010",
+      "description": "Wild camping in Imsfrane",
+      "source": "../images/22-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-011",
+      "description": "Camping near Imsfrane Cathédrale",
+      "source": "../images/IMG_7364.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-012",
+      "description": "Campfire under the stars",
+      "source": "../images/IMG_7733-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-013",
+      "description": "Camping atmosphere in Imsfrane",
+      "source": "../images/camping-1-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    },
+    {
+      "id": "photo-014",
+      "description": "IMG_7733-800.webp",
+      "source": "../images/IMG_7733-800.webp",
+      "position_x": 50,
+      "position_y": 50,
+      "zoom": 100,
+      "fit": "cover"
+    }
+  ]
+}
