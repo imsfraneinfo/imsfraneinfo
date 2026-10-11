@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aperçu menu premium · Imsfrane Cathédrale · Demo</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#092a1b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#0a2a1d;--forest2:#103a28;--gold:#e3b63d;--goldlight:#f4d77f;--cream:#f8f4e9;--muted:#b9c8bc}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#122b22;color:#fff;font-family:Montserrat,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+button,a{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:2.25;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+.preview-banner{height:34px;display:flex;align-items:center;justify-content:center;gap:9px;background:#d6b65b;color:#1b3327;font-size:10px;font-weight:800;letter-spacing:.075em;text-transform:uppercase}
+.main-header{position:relative;z-index:4;width:100%;padding:15px clamp(15px,4vw,62px);display:flex;align-items:center;gap:16px;justify-content:space-between;background:#09251fe5;border-bottom:1px solid #ffffff35;backdrop-filter:blur(12px)}
+.logo{display:flex;align-items:center;gap:10px;color:white;text-decoration:none;min-width:0}.logo img{width:48px;height:48px;object-fit:contain;border-radius:50%;flex:0 0 auto}.logo strong{font-size:clamp(12px,1.2vw,16px);line-height:1.35;display:block;font-weight:750}.logo small{display:block;color:#ddd2ae;font-size:9px;letter-spacing:.1em;margin-top:3px}
+.header-right{display:flex;align-items:center;gap:11px}.nav-cta{background:var(--gold);color:#163528;text-decoration:none;border-radius:7px;font-size:12px;font-weight:800;padding:12px 16px;white-space:nowrap}.hamburger{width:47px;height:45px;background:#ffffff12;color:#fff;border:1px solid #ffffff50;border-radius:8px;display:grid;place-items:center;cursor:pointer}
+.backdrop{position:fixed;inset:0;background:#010f0cb6;z-index:20;opacity:0;visibility:hidden;transition:opacity .28s,visibility .28s;backdrop-filter:blur(3px)}
+.backdrop.open{opacity:1;visibility:visible}
+.drawer{position:fixed;right:0;top:0;bottom:0;z-index:21;width:min(88vw,435px);background:linear-gradient(160deg,#062619,#0c301e 45%,#08271b);border-left:1px solid #d3ae5233;box-shadow:-18px 0 55px #00191075;transform:translateX(105%);transition:transform .3s cubic-bezier(.2,.8,.2,1);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#4a795f transparent}
+.drawer.open{transform:translateX(0)}.drawer-inner{padding:25px clamp(21px,5.6vw,37px) 32px}
+.drawer-top{display:flex;justify-content:space-between;align-items:center;gap:15px;padding-bottom:22px;border-bottom:1px solid #ffffff22}.drawer-top-brand{display:flex;align-items:center;gap:12px}.drawer-top-brand img{width:50px;height:50px;object-fit:contain;border-radius:50%}.drawer-top-brand strong{display:block;color:white;font-size:14px;line-height:1.4}.drawer-top-brand small{font-size:10px;color:#b3c7b5;letter-spacing:.12em}.close{display:grid;place-items:center;background:#ffffff0f;border:1px solid #ffffff36;border-radius:50%;width:41px;height:41px;color:#f7f7ec;cursor:pointer}
+.menu-label{font-size:10px;letter-spacing:.21em;color:var(--gold);font-weight:800;display:block;margin:26px 0 7px}.nav-row{width:100%;min-height:54px;display:flex;align-items:center;gap:19px;border:0;background:transparent;text-decoration:none;text-align:left;color:#f3f5eb;font-family:inherit;font-size:16px;font-weight:600;padding:12px 1px;cursor:pointer}
+.nav-row .nav-ico{width:26px;height:26px;color:var(--gold);display:grid;place-items:center;flex:0 0 26px}.nav-row .nav-ico svg{width:23px;height:23px}.nav-row .chevron{margin-left:auto;width:19px;height:19px;color:var(--gold);transition:transform .2s}.nav-row[aria-expanded="true"] .chevron{transform:rotate(180deg)}.nav-row.selected{color:var(--goldlight)}.nav-row:hover,.submenu a:hover{color:var(--goldlight)}
+.activities{padding:10px 0 16px 22px}.submenu{list-style:none;padding:0;margin:0}.submenu li a{display:flex;align-items:center;gap:23px;min-height:58px;color:#f1f5ec;text-decoration:none;font-size:clamp(16px,4.6vw,19px);font-weight:500;letter-spacing:.003em;padding:10px 0}.submenu li a .item-icon{width:27px;height:27px;color:var(--gold);flex:0 0 27px}.submenu li a .item-icon svg{width:25px;height:25px;stroke-width:2.5}.submenu li a:hover .item-icon{transform:scale(1.07)}.submenu li:nth-child(4) a{color:var(--goldlight)}
+.secondary-list{margin-top:9px;padding-top:15px;border-top:1px solid #ffffff24}.secondary-list .nav-row{font-size:14px;min-height:45px;font-weight:500}.secondary-list .nav-ico svg{width:19px;height:19px}.bottom-actions{border-top:1px solid #ffffff24;margin-top:22px;padding-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:9px}.bottom-actions a{min-height:47px;display:flex;align-items:center;justify-content:center;gap:8px;text-align:center;padding:10px 9px;border-radius:7px;text-decoration:none;font-size:12px;font-weight:800}.bottom-actions svg{width:18px;height:18px}.bottom-actions .book{background:var(--gold);color:#143125}.bottom-actions .whatsapp{background:#194c32;color:white;border:1px solid #69ab7966}.lang{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:23px}.lang button{border:1px solid #ffffff33;border-radius:4px;color:#c2d4c4;background:transparent;min-width:43px;min-height:35px;cursor:pointer;font-weight:800}.lang button.active{background:var(--gold);color:#123226;border-color:var(--gold)}
+.stage{position:relative;min-height:calc(100svh - 105px);display:flex;align-items:center;background:#122a21;isolation:isolate;overflow:hidden}.stage:before{content:"";background:linear-gradient(90deg,#08271dcc,#08271d77),url('images/21.webp') center 47%/cover no-repeat;position:absolute;inset:0;z-index:-1}.stage-content{width:min(100% - 40px,1110px);margin:auto;padding:70px 0 100px;max-width:1110px}.stage-kicker{font-size:11px;color:#e1c57e;letter-spacing:.2em;font-weight:800}.stage h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(52px,10vw,105px);max-width:750px;line-height:1;margin:15px 0;font-weight:700}.stage h1 em{color:#ead18c;font-weight:500}.stage p{color:#e1e9df;max-width:500px;line-height:1.9;font-size:14px}.stage .stage-button{margin-top:24px;border:1px solid #efd696;background:rgba(12,51,33,.74);padding:13px 20px;color:#f5db90;font-weight:800;border-radius:7px;cursor:pointer;font-family:inherit}.stage-note{margin-top:23px;font-size:11px;color:#f5e3ad}
+@media(min-width:900px){.desktop-nav{display:flex!important;gap:22px;margin-left:auto;align-items:center}.desktop-nav a{font-size:12px;color:#e9eee8;font-weight:700;text-decoration:none}.desktop-nav a:hover{color:#e9c476}.drawer{width:465px}.submenu li a{font-size:18px}.stage:before{background-position:center 42%}}
+.desktop-nav{display:none}
+@media(max-width:540px){.nav-cta{padding:10px 12px;font-size:11px}.logo img{height:42px;width:42px}.logo strong{font-size:12px}.logo small{font-size:8px}.drawer-inner{padding-top:17px}.submenu li a{min-height:55px;gap:19px}.activities{padding-left:15px}.main-header{gap:5px}.header-right{gap:7px}.preview-banner{font-size:9px}.stage h1{font-size:68px}}
+@media(prefers-reduced-motion:reduce){.backdrop,.drawer,.nav-row .chevron{transition:none}}
+
+
+/* Triplan-inspired navigation architecture: simple groups, effortless drawer,
+   original Imsfrane identity, only the six activities that have dedicated pages. */
+body.menu-open{overflow:hidden}
+.drawer{width:min(89vw,440px);background:#09291d;box-shadow:-24px 0 65px rgba(0,12,7,.47)}
+.drawer-inner{padding-bottom:34px}
+.drawer-top{padding-bottom:21px}
+.drawer-intro{display:flex;align-items:center;justify-content:space-between;padding-top:26px;margin-bottom:7px;gap:12px}
+.drawer-eyebrow{font:700 clamp(17px,2.1vw,23px)/1.35 'Cormorant Garamond',Georgia,serif;color:#f5f1e6;letter-spacing:-.01em}
+.drawer-mark{font-size:10px;font-weight:800;letter-spacing:.15em;color:var(--gold);border:1px solid #d5b25655;border-radius:6px;padding:5px 9px}
+.drawer-inner .menu-label{margin-top:18px;margin-bottom:5px;color:var(--gold);font-size:10px;letter-spacing:.17em}
+.drawer-inner .menu-label-section{margin-top:24px;margin-bottom:6px;padding-top:14px;border-top:1px solid #ffffff28}
+.drawer .nav-row{padding-block:11px;min-height:52px;gap:17px}
+.drawer .nav-row.selected{color:var(--goldlight)}
+.drawer .nav-row:hover{color:var(--goldlight)}
+.drawer .activities{max-height:470px;opacity:1;overflow:hidden;transition:max-height .28s ease,opacity .2s ease,padding .28s ease;padding:9px 0 9px 27px}
+.drawer .activities.is-collapsed{max-height:0;opacity:0;padding-top:0;padding-bottom:0}
+.drawer .submenu li a{min-height:57px;padding-block:9px;gap:22px}
+.drawer .secondary-list{margin:0;padding:0;border:0}
+.drawer .secondary-list .nav-row{min-height:45px;font-size:14px;gap:17px}
+.drawer .bottom-actions{margin-top:20px}
+.drawer .lang{margin-top:18px}
+.drawer .close{border-radius:8px}
+@media(max-width:540px){
+ .drawer{width:min(90vw,410px)}
+ .drawer-inner{padding:18px 22px 28px}
+ .drawer .submenu li a{font-size:17px;min-height:55px}
+ .drawer .activities{padding-left:17px}
+ .drawer .activities.is-collapsed{padding-left:17px}
+}
+@media(prefers-reduced-motion:reduce){.drawer .activities{transition:none}}
+
+</style>
+</head>
+<body>
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+<symbol id="i-water" viewBox="0 0 24 24"><path d="M2 8c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2M2 13c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2M2 18c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2"/></symbol>
+<symbol id="i-tent" viewBox="0 0 24 24"><path d="M3 20 12 5l9 15H3ZM7 20l5-8 5 8M12 5v-2"/></symbol>
+<symbol id="i-hike" viewBox="0 0 24 24"><circle cx="15.5" cy="3.5" r="1.6"/><path d="m13 8-3 4-5-1M13 8l3 5 4 1M13 8l-1-2M10 12l3 3-2 6M13 15l4 2 1 4M5 21l2-5 3-4"/></symbol>
+<symbol id="i-bike" viewBox="0 0 24 24"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M5.5 17.5 10 10h4l4.5 7.5H11l-4-7h-2M10 10l-1-2h-2M14 10l1-2h3"/></symbol>
+<symbol id="i-quad" viewBox="0 0 24 24"><circle cx="5" cy="18" r="3"/><circle cx="19" cy="18" r="3"/><path d="M8 18h8l-2-6-3-3H7l-3 5M11 9h5l2-3M7 9l-2-2M15 13h5l1 2"/></symbol>
+<symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 4v16M3 17h18v3M4 12h17v5H4V12ZM5 9h6v3H5V9ZM13 9h6v3h-6V9Z"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8M5 10v11h14V10M9 21v-7h6v7"/></symbol>
+<symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="2"/><path d="M9 19h7a5 5 0 0 0 0-10h-8a4 4 0 1 1 0-8h10"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 4h15v17H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2ZM4 17h15M7 8h9"/></symbol>
+<symbol id="i-camera" viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3V7Z"/><circle cx="12" cy="13" r="4"/></symbol>
+<symbol id="i-shop" viewBox="0 0 24 24"><path d="M4 9 6 3h12l2 6v12H4V9ZM3 9h18M9 21v-8h6v8"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 11h18M8 16l2 2 5-5"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v12H9l-5 4V5ZM7 9h10M7 13h7"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 11v6M12 7v.4"/></symbol>
+</svg>
+<div class="preview-banner" id="banner">APERÇU DU MENU · VERSION TEST · DEMO UNIQUEMENT</div>
+<header class="main-header">
+  <a class="logo" href="fr/index.html" aria-label="Site démo Imsfrane Cathédrale">
+    <img src="images/logo-104.webp" alt="Logo original Imsfrane Cathédrale" width="48" height="48"><span><strong>Imsfrane Cathédrale</strong><small>HIGH ATLAS · MOROCCO</small></span>
+  </a>
+  <nav class="desktop-nav" aria-label="Navigation de démonstration">
+    <a href="fr/index.html" data-fr="Accueil" data-en="Home">Accueil</a><a href="fr/programme.html" data-fr="Programmes" data-en="Programs">Programmes</a><a href="fr/guide.html" data-fr="Guide pratique" data-en="Travel guide">Guide pratique</a><a href="fr/contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+  </nav>
+  <div class="header-right">
+    <a class="nav-cta" href="fr/booking.html" data-fr="Réserver" data-en="Book now">Réserver</a>
+    <button type="button" class="hamburger" id="openMenu" aria-controls="drawer" aria-label="Ouvrir le menu" aria-expanded="true"><svg><use href="#i-menu"/></svg></button>
+  </div>
+</header>
+<main class="stage">
+  <div class="stage-content">
+    <div class="stage-kicker" data-fr="DÉCOUVREZ LE HAUT ATLAS" data-en="DISCOVER THE HIGH ATLAS">DÉCOUVREZ LE HAUT ATLAS</div>
+    <h1>Imsfrane <em>Cathédrale.</em></h1>
+    <p data-fr="Un exemple de navigation simple, professionnelle, inspirée de la capture que vous avez envoyée. Testez les rubriques et le bouton de fermeture." data-en="A clean, professional navigation preview inspired by your screenshot. Try expanding the activities and closing the menu.">Un exemple de navigation simple, professionnelle, inspirée de la capture que vous avez envoyée. Testez les rubriques et le bouton de fermeture.</p>
+    <button type="button" class="stage-button" id="showMenu" data-fr="Voir le nouveau menu →" data-en="Open the new menu →">Voir le nouveau menu →</button>
+    <div class="stage-note" data-fr="Ceci est uniquement un aperçu : les autres pages de Demo ne changent pas." data-en="This is a preview only: the other Demo pages remain unchanged.">Ceci est uniquement un aperçu : les autres pages de Demo ne changent pas.</div>
+  </div>
+</main>
+<div class="backdrop open" id="backdrop" aria-hidden="true"></div>
+<aside class="drawer open" id="drawer" aria-label="Menu de démonstration" aria-modal="true" role="dialog">
+  <div class="drawer-inner">
+    <div class="drawer-top">
+      <div class="drawer-top-brand"><img src="images/logo-104.webp" width="50" height="50" alt="Logo original Imsfrane Cathédrale"><span><strong>Imsfrane Cathédrale</strong><small>HIGH ATLAS · MOROCCO</small></span></div>
+      <button class="close" id="closeMenu" type="button" aria-label="Fermer le menu"><svg><use href="#i-close"/></svg></button>
+    </div>
+    <div class="drawer-intro"><span class="drawer-eyebrow" data-fr="EXPLORER IMSFRANE" data-en="EXPLORE IMSFRANE">EXPLORER IMSFRANE</span><span class="drawer-mark">MENU</span></div>
+    <a class="nav-row" href="fr/index.html" data-route="index.html"><span class="nav-ico"><svg><use href="#i-home"/></svg></span><span data-fr="Accueil" data-en="Home">Accueil</span></a>
+    <span class="menu-label" data-fr="NOS SERVICES" data-en="OUR SERVICES">NOS SERVICES</span>
+    <button class="nav-row selected" id="activitiesToggle" type="button" aria-expanded="true" aria-controls="activityList">
+      <span class="nav-ico"><svg><use href="#i-hike"/></svg></span><span data-fr="Activités" data-en="Activities">Activités</span><svg class="chevron"><use href="#i-chevron"/></svg>
+    </button>
+    <div class="activities" id="activityList">
+      <ul class="submenu">
+        <li><a href="fr/rafting.html" data-route="rafting.html"><span class="item-icon"><svg><use href="#i-water"/></svg></span>Rafting</a></li>
+        <li><a href="fr/camping.html" data-route="camping.html"><span class="item-icon"><svg><use href="#i-tent"/></svg></span>Camping</a></li>
+        <li><a href="fr/randonnee.html" data-route="randonnee.html"><span class="item-icon"><svg><use href="#i-hike"/></svg></span><span data-fr="Randonnée" data-en="Hiking">Randonnée</span></a></li>
+        <li><a href="fr/vtt.html" data-route="vtt.html"><span class="item-icon"><svg><use href="#i-bike"/></svg></span><span data-fr="VTT" data-en="Mountain biking">VTT</span></a></li>
+        <li><a href="fr/quad.html" data-route="quad.html"><span class="item-icon"><svg><use href="#i-quad"/></svg></span><span data-fr="Quad" data-en="Quad biking">Quad</span></a></li>
+        <li><a href="fr/hebergement.html" data-route="hebergement.html"><span class="item-icon"><svg><use href="#i-bed"/></svg></span><span data-fr="Hébergement" data-en="Accommodation">Hébergement</span></a></li>
+      </ul>
+    </div>
+    <span class="menu-label menu-label-section" data-fr="PRÉPARER VOTRE SÉJOUR" data-en="PLAN YOUR STAY">PRÉPARER VOTRE SÉJOUR</span>
+    <div class="secondary-list secondary-start">
+      <a class="nav-row" href="fr/programme.html" data-route="programme.html"><span class="nav-ico"><svg><use href="#i-route"/></svg></span><span data-fr="Programmes" data-en="Programs">Programmes</span></a>
+      <a class="nav-row" href="fr/booking.html" data-route="booking.html"><span class="nav-ico"><svg><use href="#i-calendar"/></svg></span><span data-fr="Réservation" data-en="Booking">Réservation</span></a>
+    </div>
+    <span class="menu-label menu-label-section" data-fr="PLUS D’INFO" data-en="MORE INFORMATION">PLUS D’INFO</span>
+    <div class="secondary-list secondary-more">
+      <a class="nav-row" href="fr/memories.html" data-route="memories.html"><span class="nav-ico"><svg><use href="#i-camera"/></svg></span><span data-fr="Galerie & souvenirs" data-en="Gallery & memories">Galerie & souvenirs</span></a>
+      <a class="nav-row" href="fr/guide.html" data-route="guide.html"><span class="nav-ico"><svg><use href="#i-book"/></svg></span><span data-fr="Guide pratique" data-en="Travel guide">Guide pratique</span></a>
+      <a class="nav-row" href="fr/about.html" data-route="about.html"><span class="nav-ico"><svg><use href="#i-info"/></svg></span><span data-fr="Qui sommes-nous ?" data-en="About us">Qui sommes-nous ?</span></a>
+      <a class="nav-row" href="fr/blog.html" data-route="blog.html"><span class="nav-ico"><svg><use href="#i-book"/></svg></span>Blog</a>
+      <a class="nav-row" href="fr/store.html" data-route="store.html"><span class="nav-ico"><svg><use href="#i-shop"/></svg></span><span data-fr="Boutique" data-en="Shop">Boutique</span></a>
+      <a class="nav-row" href="fr/contact.html" data-route="contact.html"><span class="nav-ico"><svg><use href="#i-chat"/></svg></span>Contact</a>
+    </div>
+    <div class="bottom-actions">
+      <a class="book" href="fr/booking.html" data-route="booking.html"><svg><use href="#i-calendar"/></svg><span data-fr="Réserver" data-en="Book now">Réserver</span></a>
+      <a class="whatsapp" href="https://wa.me/212667772551" rel="noopener noreferrer" target="_blank"><svg><use href="#i-chat"/></svg>WhatsApp</a>
+    </div>
+    <div class="lang" aria-label="Language">
+      <button type="button" id="switchFR" class="active" aria-pressed="true">FR</button>
+      <button type="button" id="switchEN" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</aside>
+<script>
+(function(){
+ "use strict";
+ var drawer=document.getElementById("drawer"),backdrop=document.getElementById("backdrop"),openButton=document.getElementById("openMenu"),showButton=document.getElementById("showMenu"),closeButton=document.getElementById("closeMenu"),activitiesToggle=document.getElementById("activitiesToggle"),activityList=document.getElementById("activityList"),language="fr";
+ function setOpen(v){
+   drawer.classList.toggle("open",v);
+   document.body.classList.toggle("menu-open",v);
+   drawer.inert=!v;
+   backdrop.classList.toggle("open",v);
+   drawer.setAttribute("aria-hidden",String(!v));
+   openButton.setAttribute("aria-expanded",String(v));
+   if(v){closeButton.focus()}else{openButton.focus()}
+ }
+ function toggleSection(){
+   var isOpen=activitiesToggle.getAttribute("aria-expanded")!=="true";
+   activitiesToggle.setAttribute("aria-expanded",String(isOpen));
+   activityList.classList.toggle("is-collapsed",!isOpen);
+   activityList.setAttribute("aria-hidden",String(!isOpen));
+   activityList.inert=!isOpen;
+ }
+ function setLang(lang){
+   language=lang;
+   document.documentElement.lang=lang;
+   document.querySelectorAll("[data-fr][data-en]").forEach(function(el){el.textContent=el.getAttribute("data-"+lang)});
+   document.querySelectorAll("[data-route]").forEach(function(el){el.href=lang+"/"+el.getAttribute("data-route")});
+   document.querySelector(".logo").href=lang+"/index.html";
+   document.querySelectorAll(".desktop-nav a").forEach(function(a){a.href=a.getAttribute("href").replace(/^(fr|en)\//,lang+"/")});
+   document.querySelector(".nav-cta").href=lang+"/booking.html";
+   document.getElementById("switchFR").classList.toggle("active",lang==="fr");
+   document.getElementById("switchEN").classList.toggle("active",lang==="en");
+   document.getElementById("switchFR").setAttribute("aria-pressed",String(lang==="fr"));
+   document.getElementById("switchEN").setAttribute("aria-pressed",String(lang==="en"));
+ }
+ openButton.addEventListener("click",function(){setOpen(!drawer.classList.contains("open"))});
+ showButton.addEventListener("click",function(){setOpen(true)});
+ closeButton.addEventListener("click",function(){setOpen(false)});
+ backdrop.addEventListener("click",function(){setOpen(false)});
+ activitiesToggle.addEventListener("click",toggleSection);
+ document.getElementById("switchFR").addEventListener("click",function(){setLang("fr")});
+ document.getElementById("switchEN").addEventListener("click",function(){setLang("en")});
+ drawer.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){if(a.getAttribute("href")&&!a.getAttribute("href").startsWith("#"))setOpen(false)})});
+ document.addEventListener("keydown",function(e){if(e.key==="Escape"&&drawer.classList.contains("open"))setOpen(false)});
+ setOpen(true);
+})();
+</script>
+</body>
+</html>

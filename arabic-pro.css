@@ -1,0 +1,482 @@
+/* Locally-hosted fonts under the SIL Open Font License.
+   Actual font files are built into /fonts/arabic on the Demo Pages origin.
+   No Google Fonts request is needed to render Arabic. */
+@font-face {
+  font-family:"Imsfrane Alexandria";
+  src:url("fonts/arabic/Alexandria-VF.woff2") format("woff2");
+  font-style:normal;
+  font-weight:400 800;
+  font-display:swap;
+}
+@font-face {
+  font-family:"Imsfrane Tajawal";
+  src:url("fonts/arabic/Tajawal-Regular.woff2") format("woff2");
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+}
+@font-face {
+  font-family:"Imsfrane Tajawal";
+  src:url("fonts/arabic/Tajawal-Medium.woff2") format("woff2");
+  font-style:normal;
+  font-weight:500 600;
+  font-display:swap;
+}
+@font-face {
+  font-family:"Imsfrane Tajawal";
+  src:url("fonts/arabic/Tajawal-Bold.woff2") format("woff2");
+  font-style:normal;
+  font-weight:700;
+  font-display:swap;
+}
+@font-face {
+  font-family:"Imsfrane Tajawal";
+  src:url("fonts/arabic/Tajawal-ExtraBold.woff2") format("woff2");
+  font-style:normal;
+  font-weight:800 900;
+  font-display:swap;
+}
+
+/* Arabic typography — Imsfrane Demo only.
+   Display: Alexandria (distinct modern Kufic geometry)
+   Reading/UI: Tajawal (clear humanist Arabic)
+   Font source: Google Fonts; browser/system fallback keeps content legible.
+   ONLY html[lang="ar"]; French, English and Spanish remain untouched. */
+html[lang="ar"] {
+  --ar-display:"Imsfrane Alexandria","Noto Kufi Arabic","Imsfrane Tajawal",Tahoma,Arial,sans-serif;
+  --ar-text:"Imsfrane Tajawal","Noto Sans Arabic","Imsfrane Alexandria",Tahoma,Arial,sans-serif;
+  font-synthesis:none;
+  text-rendering:optimizeLegibility;
+}
+html[lang="ar"] body {
+  font-family:var(--ar-text)!important;
+  line-height:1.85;
+  -webkit-font-smoothing:antialiased;
+}
+html[lang="ar"] :is(main,header.site-header,footer.site-footer,
+  .atnav-drawer,.atnav-desktop,.atnav-article-header,.hp-home,
+  .camp-page,.rando,.quad-r-hero,.gp-main,.bp-main,.sp-main,
+  .journal-page,.ij-article,.standalone-article,.article-layout,
+  .aboutx,.memories-showcase,.locale-page) {
+  font-family:var(--ar-text)!important;
+}
+html[lang="ar"] :is(h1,h2,h3,h4,h5,h6,
+  .hp-home h1,.hp-home h2,.hp-home h3,
+  .article-hero-text h1,.ij-article h1,
+  .journal-featured h2,.journal-card h3,
+  .atnav-drawer-title,.atnav-intro-title) {
+  font-family:var(--ar-display)!important;
+  letter-spacing:0!important;
+  font-style:normal;
+  font-weight:700;
+  line-height:1.45!important;
+  text-wrap:balance;
+  overflow-wrap:break-word;
+}
+html[lang="ar"] :is(h1,.hp-home .hp-hero h1,.article-hero-text h1) {
+  font-weight:800;
+  line-height:1.4!important;
+}
+html[lang="ar"] :is(h1,h2,h3,h4,h5,h6) em {
+  font-family:inherit!important;
+  font-style:normal!important;
+  letter-spacing:0!important;
+  line-height:inherit!important;
+}
+html[lang="ar"] :is(p,li,dt,dd,summary,blockquote,
+  .article-body,.ij-content,.journal-card-body,.bp-note,.gp-main) {
+  font-family:var(--ar-text)!important;
+  letter-spacing:0!important;
+}
+html[lang="ar"] main :is(p,li,blockquote) {
+  line-height:1.95;
+  overflow-wrap:break-word;
+}
+html[lang="ar"] :is(button,input,select,textarea,label,
+  .atnav-item,.atnav-submenu a,.atnav-book,.atnav-article-book,
+  .atnav-desktop a,.header-book-button,
+  .hp-button,.bp-filter,.bp-offer,.sp-main button,.journal-filter,
+  .article-cta,.journal-primary-link) {
+  font-family:var(--ar-text)!important;
+  letter-spacing:0!important;
+}
+html[lang="ar"] :is(.atnav-item,.atnav-submenu a,
+  .header-book-button,.hp-button,.bp-filter,.journal-filter,
+  .article-cta,.journal-primary-link) {
+  font-weight:700!important;
+}
+html[lang="ar"] :is(.hp-kicker,.hp-eyebrow,.hp-activity-note,
+  .journal-kicker,.bp-kicker,.bp-heading-hint,
+  .atnav-intro-title,.atnav-mark,.kicker) {
+  letter-spacing:0!important;
+  text-transform:none!important;
+  font-family:var(--ar-text)!important;
+  font-weight:800!important;
+  line-height:1.7;
+}
+html[lang="ar"] .hp-home .hp-heading h2 {
+  line-height:1.45!important;
+}
+html[lang="ar"] .hp-home .hp-activity-card h3 {
+  font-family:var(--ar-display)!important;
+  font-weight:700!important;
+  line-height:1.5!important;
+}
+html[lang="ar"] .hp-home .hp-activity-card p {
+  font-size:14px;
+  line-height:1.9;
+}
+html[lang="ar"] :is(.atnav-article-brand,.brand-content strong,
+  .atnav-drawer-brand strong) {
+  /* The original Latin logotype is preserved as branding. */
+  font-family:Montserrat,Arial,sans-serif!important;
+}
+html[lang="ar"] .atnav-langmini {
+  direction:ltr;
+}
+html[lang="ar"] .atnav-langmini :is(.atnav-lang-code,.atnav-lang-current) {
+  font-family:Montserrat,Arial,sans-serif!important;
+}
+html[lang="ar"] .atnav-langmini-panel a {
+  font-family:var(--ar-text)!important;
+}
+html[lang="ar"] main :is(input,textarea,select) {
+  line-height:1.6;
+}
+html[lang="ar"] .ij-content,
+html[lang="ar"] .article-body,
+html[lang="ar"] .journal-article-content {
+  font-size:16px;
+  line-height:2.05;
+}
+html[lang="ar"] .article-body :is(h2,h3),
+html[lang="ar"] .ij-content :is(h2,h3) {
+  line-height:1.55!important;
+}
+@media(max-width:640px) {
+  html[lang="ar"] main :is(p,li,blockquote) {line-height:1.95}
+  html[lang="ar"] .hp-home .hp-heading h2 {line-height:1.5!important}
+  html[lang="ar"] .hp-home .hp-hero h1 {line-height:1.5!important}
+  html[lang="ar"] :is(button,.hp-button,.header-book-button) {line-height:1.6}
+  html[lang="ar"] .atnav-submenu a {font-size:16px;line-height:1.7}
+}
+
+
+/* Final cascade correction: earlier home-pro.css had an !important
+   Cairo rule specifically on .hp-home .hp-hero h1. Match that selector
+   AFTER home-pro.css so Alexandria truly renders, not the old Cairo. */
+html[lang="ar"] .hp-home .hp-hero h1,
+html[lang="ar"] .hp-home .hp-heading h2,
+html[lang="ar"] .hp-home .hp-hero h1 em,
+html[lang="ar"] .hp-home .hp-activity-card h3,
+html[lang="ar"] .hp-home .hp-trust-item h3 {
+  font-family:var(--ar-display)!important;
+  font-style:normal!important;
+  letter-spacing:0!important;
+  font-weight:800!important;
+}
+html[lang="ar"] .hp-home .hp-hero h1 span {
+  font-family:var(--ar-text)!important;
+  letter-spacing:0!important;
+  font-weight:600!important;
+  line-height:1.8!important;
+}
+/* Page-specific title rules can be unusually specific in the original
+   templates. Apply the same Arabic heading typeface to those titles. */
+html[lang="ar"] #imsfrane-booking .bp-hero h1,
+html[lang="ar"] #imsfrane-rafting :is(h1,h2,h3),
+html[lang="ar"] .camp-page :is(h1,h2,h3),
+html[lang="ar"] .journal-page :is(h1,h2,h3),
+html[lang="ar"] .gp-main :is(h1,h2,h3),
+html[lang="ar"] .aboutx :is(h1,h2,h3),
+html[lang="ar"] .sp-main :is(h1,h2,h3) {
+  font-family:var(--ar-display)!important;
+  letter-spacing:0!important;
+}
+/* Brand text is still Latin, and mixed-script numerals stay readable. */
+html[lang="ar"] :is(.hp-home,.bp-main,.gp-main,.camp-page,.journal-page)
+  :is(p,li,small,summary,blockquote) {
+  font-family:var(--ar-text)!important;
+}
+
+
+/* Full Arabic RTL: not just translating text. Every text region follows
+   Arabic reading flow; branded Latin words and numerical entry remain LTR. */
+html[lang="ar"] {
+  direction:rtl!important;
+}
+html[lang="ar"] body {
+  direction:rtl!important;
+  text-align:right;
+  overflow-x:clip;
+}
+html[lang="ar"] body.atnav-ready #siteHeader,
+html[lang="ar"] body.atnav-ready #siteHeader .header-inner,
+html[lang="ar"] body.atnav-ready #siteHeader .header-actions,
+html[lang="ar"] :is(main,article,section,aside,footer,nav,form,fieldset,
+  .hp-home,.bp-main,.bp-wrap,.bp-layout,.bp-offers,.bp-offer,
+  .gp-main,.journal-page,.journal-grid,.journal-card,
+  .camp-page,.camp-wrap,.camp-features,.camp-tariff-grid,
+  .atnav-drawer,.atnav-drawer-inner,.atnav-drawer nav,
+  .quad-r-main,.rando,.aboutx,.sp-main,.memories-showcase,
+  .demo-rebuilt-page) {
+  direction:rtl!important;
+}
+html[lang="ar"] :is(main,footer,.atnav-drawer)
+  :is(h1,h2,h3,h4,h5,h6,p,ul,ol,li,dt,dd,summary,blockquote,
+     .hp-kicker,.hp-eyebrow,.hp-activity-note,
+     .journal-kicker,.journal-card-body,
+     .bp-kicker,.bp-note,.atnav-label) {
+  text-align:right!important;
+  direction:rtl!important;
+}
+html[lang="ar"] :is(main,footer,.atnav-drawer)
+  :is(h1,h2,h3,h4,h5,h6,p,li,summary,blockquote) {
+  unicode-bidi:normal;
+  word-break:normal;
+  overflow-wrap:break-word;
+}
+html[lang="ar"] main :is(.hp-heading,.hp-activity-body,
+   .hp-destination-content,.hp-trust-item,.hp-program,
+   .camp-feature,.camp-detail,.camp-tariff,
+   .rando .card,.quad-r-copy,.gp-main .card,
+   .journal-card-body,.journal-featured-copy,
+   .sp-main .card,.bp-hero-copy,.bp-offer,
+   .ij-content,.article-body,.memories-intro) {
+  direction:rtl!important;
+  text-align:right!important;
+}
+html[lang="ar"] .hp-home :is(.hp-section-row,.hp-heading,
+    .hp-activity-body,.hp-programs,.hp-explore,.hp-trust,.hp-memories) {
+  direction:rtl!important;
+}
+html[lang="ar"] .hp-home .hp-hero-content {
+  direction:rtl!important;
+  text-align:right!important;
+}
+html[lang="ar"] .hp-home .hp-hero-buttons,
+html[lang="ar"] .camp-buttons,
+html[lang="ar"] .quad-r-acts,
+html[lang="ar"] .hp-final-buttons {
+  direction:rtl!important;
+}
+html[lang="ar"] :is(.bp-field,.bp-section,.bp-offer,.bp-offer-actions,
+  .bp-section-heading,.bp-summary,.bp-recap,.bp-travelers-box,
+  .journal-search,.journal-controls,.journal-filters,.sp-controls,
+  .footer-column) {
+  direction:rtl!important;
+  text-align:right!important;
+}
+html[lang="ar"] :is(label,select,textarea,input:not([type="number"]):not([type="tel"]):not([type="email"]):not([type="date"])) {
+  direction:rtl!important;
+  text-align:right!important;
+}
+html[lang="ar"] input:is([type="number"],[type="tel"],[type="email"],[type="date"]) {
+  direction:ltr!important;
+  text-align:left!important;
+  unicode-bidi:isolate;
+}
+/* Arabic navigation starts at the RIGHT with gold icons beside titles. */
+html[lang="ar"] body.atnav-ready .atnav-drawer {
+  right:0!important;
+  left:auto!important;
+  text-align:right!important;
+}
+html[lang="ar"] body.atnav-ready .atnav-drawer
+  :is(.atnav-item,.atnav-submenu a,.atnav-drawer-top,.atnav-drawer-brand,
+      .atnav-intro,.atnav-actions) {
+  direction:rtl!important;
+  text-align:right!important;
+}
+html[lang="ar"] body.atnav-ready .atnav-drawer .atnav-item-icon,
+html[lang="ar"] body.atnav-ready .atnav-drawer .atnav-subicon {
+  margin-left:0;
+  margin-right:0;
+}
+html[lang="ar"] body.atnav-ready .atnav-drawer .atnav-chevron {
+  margin-left:0!important;
+  margin-right:auto!important;
+}
+html[lang="ar"] body.atnav-ready .atnav-drawer .atnav-languages {
+  direction:rtl!important;
+}
+/* Keep the single language control stable: FR/EN/AR/ES codes
+   are Latin abbreviations and should not be reversed. */
+html[lang="ar"] body.atnav-ready .atnav-langmini,
+html[lang="ar"] body.atnav-ready .atnav-langmini-trigger,
+html[lang="ar"] body.atnav-ready .atnav-langmini-panel {
+  direction:ltr!important;
+}
+html[lang="ar"] body.atnav-ready .atnav-langmini-panel a {
+  direction:ltr!important;
+  text-align:left!important;
+}
+html[lang="ar"] body.atnav-ready .atnav-langmini-panel a[lang="ar"] span:last-child {
+  direction:rtl!important;
+  unicode-bidi:isolate;
+}
+html[lang="ar"] :is(.brand-content,.atnav-drawer-brand) {
+  direction:ltr!important;
+}
+html[lang="ar"] :is(.brand-content strong,.atnav-drawer-brand strong,
+    .atnav-article-brand,.footer-brand strong) {
+  direction:ltr!important;
+  unicode-bidi:isolate;
+}
+html[lang="ar"] :is(.hp-google-score,.hp-google-rating,
+   .hp-hero-altitude,.hp-facts-inner,
+   .journal-card-meta,.bp-offer-price,
+   .sp-price,.hp-activity-bottom strong) {
+  unicode-bidi:isolate;
+}
+/* Keep intentionally centered rating totals, badges and CTA while
+   the body copy and headings flow from the right. */
+html[lang="ar"] :is(.hp-google-score,.hp-google-stars,
+   .hp-hero-altitude,.hp-facts-inner,.atnav-mark,
+   .hp-slide-dots,.bp-quantity) {
+  text-align:center;
+}
+html[lang="ar"] .atnav-open svg,
+html[lang="ar"] .atnav-close svg,
+html[lang="ar"] .hp-slider-controls svg {
+  transform:none;
+}
+html[lang="ar"] main :is(.fa-arrow-right,.fa-chevron-right) {
+  transform:scaleX(-1);
+}
+@media(max-width:670px) {
+  html[lang="ar"] body.atnav-ready #siteHeader .header-inner {
+    direction:rtl!important;
+  }
+  html[lang="ar"] :is(.hp-home,.gp-main,.bp-main,.journal-page,.camp-page)
+    :is(h1,h2,h3,p) {
+    text-align:right!important;
+    max-width:100%;
+  }
+  html[lang="ar"] main :is(.bp-layout,.hp-activity-grid,
+    .journal-grid,.camp-tariff-grid) > * {
+    min-width:0;
+  }
+  html[lang="ar"] .atnav-drawer-inner {
+    padding-inline:22px!important;
+  }
+}
+
+
+/* Mobile RTL overflow FIX (verified in real Chrome at 345/390 CSS px).
+   Old .atnav-langmini-panel {right:0} anchored the 187px dropdown to
+   the RIGHT edge of an AR selector only 33-43px wide and extended
+   77-88px LEFT outside the RTL viewport. Chrome then auto-scrolled
+   document.scrollingElement.scrollLeft=-77..-88, shifting ALL content
+   to the right. Keep the dropdown at the selector's LEFT edge so
+   it opens INTO the viewport, not out of it. */
+html[lang="ar"] body.atnav-ready .atnav-langmini .atnav-langmini-panel {
+  left:0!important;
+  right:auto!important;
+  transform:none!important;
+  max-width:min(202px,calc(100vw - 16px));
+  overflow-x:hidden;
+}
+@media(max-width:670px){
+  html[lang="ar"] body.atnav-ready .atnav-langmini .atnav-langmini-panel {
+    width:min(187px,calc(100vw - 16px))!important;
+    left:0!important;
+    right:auto!important;
+  }
+}
+
+
+/* RAFTING IFRAMED PAGE: exact visual regressions confirmed by user.
+   The rafting template uses --serif: Cormorant Garamond for bold,
+   .hero-badge b ("الأطلس من جهة النهر") and all monetary values
+   (.route-price strong, .exp-opt b, .hero-stat strong).
+   Those are NOT h1/h2/h3 and escaped previous headings-only overrides.
+   Replace template typography variables in the Arabic document itself. */
+html[lang="ar"] {
+  --serif:var(--ar-display)!important;
+  --font:var(--ar-text)!important;
+}
+html[lang="ar"] :is(
+  .hero-badge b,
+  .hero-stat strong,
+  .route-price strong,
+  .route-price span,
+  .exp-opt b,
+  .exp-opt strong,
+  .story-stamp,
+  .brand-copy strong,
+  .route-visual .num,
+  .step-index,
+  .foot strong
+) {
+  font-family:var(--ar-display)!important;
+  letter-spacing:0!important;
+  font-style:normal!important;
+  line-height:1.45!important;
+  font-weight:700!important;
+}
+html[lang="ar"] .hero-badge b {
+  font-size:clamp(19px,2.6vw,25px);
+  line-height:1.6!important;
+  direction:rtl!important;
+  text-align:right!important;
+  unicode-bidi:plaintext;
+}
+html[lang="ar"] :is(.hero-stat strong,.route-price strong,.exp-opt b) {
+  direction:rtl!important;
+  unicode-bidi:isolate;
+  font-variant-numeric:normal;
+}
+html[lang="ar"] :is(
+  .route-price small,.hero-stat small,.exp-opt small,
+  .route-content p,.route-details summary,.hero-badge span
+) {
+  font-family:var(--ar-text)!important;
+  letter-spacing:0!important;
+  line-height:1.85!important;
+}
+
+
+/* Mixed numerals and Arabic currency require separate bidirectional runs.
+   The number is logically 2 500 / 3 000, never 500 2 / 000 3.
+   This is limited to Arabic price blocks; the surrounding page remains RTL. */
+html[lang="ar"] .ar-formatted-price {
+  display:inline-flex!important;
+  flex-wrap:wrap;
+  align-items:baseline;
+  justify-content:flex-start;
+  gap:.2em;
+  direction:rtl!important;
+  unicode-bidi:isolate;
+  line-height:1.35!important;
+  text-align:right!important;
+  max-width:100%;
+}
+html[lang="ar"] .ar-formatted-price .ar-price-number {
+  direction:ltr!important;
+  unicode-bidi:isolate!important;
+  display:inline-block;
+  white-space:nowrap!important;
+  font-family:"Imsfrane Alexandria",Arial,sans-serif!important;
+  font-variant-numeric:lining-nums tabular-nums;
+  font-feature-settings:"tnum" 1, "lnum" 1;
+}
+html[lang="ar"] .ar-formatted-price .ar-price-unit {
+  direction:rtl!important;
+  unicode-bidi:isolate!important;
+  display:inline-block;
+  white-space:nowrap!important;
+  font-family:"Imsfrane Tajawal",Arial,sans-serif!important;
+  font-size:.67em;
+  font-weight:700;
+}
+html[lang="ar"] .exp-opt b.ar-formatted-price,
+html[lang="ar"] .route-price strong.ar-formatted-price {
+  font-size:clamp(26px,6vw,37px)!important;
+}
+@media (max-width:450px) {
+ html[lang="ar"] .exp-opt b.ar-formatted-price,
+ html[lang="ar"] .route-price strong.ar-formatted-price {
+   font-size:clamp(25px,6.2vw,33px)!important;
+ }
+}
