@@ -1,0 +1,66 @@
+name: Publish clean URLs for all Imsfrane languages
+
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/build-clean-urls.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: imsfrane-clean-urls
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current official site
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+          persist-credentials: true
+
+      - name: Backup official site before URL migration
+        run: |
+          branch="backup-before-clean-urls-${GITHUB_RUN_ID}"
+          git push origin "HEAD:refs/heads/${branch}"
+          echo "Backup available: ${branch}" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Rebuild extensionless URLs and four-language sitemap
+        run: |
+          python3 scripts/build_clean_urls.py
+
+      - name: Check published pages and sitemap
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as E
+          root=Path('.')
+          xml=E.parse(root/'sitemap.xml').getroot()
+          urls={el.text for el in xml.iter() if el.tag.endswith('}loc')}
+          assert len(urls)>=160, len(urls)
+          assert all('https://imsfrane.com/'+l+'/' in urls for l in ('ar','fr','en','es'))
+          for lang in ('fr','en','ar','es'):
+              for slug in ('camping','rafting','randonnee','booking','contact','blog','quad','vtt'):
+                  assert (root/lang/slug/'index.html').is_file(),(lang,slug)
+                  assert (root/lang/(slug+'.html')).is_file(),(lang,slug)
+          assert (root/'CNAME').read_text().strip()=='imsfrane.com'
+          print("PASS: clean URLs, legacy routes, four-language sitemap, original CNAME")
+          PY
+
+      - name: Commit and publish site
+        run: |
+          git config user.name "imsfrane-clean-urls-publisher"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes: clean URLs already published." >> "$GITHUB_STEP_SUMMARY"
+          else
+            git commit -m "Publish SEO clean URLs with safe legacy redirects in FR EN AR ES"
+            git push origin HEAD:main
+            echo "Deployed canonical extensionless pages and rebuilt sitemap." >> "$GITHUB_STEP_SUMMARY"
+          fi
