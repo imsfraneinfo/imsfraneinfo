@@ -3,7 +3,7 @@ name: Publish clean URLs for all Imsfrane languages
 on:
   push:
     branches: [main]
-    paths: ['.github/workflows/build-clean-urls.yml']
+    paths: ['.github/workflows/build-clean-urls.yml', 'scripts/build_clean_urls.py']
   workflow_dispatch:
 
 permissions:
