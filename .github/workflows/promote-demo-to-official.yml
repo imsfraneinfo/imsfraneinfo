@@ -1,0 +1,137 @@
+name: Publish approved Imsfrane Demo to official website
+
+# This workflow has NO push trigger. It runs only when the owner manually starts it.
+on:
+  workflow_dispatch:
+    inputs:
+      confirmation:
+        description: 'Type PUBLISH to replace imsfrane.com with the Demo site'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: imsfrane-production-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current official website
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+          persist-credentials: true
+
+      - name: Require manual publish confirmation
+        env:
+          CONFIRMATION: ${{ inputs.confirmation }}
+        run: |
+          if [ "$CONFIRMATION" != "PUBLISH" ]; then
+            echo "::error::To publish the demo, enter exactly PUBLISH."
+            exit 1
+          fi
+
+      - name: Create additional immutable backup branch
+        run: |
+          branch="backup-before-demo-live-${GITHUB_RUN_ID}"
+          git push origin "HEAD:refs/heads/${branch}"
+          echo "Official previous version saved in: ${branch}" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Download finished demo site
+        run: |
+          git clone --depth 1 --branch gh-pages \
+            https://github.com/imsfraneinfo/Imsfrane-demo.git \
+            "$RUNNER_TEMP/imsfrane-demo-published"
+          test -f "$RUNNER_TEMP/imsfrane-demo-published/ar/index.html"
+          test -f "$RUNNER_TEMP/imsfrane-demo-published/es/index.html"
+          test -f "$RUNNER_TEMP/imsfrane-demo-published/fr/index.html"
+          test -f "$RUNNER_TEMP/imsfrane-demo-published/en/index.html"
+
+      - name: Copy approved static site while preserving production settings
+        run: |
+          # Keep .git, .github Actions, and the official domain's CNAME.
+          # This only updates files in the checked-out working directory so far.
+          rsync -a --delete \
+            --exclude='/.git/' \
+            --exclude='/.github/' \
+            --exclude='/CNAME' \
+            "$RUNNER_TEMP/imsfrane-demo-published/" ./
+          test "$(cat CNAME)" = "imsfrane.com"
+
+      - name: Convert all Demo-only links to official URLs and validate
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          root = Path('.')
+          text_exts = {'.html', '.css', '.js', '.json', '.xml', '.txt',
+                       '.webmanifest', '.svg', '.md', '.yml', '.yaml'}
+          touched = 0
+          for path in root.rglob('*'):
+              if not path.is_file() or path.parts[0] in ('.git', '.github'):
+                  continue
+              if path.suffix.lower() not in text_exts:
+                  continue
+              try:
+                  content = path.read_text(encoding='utf-8')
+              except (UnicodeDecodeError, OSError):
+                  continue
+              fixed = content.replace('https://imsfraneinfo.github.io/Imsfrane-demo/',
+                                      'https://imsfrane.com/')
+              fixed = fixed.replace('https://imsfraneinfo.github.io/Imsfrane-demo',
+                                    'https://imsfrane.com')
+              fixed = fixed.replace('/Imsfrane-demo/', '/')
+              if fixed != content:
+                  path.write_text(fixed, encoding='utf-8')
+                  touched += 1
+
+          index = root / 'index.html'
+          html = index.read_text(encoding='utf-8')
+          old = 'location.replace(language.startsWith("fr") ? "fr/index.html" : "en/index.html");'
+          new = ('var code = language.split("-")[0];\n'
+                 '      location.replace(["fr", "en", "es", "ar"].includes(code)'
+                 ' ? code + "/index.html" : "en/index.html");')
+          if old in html:
+              html = html.replace(old, new)
+              index.write_text(html, encoding='utf-8')
+          elif '["fr", "en", "es", "ar"].includes(code)' not in html:
+              raise SystemExit('Unknown language redirect logic in index.html')
+
+          for lang in ('fr', 'en', 'es', 'ar'):
+              directory = root / lang
+              if not (directory / 'index.html').is_file():
+                  raise SystemExit(f'Missing {lang} homepage')
+              if not (directory / 'booking.html').is_file():
+                  raise SystemExit(f'Missing {lang} booking page')
+
+          html_pages = list(root.rglob('*.html'))
+          if len(html_pages) < 40:
+              raise SystemExit(f'Unexpectedly few HTML pages: {len(html_pages)}')
+          if (root / 'CNAME').read_text(encoding='utf-8').strip() != 'imsfrane.com':
+              raise SystemExit('Official CNAME is missing or changed')
+          for page in html_pages:
+              if '/Imsfrane-demo/' in page.read_text(encoding='utf-8'):
+                  raise SystemExit(f'Old Demo path remains in {page}')
+          if 'https://imsfrane.com/sitemap.xml' not in (root / 'robots.txt').read_text(encoding='utf-8'):
+              raise SystemExit('Sitemap URL did not switch to official domain')
+
+          print(f'Checked {len(html_pages)} HTML pages; rewrote {touched} text files.')
+          PY
+
+      - name: Commit and publish on official branch
+        run: |
+          git config user.name "imsfrane-official-publisher"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "The official site already matches the published Demo." >> "$GITHUB_STEP_SUMMARY"
+          else
+            git commit -m "Publish tested multilingual Imsfrane Demo on official domain"
+            git push origin HEAD:main
+            echo "Published Demo on main. GitHub Pages should update imsfrane.com shortly." >> "$GITHUB_STEP_SUMMARY"
+          fi
