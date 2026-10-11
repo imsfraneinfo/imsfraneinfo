@@ -69,6 +69,10 @@ def transform(doc, lang, filename, files):
         doc=re.sub(r"""(?P<q>["'])"""+re.escape(name)+r"""(?P=q)""",
                    lambda m:m["q"]+path+m["q"],doc)
     doc=re.sub(r"""<link\b(?=[^>]*\brel\s*=\s*["']canonical["'])[^>]*>""","",doc,flags=re.I)
+    # Restore the page filename used for active-menu state in existing UI.
+    clean_active = clean("/"+lang+"/"+filename,files)
+    doc = doc.replace('data-nav-active="'+clean_active+'"',
+                      'data-nav-active="'+filename+'"')
     if "</head>" not in doc:
         raise RuntimeError("No head end: "+lang+"/"+filename)
     doc=doc.replace("</head>",'<link rel="canonical" href="'+HOST+clean("/"+lang+"/"+filename,files)+'"/></head>',1)
