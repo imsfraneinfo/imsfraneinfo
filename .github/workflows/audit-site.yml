@@ -1,0 +1,23 @@
+name: Audit Imsfrane Site
+on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/audit_site.py
+      - .github/workflows/audit-site.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check site pages, links and SEO
+        run: python3 scripts/audit_site.py
+      - name: Save full audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: imsfrane-static-audit
+          path: site-audit-report.json
+          retention-days: 7
