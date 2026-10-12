@@ -88,4 +88,24 @@ function enableArticleDiscussion(){
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",enableArticleDiscussion,{once:true});else enableArticleDiscussion();
 
+function fixArabicArticleLabels(){
+ if(!/^\/ar\/blog-[a-z0-9-]+\/?$/i.test(location.pathname))return;
+ var nav=document.querySelector(".article-nav nav");
+ if(nav){
+  Array.from(nav.querySelectorAll("a")).forEach(function(a){
+   if(a.textContent.includes("Tous les articles"))a.textContent="← جميع المقالات";
+   var val=a.textContent.trim();
+   if(val==="FR"&&a.getAttribute("href")===location.pathname)a.href=location.pathname.replace(/^\/ar\//,"/fr/");
+   if(val==="EN"&&a.getAttribute("href")===location.pathname)a.href=location.pathname.replace(/^\/ar\//,"/en/");
+  });
+ }
+ var hero=document.querySelector(".article-hero-text span");
+ if(hero){
+  var labels={"Itinéraires":"طرق الوصول","Randonnée":"المشي الجبلي","Camping":"التخييم","Découverte":"اكتشاف","Nature":"الطبيعة","Rafting":"التجديف النهري","Culture":"الثقافة","Conseils":"نصائح","VTT":"الدراجات الجبلية","Saisons":"مواسم الزيارة"};
+  var first=hero.textContent.trim();
+  Object.keys(labels).forEach(function(k){if(first.startsWith(k+" ·"))hero.textContent=labels[k]+first.slice(k.length)});
+ }
+}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",fixArabicArticleLabels,{once:true});else fixArabicArticleLabels();
+
 })();
