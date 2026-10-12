@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Static quality audit for Imsfrane GitHub Pages. Informational; no site mutations."""
+"""Static quality audit for Imsfrane GitHub Pages. Informational; no site mutations.\nRun after localization fixes to verify the full current release.\n"""
 from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import unquote, urlsplit
