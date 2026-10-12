@@ -81,4 +81,11 @@ function initMemberEntry(){
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",initMemberEntry,{once:true});else initMemberEntry();
 
+function enableArticleDiscussion(){
+ if(!/^\/(fr|en|ar|es)\/blog-[a-z0-9-]+\/?$/i.test(location.pathname))return;
+ if(document.querySelector('script[data-imsfrane-comments]'))return;
+ var tag=document.createElement("script");tag.src="/js/member-blog-comments.js";tag.defer=true;tag.dataset.imsfraneComments="1";document.head.appendChild(tag);
+}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",enableArticleDiscussion,{once:true});else enableArticleDiscussion();
+
 })();
