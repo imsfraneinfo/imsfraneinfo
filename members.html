@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,follow"><title>Imsfrane Members · Imsfrane</title>
+<style>
+:root{--green:#123a33;--gold:#c6a43f;--paper:#f9f8f4;--line:#ddd9c8}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--green);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.55}
+header{background:var(--green);color:white;padding:20px max(16px,calc((100% - 1030px)/2));display:flex;justify-content:space-between;align-items:center;gap:12px}
+header a{color:var(--gold);text-decoration:none;font-weight:700}.brand{font-family:Georgia,serif;font-size:21px}
+main{max-width:950px;margin:32px auto;padding:0 16px 55px}h1{font-family:Georgia,serif;font-size:clamp(30px,6vw,50px);margin:6px 0 8px}
+section{background:white;padding:22px;border:1px solid var(--line);border-radius:15px;margin:16px 0;box-shadow:0 5px 23px #17362e09}
+label{display:block;font-weight:600;margin:12px 0 5px}input:not([type=checkbox]),textarea,select{width:100%;border:1px solid #c7cdbd;border-radius:9px;padding:12px;font:inherit;background:white;color:#21332c}
+textarea{min-height:112px}button{font:inherit;cursor:pointer;border:0;border-radius:9px;padding:11px 17px;background:var(--green);color:white;font-weight:700;margin-top:12px}
+button:disabled{opacity:.5;cursor:wait}.secondary{background:#eeeae0;color:var(--green)}.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.muted{color:#61756c;font-size:14px}.status{padding:12px;border-radius:9px;background:#f1f5ed;margin:12px 0;white-space:pre-wrap}
+.status.error{background:#fff0ed;color:#9c2922}.hidden{display:none!important}.comment{border-bottom:1px solid var(--line);padding:12px 0}
+.comment:last-child{border:0}.comment small{color:#61756c}.check{display:flex;gap:10px;align-items:center;font-weight:500;margin:13px 0}.check input{width:18px;height:18px}
+footer{padding:24px;text-align:center;color:#71827a}html[dir=rtl] .check{flex-direction:row-reverse;justify-content:flex-end}
+</style><style id="member-premium">
+body{background:#f8f7f2;background-image:radial-gradient(circle at 7% 10%,#dcbf6435,transparent 34%);font-family:Montserrat,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+header{padding-block:19px;background:#0c2d25;box-shadow:0 8px 34px #0b2e2130;position:relative}
+header .brand{font-family:Georgia,serif;letter-spacing:.02em}
+main{max-width:1080px}
+.members-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,420px);align-items:stretch;gap:0;overflow:hidden;border-radius:24px;background:#102f27;box-shadow:0 20px 56px #0a2d2428;margin-bottom:25px;color:white;min-height:350px}
+.members-cover{position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:36px 35px;isolation:isolate;background:#0b2f28 url('images/21.webp') center/cover no-repeat}
+.members-cover:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0a302645,#09271ce8);z-index:-1}
+.members-cover p{font-size:13px;color:#f0deaf;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+.members-cover h2{font:600 clamp(30px,4vw,46px)/1.06 Georgia,serif;max-width:340px;color:#fff;margin:12px 0}
+.members-cover span{max-width:340px;color:#e9e8d8;font-size:15px;line-height:1.65}
+.members-card{background:#fff;color:#123a33;padding:27px 30px;display:flex;flex-direction:column;justify-content:center}
+.members-card section{margin:0;padding:0;border:0;box-shadow:none}
+.members-card h2{font-size:22px;margin:0 0 9px}
+.members-card input{border-radius:9px;background:#fafaf8;border:1px solid #d2d6ca}
+.members-card button{margin-top:12px}
+.members-card .row button{flex:1}
+.members-card #signIn{background:#123a33}
+.members-card #signUp{background:#efe7d2;color:#294638}
+.google-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:12px;background:#fff!important;color:#28322d!important;border:1px solid #ced6ce!important;padding:13px!important;border-radius:10px!important;box-shadow:0 3px 12px #00000007}
+.google-btn:hover{border-color:#c3a460!important;background:#fcfaf3!important}
+.google-logo{font:bold 22px/1 Arial,sans-serif;color:#4285f4}
+.or-line{display:flex;align-items:center;gap:12px;color:#879188;font-size:12px;margin:17px 0 6px}.or-line:before,.or-line:after{content:"";flex:1;height:1px;background:#d7ded2}
+section:not(.members-card section){border-radius:15px}
+#guest,#member{background:transparent}
+#notice{border-left:3px solid #c4a252;background:#f4f1e6;margin:14px 0 22px}
+.members-heading{font-weight:750;font-size:13px;letter-spacing:.15em;color:#956f20}
+@media(max-width:760px){main{margin:19px auto;padding:0 13px 40px}.members-hero{display:block;border-radius:17px}.members-cover{min-height:210px;padding:25px}.members-cover h2{font-size:29px}.members-card{padding:24px 20px}header{padding-inline:18px}}
+html[dir="rtl"] .members-cover{text-align:right}
+</style><style id="global-redesign">
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&family=Alexandria:wght@400;500;600;700&display=swap');
+:root{--green:#173a30;--gold:#c6a766;--paper:#fff;--line:#e1e7e0}
+*,*:before,*:after{box-sizing:border-box}
+body{background:#fff;color:#193c31;font:500 14px/1.6 "DM Sans",sans-serif;-webkit-font-smoothing:antialiased}
+a,button,input,select{transition:all .18s}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #c3ab70;outline-offset:3px}
+header{position:fixed;z-index:3;left:0;top:0;width:49%;height:90px;background:transparent;box-shadow:none;padding:28px 42px;display:flex;align-items:center}
+header .brand{font:600 24px/1 "Playfair Display",Georgia,serif;color:#fff}
+header a{display:none}
+main{margin:0;max-width:none;padding:0;min-height:100vh;display:grid;grid-template-columns:49% 51%;grid-template-rows:auto auto auto 1fr;align-content:start;background:#fff}
+main>.row:first-child{grid-column:2;grid-row:1;padding:105px max(40px,calc((100% - 470px)/2)) 0!important;display:flex!important;flex-direction:column;align-items:flex-start!important;gap:0!important}
+main>.row:first-child:before{content:"IMSFRANE · YOUR ADVENTURE COMMUNITY";font:800 10px/1.6 Manrope,sans-serif;letter-spacing:.21em;color:#ac8954;margin-bottom:10px}
+main>.row:first-child:after{content:"Join our Atlas community · Stories, trails & authentic experiences";color:#87948c;font-size:11px;margin-top:-9px}
+h1{font:800 clamp(31px,3.4vw,45px)/1.15 Manrope,sans-serif;letter-spacing:-.06em;margin:8px 0 9px}
+#subtitle{font-size:13px;color:#7d8980;line-height:1.8;margin:0 0 14px}
+#language{position:absolute;right:32px;top:25px;max-width:136px!important;border-radius:40px;border:1px solid #e0e6df;background:#fff;padding:10px 14px;color:#425a4b;font:800 12px Manrope,sans-serif;z-index:6}
+#notice{grid-column:2;grid-row:2;margin:10px max(40px,calc((100% - 470px)/2)) 0;padding:10px 12px;font-size:12px;border-radius:8px;background:#f5f6ed;color:#5b6c56;border:1px solid #e5e9d7}
+#notice:empty{display:none}
+.members-hero{display:contents}
+.members-cover{position:fixed;z-index:1;inset:0 auto 0 0;width:49%;height:100vh;padding:42px clamp(30px,4vw,76px) 75px;background:#16382d url('images/21.webp') center center/cover no-repeat;justify-content:flex-end;isolation:isolate}
+.members-cover:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#092a217a 0%,transparent 34%,#061d16e3 100%)}
+.members-cover p{font-size:11px;color:#f3dba5;letter-spacing:.24em;margin-bottom:16px}
+.members-cover h2{font:600 clamp(41px,4.4vw,70px)/1.07 "Playfair Display",Georgia,serif;letter-spacing:-.04em;max-width:510px;margin:0 0 15px;color:white}
+.members-cover span{font-size:14px;color:#f6f9ebdb;line-height:1.85;max-width:400px;display:block}
+.members-card{grid-column:2;grid-row:3;background:#fff;display:block;padding:0 max(40px,calc((100% - 470px)/2));color:#19382d}
+#guest{padding:5px 0 15px!important;background:transparent!important}
+#authTitle{display:none}
+label:not(.check){font:800 12px/1.5 Manrope,sans-serif;color:#284438;margin:16px 0 7px}
+input:not([type=checkbox]),textarea{padding:14px 15px;border:1px solid #dbe2db;background:#fff;border-radius:10px;font-size:14px}
+input:focus,textarea:focus{border-color:#bf9e5d;box-shadow:0 0 0 4px #c6a76622;outline:0}
+.google-btn{border:1px solid #dae1da!important;background:#fff!important;color:#26352d!important;font-size:13px;font-weight:800;padding:14px!important;border-radius:10px!important;box-shadow:0 3px 12px #203b2809}
+.google-btn:hover{background:#f8faf7!important}
+.or-line{margin:21px 0 9px;color:#8b988e;font-size:11px}
+#signIn{width:100%;order:1;padding:15px;background:#143f31;font-size:14px}
+#signUp{background:none;color:#a78142;padding:7px 2px;font-size:12px}
+#forgot{order:0;background:none;color:#61756c;padding:6px;font-size:11px}
+#loginForm>.row{flex-direction:column;gap:7px;align-items:stretch}
+#loginForm>.row button{flex:unset}
+#member{grid-column:2;grid-row:3;margin:0 max(40px,calc((100% - 470px)/2))!important;padding:15px 0;border:0;box-shadow:none}
+main>section:not(#member){grid-column:2;margin:20px max(40px,calc((100% - 470px)/2));border:1px solid #edf0eb;box-shadow:0 10px 28px #13392608;padding:20px;border-radius:14px}
+main>section:not(#member) h2{font:800 16px Manrope,sans-serif}
+.muted{font-size:12px;color:#88958b}
+main>section:last-child{margin-top:0!important;background:transparent!important;border:0!important;box-shadow:none!important;padding-top:0!important;color:#99a49d}
+main>section:last-child h2{font-size:12px}
+footer{display:none}
+html[dir="rtl"] body{font-family:Alexandria,"DM Sans",sans-serif}
+html[dir="rtl"] h1{letter-spacing:0}
+html[dir="rtl"] #language{right:auto;left:32px}
+html[dir="rtl"] main>.row:first-child,html[dir="rtl"] .members-card{text-align:right}
+@media(max-width:780px){header{width:100%;height:70px;padding:18px 20px}header .brand{font-size:20px}main{display:block;padding:0 0 22px}.members-cover{position:relative;inset:auto;min-height:200px;height:215px;width:100%;padding:75px 23px 22px;justify-content:flex-end}.members-cover h2{font-size:30px;max-width:330px;margin-bottom:0}.members-cover p,.members-cover span{display:none}main>.row:first-child{padding:32px 24px 0!important}.members-card{padding:0 24px}#notice{margin:13px 24px 5px}main>section:not(#member){margin:18px 24px}#member{margin:0 24px!important}h1{font-size:32px}#language{top:21px;right:18px;border-color:#ffffffaa;background:#ffffffec;padding:7px 10px;max-width:125px!important}html[dir="rtl"] #language{left:18px}header .brand{max-width:60%;line-height:1.2}.members-cover{background-position:center 40%}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important}}
+</style><style id="mobile-layout-fix">
+@media(max-width:780px){main{display:flex;flex-direction:column}.members-hero{display:contents}.members-cover{order:-2}main>.row:first-child{order:-1}#notice{order:0}.members-card{order:1}#member{order:2}main>section:not(#member){order:3}main>section:last-child{order:4}}
+</style><style id="google-logo-tune">.google-logo-svg{display:block;width:21px;height:21px;flex:0 0 21px}.google-btn{gap:12px!important}.members-cover h2{overflow-wrap:break-word}html[dir="rtl"] .members-cover{text-align:right}html[dir="rtl"] .google-btn{direction:rtl}html[dir="rtl"] #email,html[dir="rtl"] #password{direction:ltr;text-align:left}html[dir="rtl"] .members-heading{letter-spacing:normal!important}</style><style id="translated-visual-polish">main>.row:first-child:before,main>.row:first-child:after{content:none!important}.members-heading{display:block;color:#a2844e!important;letter-spacing:.10em;font-weight:800;font-size:11px;margin-bottom:10px}.members-cover{background-position:center 43%!important}.members-cover h2{max-width:520px}html[dir="rtl"] .members-cover h2{font-family:Alexandria,"Playfair Display",sans-serif;letter-spacing:0!important;font-size:clamp(28px,3.8vw,51px);line-height:1.3}html[dir="rtl"] .members-cover p{letter-spacing:0}@media(max-width:780px){.members-heading{font-size:10px}.members-cover h2{font-size:clamp(24px,6.3vw,31px)}html[dir="rtl"] .members-cover h2{font-size:clamp(25px,6.1vw,31px);line-height:1.4}}</style><style id="community-tools-style">.member-question{border-radius:14px}.comment .secondary{margin-top:8px;padding:7px 10px;background:#f4f5f0;color:#5b4935;font-size:12px}.member-question textarea{min-height:105px}.member-question button{margin-top:10px}html[dir="rtl"] .member-question{text-align:right}</style></head>
+<body>
+<header><span class="brand">Imsfrane Cathédrale</span><a href="https://imsfraneinfo.github.io/" id="back">← Demo</a></header>
+<main>
+<div class="row" style="justify-content:space-between"><div><span class="members-heading" id="memberKicker">IMSFRANE CATHÉDRALE · MEMBERS</span><h1 id="heading">Espace membres</h1><p id="subtitle">Inscription, connexion et commentaires — espace membres.</p></div>
+<select id="language" aria-label="Language" style="max-width:165px"><option value="fr">Français</option><option value="en">English</option><option value="ar">العربية</option><option value="es">Español</option></select></div>
+<div id="notice" class="status" role="status" aria-live="polite"></div>
+<div class="members-hero"><div class="members-cover"><p id="heroEyebrow">IMSFRANE · ATLAS MOUNTAINS</p><h2 id="heroTitle">Your adventures. Your community.</h2><span id="heroDescription">Connect with local guides, share experiences and explore the Atlas mountains with us.</span></div><div class="members-card">
+<section id="guest">
+<h2 id="authTitle">Se connecter / S'inscrire</h2>
+<form id="loginForm"><label for="email" id="emailLabel">Adresse e-mail</label><input id="email" type="email" autocomplete="email" required>
+<label for="password" id="passwordLabel">Mot de passe (6 caractères minimum)</label><input id="password" type="password" autocomplete="current-password" minlength="6" required>
+<button class="google-btn" id="googleSignIn" type="button"><svg class="google-logo-svg" width="20" height="20" viewBox="0 0 48 48" role="img" aria-label="Google" focusable="false"><path fill="#EA4335" d="M24 9.5c3.5 0 6.7 1.2 9.2 3.6l6.8-6.8C35.9 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.5 13.2l7.9 6.1C12.3 13.6 17.7 9.5 24 9.5Z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94a11 11 0 0 1-4.8 7.24l7.73 6C44.38 38.08 46.98 31.94 46.98 24.55Z"/><path fill="#FBBC05" d="M10.39 28.69A14.4 14.4 0 0 1 9.62 24c0-1.63.28-3.2.76-4.69l-7.88-6.1A23.96 23.96 0 0 0 0 24c0 3.87.93 7.52 2.5 10.79l7.89-6.1Z"/><path fill="#34A853" d="M24 48c6.48 0 11.9-2.13 15.87-5.74l-7.73-6A14.4 14.4 0 0 1 24 38.5c-6.3 0-11.67-4.07-13.61-9.81l-7.88 6.1C6.5 42.6 14.6 48 24 48Z"/></svg><span id="googleLabel">Continuer avec Google</span></button><div class="or-line"><span id="orLabel">ou par e-mail</span></div><div class="row"><button type="submit" id="signIn">Se connecter</button><button type="button" class="secondary" id="signUp">Créer un compte</button><button type="button" class="secondary" id="forgot">Mot de passe oublié</button></div></form>
+</section></div></div>
+<section id="member" class="hidden">
+<div class="row" style="justify-content:space-between"><h2 id="welcome">Mon compte</h2><button type="button" class="secondary" id="logout">Déconnexion</button></div>
+<p id="accountEmail" class="muted"></p>
+<form id="profileForm"><label id="nameLabel" for="displayName">Votre nom public</label><input maxlength="80" id="displayName" autocomplete="nickname"><button id="saveProfile">Enregistrer le profil</button></form>
+<h3 id="prefTitle">Mes notifications</h3>
+<form id="preferencesForm">
+<label class="check"><input type="checkbox" id="prefInApp" checked><span id="inAppUpdates">Notifications dans mon compte (activées)</span></label><label class="check"><input type="checkbox" id="prefEmail"><span id="emailUpdates">Actualités par e-mail</span></label>
+<label class="check"><input type="checkbox" id="prefPush"><span id="pushUpdates">Notifications téléphone / navigateur (à venir)</span></label>
+<label class="check"><input type="checkbox" id="prefMarketing"><span id="marketingUpdates">Offres promotionnelles (optionnel)</span></label>
+<button id="savePrefs">Enregistrer mes préférences</button></form>
+</section>
+<section><h2 id="commentsTitle">Commentaires — article test</h2><p class="muted" id="commentsHint">Les commentaires sont publiés immédiatement.</p>
+<div id="comments"></div><form id="commentForm" class="hidden"><label for="commentBody" id="commentLabel">Votre commentaire</label><textarea id="commentBody" required minlength="3" maxlength="3000"></textarea><button id="publishComment">Publier le commentaire</button></form>
+<p id="mustLogin" class="muted">Connectez-vous pour commenter.</p></section><section class="member-question"><h2 id="questionTitle">Posez votre question</h2><form id="questionForm" class="hidden"><label id="questionLabel" for="questionText">Votre question</label><textarea id="questionText" required minlength="5" maxlength="2000"></textarea><button id="questionSend">Poser une question</button></form><p id="questionLogin" class="muted">Connectez-vous pour poser une question privée.</p></section>
+<section><h2 id="privacyTitle">Confidentialité</h2><p id="privacyText" class="muted">Bêta technique. Ne publiez pas de données privées dans les commentaires. L'envoi effectif des e-mails et notifications push n'est pas encore activé. Vous choisissez explicitement vos préférences.</p></section>
+</main><footer>Imsfrane Cathédrale · Espace membres · Supabase Auth</footer>
+<script type="module">
+import {createClient} from 'https://esm.sh/@supabase/supabase-js@2';
+const db=createClient('https://ktrcrfoywokuuwzwnqsu.supabase.co','sb_publishable_GS2PtVM4vBv7epvV6aZSpA_XQyD9bCj',{auth:{detectSessionInUrl:true,persistSession:true,autoRefreshToken:true}});
+const $=id=>document.getElementById(id),get=()=>db.auth.getUser();
+const copy={
+fr:{commentDelete:"Supprimer",questionLabel:"Votre question",questionSend:"Poser une question",questionSent:"Question envoyée. Elle est privée.",inAppUpdates:"Notifications dans mon compte (activées)",deleteConfirm:"Voulez-vous supprimer ce commentaire ?",orLabel:"ou continuer par e-mail",googleLabel:"Continuer avec Google",heading:"Espace membres",subtitle:"Inscription, connexion et commentaires — espace membres.",authTitle:"Se connecter / S'inscrire",emailLabel:"Adresse e-mail",passwordLabel:"Mot de passe (6 caractères minimum)",signIn:"Se connecter",signUp:"Créer un compte",forgot:"Mot de passe oublié",welcome:"Mon compte",logout:"Déconnexion",nameLabel:"Votre nom public",saveProfile:"Enregistrer le profil",prefTitle:"Mes notifications",emailUpdates:"Actualités par e-mail",pushUpdates:"Notifications téléphone / navigateur (à venir)",marketingUpdates:"Offres promotionnelles (optionnel)",savePrefs:"Enregistrer mes préférences",commentsTitle:"Commentaires — article test",commentsHint:"Les commentaires sont publiés immédiatement.",commentLabel:"Votre commentaire",publishComment:"Publier le commentaire",mustLogin:"Connectez-vous pour commenter.",privacyTitle:"Confidentialité",privacyText:"Bêta technique. Ne publiez pas de données privées dans les commentaires. L'envoi effectif des e-mails et notifications push n'est pas encore activé. Vous choisissez explicitement vos préférences.",ready:"Demo connecté à Supabase. Vous pouvez tester l'inscription.",welcomeMsg:"Vous êtes connecté.",signUpMsg:"Compte demandé. Consultez votre boîte e-mail pour confirmer l'adresse si nécessaire.",commentSent:"Commentaire publié.",saved:"Enregistré.",passwordMsg:"E-mail de réinitialisation demandé. Vérifiez votre boîte de réception.",pending:"En attente",approved:"Approuvé",none:"Pas encore de commentaires approuvés.",error:"Erreur : "},
+en:{commentDelete:"Delete",questionLabel:"Your question",questionSend:"Ask a question",questionSent:"Question sent privately.",inAppUpdates:"In-app notifications (on by default)",deleteConfirm:"Delete this comment?",orLabel:"or continue with email",googleLabel:"Continue with Google",heading:"Members area",subtitle:"Sign up, sign in and comments — test version.",authTitle:"Sign in / Sign up",emailLabel:"Email address",passwordLabel:"Password (at least 6 characters)",signIn:"Sign in",signUp:"Create account",forgot:"Forgot password",welcome:"My account",logout:"Sign out",nameLabel:"Public display name",saveProfile:"Save profile",prefTitle:"My notifications",emailUpdates:"Email updates",pushUpdates:"Phone / browser notifications (coming soon)",marketingUpdates:"Promotional offers (optional)",savePrefs:"Save preferences",commentsTitle:"Comments — test article",commentsHint:"Comments are published immediately.",commentLabel:"Your comment",publishComment:"Post comment",mustLogin:"Sign in to comment.",privacyTitle:"Privacy",privacyText:"Technical beta. Do not post sensitive data. Email broadcasts and push notifications are not active yet. All notification choices are optional.",ready:"Supabase demo connected. You can try creating an account.",welcomeMsg:"You're signed in.",signUpMsg:"Account requested. Check your email to confirm if needed.",commentSent:"Comment posted.",saved:"Saved.",passwordMsg:"Password reset requested. Check your email.",pending:"Pending",approved:"Approved",none:"No approved comments yet.",error:"Error: "},
+ar:{commentDelete:"حذف",questionLabel:"سؤالك",questionSend:"إرسال السؤال",questionSent:"تم إرسال السؤال بشكل خاص.",inAppUpdates:"إشعارات داخل الحساب (مفعّلة تلقائياً)",deleteConfirm:"واش متأكد بغيتي تمسح التعليق؟",orLabel:"أو المتابعة بالبريد الإلكتروني",googleLabel:"المتابعة باستخدام Google",heading:"فضاء الأعضاء",subtitle:"إنشاء حساب وتسجيل الدخول والتعليقات — نسخة تجريبية.",authTitle:"تسجيل الدخول أو إنشاء حساب",emailLabel:"البريد الإلكتروني",passwordLabel:"كلمة المرور (6 أحرف على الأقل)",signIn:"تسجيل الدخول",signUp:"إنشاء حساب",forgot:"نسيت كلمة المرور",welcome:"حسابي",logout:"تسجيل الخروج",nameLabel:"الاسم الظاهر للعموم",saveProfile:"حفظ الملف الشخصي",prefTitle:"إعدادات الإشعارات",emailUpdates:"أخبار عبر البريد الإلكتروني",pushUpdates:"إشعارات الهاتف والمتصفح (قريباً)",marketingUpdates:"العروض الترويجية (اختياري)",savePrefs:"حفظ التفضيلات",commentsTitle:"التعليقات — مقال تجريبي",commentsHint:"التعليقات كتنشر مباشرة بلا موافقة مسبقة.",commentLabel:"تعليقك",publishComment:"نشر التعليق",mustLogin:"سجّل الدخول للتعليق.",privacyTitle:"الخصوصية",privacyText:"نسخة اختبارية. لا تكتب معلومات حساسة في التعليقات. لم يُفعَّل إرسال البريد والإشعارات بعد. تختار تفضيلاتك بحرية.",ready:"الصفحة مرتبطة بقاعدة البيانات. يمكن تجربة إنشاء الحساب.",welcomeMsg:"تم تسجيل الدخول.",signUpMsg:"تم طلب إنشاء الحساب. راجع بريدك الإلكتروني للتأكيد عند الحاجة.",commentSent:"تم نشر التعليق.",saved:"تم الحفظ.",passwordMsg:"تم طلب إعادة تعيين كلمة المرور. راجع بريدك الإلكتروني.",pending:"قيد المراجعة",approved:"مقبول",none:"لا توجد تعليقات منشورة بعد.",error:"خطأ: "},
+es:{commentDelete:"Eliminar",questionLabel:"Tu pregunta",questionSend:"Enviar pregunta",questionSent:"Pregunta enviada en privado.",inAppUpdates:"Notificaciones en la cuenta (activadas)",deleteConfirm:"¿Eliminar este comentario?",orLabel:"o continuar con email",googleLabel:"Continuar con Google",heading:"Zona de miembros",subtitle:"Registro, acceso y comentarios — versión de prueba.",authTitle:"Iniciar sesión / Registrarse",emailLabel:"Correo electrónico",passwordLabel:"Contraseña (mínimo 6 caracteres)",signIn:"Iniciar sesión",signUp:"Crear cuenta",forgot:"Olvidé mi contraseña",welcome:"Mi cuenta",logout:"Cerrar sesión",nameLabel:"Nombre público",saveProfile:"Guardar perfil",prefTitle:"Mis notificaciones",emailUpdates:"Noticias por correo",pushUpdates:"Avisos en móvil / navegador (próximamente)",marketingUpdates:"Ofertas promocionales (opcional)",savePrefs:"Guardar preferencias",commentsTitle:"Comentarios — artículo de prueba",commentsHint:"Los comentarios se publican inmediatamente.",commentLabel:"Tu comentario",publishComment:"Publicar comentario",mustLogin:"Inicia sesión para comentar.",privacyTitle:"Privacidad",privacyText:"Beta técnica. No publiques datos sensibles. El envío de correos masivos y notificaciones push todavía no está activo. Tus preferencias son opcionales.",ready:"Demo conectado a Supabase. Puedes probar el registro.",welcomeMsg:"Has iniciado sesión.",signUpMsg:"Registro solicitado. Comprueba tu correo para confirmar si es necesario.",commentSent:"Comentario publicado.",saved:"Guardado.",passwordMsg:"Se ha solicitado el cambio de contraseña. Revisa tu correo.",pending:"Pendiente",approved:"Aprobado",none:"No hay comentarios aprobados todavía.",error:"Error: "}
+};
+let lang=(new URLSearchParams(location.search).get("lang")||"fr").toLowerCase(),user=null;
+if(!["fr","en","ar","es"].includes(lang))lang="fr";
+$("language").value=lang;
+const msg=(s,error=false)=>{const n=$("notice");n.textContent=s;n.classList.toggle("error",error)};
+const localized=()=>copy[lang];
+function translate(){lang=$("language").value;document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";for(const [k,v] of Object.entries(localized()))if($(k))$(k).textContent=v;const heroTexts={"fr":["IMSFRANE · MONTAGNES DE L’ATLAS","Vos aventures. Votre communauté.","Rencontrez nos guides locaux, partagez vos expériences et explorez les montagnes de l’Atlas avec nous.","IMSFRANE CATHÉDRALE · ESPACE MEMBRES"],"en":["IMSFRANE · ATLAS MOUNTAINS","Your adventures. Your community.","Connect with local guides, share experiences and explore the Atlas Mountains with us.","IMSFRANE CATHÉDRALE · MEMBERS"],"ar":["مسفران · جبال الأطلس","مغامراتك. مجتمعك.","تواصل مع المرشدين المحليين، شارك تجاربك واكتشف جبال الأطلس معنا.","مسفران كاتدرال · فضاء الأعضاء"],"es":["IMSFRANE · MONTAÑAS DEL ATLAS","Tus aventuras. Tu comunidad.","Conecta con guías locales, comparte experiencias y descubre las montañas del Atlas con nosotros.","IMSFRANE CATHÉDRALE · MIEMBROS"]};["heroEyebrow","heroTitle","heroDescription","memberKicker"].forEach((id,i)=>{$(id).textContent=heroTexts[lang][i]});document.title=localized().heading+" | Imsfrane Cathédrale";}
+$("language").onchange=async()=>{translate();await loadComments()};
+function showAuth(){ $("guest").classList.toggle("hidden",!!user);$("member").classList.toggle("hidden",!user);$("commentForm").classList.toggle("hidden",!user);$("mustLogin").classList.toggle("hidden",!!user);$("questionForm").classList.toggle("hidden",!user);$("questionLogin").classList.toggle("hidden",!!user);$("accountEmail").textContent=user?.email||"";}
+async function guarded(work){try{document.querySelectorAll("button").forEach(x=>x.disabled=true);await work()}catch(e){msg(localized().error+(e.message||String(e)),true)}finally{document.querySelectorAll("button").forEach(x=>x.disabled=false)}}
+$("loginForm").onsubmit=e=>{e.preventDefault();guarded(async()=>{const {error}=await db.auth.signInWithPassword({email:$("email").value.trim(),password:$("password").value});if(error)throw error;msg(localized().welcomeMsg)})};
+$("signUp").onclick=()=>guarded(async()=>{if(!$("loginForm").reportValidity())return;const {error}=await db.auth.signUp({email:$("email").value.trim(),password:$("password").value,options:{emailRedirectTo:location.origin+location.pathname}});if(error)throw error;msg(localized().signUpMsg)});
+$("googleSignIn").onclick=()=>guarded(async()=>{const {error}=await db.auth.signInWithOAuth({provider:"google",options:{redirectTo:location.origin+location.pathname+location.search}});if(error)throw error});
+$("forgot").onclick=()=>guarded(async()=>{if(!$("email").checkValidity()){ $("email").reportValidity();return }const {error}=await db.auth.resetPasswordForEmail($("email").value.trim(),{redirectTo:location.origin+location.pathname});if(error)throw error;msg(localized().passwordMsg)});
+$("logout").onclick=()=>guarded(async()=>{const {error}=await db.auth.signOut();if(error)throw error;msg(localized().ready)});
+async function loadMember(){if(!user)return;const [p,n]=await Promise.all([db.from("member_profiles").select("display_name").eq("user_id",user.id).maybeSingle(),db.from("member_notification_preferences").select("*").eq("user_id",user.id).maybeSingle()]);if(p.error)throw p.error;if(n.error)throw n.error;$("displayName").value=p.data?.display_name||"";$("prefEmail").checked=!!n.data?.email_updates;$("prefInApp").checked=n.data?.in_app_updates!==false;$("prefPush").checked=!!n.data?.browser_push;$("prefMarketing").checked=!!n.data?.marketing_opt_in;}
+$("profileForm").onsubmit=e=>{e.preventDefault();guarded(async()=>{const {error}=await db.from("member_profiles").upsert({user_id:user.id,display_name:$("displayName").value.trim(),locale:lang},{onConflict:"user_id"});if(error)throw error;msg(localized().saved);await loadComments()})};
+$("preferencesForm").onsubmit=e=>{e.preventDefault();guarded(async()=>{const {error}=await db.from("member_notification_preferences").upsert({user_id:user.id,in_app_updates:$("prefInApp").checked,email_updates:$("prefEmail").checked,browser_push:$("prefPush").checked,marketing_opt_in:$("prefMarketing").checked},{onConflict:"user_id"});if(error)throw error;msg(localized().saved)})};
+$("commentForm").onsubmit=e=>{e.preventDefault();guarded(async()=>{const body=$("commentBody").value.trim();if(body.length<3)return;const {error}=await db.from("member_comments").insert({user_id:user.id,article_path:"/"+lang+"/blog/",body,status:"approved"});if(error)throw error;$("commentBody").value="";msg(localized().commentSent);await loadComments()})};
+async function loadComments(){
+ const list=$("comments");list.replaceChildren();const path="/"+lang+"/blog/";
+ const {data,error}=await db.from("member_comments").select("id,user_id,body,status,created_at").eq("article_path",path).order("created_at",{ascending:false}).limit(50);
+ if(error){msg(localized().error+error.message,true);return}
+ if(!(data||[]).length){const p=document.createElement("p");p.className="muted";p.textContent=localized().none;list.append(p)}
+ for(const item of data||[]){
+  const card=document.createElement("div");card.className="comment";
+  const p=document.createElement("p");p.textContent=item.body;
+  const meta=document.createElement("small");meta.textContent=new Date(item.created_at).toLocaleDateString(lang==="ar"?"ar-MA":lang);
+  card.append(p,meta);
+  if(user?.id===item.user_id){const btn=document.createElement("button");btn.className="secondary";btn.type="button";btn.textContent=localized().commentDelete;btn.addEventListener("click",()=>{if(!confirm(localized().deleteConfirm))return;guarded(async()=>{const {error}=await db.from("member_comments").delete().eq("id",item.id);if(error)throw error;await loadComments()})});card.append(btn)}
+  list.append(card)
+ }
+}
+$("questionForm").onsubmit=e=>{e.preventDefault();guarded(async()=>{
+ const question=$("questionText").value.trim();if(question.length<5)return;
+ const {error}=await db.from("member_questions").insert({user_id:user.id,question});
+ if(error)throw error;$("questionText").value="";msg(localized().questionSent)
+})};
+db.auth.onAuthStateChange((_event,session)=>{user=session?.user||null;showAuth();setTimeout(()=>{if(user)loadMember().catch(e=>msg(localized().error+e.message,true));loadComments()},0)});
+translate();msg(localized().ready);guarded(async()=>{const {data,error}=await db.auth.getSession();if(error)throw error;user=data.session?.user||null;showAuth();if(user)await loadMember();await loadComments()});
+</script></body></html>
