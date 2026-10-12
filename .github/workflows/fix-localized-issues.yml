@@ -1,0 +1,31 @@
+name: Repair verified locale issues
+on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/fix_localized_issues.py
+      - .github/workflows/fix-localized-issues.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+      - name: Apply conservative locale SEO and link fixes
+        run: python3 scripts/fix_localized_issues.py
+      - name: Verify revised pages
+        run: python3 scripts/audit_site.py
+      - name: Commit reviewed class of fixes
+        run: |
+          git config user.name "imsfrane-quality-fixes"
+          git config user.email "actions@users.noreply.github.com"
+          git add ar/ es/ fr/camping/index.html en/camping/index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Fix locale SEO metadata and broken camping contact links"
+            git push origin HEAD:main
+          fi
