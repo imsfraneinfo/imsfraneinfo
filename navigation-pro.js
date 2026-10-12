@@ -63,4 +63,22 @@ function initLanguageMenus(){
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",initLanguageMenus,{once:true});else initLanguageMenus();
 
+function initMemberEntry(){
+ var menu=document.querySelector(".atnav-langmini");
+ if(!menu || document.querySelector(".ims-member-entry"))return;
+ var current=(document.documentElement.lang || "fr").slice(0,2);
+ var title={fr:"Se connecter",en:"Sign in",ar:"تسجيل الدخول",es:"Iniciar sesión"}[current] || "Sign in";
+ var link=document.createElement("a");
+ link.className="ims-member-entry";link.href="/members.html?lang="+encodeURIComponent(current);
+ link.setAttribute("aria-label",title);link.setAttribute("title",title);
+ link.innerHTML='<svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M4.8 20c.3-4.4 3-6.6 7.2-6.6s6.9 2.2 7.2 6.6"/></svg>';
+ menu.insertAdjacentElement("afterend",link);
+ if(!document.getElementById("ims-member-entry-style")){
+ var css=document.createElement("style");css.id="ims-member-entry-style";
+ css.textContent='.ims-member-entry{display:inline-grid;place-items:center;width:39px;height:39px;flex:0 0 39px;border:1px solid #e2bf7c72;border-radius:10px;background:#f5d88617;color:#f4d788!important;text-decoration:none;margin-inline:6px;transition:background .2s,border-color .2s}.ims-member-entry:hover,.ims-member-entry:focus-visible{background:#f5d88632;border-color:#e2bf7c;outline-offset:2px}.ims-member-entry svg{display:block}@media(max-width:420px){.ims-member-entry{width:34px;height:36px;flex-basis:34px;margin-inline:3px}}';
+ document.head.appendChild(css);
+ }
+}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",initMemberEntry,{once:true});else initMemberEntry();
+
 })();
