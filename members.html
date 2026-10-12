@@ -98,7 +98,21 @@ html[dir="rtl"] main>.row:first-child,html[dir="rtl"] .members-card{text-align:r
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important}}
 </style><style id="mobile-layout-fix">
 @media(max-width:780px){main{display:flex;flex-direction:column}.members-hero{display:contents}.members-cover{order:-2}main>.row:first-child{order:-1}#notice{order:0}.members-card{order:1}#member{order:2}main>section:not(#member){order:3}main>section:last-child{order:4}}
-</style><style id="google-logo-tune">.google-logo-svg{display:block;width:21px;height:21px;flex:0 0 21px}.google-btn{gap:12px!important}.members-cover h2{overflow-wrap:break-word}html[dir="rtl"] .members-cover{text-align:right}html[dir="rtl"] .google-btn{direction:rtl}html[dir="rtl"] #email,html[dir="rtl"] #password{direction:ltr;text-align:left}html[dir="rtl"] .members-heading{letter-spacing:normal!important}</style><style id="translated-visual-polish">main>.row:first-child:before,main>.row:first-child:after{content:none!important}.members-heading{display:block;color:#a2844e!important;letter-spacing:.10em;font-weight:800;font-size:11px;margin-bottom:10px}.members-cover{background-position:center 43%!important}.members-cover h2{max-width:520px}html[dir="rtl"] .members-cover h2{font-family:Alexandria,"Playfair Display",sans-serif;letter-spacing:0!important;font-size:clamp(28px,3.8vw,51px);line-height:1.3}html[dir="rtl"] .members-cover p{letter-spacing:0}@media(max-width:780px){.members-heading{font-size:10px}.members-cover h2{font-size:clamp(24px,6.3vw,31px)}html[dir="rtl"] .members-cover h2{font-size:clamp(25px,6.1vw,31px);line-height:1.4}}</style><style id="community-tools-style">.member-question{border-radius:14px}.comment .secondary{margin-top:8px;padding:7px 10px;background:#f4f5f0;color:#5b4935;font-size:12px}.member-question textarea{min-height:105px}.member-question button{margin-top:10px}html[dir="rtl"] .member-question{text-align:right}</style></head>
+</style><style id="google-logo-tune">.google-logo-svg{display:block;width:21px;height:21px;flex:0 0 21px}.google-btn{gap:12px!important}.members-cover h2{overflow-wrap:break-word}html[dir="rtl"] .members-cover{text-align:right}html[dir="rtl"] .google-btn{direction:rtl}html[dir="rtl"] #email,html[dir="rtl"] #password{direction:ltr;text-align:left}html[dir="rtl"] .members-heading{letter-spacing:normal!important}</style><style id="translated-visual-polish">main>.row:first-child:before,main>.row:first-child:after{content:none!important}.members-heading{display:block;color:#a2844e!important;letter-spacing:.10em;font-weight:800;font-size:11px;margin-bottom:10px}.members-cover{background-position:center 43%!important}.members-cover h2{max-width:520px}html[dir="rtl"] .members-cover h2{font-family:Alexandria,"Playfair Display",sans-serif;letter-spacing:0!important;font-size:clamp(28px,3.8vw,51px);line-height:1.3}html[dir="rtl"] .members-cover p{letter-spacing:0}@media(max-width:780px){.members-heading{font-size:10px}.members-cover h2{font-size:clamp(24px,6.3vw,31px)}html[dir="rtl"] .members-cover h2{font-size:clamp(25px,6.1vw,31px);line-height:1.4}}</style><style id="community-tools-style">.member-question{border-radius:14px}.comment .secondary{margin-top:8px;padding:7px 10px;background:#f4f5f0;color:#5b4935;font-size:12px}.member-question textarea{min-height:105px}.member-question button{margin-top:10px}html[dir="rtl"] .member-question{text-align:right}</style><style id="admin-interface-css">
+#adminDashboard{background:#fefefc;border:1px solid #dfe8de;border-radius:16px;padding:23px;box-shadow:0 10px 30px #1535280c}
+#adminDashboard h2{font:800 21px Manrope,Arial,sans-serif;color:#143e2c;margin:0}
+#adminDashboard h3{font-size:15px;color:#1c4a36;margin:24px 0 12px}
+.admin-stats{display:grid!important;grid-template-columns:1fr 1fr;gap:12px!important;margin:18px 0}
+.admin-stats>div{background:#f5f7f0;padding:15px;border-radius:12px;border:1px solid #e5ebdf}
+.admin-stats strong{font-size:23px;display:block;color:#183e2d}.admin-stats span{font-size:12px;color:#63786b}
+.admin-entry{padding:14px;border:1px solid #e8eee5;background:white;border-radius:11px;margin:11px 0}
+.admin-entry p{font-size:14px;line-height:1.65;overflow-wrap:anywhere;white-space:pre-wrap;margin:9px 0}
+.admin-entry small{display:block;color:#738175;font-size:11px;overflow-wrap:anywhere}
+.admin-entry button{background:#9a3434;font-size:12px;padding:8px 13px;margin:11px 0 0}
+.admin-entry button:hover{background:#802b2b}
+.admin-empty{color:#7a897c;font-size:12px}
+html[dir=rtl] #adminDashboard{text-align:right}
+</style></head>
 <body>
 <header><span class="brand">Imsfrane Cathédrale</span><a href="https://imsfraneinfo.github.io/" id="back">← Demo</a></header>
 <main>
@@ -125,7 +139,13 @@ html[dir="rtl"] main>.row:first-child,html[dir="rtl"] .members-card{text-align:r
 </section>
 <section><h2 id="commentsTitle">Commentaires — article test</h2><p class="muted" id="commentsHint">Les commentaires sont publiés immédiatement.</p>
 <div id="comments"></div><form id="commentForm" class="hidden"><label for="commentBody" id="commentLabel">Votre commentaire</label><textarea id="commentBody" required minlength="3" maxlength="3000"></textarea><button id="publishComment">Publier le commentaire</button></form>
-<p id="mustLogin" class="muted">Connectez-vous pour commenter.</p></section><section class="member-question"><h2 id="questionTitle">Posez votre question</h2><form id="questionForm" class="hidden"><label id="questionLabel" for="questionText">Votre question</label><textarea id="questionText" required minlength="5" maxlength="2000"></textarea><button id="questionSend">Poser une question</button></form><p id="questionLogin" class="muted">Connectez-vous pour poser une question privée.</p></section>
+<p id="mustLogin" class="muted">Connectez-vous pour commenter.</p></section><section id="adminDashboard" class="hidden" aria-label="Admin dashboard">
+<div class="row" style="justify-content:space-between"><h2 id="adminTitle">Administration</h2><button type="button" id="adminRefresh" class="secondary">Actualiser</button></div>
+<p id="adminHelp" class="muted">Modérez les commentaires et consultez les questions privées des membres.</p>
+<div class="row admin-stats"><div><strong id="adminCommentsCount">0</strong><span id="adminCommentsLabel">Commentaires</span></div><div><strong id="adminQuestionsCount">0</strong><span id="adminQuestionsLabel">Questions</span></div></div>
+<h3 id="adminCommentsHeading">Commentaires récents</h3><div id="adminCommentsList" aria-live="polite"></div>
+<h3 id="adminQuestionsHeading">Questions privées</h3><div id="adminQuestionsList" aria-live="polite"></div>
+</section><section class="member-question"><h2 id="questionTitle">Posez votre question</h2><form id="questionForm" class="hidden"><label id="questionLabel" for="questionText">Votre question</label><textarea id="questionText" required minlength="5" maxlength="2000"></textarea><button id="questionSend">Poser une question</button></form><p id="questionLogin" class="muted">Connectez-vous pour poser une question privée.</p></section>
 <section><h2 id="privacyTitle">Confidentialité</h2><p id="privacyText" class="muted">Bêta technique. Ne publiez pas de données privées dans les commentaires. L'envoi effectif des e-mails et notifications push n'est pas encore activé. Vous choisissez explicitement vos préférences.</p></section>
 </main><footer>Imsfrane Cathédrale · Espace membres · Supabase Auth</footer>
 <script type="module">
@@ -143,7 +163,7 @@ if(!["fr","en","ar","es"].includes(lang))lang="fr";
 $("language").value=lang;
 const msg=(s,error=false)=>{const n=$("notice");n.textContent=s;n.classList.toggle("error",error)};
 const localized=()=>copy[lang];
-function translate(){lang=$("language").value;document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";for(const [k,v] of Object.entries(localized()))if($(k))$(k).textContent=v;const heroTexts={"fr":["IMSFRANE · MONTAGNES DE L’ATLAS","Vos aventures. Votre communauté.","Rencontrez nos guides locaux, partagez vos expériences et explorez les montagnes de l’Atlas avec nous.","IMSFRANE CATHÉDRALE · ESPACE MEMBRES"],"en":["IMSFRANE · ATLAS MOUNTAINS","Your adventures. Your community.","Connect with local guides, share experiences and explore the Atlas Mountains with us.","IMSFRANE CATHÉDRALE · MEMBERS"],"ar":["مسفران · جبال الأطلس","مغامراتك. مجتمعك.","تواصل مع المرشدين المحليين، شارك تجاربك واكتشف جبال الأطلس معنا.","مسفران كاتدرال · فضاء الأعضاء"],"es":["IMSFRANE · MONTAÑAS DEL ATLAS","Tus aventuras. Tu comunidad.","Conecta con guías locales, comparte experiencias y descubre las montañas del Atlas con nosotros.","IMSFRANE CATHÉDRALE · MIEMBROS"]};["heroEyebrow","heroTitle","heroDescription","memberKicker"].forEach((id,i)=>{$(id).textContent=heroTexts[lang][i]});document.title=localized().heading+" | Imsfrane Cathédrale";}
+function translate(){lang=$("language").value;document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";for(const [k,v] of Object.entries(localized()))if($(k))$(k).textContent=v;const heroTexts={"fr":["IMSFRANE · MONTAGNES DE L’ATLAS","Vos aventures. Votre communauté.","Rencontrez nos guides locaux, partagez vos expériences et explorez les montagnes de l’Atlas avec nous.","IMSFRANE CATHÉDRALE · ESPACE MEMBRES"],"en":["IMSFRANE · ATLAS MOUNTAINS","Your adventures. Your community.","Connect with local guides, share experiences and explore the Atlas Mountains with us.","IMSFRANE CATHÉDRALE · MEMBERS"],"ar":["مسفران · جبال الأطلس","مغامراتك. مجتمعك.","تواصل مع المرشدين المحليين، شارك تجاربك واكتشف جبال الأطلس معنا.","مسفران كاتدرال · فضاء الأعضاء"],"es":["IMSFRANE · MONTAÑAS DEL ATLAS","Tus aventuras. Tu comunidad.","Conecta con guías locales, comparte experiencias y descubre las montañas del Atlas con nosotros.","IMSFRANE CATHÉDRALE · MIEMBROS"]};["heroEyebrow","heroTitle","heroDescription","memberKicker"].forEach((id,i)=>{$(id).textContent=heroTexts[lang][i]});document.title=localized().heading+" | Imsfrane Cathédrale";adminLocalize();if(isSiteAdmin)loadAdmin();}
 $("language").onchange=async()=>{translate();await loadComments()};
 function showAuth(){ $("guest").classList.toggle("hidden",!!user);$("member").classList.toggle("hidden",!user);$("commentForm").classList.toggle("hidden",!user);$("mustLogin").classList.toggle("hidden",!!user);$("questionForm").classList.toggle("hidden",!user);$("questionLogin").classList.toggle("hidden",!!user);$("accountEmail").textContent=user?.email||"";}
 async function guarded(work){try{document.querySelectorAll("button").forEach(x=>x.disabled=true);await work()}catch(e){msg(localized().error+(e.message||String(e)),true)}finally{document.querySelectorAll("button").forEach(x=>x.disabled=false)}}
@@ -175,6 +195,54 @@ $("questionForm").onsubmit=e=>{e.preventDefault();guarded(async()=>{
  const {error}=await db.from("member_questions").insert({user_id:user.id,question});
  if(error)throw error;$("questionText").value="";msg(localized().questionSent)
 })};
-db.auth.onAuthStateChange((_event,session)=>{user=session?.user||null;showAuth();setTimeout(()=>{if(user)loadMember().catch(e=>msg(localized().error+e.message,true));loadComments()},0)});
-translate();msg(localized().ready);guarded(async()=>{const {data,error}=await db.auth.getSession();if(error)throw error;user=data.session?.user||null;showAuth();if(user)await loadMember();await loadComments()});
+
+const admTxt={
+fr:{title:"Administration",refresh:"Actualiser",help:"Gérez les commentaires publics et les questions privées des membres.",comments:"Commentaires",questions:"Questions",commentHeading:"Commentaires récents",questionHeading:"Questions privées",delete:"Supprimer",confirm:"Supprimer définitivement ce commentaire ?",empty:"Aucun élément.",by:"Membre",success:"Commentaire supprimé."},
+en:{title:"Admin dashboard",refresh:"Refresh",help:"Manage public comments and private questions from members.",comments:"Comments",questions:"Questions",commentHeading:"Recent comments",questionHeading:"Private questions",delete:"Delete",confirm:"Permanently delete this comment?",empty:"No items.",by:"Member",success:"Comment deleted."},
+ar:{title:"لوحة الإدارة",refresh:"تحديث",help:"تسيير التعليقات العامة والاطلاع على أسئلة الأعضاء الخاصة.",comments:"التعليقات",questions:"الأسئلة",commentHeading:"آخر التعليقات",questionHeading:"الأسئلة الخاصة",delete:"حذف",confirm:"واش متأكد بغيتي تمسح هاد التعليق نهائياً؟",empty:"ما كاين والو حالياً.",by:"عضو",success:"تم حذف التعليق."},
+es:{title:"Panel de administración",refresh:"Actualizar",help:"Gestiona comentarios públicos y preguntas privadas de miembros.",comments:"Comentarios",questions:"Preguntas",commentHeading:"Comentarios recientes",questionHeading:"Preguntas privadas",delete:"Eliminar",confirm:"¿Eliminar este comentario definitivamente?",empty:"No hay elementos.",by:"Miembro",success:"Comentario eliminado."}
+};
+let isSiteAdmin=false,adminFetchToken=0;
+function adminLocalize(){const t=admTxt[lang];for(const [id,key] of Object.entries({adminTitle:"title",adminRefresh:"refresh",adminHelp:"help",adminCommentsLabel:"comments",adminQuestionsLabel:"questions",adminCommentsHeading:"commentHeading",adminQuestionsHeading:"questionHeading"}))$(id).textContent=t[key]}
+function safeCard(entry,type){
+ const card=document.createElement("article");card.className="admin-entry";
+ const meta=document.createElement("small");meta.textContent=type==="comment"?(entry.article_path+" · "+new Date(entry.created_at).toLocaleString(lang==="ar"?"ar-MA":lang)):(new Date(entry.created_at).toLocaleString(lang==="ar"?"ar-MA":lang)+" · "+admTxt[lang].by);
+ const p=document.createElement("p");p.textContent=type==="comment"?entry.body:entry.question;
+ card.append(meta,p);
+ if(type==="comment"){const del=document.createElement("button");del.type="button";del.textContent=admTxt[lang].delete;del.addEventListener("click",async()=>{if(!confirm(admTxt[lang].confirm))return;del.disabled=true;const {error}=await db.from("member_comments").delete().eq("id",entry.id);if(error){msg(localized().error+error.message,true);del.disabled=false;return}msg(admTxt[lang].success);await Promise.all([loadAdmin(),loadComments()])});card.append(del)}
+ return card
+}
+async function verifyAdmin(){
+ const uid=user?.id;
+ isSiteAdmin=false;$("adminDashboard").classList.add("hidden");
+ if(!uid)return;
+ const {data,error}=await db.from("member_admins").select("user_id").eq("user_id",uid).maybeSingle();
+ if(error){msg(localized().error+error.message,true);return}
+ if(!user||uid!==user.id)return;
+ isSiteAdmin=!!data;
+ $("adminDashboard").classList.toggle("hidden",!isSiteAdmin);
+ if(isSiteAdmin)await loadAdmin()
+}
+async function loadAdmin(){
+ if(!isSiteAdmin||!user)return;
+ const ticket=++adminFetchToken;
+ const [comments,questions]=await Promise.all([
+  db.from("member_comments").select("id,article_path,body,status,created_at").order("created_at",{ascending:false}).limit(150),
+  db.from("member_questions").select("id,user_id,question,created_at").order("created_at",{ascending:false}).limit(150)
+ ]);
+ if(ticket!==adminFetchToken||!isSiteAdmin)return;
+ if(comments.error||questions.error){msg(localized().error+(comments.error||questions.error).message,true);return}
+ const cs=comments.data||[],qs=questions.data||[];
+ $("adminCommentsCount").textContent=String(cs.length);
+ $("adminQuestionsCount").textContent=String(qs.length);
+ for(const [id,data,kind] of [["adminCommentsList",cs,"comment"],["adminQuestionsList",qs,"question"]]){
+  const target=$(id);target.replaceChildren();
+  if(!data.length){const x=document.createElement("p");x.className="admin-empty";x.textContent=admTxt[lang].empty;target.append(x)}
+  else for(const entry of data)target.append(safeCard(entry,kind))
+ }
+}
+$("adminRefresh").addEventListener("click",()=>loadAdmin());
+
+db.auth.onAuthStateChange((_event,session)=>{user=session?.user||null;showAuth();setTimeout(()=>{if(user){loadMember().catch(e=>msg(localized().error+e.message,true));verifyAdmin()}else{isSiteAdmin=false;$("adminDashboard").classList.add("hidden")}loadComments()},0)});
+translate();msg(localized().ready);guarded(async()=>{const {data,error}=await db.auth.getSession();if(error)throw error;user=data.session?.user||null;showAuth();if(user){await loadMember();await verifyAdmin()}await loadComments()});
 </script></body></html>
