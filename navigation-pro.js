@@ -108,4 +108,15 @@ function fixArabicArticleLabels(){
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",fixArabicArticleLabels,{once:true});else fixArabicArticleLabels();
 
+function removeDuplicateArticleLanguages(){
+ if(!/^\/(fr|en|ar|es)\/blog-[a-z0-9-]+\/?$/i.test(location.pathname))return;
+ var nav=document.querySelector(".article-nav nav");
+ if(!nav)return;
+ Array.from(nav.querySelectorAll("a")).forEach(function(a){
+  var label=(a.textContent||"").trim().toLowerCase();
+  if(["fr","en","es","ar","العربية","français","english","español"].includes(label))a.remove();
+ });
+}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",removeDuplicateArticleLanguages,{once:true});else removeDuplicateArticleLanguages();
+
 })();
