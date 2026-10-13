@@ -278,11 +278,77 @@
     lines.push(words.pending);
     return lines.join("\n")
   }
-  element("bp-form").addEventListener("submit",function(event){
+
+  // The existing WhatsApp booking flow stays untouched for guests.
+  // Authenticated users also get a private, pending request in Mes commandes.
+  var requestBusy=false,orderDb=null;
+  function requestText(fr,en,ar,es){return {fr:fr,en:en,ar:ar,es:es}[language]||fr}
+  var accountTip=document.createElement("div");
+  accountTip.className="ims-order-tip";
+  accountTip.style.cssText="background:#f8f4e7;border:1px solid #d8bf76;border-radius:12px;padding:13px 17px;margin:15px 0;color:#194331;font-size:13px;line-height:1.7";
+  var accountDescription=document.createElement("span"),accountLogin=document.createElement("button");
+  accountLogin.type="button";
+  accountLogin.textContent=requestText("Se connecter","Sign in","تسجيل الدخول","Iniciar sesión");
+  accountLogin.style.cssText="display:inline-block;margin-inline-start:10px;padding:7px 12px;background:#17402f;border:1px solid #c6a43f;border-radius:8px;color:#fff;font-size:12px;font-weight:800;cursor:pointer";
+  accountDescription.textContent=requestText("Connectez-vous pour retrouver vos demandes dans Mes commandes. La réservation WhatsApp reste possible sans compte.","Sign in to save requests under My orders. WhatsApp booking remains possible as a guest.","سجّل الدخول لتجد طلباتك في «طلباتي». يمكنك التواصل عبر واتساب دون حساب.","Inicia sesión para guardar solicitudes en Mis pedidos. WhatsApp también funciona sin cuenta.");
+  accountLogin.onclick=function(){var member=document.querySelector(".ims-member-entry");if(member)member.click();else location.href="/members.html?lang="+language};
+  accountTip.append(accountDescription,accountLogin);
+  element("bp-form").prepend(accountTip);
+  async function orderClient(){
+    if(!orderDb){var sdk=await import("https://esm.sh/@supabase/supabase-js@2");orderDb=sdk.createClient("https://ktrcrfoywokuuwzwnqsu.supabase.co","sb_publishable_GS2PtVM4vBv7epvV6aZSpA_XQyD9bCj")}
+    return orderDb;
+  }
+  async function saveMemberOrder(){
+    var client=await orderClient(),session=await client.auth.getSession();
+    if(session.error)throw session.error;
+    var member=session.data.session?.user;
+    if(!member)return {saved:false,guest:true};
+    var selectedOffers=selected().map(function(item){
+      return {id:item.id,label:item[language]||item.fr||item.en||item.id,quantity:requiredUnits(item),days:item.unit==="tentNight"?days():1};
+    });
+    var selectedExtras=[].slice.call(element("bp-extras").querySelectorAll('input[type="checkbox"]:checked')).map(function(x){return x.value}).slice(0,8);
+    var data={
+      user_id:member.id,
+      customer_name:element("bp-name").value.trim().slice(0,90),
+      phone:element("bp-phone").value.trim().slice(0,28),
+      email:element("bp-email").value.trim()||null,
+      locale:language,
+      start_date:start.value,
+      end_date:hasTents()?end.value:null,
+      travelers:travelerCount(),
+      items:selectedOffers,
+      extras:selectedExtras,
+      departure_place:element("bp-place").value.trim().slice(0,150)||null,
+      notes:element("bp-note").value.trim().slice(0,2000)||null,
+      estimated_total_mad:Math.max(0,Math.round(total())),
+      status:"requested",
+      source:"demo_whatsapp_form"
+    };
+    var response=await client.from("member_orders").insert(data).select("id").single();
+    if(response.error)throw response.error;
+    return {saved:true,guest:false,id:response.data?.id};
+  }
+  var hasMember=null;
+  orderClient().then(function(client){return client.auth.getSession()}).then(function(result){
+    hasMember=!!result.data.session?.user;
+    if(hasMember){accountDescription.textContent=requestText("Votre demande sera enregistrée dans Mes commandes avant l’ouverture de WhatsApp (en attente de confirmation).","Your request will be saved under My orders before opening WhatsApp (pending confirmation).","سيُحفظ طلبك ضمن «طلباتي» قبل الانتقال إلى واتساب (في انتظار التأكيد).","Tu solicitud se guardará en Mis pedidos antes de abrir WhatsApp (pendiente de confirmación).");accountLogin.hidden=true}
+  }).catch(function(){});
+  element("bp-form").addEventListener("submit",async function(event){
     event.preventDefault();
-    if(!validate())return;
-    window.location.assign("https://wa.me/"+config.whatsapp+"?text="+encodeURIComponent(message()))
+    if(requestBusy||!validate())return;
+    requestBusy=true;
+    var url="https://wa.me/"+config.whatsapp+"?text="+encodeURIComponent(message());
+    try{
+      var result=await saveMemberOrder();
+      if(result.guest){try{sessionStorage.setItem("ims-demo-booking-guest","1")}catch(e){}}
+      else{try{sessionStorage.setItem("ims-demo-order-saved",String(result.id||""))}catch(e){}}
+    }catch(e){
+      console.error("Booking request could not be recorded",e);
+      alert(requestText("Votre demande n’a pas pu être enregistrée dans Mes commandes. Vous pouvez quand même l’envoyer via WhatsApp.","Could not save this request to My orders. You can still send it via WhatsApp.","تعذّر حفظ الطلب في «طلباتي». ما زال بإمكانك إرساله عبر واتساب.","No se pudo guardar en Mis pedidos. Todavía puedes enviar la solicitud por WhatsApp."));
+    }finally{requestBusy=false}
+    window.location.assign(url);
   });
+
   element("bp-copy").addEventListener("click",function(){
     if(!validate())return;
     var output=message(),button=element("bp-copy");
