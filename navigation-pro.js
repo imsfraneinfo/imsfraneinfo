@@ -180,7 +180,21 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
 
 
 /* AdSense readiness: provide a discoverable privacy link on every site page. */
+/* Hide public sitemap links while preserving /sitemap.xml for Google robots. */
+function removeSitemapFooterLinks(){
+ document.querySelectorAll("footer a[href]").forEach(function(a){
+  var raw=a.getAttribute("href");
+  if(!raw)return;
+  try{
+   var url=new URL(raw,location.href);
+   if(url.origin!==location.origin||url.pathname!=="/sitemap.xml")return;
+   var row=a.closest("li");
+   if(row&&row.closest("footer"))row.remove();else a.remove();
+  }catch(e){}
+ });
+}
 function addPrivacyFooterLink(){
+ removeSitemapFooterLinks();
  var lang=(document.documentElement.lang||document.body?.dataset?.lang||"fr").slice(0,2);
  if(!/^(fr|en|es|ar)$/.test(lang))lang="fr";
  if(document.querySelector("a.ims-privacy-link"))return;

@@ -338,3 +338,9 @@ body.atnav-ready .atnav-langmini-panel a[lang="ar"] span:last-child{
 /* Privacy policy link: visible in shared and article footers. */
 body.atnav-ready .ims-privacy-link{display:inline-block;color:#e3c678!important;text-decoration:underline!important;text-underline-offset:4px;margin-inline:9px;font-size:13px;font-weight:600}
 body.atnav-ready .ims-privacy-link:hover,body.atnav-ready .ims-privacy-link:focus-visible{color:#fff!important}
+
+/* No technical Sitemap links displayed in the public footer, in any language.
+   sitemap.xml and the robots.txt sitemap reference stay accessible to search engines. */
+body.atnav-ready footer a[href="/sitemap.xml"],
+body.atnav-ready footer a[href="https://imsfrane.com/sitemap.xml"],
+body.atnav-ready footer li:has(> a[href="/sitemap.xml"]){display:none!important}
