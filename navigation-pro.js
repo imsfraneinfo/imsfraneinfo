@@ -178,4 +178,20 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
 
 /* Site header: no notification bell. The full inbox stays on members.html. */
 
+
+/* AdSense readiness: provide a discoverable privacy link on every site page. */
+function addPrivacyFooterLink(){
+ var lang=(document.documentElement.lang||document.body?.dataset?.lang||"fr").slice(0,2);
+ if(!/^(fr|en|es|ar)$/.test(lang))lang="fr";
+ if(document.querySelector("a.ims-privacy-link"))return;
+ var footer=document.querySelector("footer.site-footer .footer-bottom-inner")||document.querySelector("footer");
+ if(!footer)return;
+ var words={fr:"Politique de confidentialité",en:"Privacy policy",es:"Política de privacidad",ar:"سياسة الخصوصية"};
+ var anchor=document.createElement("a");anchor.className="ims-privacy-link";anchor.href="/"+lang+"/privacy/";anchor.textContent=words[lang];
+ if(!footer.classList.contains("footer-bottom-inner")){var separator=document.createElement("span");separator.textContent=" · ";footer.appendChild(separator)}
+ footer.appendChild(anchor);
+}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",addPrivacyFooterLink,{once:true});else addPrivacyFooterLink();
+
+
 })();

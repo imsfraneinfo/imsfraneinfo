@@ -334,3 +334,7 @@ body.atnav-ready .atnav-langmini-panel a[lang="ar"] span:last-child{
  unicode-bidi:isolate;
  white-space:nowrap;
 }
+
+/* Privacy policy link: visible in shared and article footers. */
+body.atnav-ready .ims-privacy-link{display:inline-block;color:#e3c678!important;text-decoration:underline!important;text-underline-offset:4px;margin-inline:9px;font-size:13px;font-weight:600}
+body.atnav-ready .ims-privacy-link:hover,body.atnav-ready .ims-privacy-link:focus-visible{color:#fff!important}
