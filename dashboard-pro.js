@@ -156,7 +156,7 @@ let currentUser=null,storedName="",tab="home";
 const getLang=()=>langs.includes(document.documentElement.lang)?document.documentElement.lang:"fr";
 const tr=()=>translations[getLang()];
 const el=id=>document.getElementById(id);
-const path=slug=>base+getLang()+"/"+slug+"/";
+const path=slug=>base+getLang()+"/"+slug+".html";
 const safe=(fn,fallback)=>{try{return fn()}catch(_e){return fallback}};
 
 let favoriteIds=[],storedPhone="",storedAvatar="",apiPromise=null;
@@ -326,7 +326,7 @@ function decorate(){
  dash.querySelectorAll("[data-i18n-dash]").forEach(e=>{const k=e.dataset.i18nDash;if(t[k])e.textContent=t[k]});
  const official="https://imsfrane.com/"+lang+"/";el("imsDashOfficial").href=official;
  el("imsDashBooking").href=path("booking");dash.querySelectorAll(".ims-dash-booking").forEach(a=>a.href=path("booking"));
- const prev=safe(()=>sessionStorage.getItem("ims-member-lastpage"),null);
+ const prev=safe(()=>sessionStorage.getItem("ims-demo-lastpage"),null);
  let valid=null;if(prev)try{const u=new URL(prev,location.href);if(u.origin===location.origin&&u.pathname.startsWith(base+lang+"/")&&u.pathname!==location.pathname)valid=u.href}catch(e){}
  el("imsDashReturn").href=valid||base+lang+"/index.html";
  renderActivities();renderFavorites();renderProgress();

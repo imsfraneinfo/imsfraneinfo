@@ -1,7 +1,7 @@
 /* Demo-wide Imsfrane Cathédrale premium navigation. Native, no dependencies. */
 (function(){
 "use strict";
-try{if(/^\/(?:fr|en|ar|es)\//.test(location.pathname))sessionStorage.setItem("ims-member-lastpage",location.href)}catch(e){}
+try{if(/^\/Imsfrane-demo\/(?:fr|en|ar|es)\//.test(location.pathname))sessionStorage.setItem("ims-demo-lastpage",location.href)}catch(e){}
 function init(){
 var body=document.body, drawer=document.getElementById("atnavDrawer"), backdrop=document.getElementById("atnavBackdrop"), opener=document.getElementById("atnavOpen"), closer=document.getElementById("atnavClose"), toggle=document.getElementById("atnavActivities"), list=document.getElementById("atnavActivityList");
 if(!drawer||!backdrop||!opener||!closer||!toggle||!list)return;
@@ -63,6 +63,31 @@ function initLanguageMenus(){
  document.addEventListener("click",function(e){if(!e.target.closest(".atnav-langmini"))close()});
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",initLanguageMenus,{once:true});else initLanguageMenus();
+
+
+/* DEMO article reading: keep the single four-language selector in the main header.
+   The article's old language row duplicated it and omitted Spanish. */
+function simplifyBlogArticleNav(){
+ var legacy=document.querySelector("header.article-nav");
+ var official=document.querySelector(".atnav-article-header .atnav-langmini, #siteHeader .atnav-langmini");
+ if(!legacy||!official)return;
+ var lang=(document.documentElement.lang||"fr").slice(0,2);
+ var text={fr:"Tous les articles",en:"All articles",ar:"جميع المقالات",es:"Todos los artículos"}[lang]||"All articles";
+ var bar=document.createElement("nav");
+ bar.className="ims-blog-return";
+ bar.setAttribute("aria-label",text);
+ var link=document.createElement("a");
+ link.href="blog.html";
+ link.setAttribute("aria-label",text);
+ var arrow=document.createElement("span");
+ arrow.className="ims-blog-return-arrow";
+ arrow.setAttribute("aria-hidden","true");
+ arrow.textContent=lang==="ar"?"→":"←";
+ var label=document.createElement("span");label.textContent=text;
+ link.append(arrow,label);bar.append(link);
+ legacy.replaceWith(bar);
+}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",simplifyBlogArticleNav,{once:true});else simplifyBlogArticleNav();
 
 function initMemberEntry(){
   var menu=document.querySelector(".atnav-langmini");
@@ -141,53 +166,16 @@ function refreshAccount(u){
 
  q(".ims-login-close").onclick=close;dialog.addEventListener("click",function(e){if(e.target===dialog)close()});document.addEventListener("keydown",function(e){if(!dialog.hidden&&e.key==="Escape")close()});
  dialog.querySelectorAll(".ims-login-tab").forEach(function(b){b.onclick=function(){mode=b.dataset.mode;render()}});
- q(".ims-login-google").onclick=async function(){try{var db=await getClient();sessionStorage.setItem("ims-member-return",location.href);var r=await db.auth.signInWithOAuth({provider:"google",options:{redirectTo:location.origin+"/members.html"}});if(r.error)throw r.error}catch(e){message(e.message)}};
+ q(".ims-login-google").onclick=async function(){try{var db=await getClient();sessionStorage.setItem("ims-demo-return",location.href);var r=await db.auth.signInWithOAuth({provider:"google",options:{redirectTo:location.origin+"/members.html"}});if(r.error)throw r.error}catch(e){message(e.message)}};
  q(".ims-login-form").onsubmit=async function(e){e.preventDefault();try{var db=await getClient(),email=q("#ims-login-email").value.trim(),password=q("#ims-login-pass").value;var r=mode==="signup"?await db.auth.signUp({email:email,password:password,options:{emailRedirectTo:location.origin+"/members.html"}}):await db.auth.signInWithPassword({email:email,password:password});if(r.error)throw r.error;if(!r.data.session)message(labels[14]);else{close();location.reload()}}catch(e){message(e.message)}};
  q(".ims-login-forgot").onclick=async function(){var email=q("#ims-login-email").value.trim();if(!email){q("#ims-login-email").focus();return}try{var db=await getClient(),r=await db.auth.resetPasswordForEmail(email,{redirectTo:location.origin+"/members.html"});if(r.error)throw r.error;message(labels[15])}catch(e){message(e.message)}};
  render();
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",initAccountModal,{once:true});else initAccountModal();
 
-function loadFavoriteHearts(){if(!/^\/(fr|en|ar|es)\//.test(location.pathname))return;if(document.querySelector('script[data-ims-fav]'))return;var script=document.createElement("script");script.src="/js/ims-favorites-demo.js?v=20261013all14proheart-v1";script.defer=true;script.dataset.imsFav="yes";document.head.append(script)}
+function loadFavoriteHearts(){if(!/^\/Imsfrane-demo\/(fr|en|ar|es)\//.test(location.pathname))return;if(document.querySelector('script[data-ims-fav]'))return;var script=document.createElement("script");script.src="/js/ims-favorites-demo.js?v=20261013all14proheart-v1";script.defer=true;script.dataset.imsFav="yes";document.head.append(script)}
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",loadFavoriteHearts,{once:true});else loadFavoriteHearts();
 
-function enableArticleDiscussion(){
- if(!/^\/(fr|en|ar|es)\/blog-[a-z0-9-]+\/?$/i.test(location.pathname))return;
- if(document.querySelector('script[data-imsfrane-comments]'))return;
- var tag=document.createElement("script");tag.src="/js/member-blog-comments.js";tag.defer=true;tag.dataset.imsfraneComments="1";document.head.appendChild(tag);
-}
-if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",enableArticleDiscussion,{once:true});else enableArticleDiscussion();
-
-function fixArabicArticleLabels(){
- if(!/^\/ar\/blog-[a-z0-9-]+\/?$/i.test(location.pathname))return;
- var nav=document.querySelector(".article-nav nav");
- if(nav){
-  Array.from(nav.querySelectorAll("a")).forEach(function(a){
-   if(a.textContent.includes("Tous les articles"))a.textContent="← جميع المقالات";
-   var val=a.textContent.trim();
-   if(val==="FR"&&a.getAttribute("href")===location.pathname)a.href=location.pathname.replace(/^\/ar\//,"/fr/");
-   if(val==="EN"&&a.getAttribute("href")===location.pathname)a.href=location.pathname.replace(/^\/ar\//,"/en/");
-  });
- }
- var hero=document.querySelector(".article-hero-text span");
- if(hero){
-  var labels={"Itinéraires":"طرق الوصول","Randonnée":"المشي الجبلي","Camping":"التخييم","Découverte":"اكتشاف","Nature":"الطبيعة","Rafting":"التجديف النهري","Culture":"الثقافة","Conseils":"نصائح","VTT":"الدراجات الجبلية","Saisons":"مواسم الزيارة"};
-  var first=hero.textContent.trim();
-  Object.keys(labels).forEach(function(k){if(first.startsWith(k+" ·"))hero.textContent=labels[k]+first.slice(k.length)});
- }
-}
-if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",fixArabicArticleLabels,{once:true});else fixArabicArticleLabels();
-
-function removeDuplicateArticleLanguages(){
- if(!/^\/(fr|en|ar|es)\/blog-[a-z0-9-]+\/?$/i.test(location.pathname))return;
- var nav=document.querySelector(".article-nav nav");
- if(!nav)return;
- Array.from(nav.querySelectorAll("a")).forEach(function(a){
-  var label=(a.textContent||"").trim().toLowerCase();
-  if(["fr","en","es","ar","العربية","français","english","español"].includes(label))a.remove();
- });
-}
-if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",removeDuplicateArticleLanguages,{once:true});else removeDuplicateArticleLanguages();
-
+/* Site header: no notification bell. The full inbox stays on members.html. */
 
 })();

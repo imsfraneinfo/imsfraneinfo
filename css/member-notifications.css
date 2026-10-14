@@ -1,0 +1,49 @@
+/* Imsfrane Cathédrale — member notification UI, staging preview */
+.ims-notify-bell{display:inline-grid!important;position:relative!important;place-items:center!important;flex:0 0 41px!important;width:41px!important;height:41px!important;margin-inline:6px!important;padding:0!important;border:1px solid #cfb478a8!important;border-radius:11px!important;background:#f4d98d19!important;color:#eed090!important;cursor:pointer;vertical-align:middle;box-shadow:none!important}
+.ims-notify-bell:hover{background:#eec87530!important}
+.ims-notify-bell svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ims-notify-badge{position:absolute;inset-block-start:-7px;inset-inline-end:-6px;min-width:19px;height:19px;border-radius:11px;background:#f3d27f;color:#183d2c;display:grid;place-items:center;padding:0 4px;border:2px solid #0e3125;font-size:10px;font-weight:900;line-height:1}
+.ims-notify-badge[hidden]{display:none!important}
+.ims-notify-popover{position:fixed;z-index:2147482500;top:83px;inset-inline-end:clamp(10px,4vw,52px);width:min(440px,calc(100vw - 20px));max-height:min(78vh,680px);overflow:auto;background:#fff;border:1px solid #dcd6bd;box-shadow:0 24px 60px #062a2155;border-radius:17px;padding:19px;color:#183d2e}
+.ims-notify-popover[hidden]{display:none!important}
+.ims-notify-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+.ims-notify-head h3{margin:0;color:#123a2b;font:700 clamp(20px,2.5vw,25px) Georgia,serif}
+.ims-notify-small-action{border:1px solid #e1d3a7!important;border-radius:8px!important;background:#f8f4e9!important;color:#244d37!important;padding:7px 9px!important;margin:0!important;font-weight:800!important;font-size:11px!important;line-height:1.4;cursor:pointer}
+.ims-notify-small-action:disabled{opacity:.45;cursor:default}
+.ims-notify-card{border:1px solid #e5e8df;border-radius:13px;background:#fff;display:flex;gap:13px;padding:15px;margin:11px 0}
+.ims-notify-card.is-unread{background:#fbfcf5;border-color:#d9c58e;box-shadow:inset 3px 0 #c8a95c}
+.ims-notify-emoji{width:37px;height:37px;flex:none;display:grid;place-items:center;background:#f3efdd;border-radius:11px;font-size:19px}
+.ims-notify-copy{min-width:0;flex:1}
+.ims-notify-copy small{display:block;margin-bottom:5px;color:#937843;font-size:11px;font-weight:850}
+.ims-notify-copy strong{display:block;margin-bottom:5px;color:#17402c;font-size:14px;line-height:1.4;overflow-wrap:anywhere}
+.ims-notify-copy p{font-size:12px;line-height:1.8;color:#637466;margin:3px 0 11px;white-space:pre-wrap;overflow-wrap:anywhere}
+.ims-notify-actions{display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+.ims-notify-view,.ims-notify-all{color:#806220!important;font-weight:850;font-size:12px;text-decoration:none}
+.ims-notify-all{display:block;text-align:center;margin-top:14px;padding:13px;background:#f8f3e8;border-radius:9px}
+.ims-notify-empty{padding:25px 13px;text-align:center;color:#748779;font-size:13px}
+.ims-notify-account-panel{padding:20px 0}
+.ims-notify-account-panel .ims-notify-inbox{background:#fff;padding:clamp(16px,3vw,31px);border-radius:17px;border:1px solid #e1e8dc}
+.ims-notify-account-panel .ims-notify-card{padding:19px}
+.ims-notify-admin{margin:30px 0 5px;border:1px solid #d4b36b;border-radius:18px;padding:clamp(16px,3vw,30px);background:linear-gradient(120deg,#fcfdf8,#f9f5e7);font-size:14px;color:#1d4532}
+.ims-notify-admin h3{font:700 25px Georgia,serif;margin:0 0 9px}
+.ims-notify-admin>p{color:#687a6e;line-height:1.8}
+.ims-notify-compose{display:grid;gap:15px}
+.ims-notify-field{display:grid;gap:7px;font-weight:750;color:#335443;font-size:12px}
+.ims-notify-field span{display:block}
+.ims-notify-field input,.ims-notify-field select,.ims-notify-field textarea{box-sizing:border-box;display:block;width:100%;border:1px solid #d6dfd2;border-radius:9px;padding:10px 12px;background:#fff;color:#163c2d;font:500 13px/1.6 system-ui,sans-serif;outline-offset:2px;max-width:none!important;resize:vertical}
+.ims-notify-field input:focus,.ims-notify-field textarea:focus{border-color:#ab904a}
+.ims-notify-check{display:flex;align-items:center;gap:9px;line-height:1.7;font-size:12px}
+.ims-notify-check input{accent-color:#236043;width:18px;height:18px}
+.ims-notify-languages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.ims-notify-language{border:1px solid #e0e4d9;border-radius:11px;background:#fff;padding:13px;min-width:0;display:grid;gap:12px}
+.ims-notify-language legend{padding:0 7px;font-weight:900;color:#806020;letter-spacing:.06em;font-size:11px}
+.ims-notify-example,.ims-notify-send{border:1px solid #c0a367!important;border-radius:9px!important;margin:0!important;padding:12px 18px!important;font-weight:850!important;font-size:13px!important}
+.ims-notify-example{background:#f9f4e4!important;color:#1a4230!important}
+.ims-notify-send{background:#173f2e!important;color:#f2d889!important}
+.ims-notify-send:disabled{opacity:.6}
+.ims-notify-admin-state{margin:0!important;font-size:12px;color:#1b5f41}
+.ims-notify-history{border-top:1px solid #e3d5ad;margin-top:14px;padding-top:10px;color:#697d6b;font-size:12px}
+.ims-notify-history p{margin:8px 0}
+.ims-notify-toast{position:fixed;z-index:2147483600;bottom:90px;left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100vw - 26px);padding:12px 19px;border-radius:10px;background:#103a2b;border:1px solid #c5a35d;color:#fff;box-shadow:0 7px 35px #102f2b4d;font:750 12px system-ui,sans-serif;text-align:center}
+.ims-notify-toast[hidden]{display:none}
+@media(max-width:720px){.ims-notify-bell{width:37px!important;flex-basis:37px!important;height:38px!important;margin-inline:1px!important}.ims-notify-popover{top:70px}.ims-notify-languages{grid-template-columns:1fr}.ims-notify-account-panel{padding:9px 0}.ims-notify-admin{margin-top:17px}.ims-notify-card{padding:12px}}

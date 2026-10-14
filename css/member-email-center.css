@@ -1,0 +1,27 @@
+
+/* Email notification management — Imsfrane Demo */
+.ims-email-admin{background:#fff;border:1px solid #e1e5d9;border-radius:16px;margin:20px 0;padding:24px;box-shadow:0 8px 25px #0d382215}
+.ims-email-admin *{box-sizing:border-box}
+.ims-email-admin h3{margin:5px 0 10px;color:#143b2b;font:700 25px/1.35 Georgia,serif}
+.ims-email-admin p{font-size:13px;color:#5c6c63;line-height:1.7;margin:9px 0}
+.ims-email-kicker{color:#9b762e;font-size:10px;font-weight:850;letter-spacing:.13em}
+.ims-email-admin label:not(.ims-email-check){display:block;margin:13px 0 5px;color:#224a36;font-size:12px;font-weight:850}
+.ims-email-admin input,.ims-email-admin textarea,.ims-email-admin select{box-sizing:border-box;width:100%;border:1px solid #d6e0d1!important;border-radius:9px!important;background:#fdfdfa!important;color:#193e2f!important;font:500 13px/1.6 system-ui,sans-serif!important;padding:12px!important;min-height:42px}
+.ims-email-admin textarea{resize:vertical;min-height:100px}
+.ims-email-admin .ims-email-two{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.ims-email-admin .ims-email-buttons{display:flex;gap:11px;flex-wrap:wrap;margin:20px 0}
+.ims-email-admin button{border:0!important;border-radius:10px!important;padding:12px 17px!important;min-height:43px!important;line-height:1.5!important;font-size:12px!important;font-weight:850!important;margin:0!important}
+.ims-email-admin .ims-email-test{background:#f3ead0!important;color:#194030!important;border:1px solid #d7b65e!important}
+.ims-email-admin .ims-email-send{background:#143c2d!important;color:#fbe4aa!important}
+.ims-email-admin .ims-email-more{background:#e6ede6!important;color:#214632!important;border:1px solid #aec5b3!important}
+.ims-email-admin button:disabled{opacity:.48!important;cursor:not-allowed!important}
+.ims-email-admin button:focus-visible{outline:3px solid #d6af5e;outline-offset:3px}
+.ims-email-admin .ims-email-alert{display:block;background:#fff6e0;border:1px solid #e8d59e;color:#735c24;padding:12px 15px;border-radius:10px;line-height:1.7;font-size:12px;margin:12px 0;overflow-wrap:anywhere}
+.ims-email-admin .ims-email-alert.ok{background:#edf7ed;border-color:#b0d4b4;color:#275b3f}
+.ims-email-admin .ims-email-alert.bad{background:#fef0eb;border-color:#f2bfad;color:#984b33}
+.ims-email-admin details{border-top:1px solid #e8ecdf;padding:12px 0;margin-top:10px}
+.ims-email-admin summary{font-size:13px;font-weight:800;color:#315640;cursor:pointer}
+.ims-email-admin small{display:block;font-size:11px;color:#69776d;margin-top:6px}
+.ims-email-admin .ims-email-check{display:flex;align-items:center;gap:8px;margin:13px 0;font-size:12px;color:#294632}
+.ims-email-admin .ims-email-check input{width:16px;min-height:16px;height:16px;flex:none}
+@media(max-width:640px){.ims-email-admin{padding:19px 15px}.ims-email-admin .ims-email-two{grid-template-columns:1fr}.ims-email-admin .ims-email-buttons{flex-direction:column}.ims-email-admin button{width:100%}}

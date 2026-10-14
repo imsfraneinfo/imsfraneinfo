@@ -1,7 +1,7 @@
 /* Demo-wide account favorites for all 14 homepage activities. */
 (function(){
 "use strict";
-const m=location.pathname.match(/^\/(fr|en|ar|es)\//);
+const m=location.pathname.match(/^\/Imsfrane-demo\/(fr|en|ar|es)\//);
 if(!m)return;
 const lang=m[1],catalog=["rafting","camping","randonnee","vtt","quad","hebergement","tubing","jetski","4x4","passage","zrkan","anergui","almou","ahidous"],tags={
  fr:{save:"Ajouter aux favoris",remove:"Retirer des favoris",login:"Connectez-vous pour enregistrer vos favoris.",saved:"Ajouté à vos favoris",removed:"Retiré de vos favoris",error:"Impossible d’enregistrer ce favori."},
@@ -10,7 +10,7 @@ const lang=m[1],catalog=["rafting","camping","randonnee","vtt","quad","hebergeme
  es:{save:"Añadir a favoritos",remove:"Quitar de favoritos",login:"Inicia sesión para guardar favoritos.",saved:"Añadido a favoritos",removed:"Eliminado de favoritos",error:"No se pudo guardar el favorito."}
 }[lang];
 let db,user=null,items=new Set(),busy=new Set();
-const key="ims-member-fav-pending";
+const key="ims-demo-fav-pending";
 const css=document.createElement("style");css.textContent='.ims-fav-target{position:relative!important}.ims-fav-heart{position:absolute;z-index:20;top:12px;inset-inline-end:12px;min-width:40px;min-height:40px;width:40px;height:40px;display:grid;place-items:center;padding:0!important;margin:0!important;border-radius:50%!important;background:#faf9f0f2!important;border:1.5px solid #c6a43f!important;box-shadow:0 3px 13px #102f2638;color:#27513c!important;font-size:24px!important;cursor:pointer;line-height:1!important}.ims-fav-heart[aria-pressed=true]{background:#c6a43f!important;color:#103724!important}.ims-fav-heart:focus-visible{outline:3px solid #ceaa3d;outline-offset:3px}.ims-fav-detail{position:relative;display:inline-flex;align-items:center;gap:8px;margin:12px 0!important;border:1.5px solid #c6a43f!important;border-radius:12px!important;background:#113929!important;color:#f5db8b!important;padding:10px 17px!important;font-weight:800!important;font-size:14px!important}.ims-fav-detail[aria-pressed=true]{background:#d9b65a!important;color:#17392e!important}@media(max-width:600px){.ims-fav-heart{top:8px;inset-inline-end:8px;width:38px;height:38px;min-height:38px}}';document.head.append(css);const pro=document.createElement("link");pro.rel="stylesheet";pro.href="/css/ims-favorites-pro.css?v=20261013hearts-v1";document.head.append(pro);
 function message(t){let n=document.getElementById("imsFavToast");if(!n){n=document.createElement("div");n.id="imsFavToast";n.setAttribute("role","status");n.style.cssText="position:fixed;z-index:2147483100;bottom:86px;left:50%;transform:translateX(-50%);max-width:calc(100vw - 28px);background:#153d2e;color:white;border:1px solid #c6a43f;border-radius:12px;padding:12px 19px;font:700 13px system-ui;box-shadow:0 9px 27px #0004;text-align:center";document.body.append(n)}n.textContent=t;n.hidden=false;setTimeout(()=>n.hidden=true,3500)}
 
@@ -25,7 +25,7 @@ function icon(b,slug){
  if(detail){const label=b.querySelector(".ims-heart-label");if(label)label.textContent=on?tags.remove:tags.save}
 }
 function rerender(){document.querySelectorAll("[data-ims-favorite]").forEach(b=>icon(b,b.dataset.imsFavorite))}
-function matchLink(a){if(!a)return null;try{let u=new URL(a.getAttribute("href"),location.href);if(u.origin!==location.origin)return null;let match=u.pathname.match(/\/(fr|en|ar|es)\/(rafting|camping|randonnee|vtt|quad|hebergement)(?:\.html|\/)$/);return match?.[2]||null}catch(e){return null}}
+function matchLink(a){if(!a)return null;try{let u=new URL(a.getAttribute("href"),location.href);if(u.origin!==location.origin)return null;let match=u.pathname.match(/\/(fr|en|ar|es)\/(rafting|camping|randonnee|vtt|quad|hebergement)\.html$/);return match?.[2]||null}catch(e){return null}}
 function button(slug,detail){
  let b=document.createElement("button");b.type="button";b.className=detail?"ims-fav-detail":"ims-fav-heart";b.dataset.imsFavorite=slug;
  b.append(heartSvg());
@@ -44,7 +44,7 @@ function place(){
   const slug=links.map(matchLink).find(Boolean);
   if(slug)addHeart(slug,card);
  });
- const slug=location.pathname.match(/\/(rafting|camping|randonnee|vtt|quad|hebergement)(?:\.html|\/)$/)?.[1];
+ const slug=location.pathname.match(/\/(rafting|camping|randonnee|vtt|quad|hebergement)\.html$/)?.[1];
  if(slug&&!document.getElementById("imsFavDetailButton")){
   const h=document.querySelector("main h1")||document.querySelector("h1");
   if(h){let b=button(slug,true);b.id="imsFavDetailButton";h.insertAdjacentElement("afterend",b)}
