@@ -8,11 +8,11 @@ function ensureKayakLinks(){
  if(!(/^\/(?:Imsfrane-demo\/)?(?:fr|en|ar|es)\//.test(path)))return;
  var lang=(document.documentElement.lang||"fr").slice(0,2);
  var name=lang==="ar"?"كاياك":"Kayak";
- var isKayak=path.endsWith('/kayak.html');
+ var isKayak=path.endsWith('/kayak.html')||path.endsWith('/kayak/');
  function add(selector,markup){
   document.querySelectorAll(selector).forEach(function(menu){
-   var first=menu.querySelector('a[href="rafting.html"]');
-   if(!first||menu.querySelector('a[href="kayak.html"]'))return;
+   var first=menu.querySelector('a[href="rafting.html"],a[href$="/rafting/"],a[href$="/rafting.html"]');
+   if(!first||menu.querySelector('a[href="/'+lang+'/kayak.html"],a[href$="/kayak.html"],a[href$="/kayak/"]'))return;
    var item=document.createElement("li");
    item.innerHTML=markup;
    first.closest("li").insertAdjacentElement("afterend",item);
@@ -20,14 +20,14 @@ function ensureKayakLinks(){
  }
  var current=isKayak?' aria-current="page"':'';
  var cls=isKayak?' active':'';
- add(".atnav-submenu",'<a class="atnav-submenu-link'+cls+'" href="kayak.html"'+current+'><span class="atnav-subicon"><svg aria-hidden="true"><use href="#atnav-i-water"></use></svg></span><span>'+name+'</span></a>');
- add("ul.dropdown-menu",'<a class="'+cls.trim()+'" href="kayak.html"'+current+'><i class="fa-solid fa-water" aria-hidden="true"></i><span>'+name+'</span></a>');
+ add(".atnav-submenu",'<a class="atnav-submenu-link'+cls+'" href="/'+lang+'/kayak.html"'+current+'><span class="atnav-subicon"><svg aria-hidden="true"><use href="#atnav-i-water"></use></svg></span><span>'+name+'</span></a>');
+ add("ul.dropdown-menu",'<a class="'+cls.trim()+'" href="/'+lang+'/kayak.html"'+current+'><i class="fa-solid fa-water" aria-hidden="true"></i><span>'+name+'</span></a>');
  var footer=document.querySelectorAll("footer.site-footer .footer-column ul");
  footer.forEach(function(ul){
-  var first=ul.querySelector('a[href="rafting.html"]');
-  if(!first||ul.querySelector('a[href="kayak.html"]'))return;
+  var first=ul.querySelector('a[href="rafting.html"],a[href$="/rafting/"],a[href$="/rafting.html"]');
+  if(!first||ul.querySelector('a[href="/'+lang+'/kayak.html"],a[href$="/kayak.html"],a[href$="/kayak/"]'))return;
   var li=document.createElement("li"),a=document.createElement("a");
-  a.href="kayak.html";a.textContent=name;
+  a.href="/'+lang+'/kayak.html";a.textContent=name;
   li.appendChild(a);first.closest("li").insertAdjacentElement("afterend",li);
  });
 }
