@@ -1,4 +1,4 @@
-/* Demo-wide Imsfrane Cathédrale premium navigation. Native, no dependencies. */
+/* Imsfrane Cathédrale production navigation with multilingual activity favorites. */
 (function(){
 "use strict";
 try{if(/^\/Imsfrane-demo\/(?:fr|en|ar|es)\//.test(location.pathname))sessionStorage.setItem("ims-demo-lastpage",location.href)}catch(e){}
