@@ -1,50 +1,113 @@
-/* Imsfrane Pro Favorites — Demo only, forest and gold visual identity. */
+/* IMSFRANE · Refined favorites system, Demo only
+   Compact premium hearts with subtle ivory surface, green outlines, and accessible click targets across cards and the member dashboard. */
 .ims-fav-target{position:relative!important}
 button.ims-fav-heart,
 .ims-dash-home-visual.hp-home button.ims-original-fav-heart{
- position:absolute!important;z-index:25!important;inset-block-start:13px!important;inset-inline-end:13px!important;
- display:inline-flex!important;align-items:center!important;justify-content:center!important;
- width:44px!important;height:44px!important;min-height:44px!important;min-width:44px!important;
- padding:0!important;margin:0!important;border-radius:50%!important;
- background:rgba(255,255,255,.94)!important;backdrop-filter:blur(12px);
- -webkit-backdrop-filter:blur(12px);border:1.5px solid rgba(189,152,62,.8)!important;
- color:#174332!important;box-shadow:0 6px 22px rgba(6,26,18,.23),inset 0 1px 1px rgba(255,255,255,.9)!important;
- cursor:pointer;line-height:1!important;transition:transform .19s ease,background .19s ease,border-color .19s ease,box-shadow .19s ease!important;
- -webkit-tap-highlight-color:transparent;
+  -webkit-appearance:none!important;appearance:none!important;
+  position:absolute!important;z-index:28!important;
+  inset-block-start:9px!important;inset-inline-end:9px!important;
+  top:auto;right:auto;left:auto;bottom:auto;
+  display:grid!important;place-items:center!important;
+  width:29px!important;height:29px!important;
+  min-width:29px!important;min-height:29px!important;
+  padding:0!important;margin:0!important;
+  border:1px solid rgba(239,235,217,.94)!important;
+  border-radius:50%!important;
+  background:rgba(255,255,255,.96)!important;
+  color:#2e5942!important;
+  box-shadow:0 3px 11px rgba(5,36,25,.16)!important;
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  cursor:pointer;
+  line-height:1!important;
+  font-size:0!important;
+  transition:transform .2s ease,border-color .2s ease,background .2s ease,box-shadow .2s ease!important;
+  -webkit-tap-highlight-color:transparent;
 }
-button.ims-fav-heart:hover,.ims-dash-home-visual.hp-home button.ims-original-fav-heart:hover{
- transform:translateY(-2px) scale(1.055)!important;border-color:#c6a43f!important;box-shadow:0 8px 24px #0b2d2245!important
+button.ims-fav-heart:after,
+.ims-dash-home-visual.hp-home button.ims-original-fav-heart:after{
+  content:"";position:absolute;inset:-8px;border-radius:50%;
 }
-button.ims-fav-heart[aria-pressed="true"],.ims-dash-home-visual.hp-home button.ims-original-fav-heart[aria-pressed="true"]{
- background:#143e30!important;border-color:#d9bb71!important;color:#f1ce7a!important;
- box-shadow:0 6px 22px #0a2e286b,0 0 0 3px #e0bb6152!important
+button.ims-fav-heart:hover,
+.ims-dash-home-visual.hp-home button.ims-original-fav-heart:hover{
+  transform:translateY(-1px)!important;
+  border-color:#c6a43f!important;
+  box-shadow:0 5px 16px rgba(5,36,25,.21)!important;
 }
-.ims-heart-svg{width:23px;height:23px;display:block;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;fill:none;transition:fill .2s ease,transform .2s ease}
-[aria-pressed="true"]>.ims-heart-svg{fill:#e6bb65;stroke:#f8d68b}
-button.ims-fav-heart:active>.ims-heart-svg,
-.ims-dash-home-visual.hp-home button.ims-original-fav-heart:active>.ims-heart-svg{transform:scale(.84)}
+button.ims-fav-heart[aria-pressed="true"],
+.ims-dash-home-visual.hp-home button.ims-original-fav-heart[aria-pressed="true"]{
+  background:#194b37!important;
+  color:#e9c66c!important;
+  border-color:#d9bc74!important;
+  box-shadow:0 3px 13px rgba(10,44,29,.26)!important;
+}
+button.ims-fav-heart .ims-heart-svg,
+.ims-dash-home-visual.hp-home button.ims-original-fav-heart .ims-heart-svg{
+  width:15px!important;height:15px!important;display:block;
+  stroke:currentColor;stroke-width:1.8;
+  stroke-linecap:round;stroke-linejoin:round;
+  fill:none;pointer-events:none;
+  transition:fill .18s ease,transform .18s ease;
+}
+button.ims-fav-heart[aria-pressed="true"] .ims-heart-svg,
+.ims-dash-home-visual.hp-home button.ims-original-fav-heart[aria-pressed="true"] .ims-heart-svg{
+  fill:#e9c66c;stroke:#e9c66c;
+}
+button.ims-fav-heart:active .ims-heart-svg,
+.ims-dash-home-visual.hp-home button.ims-original-fav-heart:active .ims-heart-svg{
+  transform:scale(.86);
+}
 button.ims-fav-heart:focus-visible,
 .ims-dash-home-visual.hp-home button.ims-original-fav-heart:focus-visible,
-button.ims-fav-detail:focus-visible{outline:3px solid #d9af50!important;outline-offset:3px!important}
-button.ims-fav-heart:disabled,.ims-dash-home-visual.hp-home button.ims-original-fav-heart:disabled{opacity:.56;cursor:wait}
+button.ims-fav-detail:focus-visible{outline:3px solid #c6a43f!important;outline-offset:3px!important}
+button.ims-fav-heart:disabled,
+.ims-dash-home-visual.hp-home button.ims-original-fav-heart:disabled{opacity:.55;cursor:wait}
+
+/* Compact add/remove action on individual activity pages. */
 button.ims-fav-detail{
- display:inline-flex!important;align-items:center!important;justify-content:center!important;
- gap:10px!important;padding:12px 18px!important;margin:12px 0!important;
- background:#143c30!important;color:#eacb7f!important;border:1px solid #c6a43f!important;
- border-radius:12px!important;font-size:13px!important;font-weight:850!important;
- box-shadow:0 6px 18px #052b1926;cursor:pointer;
+  appearance:none;-webkit-appearance:none;
+  display:inline-flex!important;
+  justify-content:center!important;align-items:center!important;
+  gap:8px!important;
+  margin:12px 0!important;padding:9px 14px!important;
+  border:1px solid #c9d7ca!important;
+  border-radius:999px!important;
+  background:#fff!important;
+  color:#255640!important;
+  box-shadow:0 4px 13px rgba(15,43,30,.08)!important;
+  cursor:pointer;font-size:12px!important;font-weight:750!important;
+  line-height:1.4!important;
+  text-align:center;
+  transition:background .2s ease,border-color .2s ease!important;
 }
-button.ims-fav-detail[aria-pressed="true"]{background:#f3e7c7!important;color:#143e2c!important}
-button.ims-fav-detail .ims-heart-svg{width:20px;height:20px;flex:none}
-button.ims-fav-detail[aria-pressed="true"] .ims-heart-svg{fill:#ca943d;stroke:#aa7630}
+button.ims-fav-detail:hover{border-color:#c6a43f!important;background:#f8f6ef!important}
+button.ims-fav-detail[aria-pressed="true"]{background:#edf3e9!important;color:#16432f!important;border-color:#c6a43f!important}
+button.ims-fav-detail .ims-heart-svg{
+  width:17px!important;height:17px!important;
+  stroke:currentColor;stroke-width:1.8;
+  stroke-linecap:round;stroke-linejoin:round;fill:none;flex:none;
+}
+button.ims-fav-detail[aria-pressed="true"] .ims-heart-svg{fill:#c6a43f;stroke:#9e832b}
 .ims-heart-label{font:inherit}
+html[lang="ar"] button.ims-fav-detail{font-family:var(--ar-text,"Imsfrane Tajawal",Tahoma,Arial,sans-serif)!important}
+
+/* Kayak detail has a dark hero: keep this control legible beside the booking actions. */
+.ky-hero-actions button.ims-fav-detail{margin:0!important;align-self:center;background:rgba(255,255,255,.95)!important}
+
 @media(max-width:620px){
- button.ims-fav-heart,.ims-dash-home-visual.hp-home button.ims-original-fav-heart{
-  inset-block-start:8px!important;inset-inline-end:8px!important;
-  width:40px!important;height:40px!important;min-width:40px!important;min-height:40px!important
- }
- .ims-heart-svg{width:21px;height:21px}
+  button.ims-fav-heart,
+  .ims-dash-home-visual.hp-home button.ims-original-fav-heart{
+    inset-block-start:7px!important;inset-inline-end:7px!important;
+    width:27px!important;height:27px!important;
+    min-width:27px!important;min-height:27px!important;
+  }
+  button.ims-fav-heart .ims-heart-svg,
+  .ims-dash-home-visual.hp-home button.ims-original-fav-heart .ims-heart-svg{width:14px!important;height:14px!important}
+  button.ims-fav-detail{font-size:11px!important;padding:9px 12px!important}
 }
 @media(prefers-reduced-motion:reduce){
- button.ims-fav-heart,.ims-dash-home-visual.hp-home button.ims-original-fav-heart,.ims-heart-svg{transition:none!important}
+ button.ims-fav-heart,
+ .ims-dash-home-visual.hp-home button.ims-original-fav-heart,
+ button.ims-fav-detail,
+ .ims-heart-svg{transition:none!important}
 }

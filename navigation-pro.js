@@ -204,7 +204,7 @@ function refreshAccount(u){
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",initAccountModal,{once:true});else initAccountModal();
 
-function loadFavoriteHearts(){if(!/^\/Imsfrane-demo\/(fr|en|ar|es)\//.test(location.pathname))return;if(document.querySelector('script[data-ims-fav]'))return;var script=document.createElement("script");script.src="/js/ims-favorites-demo.js?v=20261013all14proheart-v1";script.defer=true;script.dataset.imsFav="yes";document.head.append(script)}
+function loadFavoriteHearts(){if(!/^\/(fr|en|ar|es)\//.test(location.pathname))return;if(document.querySelector('script[data-ims-fav]'))return;var script=document.createElement("script");script.src="/js/ims-favorites-demo.js?v=20261016petite-heart-all-pages-v3";script.defer=true;script.dataset.imsFav="yes";document.head.append(script)}
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",loadFavoriteHearts,{once:true});else loadFavoriteHearts();
 
 /* Site header: no notification bell. The full inbox stays on members.html. */

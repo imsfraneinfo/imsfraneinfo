@@ -22,6 +22,16 @@ const activities=[
   }
  },
  {
+  "id": "kayak",
+  "photo": "images/kayak/kayak-group.webp",
+  "names": {
+   "fr": "Kayak",
+   "en": "Kayak",
+   "ar": "التجديف بالكاياك",
+   "es": "Kayak"
+  }
+ },
+ {
   "id": "randonnee",
   "photo": "images/19-800.webp",
   "names": {
@@ -83,7 +93,7 @@ const activities=[
  },
  {
   "id": "jetski",
-  "photo": "images/jetski-800.webp",
+  "photo": "images/jetski-lake.webp",
   "names": {
    "fr": "Jet Ski",
    "en": "Jet Ski",
@@ -242,7 +252,7 @@ async function renderActivities(){
    This preserves each original image, heading, description, price and card design. */
 const homepageCache=new Map();
 let favoritesRenderVersion=0;
-const fallbackCardImages={"rafting":"images/raft2-800.webp","randonnee":"images/19-800.webp","camping":"images/camping-1-800.webp","vtt":"images/vtt-800.webp","quad":"images/quad-800.webp","hebergement":"images/bab2-800.webp","tubing":"images/tubing-800.webp","jetski":"images/jetski-800.webp","4x4":"images/4x4-800.webp","passage":"images/passage-800.webp","zrkan":"images/zrkan-800.webp","anergui":"images/anergui-800.webp","almou":"images/almo-800.webp","ahidous":"images/ahidous-800.webp"};
+const fallbackCardImages={"rafting":"images/rafting-new/IMG_9129.webp","kayak":"images/kayak/kayak-group.webp","randonnee":"images/19-800.webp","camping":"images/camping-1-800.webp","vtt":"images/IMG_2604.webp","quad":"images/quad-new/IMG_0310.webp","hebergement":"images/bab2-800.webp","tubing":"images/tubing-800.webp","jetski":"images/jetski-lake.webp","4x4":"images/4x4-800.webp","passage":"images/passage-800.webp","zrkan":"images/zrkan-800.webp","anergui":"images/anergui-800.webp","almou":"images/almo-800.webp","ahidous":"images/ahidous-800.webp"};
 function sourceHomepage(language){
  if(!homepageCache.has(language)){
   const url=base+language+"/index.html";
