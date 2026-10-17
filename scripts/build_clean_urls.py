@@ -76,6 +76,15 @@ def transform(doc, lang, filename, files):
     if "</head>" not in doc:
         raise RuntimeError("No head end: "+lang+"/"+filename)
     doc=doc.replace("</head>",'<link rel="canonical" href="'+HOST+clean("/"+lang+"/"+filename,files)+'"/></head>',1)
+    # Discovery metadata must stay absolute even when navigation is root-relative.
+    def absolute_metadata(m):
+        tag = m[0]
+        if "hreflang" in tag or 'rel="canonical"' in tag:
+            tag = re.sub(r'(href=["\'])(/[^/][^"\']*)', r'\1' + HOST + r'\2', tag)
+        return tag
+    doc = re.sub(r"<link\b[^>]*>", absolute_metadata, doc, flags=re.I)
+    doc = re.sub(r'(<meta\b(?=[^>]*property=["\']og:url["\'])[^>]*content=["\'])(/[^/][^"\']*)',
+                 r'\1' + HOST + r'\2', doc)
     return doc
 
 def old_redirect(lang,filename):
