@@ -27,7 +27,7 @@ function ensureKayakLinks(){
   var first=ul.querySelector('a[href="rafting.html"],a[href$="/rafting/"],a[href$="/rafting.html"]');
   if(!first||ul.querySelector('a[href="/'+lang+'/kayak.html"],a[href$="/kayak.html"],a[href$="/kayak/"]'))return;
   var li=document.createElement("li"),a=document.createElement("a");
-  a.href="/'+lang+'/kayak.html";a.textContent=name;
+  a.href="/"+lang+"/kayak.html";a.textContent=name;
   li.appendChild(a);first.closest("li").insertAdjacentElement("afterend",li);
  });
 }
