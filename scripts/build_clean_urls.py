@@ -43,6 +43,9 @@ def transform(doc, lang, filename, files):
     def attr_replace(m):
         val=m["val"]
         if m["attr"].lower() in ("srcset","imagesrcset"):
+            # A data URI contains a comma inside the URL, not between candidates.
+            if val.lstrip().startswith("data:"):
+                return m[0]
             chunks=[]
             for item in val.split(","):
                 parts=re.match(r"^(\s*)(\S+)(.*)$",item,re.S)
