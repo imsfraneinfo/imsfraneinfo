@@ -7,10 +7,21 @@ var slides=Array.prototype.slice.call(hero.querySelectorAll(".hp-slide"));
 var dots=Array.prototype.slice.call(hero.querySelectorAll(".hp-slide-dot"));
 var arrows=Array.prototype.slice.call(hero.querySelectorAll(".hp-slide-arrow"));
 if(!slides.length||slides.length!==dots.length)return;
-var index=0, timer=null, paused=false;
+var index=0, timer=null, paused=false, engaged=false, requested=0;
 var motion=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)");
 var observer=null, inView=true, touchStart=null;
-function show(next){
+async function show(next){
+ const target=((next%slides.length)+slides.length)%slides.length;
+ const ticket=++requested;
+ const image=slides[target].querySelector('img');
+ if(image&&image.dataset.src){
+  image.sizes=image.getAttribute('sizes')||'100vw';
+  image.srcset=image.dataset.srcset||'';
+  image.src=image.dataset.src;
+  delete image.dataset.src;
+  try{await image.decode()}catch(e){}
+ }
+ if(ticket!==requested)return;
  index=((next%slides.length)+slides.length)%slides.length;
  slides.forEach(function(slide,i){
    var on=i===index;
@@ -24,7 +35,7 @@ function show(next){
  });
 }
 function stop(){if(timer!==null){window.clearInterval(timer);timer=null}}
-function shouldPlay(){return !paused&&inView&&!document.hidden&&!(motion&&motion.matches)}
+function shouldPlay(){return engaged&&!paused&&inView&&!document.hidden&&!(motion&&motion.matches)}
 function start(){
  stop();
  if(shouldPlay()){timer=window.setInterval(function(){show(index+1)},5500)}
@@ -67,5 +78,11 @@ if("IntersectionObserver" in window){
  observer=new IntersectionObserver(function(entries){inView=entries[0].isIntersecting;start()},{threshold:0.1});
  observer.observe(hero)
 }
+// Hidden slide photos are fetched only when needed; autoplay follows the
+// visitor's first interaction, saving data during an unattended initial load.
+function engage(){if(engaged)return;engaged=true;start()}
+window.addEventListener('pointerdown',engage,{once:true,passive:true});
+window.addEventListener('keydown',engage,{once:true});
+window.addEventListener('scroll',engage,{once:true,passive:true});
 show(0);start()
 })();
