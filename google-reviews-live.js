@@ -1,4 +1,4 @@
-/* Imsfrane Demo: display live Google Maps reviews without storing review data.
+/* Imsfrane: live business reviews via a server-side credential boundary; Maps fallback.
  * Browser API key is injected on build via the GOOGLE_MAPS_BROWSER_KEY action secret.
  * Maps JS API keys are visible to browsers and MUST be HTTP-referrer and API restricted.
  */
@@ -159,7 +159,7 @@
     if (Number.isInteger(count) && count >= 0 && countNode) {
       countNode.textContent = count.toLocaleString(lang) + " " + tx.reviews;
     }
-    const reviews = Array.isArray(place.reviews) ? place.reviews.slice(0, 5) : [];
+    const reviews = Array.isArray(place.reviews) ? place.reviews.slice(0, 50) : [];
     diagnostic("SUCCESS: rating=" + (Number.isFinite(rating) ? rating : "none") +
       "; total=" + (Number.isFinite(count) ? count : "none") +
       "; reviewsReturned=" + reviews.length +
@@ -199,11 +199,33 @@
     diagnostic("SUCCESS: " + cards.length + " review cards rendered; " +
       "visible=" + (getComputedStyle(reviewList).display !== "none"));
   }
-  if (!key || !placeId) {
+  if (!placeId) {
     diagnostic(!key ? "API_KEY_MISSING_IN_DEMO_DEPLOYMENT" : "PLACE_ID_MISSING");
     return;
   }
-  function loadReviews(){
+  async function loadReviews(){
+    try {
+      const publicAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt0cmNyZm95d29rdXV3enducXN1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE4MDAxNDUsImV4cCI6MjEwNzM3NjE0NX0.PyabGDs6Qi48GtOyZuaJH7pC_Q9qgx7_YoybOG9PfGU";
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 20000);
+      let response;
+      try {
+        response = await fetch("https://ktrcrfoywokuuwzwnqsu.supabase.co/functions/v1/google-business-reviews", {
+          headers:{Authorization:"Bearer " + publicAnonKey, apikey:publicAnonKey},
+          signal:controller.signal, credentials:"omit"
+        });
+      } finally { clearTimeout(timeout); }
+      if (!response.ok) throw new Error("REVIEWS_SOURCE_PENDING");
+      const place = await response.json();
+      if (!Array.isArray(place.reviews) || !Number.isInteger(place.userRatingCount)) throw new Error("INVALID_REVIEWS_RESPONSE");
+      show(place);
+      return;
+    } catch (_) {
+      diagnostic("BUSINESS_PROFILE_PENDING: using Google Maps fallback.");
+    }
+    if (key) loadMapsReviews();
+  }
+  function loadMapsReviews(){
   diagnostic("LOADING_GOOGLE_MAPS");
   let completed = false;
   if (debug) setTimeout(function () {
