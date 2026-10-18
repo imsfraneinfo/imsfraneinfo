@@ -67,6 +67,77 @@
     if (text != null) el.textContent = String(text);
     return el;
   }
+  function carousel(cards) {
+    const labels = {
+      fr: {previous:"Avis précédent",next:"Avis suivant",pause:"Mettre en pause",play:"Reprendre le défilement",name:"Avis des visiteurs"},
+      en: {previous:"Previous review",next:"Next review",pause:"Pause reviews",play:"Resume reviews",name:"Visitor reviews"},
+      ar: {previous:"التقييم السابق",next:"التقييم التالي",pause:"إيقاف التمرير",play:"استئناف التمرير",name:"تقييمات الزوار"},
+      es: {previous:"Reseña anterior",next:"Reseña siguiente",pause:"Pausar reseñas",play:"Reanudar reseñas",name:"Reseñas de visitantes"}
+    }[lang] || {previous:"Previous review",next:"Next review",pause:"Pause reviews",play:"Resume reviews",name:"Visitor reviews"};
+    const style = node("style");
+    style.textContent = `.hp-home .hp-live-review-list.hp-review-carousel{display:block!important;width:min(850px,calc(100% - 32px));min-height:0;padding:4px 0 24px}
+.hp-review-track{display:grid;align-items:stretch}
+.hp-review-track>.hp-live-review-card{grid-area:1/1;visibility:hidden;pointer-events:none;padding:24px 26px;border-radius:16px}
+.hp-review-track>.hp-live-review-card.is-current{visibility:visible;pointer-events:auto}
+.hp-home .hp-review-carousel .hp-live-review-text{font-size:14px;line-height:1.8;-webkit-line-clamp:6}
+.hp-home .hp-review-carousel .hp-live-review-stars{color:#956b12}
+.hp-review-controls{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:14px;direction:ltr}
+.hp-review-controls button{display:inline-grid;place-items:center;min-width:44px;height:44px;border:1px solid #b7c8bc;border-radius:50%;background:#fff;color:#123d2a;font:700 23px/1 Arial,sans-serif;cursor:pointer}
+.hp-review-controls button:hover{background:#f1f5ed}.hp-review-controls button:focus-visible{outline:3px solid #9e832b;outline-offset:3px}
+.hp-review-controls .hp-review-pause{font-size:15px}.hp-review-counter{min-width:52px;text-align:center;color:#294d39;font:700 13px/1.5 Arial,sans-serif}
+@media(max-width:540px){.hp-review-track>.hp-live-review-card{padding:20px 18px}.hp-home .hp-review-carousel .hp-live-review-text{font-size:13px}}`;
+    document.head.appendChild(style);
+    reviewList.classList.add("hp-review-carousel");
+    reviewList.setAttribute("role", "region");
+    reviewList.setAttribute("aria-roledescription", "carousel");
+    reviewList.setAttribute("aria-label", labels.name);
+    const track = node("div", "hp-review-track");
+    track.setAttribute("aria-live", "off");
+    track.append(...cards);
+    reviewList.replaceChildren(track);
+    let index = 0, timer = null, paused = false, hovering = false, focused = false, inView = true;
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const controls = node("div", "hp-review-controls");
+    const previous = node("button", "", "‹"), next = node("button", "", "›");
+    const pause = node("button", "hp-review-pause", "Ⅱ");
+    const counter = node("span", "hp-review-counter");
+    for (const b of [previous,next,pause]) b.type = "button";
+    previous.setAttribute("aria-label", labels.previous);
+    next.setAttribute("aria-label", labels.next);
+    function select(n) {
+      index = (n + cards.length) % cards.length;
+      cards.forEach((card,i) => {
+        const active = i === index;
+        card.classList.toggle("is-current", active);
+        card.setAttribute("aria-hidden", String(!active));
+        card.inert = !active;
+      });
+      counter.textContent = (index + 1) + " / " + cards.length;
+    }
+    function schedule() {
+      clearInterval(timer); timer = null;
+      pause.textContent = paused ? "▶" : "Ⅱ";
+      pause.setAttribute("aria-label", paused ? labels.play : labels.pause);
+      if(cards.length > 1 && !paused && !hovering && !focused && inView && !document.hidden && !motion.matches)
+        timer = setInterval(() => select(index + 1), 7000);
+    }
+    previous.addEventListener("click", () => {select(index - 1);schedule()});
+    next.addEventListener("click", () => {select(index + 1);schedule()});
+    pause.addEventListener("click", () => {paused = !paused;schedule()});
+    controls.append(previous,counter,next,pause);
+    if(cards.length > 1) reviewList.appendChild(controls);
+    reviewList.addEventListener("mouseenter", () => {hovering = true;schedule()});
+    reviewList.addEventListener("mouseleave", () => {hovering = false;schedule()});
+    reviewList.addEventListener("focusin", () => {focused = true;schedule()});
+    reviewList.addEventListener("focusout", e => {if(!reviewList.contains(e.relatedTarget)){focused = false;schedule()}});
+    document.addEventListener("visibilitychange", schedule);
+    if(motion.addEventListener) motion.addEventListener("change", schedule);
+    if("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(entries => {inView = entries[0].isIntersecting;schedule()}, {threshold:0.1});
+      observer.observe(reviewList);
+    }
+    select(0); schedule();
+  }
   function show(place) {
     diagnostic("SUCCESS: Google returned rating and reviews.");
     const rating = Number(place.rating);
@@ -123,7 +194,7 @@
       diagnostic("SUCCESS: reviewsReturned=" + reviews.length + " but all are empty.");
       return;
     }
-    reviewList.replaceChildren(...cards);
+    carousel(cards);
     reviewList.hidden = false;
     diagnostic("SUCCESS: " + cards.length + " review cards rendered; " +
       "visible=" + (getComputedStyle(reviewList).display !== "none"));
