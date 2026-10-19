@@ -18,7 +18,11 @@ async function refresh() {
     method:'POST', signal:AbortSignal.timeout(8000),
     body:new URLSearchParams({client_id, client_secret, refresh_token, grant_type:'refresh_token'})
   });
-  if (!tokenResponse.ok) throw new Error('GOOGLE_AUTH_FAILED');
+  if (!tokenResponse.ok) {
+    const failure = await tokenResponse.json().catch(() => ({}));
+    const kind = {invalid_client:'GOOGLE_INVALID_CLIENT',invalid_grant:'GOOGLE_INVALID_GRANT',unauthorized_client:'GOOGLE_UNAUTHORIZED_CLIENT'}[failure.error];
+    throw new Error(kind || 'GOOGLE_AUTH_FAILED');
+  }
   const token = await tokenResponse.json();
   if (!token.access_token) throw new Error('GOOGLE_AUTH_FAILED');
   const response = await fetch(endpoint, {
@@ -58,7 +62,7 @@ Deno.serve(async req => {
     return json(await pending);
   } catch (error) {
     retryAfter = Date.now() + 30000;
-    const code = ['NOT_CONFIGURED','WRONG_PROJECT','GOOGLE_AUTH_FAILED','GOOGLE_REVIEWS_UNAVAILABLE','INVALID_RESPONSE'].includes(error.message) ? error.message : 'TEMPORARILY_UNAVAILABLE';
+    const code = ['GOOGLE_INVALID_CLIENT','GOOGLE_INVALID_GRANT','GOOGLE_UNAUTHORIZED_CLIENT','NOT_CONFIGURED','WRONG_PROJECT','GOOGLE_AUTH_FAILED','GOOGLE_REVIEWS_UNAVAILABLE','INVALID_RESPONSE'].includes(error.message) ? error.message : 'TEMPORARILY_UNAVAILABLE';
     return json({error:code},503);
   }
 });
