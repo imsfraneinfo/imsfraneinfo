@@ -75,34 +75,41 @@
       es: {previous:"Reseña anterior",next:"Reseña siguiente",pause:"Pausar reseñas",play:"Reanudar reseñas",name:"Reseñas de visitantes"}
     }[lang] || {previous:"Previous review",next:"Next review",pause:"Pause reviews",play:"Resume reviews",name:"Visitor reviews"};
     const style = node("style");
-    style.textContent = `.hp-home .hp-reviews-inner.hp-reviews-unified{grid-template-columns:61px 215px minmax(0,1fr);gap:12px 22px;padding:24px 0;align-items:center}
+    style.textContent = `.hp-home .hp-reviews-inner.hp-reviews-unified{grid-template-columns:61px 215px minmax(0,1fr);gap:6px 22px;padding:14px 0;align-items:center}
 .hp-home .hp-reviews-unified .hp-google-mark{grid-column:1;grid-row:1;width:61px;height:61px}
 .hp-home .hp-reviews-unified .hp-google-rating{grid-column:2;grid-row:1}
 .hp-home .hp-reviews-unified .hp-google-copy{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);padding:0;border:0}
 .hp-home .hp-reviews-unified .hp-google-link{grid-column:1/3;grid-row:2;justify-self:start;margin:0;background:transparent;color:#23553d!important;padding:0;min-height:44px;font-size:12px;white-space:normal;text-align:start}
 .hp-home .hp-reviews-unified .hp-live-review-list.hp-review-carousel{display:block!important;grid-column:3;grid-row:1/3;width:100%;min-width:0;min-height:0;margin:0;padding:0 0 0 28px;border-inline-start:1px solid #e5eadd;box-sizing:border-box}
 .hp-review-track{display:grid;align-items:start}
-.hp-home .hp-review-track>.hp-live-review-card{grid-area:1/1;visibility:hidden;pointer-events:none;min-width:0;height:151px;box-sizing:border-box;padding:0;border:0;background:transparent;border-radius:0;box-shadow:none;overflow:hidden}
+.hp-home .hp-review-track>.hp-live-review-card{grid-area:1/1;visibility:hidden;pointer-events:none;min-width:0;height:104px;box-sizing:border-box;padding:0;border:0;background:transparent;border-radius:0;box-shadow:none;overflow:hidden}
 .hp-home .hp-review-track>.hp-live-review-card.is-current{visibility:visible;pointer-events:auto}
 .hp-home .hp-review-carousel .hp-live-review-header{align-items:center;gap:4px 12px}
 .hp-home .hp-review-carousel .hp-live-review-author{font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:75%}
-.hp-home .hp-review-carousel .hp-live-review-text{font-size:14px;line-height:1.65;-webkit-line-clamp:3;margin:0 0 6px;color:#405e4e}
+.hp-home .hp-review-carousel .hp-live-review-text{font-size:14px;line-height:1.65;-webkit-line-clamp:2;margin:0;color:#405e4e}
 .hp-home .hp-review-carousel .hp-live-review-stars{color:#956b12;font-size:14px;line-height:1.4;margin:6px 0}
-.hp-home .hp-review-carousel .hp-live-review-credit{font-size:10px;color:#637768}
+.hp-home .hp-review-carousel .hp-live-review-credit{display:none}
 .hp-review-controls{display:flex;justify-content:flex-end;align-items:center;gap:4px;margin-top:0;direction:ltr}
 .hp-review-controls button{display:inline-grid;place-items:center;min-width:44px;height:44px;border:0;border-radius:50%;background:transparent;color:#214d37;font:500 24px/1 Arial,sans-serif;cursor:pointer}
 .hp-review-controls button:hover{background:#f1f5ed}.hp-review-controls button:focus-visible{outline:2px solid #9e832b;outline-offset:1px}
 .hp-review-controls .hp-review-pause{font-size:12px}.hp-review-counter{min-width:42px;text-align:center;color:#637768;font:600 11px/1.5 Arial,sans-serif;font-variant-numeric:tabular-nums}
 html[lang="ar"] .hp-home .hp-reviews-unified .hp-live-review-list{padding:0 28px 0 0}
-@media(max-width:760px){.hp-home .hp-reviews-inner.hp-reviews-unified{grid-template-columns:52px minmax(0,1fr);gap:14px;padding:20px 0}
+@media(max-width:760px){.hp-home .hp-reviews-inner.hp-reviews-unified{grid-template-columns:52px minmax(0,1fr);gap:10px;padding:14px 0}
 .hp-home .hp-reviews-unified .hp-google-mark{width:52px;height:52px}
-.hp-home .hp-reviews-unified .hp-live-review-list.hp-review-carousel{grid-column:1/-1;grid-row:2;padding:14px 0 0;border-inline-start:0;border-top:1px solid #e5eadd}
-.hp-home .hp-reviews-unified .hp-google-link{grid-column:1/-1;grid-row:3;justify-self:start;max-width:calc(100% - 180px);font-size:11px;margin-top:-58px;z-index:1;line-height:1.5;gap:6px}
+.hp-home .hp-reviews-unified .hp-live-review-list.hp-review-carousel{grid-column:1/-1;grid-row:2;padding:10px 0 0;border-inline-start:0;border-top:1px solid #e5eadd}
+.hp-home .hp-reviews-unified .hp-google-link{grid-column:1/-1;grid-row:3;justify-self:start;max-width:calc(100% - 180px);font-size:11px;margin-top:-54px;z-index:1;line-height:1.5;gap:6px}
 .hp-home .hp-review-carousel .hp-live-review-text{font-size:13px}
-.hp-home .hp-review-track>.hp-live-review-card{height:145px}
+.hp-home .hp-review-track>.hp-live-review-card{height:100px}
 .hp-review-controls{gap:0}}
 @media(max-width:370px){.hp-home .hp-reviews-unified .hp-google-link{max-width:calc(100% - 170px);font-size:10px}.hp-review-counter{min-width:32px}}
 `;
+    style.textContent += `.hp-home .hp-google-reviews + .hp-activities{padding-top:14px}
+.hp-home .hp-google-reviews + .hp-activities .hp-section-row{margin-bottom:20px}
+.hp-home .hp-google-reviews + .hp-activities .hp-heading h2{margin-top:4px;margin-bottom:8px}
+.hp-home .hp-review-carousel .hp-live-review-author{font-weight:800}
+.hp-home .hp-review-carousel .hp-live-review-stars{letter-spacing:2px}
+.hp-home .hp-review-carousel .hp-review-controls{border-top:1px solid #edf0e9}
+@media(max-width:760px){.hp-home .hp-google-reviews + .hp-activities{padding-top:10px}.hp-home .hp-google-reviews + .hp-activities .hp-section-row{margin-bottom:16px}}`;
     document.head.appendChild(style);
     const inner = section.querySelector(".hp-reviews-inner");
     if (inner) {
