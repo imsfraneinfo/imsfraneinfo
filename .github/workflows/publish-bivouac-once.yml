@@ -1,0 +1,59 @@
+name: Publish approved full bivouac photographs
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/publish-bivouac-once.yml']
+permissions:
+  contents: write
+concurrency:
+  group: imsfrane-production-publish
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read the approved demo snapshot
+        run: |
+          git clone --depth 1 --branch gh-pages https://github.com/imsfraneinfo/Imsfrane-demo.git /tmp/approved-demo
+          test "$(git -C /tmp/approved-demo rev-parse HEAD)" = "a304b8d9957b1b9912f8c0c32755397863edbbe7"
+      - name: Publish only the approved section and photographs
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          import shutil
+          
+          demo = Path("/tmp/approved-demo")
+          style = (demo / "fr/kayak/index.html").read_text(encoding="utf-8")
+          style = re.search(r'<style id="imsfrane-bivouac-showcase-css">[\s\S]*?</style>', style).group(0)
+          paths = [f"{lang}/kayak/index.html" for lang in ("fr", "en", "ar", "es")]
+          paths += ["rafting-content.html", "rafting-content-en.html", "rafting-content-ar.html", "rafting-content-es.html"]
+          for name in paths:
+              target = Path(name)
+              html = target.read_text(encoding="utf-8")
+              approved = (demo / name).read_text(encoding="utf-8")
+              section = re.search(r'<section class="ib-bivouac"[\s\S]*?</section>', approved).group(0)
+              section = section.replace("/Imsfrane-demo/images/", "/images/")
+              assert "/Imsfrane-demo/" not in section
+              marker = '<section class="ky-section ky-gallery-section"' if "/kayak/" in name else '<section aria-labelledby="gallery-title"'
+              assert marker in html and "</head>" in html, name
+              assert 'id="bivouac-experience"' not in html, name
+              updated = html.replace("</head>", style + "\n</head>", 1).replace(marker, section + "\n" + marker, 1)
+              assert updated.count('id="bivouac-experience"') == 1
+              target.write_text(updated, encoding="utf-8")
+          photos = sorted((demo / "images").glob("IMG_bivouac-*.webp"))
+          assert len(photos) == 4
+          for source in photos:
+              assert source.stat().st_size > 50000
+              shutil.copy2(source, Path("images") / source.name)
+          assert Path("CNAME").read_text().strip() == "imsfrane.com"
+          print("Approved full-photo layout installed on eight pages; all four images copied.")
+          
+          PY
+          git config user.name "imsfrane-official-publisher"
+          git config user.email "actions@users.noreply.github.com"
+          git add fr/kayak/index.html en/kayak/index.html ar/kayak/index.html es/kayak/index.html rafting-content.html rafting-content-en.html rafting-content-ar.html rafting-content-es.html images/IMG_bivouac-*.webp
+          git rm .github/workflows/publish-bivouac-once.yml
+          git commit -m "Publish approved bivouac story with complete uncropped photographs"
+          git push origin HEAD:main
