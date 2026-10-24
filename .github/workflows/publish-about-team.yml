@@ -1,0 +1,67 @@
+name: Publish approved About team page
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/publish-about-team.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: imsfrane-production-publish
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Download the approved demo version
+        run: |
+          git init /tmp/approved-about
+          git -C /tmp/approved-about remote add origin https://github.com/imsfraneinfo/Imsfrane-demo.git
+          git -C /tmp/approved-about fetch --depth 1 origin f18b70a649e856cfc840696dfbfd626519a488d9
+          git -C /tmp/approved-about checkout FETCH_HEAD
+      - name: Publish only About pages and team assets
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re, shutil
+          source=Path('/tmp/approved-about')
+          def official(s):
+              return s.replace('https://imsfraneinfo.github.io/Imsfrane-demo/','https://imsfrane.com/').replace('/Imsfrane-demo/','/')
+          css=official((source/'about-team.css').read_text())
+          Path('about-team.css').write_text(css)
+          portraits=['farid-laydi','hamid-laydi','ayoub-laydi','abdelaziz-allam','hassan-allam']
+          Path('images/team').mkdir(parents=True,exist_ok=True)
+          for slug in portraits:
+              shutil.copyfile(source/'images/team'/f'{slug}.webp',Path('images/team')/f'{slug}.webp')
+          for lang in ('fr','en','ar','es'):
+              p=Path(lang)/'about/index.html'
+              current=p.read_text()
+              demo=(source/lang/'about/index.html').read_text()
+              body=re.search(r'<main\b.*?</main>',demo,re.S)[0]
+              assert 'class="founder-hero"' in body
+              assert body.count('class="person-card"')==5
+              current,count=re.subn(r'<main\b.*?</main>',lambda m:official(body),current,count=1,flags=re.S)
+              assert count==1
+              current=re.sub(r'<style\b[^>]*>.*?</style>',lambda m:'' if 'main.aboutx' in m[0] else m[0],current,flags=re.S)
+              current=re.sub(r'<link[^>]*href="[^"]*about-team.css[^"]*"[^>]*>','',current)
+              current=current.replace('</head>','<link rel="stylesheet" href="/about-team.css?v=founder-hero4"></head>',1)
+              assert '/Imsfrane-demo/' not in current
+              assert not re.search(r'<meta\b[^>]*name=["\']robots["\'][^>]*content=["\']noindex',current,re.I)
+              p.write_text(current)
+          assert Path('CNAME').read_text().strip()=='imsfrane.com'
+          print('Validated 4 official About pages, founder hero and 5 team portraits.')
+          PY
+      - name: Commit approved About update
+        run: |
+          git config user.name "imsfrane-about-publisher"
+          git config user.email "actions@users.noreply.github.com"
+          git add fr/about/index.html en/about/index.html ar/about/index.html es/about/index.html about-team.css images/team/farid-laydi.webp images/team/hamid-laydi.webp images/team/ayoub-laydi.webp images/team/abdelaziz-allam.webp images/team/hassan-allam.webp
+          if git diff --cached --quiet; then
+            echo "Approved About page is already published."
+          else
+            git commit -m "Publish approved About story, founder hero and team portraits in four languages"
+            git push origin HEAD:main
+          fi
