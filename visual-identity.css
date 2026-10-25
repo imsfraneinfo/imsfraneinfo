@@ -1,0 +1,37 @@
+
+/* Ahansal & Atlas — demo palette */
+:root{--primary:#123e48;--primary-color:#123e48;--dark:#10333c;--gold:#c46a45;--accent:#c46a45;--accent-color:#c46a45;--light:#f6f1e8;--identity-petrol:#123e48;--identity-copper:#c46a45;--identity-paper:#f6f1e8}
+body{background-color:#f6f1e8;color:#193a42}
+body.atnav-ready #siteHeader{background:#10333cf2!important;border-bottom-color:#c46a4555!important}
+body.atnav-ready #siteHeader .brand-content small{color:#e3b79f!important}
+.hp-home{--hp-night:#10333c;--hp-forest:#185260;--hp-gold:#dba287;--hp-cream:#f6f1e8;--hp-ink:#123e48;--hp-border:#e1d8cc}
+html:not([lang=ar]) main :is(h1,h2){font-family:'Cormorant Garamond',Georgia,serif}
+html[lang=ar] main :is(h1,h2,h3){font-family:inherit}
+main :is(.btn,.hp-button,.hp-btn,.wo-btn,.camp-btn,.quad-r-btn,.vt-button,.bp-button){border-radius:11px}
+main :is(.btn-gold,.hp-button-gold,.hp-button-primary,.hp-btn-primary,.quad-r-gold,.camp-btn:not(.ghost),.wo-btn),.team-about .team-contact a{background:#a94f30!important;border-color:#a94f30!important;color:#fff!important}
+main :is(.btn-gold,.hp-button-gold,.hp-button-primary,.hp-btn-primary,.quad-r-gold,.camp-btn:not(.ghost),.wo-btn):hover,.team-about .team-contact a:hover{background:#8d3e25!important;border-color:#8d3e25!important}
+.hp-home .hp-kicker,.team-about .chapter,.team-about .tag{color:#995035}
+.team-about .company-block .chapter{color:#e6bda8}
+.team-about .person-info{border-top-color:#c46a45}.team-about .person-info p{color:#995035}
+.team-about .person-card,.hp-home .hp-activity{box-shadow:0 8px 24px #123e480d}
+main :is(a,button,input,select,textarea):focus-visible{outline-color:#a94f30}
+.floating-whatsapp{background:#087b3c!important;color:#fff!important}
+::selection{background:#dba287;color:#10333c}
+.quad-r-hero .quad-r-copy h1{color:#fff!important}
+.quad-r-hero .quad-r-copy h1 em{color:#e3ad92!important}
+:is(.pricebox,.cta,.end) :is(h1,h2,h3,p){color:#fff!important}
+:is(.quad-r-hero,.vt-hero,.camp-hero,.bp-hero,.ky-hero,.hp-hero,.pricebox,.cta,.end,.ky-season,.company-block) :is(.eyebrow,.kicker,.camp-ey,.ky-eyebrow,.gp-section-label,.pw-eyebrow,.chapter,.tag){color:#e6bda8!important}
+main :is(.btn:not(.alt):not(.ghost):not(.btn-line):not(.btn-outline),.pw-btn-primary),.demo-rebuild-actions a,.demo-rebuild-form button{background:#a94f30!important;color:#fff!important;border-color:#a94f30!important}
+:is(.hp-kicker,.camp-ey,.ky-eyebrow,.gp-section-label,.pw-eyebrow,.journal-kicker,.memories-kicker){color:#995035}
+.ky-season .ky-eyebrow,.end .kicker{color:#e6bda8!important}
+.eyebrow{color:#995035!important}
+.page-randonnee .hero :is(.eyebrow,em),.page-randonnee .hero .stats strong{color:#e6bda8!important}
+.camp-page .camp-hero h1 em,.camp-cta .camp-ey,.demo-editorial-hero .demo-editorial-eyebrow,.hp-season-inner .hp-kicker{color:#e6bda8!important}
+.pricebox .amount,.ims-privacy-link{color:#e6bda8!important}
+body.page-randonnee main.rando .hero .eyebrow,body.page-randonnee main.rando .hero .stats strong{color:#e6bda8!important}
+body.atnav-ready .footer-bottom .ims-privacy-link{color:#e6bda8!important}
+.weekend-program .pw-eyebrow{color:#995035!important}
+.weekend-program .pw-hero .pw-eyebrow,.weekend-program .pw-price-card .pw-eyebrow{color:#e6bda8!important}
+.kayak-page .ky-final .ky-eyebrow,.ib-bivouac .ib-copy .ib-kicker{color:#e6bda8!important}
+#imsfrane-booking .bp-note,main p.lead{color:#4c6269!important}
+main :is(.hero,.quad-r-hero,.camp-hero,.vt-hero,.bp-hero,.ky-hero,.cta,.end) p.lead{color:#e3e9e7!important}

@@ -11,11 +11,11 @@ button.ims-fav-heart,
   width:29px!important;height:29px!important;
   min-width:29px!important;min-height:29px!important;
   padding:0!important;margin:0!important;
-  border:1px solid rgba(239,235,217,.94)!important;
+  border:1px solid rgba(239,224,217,.94)!important;
   border-radius:50%!important;
   background:rgba(255,255,255,.96)!important;
-  color:#2e5942!important;
-  box-shadow:0 3px 11px rgba(5,36,25,.16)!important;
+  color:#2e5059!important;
+  box-shadow:0 3px 11px rgba(8,28,33,.16)!important;
   backdrop-filter:blur(8px);
   -webkit-backdrop-filter:blur(8px);
   cursor:pointer;
@@ -31,15 +31,15 @@ button.ims-fav-heart:after,
 button.ims-fav-heart:hover,
 .ims-dash-home-visual.hp-home button.ims-original-fav-heart:hover{
   transform:translateY(-1px)!important;
-  border-color:#c6a43f!important;
-  box-shadow:0 5px 16px rgba(5,36,25,.21)!important;
+  border-color:#c46a45!important;
+  box-shadow:0 5px 16px rgba(8,28,33,.21)!important;
 }
 button.ims-fav-heart[aria-pressed="true"],
 .ims-dash-home-visual.hp-home button.ims-original-fav-heart[aria-pressed="true"]{
-  background:#194b37!important;
-  color:#e9c66c!important;
-  border-color:#d9bc74!important;
-  box-shadow:0 3px 13px rgba(10,44,29,.26)!important;
+  background:#19414b!important;
+  color:#995035!important;
+  border-color:#d99274!important;
+  box-shadow:0 3px 13px rgba(11,37,43,.26)!important;
 }
 button.ims-fav-heart .ims-heart-svg,
 .ims-dash-home-visual.hp-home button.ims-original-fav-heart .ims-heart-svg{
@@ -51,7 +51,7 @@ button.ims-fav-heart .ims-heart-svg,
 }
 button.ims-fav-heart[aria-pressed="true"] .ims-heart-svg,
 .ims-dash-home-visual.hp-home button.ims-original-fav-heart[aria-pressed="true"] .ims-heart-svg{
-  fill:#e9c66c;stroke:#e9c66c;
+  fill:#db977a;stroke:#db977a;
 }
 button.ims-fav-heart:active .ims-heart-svg,
 .ims-dash-home-visual.hp-home button.ims-original-fav-heart:active .ims-heart-svg{
@@ -59,7 +59,7 @@ button.ims-fav-heart:active .ims-heart-svg,
 }
 button.ims-fav-heart:focus-visible,
 .ims-dash-home-visual.hp-home button.ims-original-fav-heart:focus-visible,
-button.ims-fav-detail:focus-visible{outline:3px solid #c6a43f!important;outline-offset:3px!important}
+button.ims-fav-detail:focus-visible{outline:3px solid #c46a45!important;outline-offset:3px!important}
 button.ims-fav-heart:disabled,
 .ims-dash-home-visual.hp-home button.ims-original-fav-heart:disabled{opacity:.55;cursor:wait}
 
@@ -70,24 +70,24 @@ button.ims-fav-detail{
   justify-content:center!important;align-items:center!important;
   gap:8px!important;
   margin:12px 0!important;padding:9px 14px!important;
-  border:1px solid #c9d7ca!important;
+  border:1px solid #d8d2c8!important;
   border-radius:999px!important;
-  background:#fff!important;
-  color:#255640!important;
-  box-shadow:0 4px 13px rgba(15,43,30,.08)!important;
+  background:#ffffff!important;
+  color:#254c56!important;
+  box-shadow:0 4px 13px rgba(15,37,43,.08)!important;
   cursor:pointer;font-size:12px!important;font-weight:750!important;
   line-height:1.4!important;
   text-align:center;
   transition:background .2s ease,border-color .2s ease!important;
 }
-button.ims-fav-detail:hover{border-color:#c6a43f!important;background:#f8f6ef!important}
-button.ims-fav-detail[aria-pressed="true"]{background:#edf3e9!important;color:#16432f!important;border-color:#c6a43f!important}
+button.ims-fav-detail:hover{border-color:#c46a45!important;background:#f6f1e8!important}
+button.ims-fav-detail[aria-pressed="true"]{background:#f3f0e9!important;color:#163a43!important;border-color:#c46a45!important}
 button.ims-fav-detail .ims-heart-svg{
   width:17px!important;height:17px!important;
   stroke:currentColor;stroke-width:1.8;
   stroke-linecap:round;stroke-linejoin:round;fill:none;flex:none;
 }
-button.ims-fav-detail[aria-pressed="true"] .ims-heart-svg{fill:#c6a43f;stroke:#9e832b}
+button.ims-fav-detail[aria-pressed="true"] .ims-heart-svg{fill:#c46a45;stroke:#a94f30}
 .ims-heart-label{font:inherit}
 html[lang="ar"] button.ims-fav-detail{font-family:var(--ar-text,"Imsfrane Tajawal",Tahoma,Arial,sans-serif)!important}
 
