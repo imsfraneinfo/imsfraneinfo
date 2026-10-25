@@ -1,4 +1,4 @@
-name: Publish approved About team page
+name: Publish approved identity and About page
 on:
   push:
     branches: [main]
@@ -16,52 +16,51 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
-      - name: Download the approved demo version
+      - name: Download approved source version
         run: |
-          git init /tmp/approved-about
-          git -C /tmp/approved-about remote add origin https://github.com/imsfraneinfo/Imsfrane-demo.git
-          git -C /tmp/approved-about fetch --depth 1 origin f18b70a649e856cfc840696dfbfd626519a488d9
-          git -C /tmp/approved-about checkout FETCH_HEAD
-      - name: Publish only About pages and team assets
+          git init /tmp/approved-design
+          git -C /tmp/approved-design remote add origin https://github.com/imsfraneinfo/Imsfrane-demo.git
+          git -C /tmp/approved-design fetch --depth 1 origin 0d50c058807179754ebbf52465d9e34ee8aacaa6
+          git -C /tmp/approved-design checkout FETCH_HEAD
+      - name: Apply approved About and identity to official pages
         run: |
           python3 - <<'PY'
           from pathlib import Path
-          import re, shutil
-          source=Path('/tmp/approved-about')
-          def official(s):
-              return s.replace('https://imsfraneinfo.github.io/Imsfrane-demo/','https://imsfrane.com/').replace('/Imsfrane-demo/','/')
-          css=official((source/'about-team.css').read_text())
-          Path('about-team.css').write_text(css)
-          portraits=['farid-laydi','hamid-laydi','ayoub-laydi','abdelaziz-allam','hassan-allam']
-          Path('images/team').mkdir(parents=True,exist_ok=True)
-          for slug in portraits:
-              shutil.copyfile(source/'images/team'/f'{slug}.webp',Path('images/team')/f'{slug}.webp')
+          import os, runpy, re
+          root=Path(os.environ['GITHUB_WORKSPACE'])
+          cname=(root/'CNAME').read_bytes()
+          # Preserve search-engine metadata and all existing official content.
+          before={}
+          for p in root.rglob('*.html'):
+              s=p.read_text()
+              before[p]=re.findall(r'<(?:meta|link)\b[^>]*(?:robots|canonical)[^>]*>',s,re.I)
+          os.chdir('/tmp/approved-design')
+          about=runpy.run_path('build_about_team.py')
+          about['build'].__globals__['BASE']='/'
+          about['build'](root)
+          visual=Path('build_visual_identity.py').read_text().replace('/Imsfrane-demo/','/')
+          scope={'__name__':'approved_identity'}
+          exec(compile(visual,'approved_identity','exec'),scope)
+          scope['build'](root)
+          for p,metadata in before.items():
+              assert re.findall(r'<(?:meta|link)\b[^>]*(?:robots|canonical)[^>]*>',p.read_text(),re.I)==metadata, str(p)
           for lang in ('fr','en','ar','es'):
-              p=Path(lang)/'about/index.html'
-              current=p.read_text()
-              demo=(source/lang/'about/index.html').read_text()
-              body=re.search(r'<main\b.*?</main>',demo,re.S)[0]
-              assert 'class="founder-hero"' in body
-              assert body.count('class="person-card"')==5
-              current,count=re.subn(r'<main\b.*?</main>',lambda m:official(body),current,count=1,flags=re.S)
-              assert count==1
-              current=re.sub(r'<style\b[^>]*>.*?</style>',lambda m:'' if 'main.aboutx' in m[0] else m[0],current,flags=re.S)
-              current=re.sub(r'<link[^>]*href="[^"]*about-team.css[^"]*"[^>]*>','',current)
-              current=current.replace('</head>','<link rel="stylesheet" href="/about-team.css?v=founder-hero4"></head>',1)
-              assert '/Imsfrane-demo/' not in current
-              assert not re.search(r'<meta\b[^>]*name=["\']robots["\'][^>]*content=["\']noindex',current,re.I)
-              p.write_text(current)
-          assert Path('CNAME').read_text().strip()=='imsfrane.com'
-          print('Validated 4 official About pages, founder hero and 5 team portraits.')
+              s=(root/lang/'about/index.html').read_text()
+              assert s.count('class="person-card"')==4
+              assert 'class="founder-hero"' in s
+              assert s.index('id="people"')<s.index('id="our-story"')
+              assert '/Imsfrane-demo/' not in s
+          assert (root/'CNAME').read_bytes()==cname
+          print('Verified four About pages, four managers, founder hero, and preserved official SEO metadata.')
           PY
-      - name: Commit approved About update
+      - name: Commit approved design
         run: |
-          git config user.name "imsfrane-about-publisher"
+          git config user.name "imsfrane-design-publisher"
           git config user.email "actions@users.noreply.github.com"
-          git add fr/about/index.html en/about/index.html ar/about/index.html es/about/index.html about-team.css images/team/farid-laydi.webp images/team/hamid-laydi.webp images/team/ayoub-laydi.webp images/team/abdelaziz-allam.webp images/team/hassan-allam.webp
+          git add '*.html' '*.css' images/team/
           if git diff --cached --quiet; then
-            echo "Approved About page is already published."
+            echo "Approved design already published."
           else
-            git commit -m "Publish approved About story, founder hero and team portraits in four languages"
+            git commit -m "Publish approved visual identity, contrast fixes and founder-first About page"
             git push origin HEAD:main
           fi
