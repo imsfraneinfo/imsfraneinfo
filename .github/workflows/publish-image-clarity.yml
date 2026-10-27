@@ -1,0 +1,60 @@
+name: Publish approved image clarity
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/publish-image-clarity.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: imsfrane-production-publish
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Back up official site and fetch approved demo
+        run: |
+          git push origin "HEAD:refs/heads/backup-before-image-clarity-${GITHUB_RUN_ID}"
+          git init /tmp/approved-images
+          git -C /tmp/approved-images remote add origin https://github.com/imsfraneinfo/Imsfrane-demo.git
+          git -C /tmp/approved-images fetch --depth 1 origin 15864174c5957abf3cf2bb7b5648ef19893069ec
+          git -C /tmp/approved-images checkout FETCH_HEAD
+          git -C /tmp/approved-images fetch --depth 1 origin 5a0352e0f2e2d9af9dc82beb332b1c983dff135d
+      - name: Apply only approved image improvements
+        run: |
+          python3 -m pip install Pillow==11.3.0
+          python3 - <<'PY'
+          from pathlib import Path
+          import runpy, re, subprocess
+          root=Path.cwd()
+          before={p:re.findall(r'<(?:meta|link)\b[^>]*(?:robots|canonical)[^>]*>',p.read_text(),re.I) for p in root.rglob('*.html')}
+          cname=(root/'CNAME').read_bytes()
+          scope=runpy.run_path('/tmp/approved-images/build_image_clarity.py')
+          scope['build'].__globals__['BASE']='/'
+          scope['build'](root)
+          # Copy the exact image bytes already reviewed in the demo.
+          for name in ['images/team/farid-laydi.webp']+[f'images/clarity/hero-{w}.avif' for w in (640,800,960,1200)]:
+              data=subprocess.check_output(['git','-C','/tmp/approved-images','show','5a0352e0f2e2d9af9dc82beb332b1c983dff135d:'+name])
+              (root/name).write_bytes(data)
+          for p,metadata in before.items():
+              html=p.read_text()
+              assert re.findall(r'<(?:meta|link)\b[^>]*(?:robots|canonical)[^>]*>',html,re.I)==metadata,str(p)
+              assert '/Imsfrane-demo/' not in html,str(p)
+          assert (root/'CNAME').read_bytes()==cname
+          for lang in ('fr','en','es','ar'):
+              assert '/images/clarity/hero-1200.avif' in (root/lang/'index.html').read_text()
+          print('Preserved official content, metadata, domain and all four languages.')
+          PY
+      - name: Publish approved images
+        run: |
+          git config user.name "imsfrane-image-publisher"
+          git config user.email "actions@users.noreply.github.com"
+          git add '*.html' images/clarity/ images/team/farid-laydi.webp image-clarity-report.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish approved responsive image clarity and original founder portrait"
+            git push origin HEAD:main
+          fi
