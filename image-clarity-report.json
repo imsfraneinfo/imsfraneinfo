@@ -1,0 +1,1801 @@
+[
+  {
+    "page": "404.html",
+    "small": "/images/21-800.webp",
+    "large": "/images/21.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/24-1200.avif",
+    "large": "/images/24.webp",
+    "width_before": 1200,
+    "width_after": 1440
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/31-1200.avif",
+    "large": "/images/31.webp",
+    "width_before": 1200,
+    "width_after": 1440
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/IMG_9129-800.avif",
+    "large": "/images/rafting-new/IMG_9129.webp",
+    "width_before": 800,
+    "width_after": 1152
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/IMG_9129-800.avif",
+    "large": "/images/rafting-new/IMG_9129.webp",
+    "width_before": 800,
+    "width_after": 1152
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/kayak-group-800.avif",
+    "large": "/images/kayak/kayak-group.webp",
+    "width_before": 800,
+    "width_after": 1120
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/kayak-group-800.avif",
+    "large": "/images/kayak/kayak-group.webp",
+    "width_before": 800,
+    "width_after": 1120
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/19-800-800.avif",
+    "large": "/images/19.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/19-800-800.avif",
+    "large": "/images/19.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/camping-1-800-800.avif",
+    "large": "/images/camping-1.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/camping-1-800-800.avif",
+    "large": "/images/camping-1.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/IMG_2604-800.avif",
+    "large": "/images/IMG_2604.webp",
+    "width_before": 800,
+    "width_after": 1152
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/IMG_2604-800.avif",
+    "large": "/images/IMG_2604.webp",
+    "width_before": 800,
+    "width_after": 1152
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/IMG_0310-800.avif",
+    "large": "/images/IMG_0310.webp",
+    "width_before": 800,
+    "width_after": 1152
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/IMG_0310-800.avif",
+    "large": "/images/IMG_0310.webp",
+    "width_before": 800,
+    "width_after": 1152
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/bab2-800-800.avif",
+    "large": "/images/bab2.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/bab2-800-800.avif",
+    "large": "/images/bab2.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/tubing-800-800.avif",
+    "large": "/images/tubing.webp",
+    "width_before": 800,
+    "width_after": 960
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/tubing-800-800.avif",
+    "large": "/images/tubing.webp",
+    "width_before": 800,
+    "width_after": 960
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/jetski-lake-800.avif",
+    "large": "/images/jetski-lake.webp",
+    "width_before": 800,
+    "width_after": 1000
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/jetski-lake-800.avif",
+    "large": "/images/jetski-lake.webp",
+    "width_before": 800,
+    "width_after": 1000
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/4x4-800-800.avif",
+    "large": "/images/4x4.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/4x4-800-800.avif",
+    "large": "/images/4x4.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/passage-800-800.avif",
+    "large": "/images/passage.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/passage-800-800.avif",
+    "large": "/images/passage.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/zrkan-800-800.avif",
+    "large": "/images/zrkan.webp",
+    "width_before": 800,
+    "width_after": 1311
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/zrkan-800-800.avif",
+    "large": "/images/zrkan.webp",
+    "width_before": 800,
+    "width_after": 1311
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/anergui-800-800.avif",
+    "large": "/images/anergui.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/anergui-800-800.avif",
+    "large": "/images/anergui.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/almo-800-800.avif",
+    "large": "/images/almo.webp",
+    "width_before": 800,
+    "width_after": 1310
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/almo-800-800.avif",
+    "large": "/images/almo.webp",
+    "width_before": 800,
+    "width_after": 1310
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/ahidous-800-800.avif",
+    "large": "/images/ahidous.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/ahidous-800-800.avif",
+    "large": "/images/ahidous.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/hero-1200.avif",
+    "large": "/images/hero.webp",
+    "width_before": 1200,
+    "width_after": 1440
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/hero-1200.avif",
+    "large": "/images/hero.webp",
+    "width_before": 1200,
+    "width_after": 1440
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/20-800-800.avif",
+    "large": "/images/20.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/20-800-800.avif",
+    "large": "/images/20.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/29-800-800.avif",
+    "large": "/images/29.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/29-800-800.avif",
+    "large": "/images/29.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/guide-800-800.avif",
+    "large": "/images/guide.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/index.html",
+    "small": "/images/optimized/guide-800-800.avif",
+    "large": "/images/guide.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/24-1200.avif",
+    "large": "/images/24.webp",
+    "width_before": 1200,
+    "width_after": 1440
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/31-1200.avif",
+    "large": "/images/31.webp",
+    "width_before": 1200,
+    "width_after": 1440
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/IMG_9129-800.avif",
+    "large": "/images/rafting-new/IMG_9129.webp",
+    "width_before": 800,
+    "width_after": 1152
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/IMG_9129-800.avif",
+    "large": "/images/rafting-new/IMG_9129.webp",
+    "width_before": 800,
+    "width_after": 1152
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/kayak-group-800.avif",
+    "large": "/images/kayak/kayak-group.webp",
+    "width_before": 800,
+    "width_after": 1120
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/kayak-group-800.avif",
+    "large": "/images/kayak/kayak-group.webp",
+    "width_before": 800,
+    "width_after": 1120
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/19-800-800.avif",
+    "large": "/images/19.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/19-800-800.avif",
+    "large": "/images/19.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/camping-1-800-800.avif",
+    "large": "/images/camping-1.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/camping-1-800-800.avif",
+    "large": "/images/camping-1.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/IMG_2604-800.avif",
+    "large": "/images/IMG_2604.webp",
+    "width_before": 800,
+    "width_after": 1152
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/IMG_2604-800.avif",
+    "large": "/images/IMG_2604.webp",
+    "width_before": 800,
+    "width_after": 1152
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/IMG_0310-800.avif",
+    "large": "/images/IMG_0310.webp",
+    "width_before": 800,
+    "width_after": 1152
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/IMG_0310-800.avif",
+    "large": "/images/IMG_0310.webp",
+    "width_before": 800,
+    "width_after": 1152
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/bab2-800-800.avif",
+    "large": "/images/bab2.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/bab2-800-800.avif",
+    "large": "/images/bab2.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/tubing-800-800.avif",
+    "large": "/images/tubing.webp",
+    "width_before": 800,
+    "width_after": 960
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/tubing-800-800.avif",
+    "large": "/images/tubing.webp",
+    "width_before": 800,
+    "width_after": 960
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/jetski-lake-800.avif",
+    "large": "/images/jetski-lake.webp",
+    "width_before": 800,
+    "width_after": 1000
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/jetski-lake-800.avif",
+    "large": "/images/jetski-lake.webp",
+    "width_before": 800,
+    "width_after": 1000
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/4x4-800-800.avif",
+    "large": "/images/4x4.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/4x4-800-800.avif",
+    "large": "/images/4x4.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/passage-800-800.avif",
+    "large": "/images/passage.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/passage-800-800.avif",
+    "large": "/images/passage.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/zrkan-800-800.avif",
+    "large": "/images/zrkan.webp",
+    "width_before": 800,
+    "width_after": 1311
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/zrkan-800-800.avif",
+    "large": "/images/zrkan.webp",
+    "width_before": 800,
+    "width_after": 1311
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/anergui-800-800.avif",
+    "large": "/images/anergui.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/anergui-800-800.avif",
+    "large": "/images/anergui.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/almo-800-800.avif",
+    "large": "/images/almo.webp",
+    "width_before": 800,
+    "width_after": 1310
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/almo-800-800.avif",
+    "large": "/images/almo.webp",
+    "width_before": 800,
+    "width_after": 1310
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/ahidous-800-800.avif",
+    "large": "/images/ahidous.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/ahidous-800-800.avif",
+    "large": "/images/ahidous.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/hero-1200.avif",
+    "large": "/images/hero.webp",
+    "width_before": 1200,
+    "width_after": 1440
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/hero-1200.avif",
+    "large": "/images/hero.webp",
+    "width_before": 1200,
+    "width_after": 1440
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/20-800-800.avif",
+    "large": "/images/20.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/20-800-800.avif",
+    "large": "/images/20.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/29-800-800.avif",
+    "large": "/images/29.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/29-800-800.avif",
+    "large": "/images/29.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/guide-800-800.avif",
+    "large": "/images/guide.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/index.html",
+    "small": "/images/optimized/guide-800-800.avif",
+    "large": "/images/guide.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/24-1200.avif",
+    "large": "/images/24.webp",
+    "width_before": 1200,
+    "width_after": 1440
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/31-1200.avif",
+    "large": "/images/31.webp",
+    "width_before": 1200,
+    "width_after": 1440
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/IMG_9129-800.avif",
+    "large": "/images/rafting-new/IMG_9129.webp",
+    "width_before": 800,
+    "width_after": 1152
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/IMG_9129-800.avif",
+    "large": "/images/rafting-new/IMG_9129.webp",
+    "width_before": 800,
+    "width_after": 1152
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/kayak-group-800.avif",
+    "large": "/images/kayak/kayak-group.webp",
+    "width_before": 800,
+    "width_after": 1120
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/kayak-group-800.avif",
+    "large": "/images/kayak/kayak-group.webp",
+    "width_before": 800,
+    "width_after": 1120
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/19-800-800.avif",
+    "large": "/images/19.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/19-800-800.avif",
+    "large": "/images/19.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/camping-1-800-800.avif",
+    "large": "/images/camping-1.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/camping-1-800-800.avif",
+    "large": "/images/camping-1.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/IMG_2604-800.avif",
+    "large": "/images/IMG_2604.webp",
+    "width_before": 800,
+    "width_after": 1152
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/IMG_2604-800.avif",
+    "large": "/images/IMG_2604.webp",
+    "width_before": 800,
+    "width_after": 1152
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/IMG_0310-800.avif",
+    "large": "/images/IMG_0310.webp",
+    "width_before": 800,
+    "width_after": 1152
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/IMG_0310-800.avif",
+    "large": "/images/IMG_0310.webp",
+    "width_before": 800,
+    "width_after": 1152
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/bab2-800-800.avif",
+    "large": "/images/bab2.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/bab2-800-800.avif",
+    "large": "/images/bab2.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/tubing-800-800.avif",
+    "large": "/images/tubing.webp",
+    "width_before": 800,
+    "width_after": 960
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/tubing-800-800.avif",
+    "large": "/images/tubing.webp",
+    "width_before": 800,
+    "width_after": 960
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/jetski-lake-800.avif",
+    "large": "/images/jetski-lake.webp",
+    "width_before": 800,
+    "width_after": 1000
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/jetski-lake-800.avif",
+    "large": "/images/jetski-lake.webp",
+    "width_before": 800,
+    "width_after": 1000
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/4x4-800-800.avif",
+    "large": "/images/4x4.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/4x4-800-800.avif",
+    "large": "/images/4x4.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/passage-800-800.avif",
+    "large": "/images/passage.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/passage-800-800.avif",
+    "large": "/images/passage.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/zrkan-800-800.avif",
+    "large": "/images/zrkan.webp",
+    "width_before": 800,
+    "width_after": 1311
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/zrkan-800-800.avif",
+    "large": "/images/zrkan.webp",
+    "width_before": 800,
+    "width_after": 1311
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/anergui-800-800.avif",
+    "large": "/images/anergui.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/anergui-800-800.avif",
+    "large": "/images/anergui.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/almo-800-800.avif",
+    "large": "/images/almo.webp",
+    "width_before": 800,
+    "width_after": 1310
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/almo-800-800.avif",
+    "large": "/images/almo.webp",
+    "width_before": 800,
+    "width_after": 1310
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/ahidous-800-800.avif",
+    "large": "/images/ahidous.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/ahidous-800-800.avif",
+    "large": "/images/ahidous.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/hero-1200.avif",
+    "large": "/images/hero.webp",
+    "width_before": 1200,
+    "width_after": 1440
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/hero-1200.avif",
+    "large": "/images/hero.webp",
+    "width_before": 1200,
+    "width_after": 1440
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/20-800-800.avif",
+    "large": "/images/20.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/20-800-800.avif",
+    "large": "/images/20.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/29-800-800.avif",
+    "large": "/images/29.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/29-800-800.avif",
+    "large": "/images/29.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/guide-800-800.avif",
+    "large": "/images/guide.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/index.html",
+    "small": "/images/optimized/guide-800-800.avif",
+    "large": "/images/guide.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/24-1200.avif",
+    "large": "/images/24.webp",
+    "width_before": 1200,
+    "width_after": 1440
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/31-1200.avif",
+    "large": "/images/31.webp",
+    "width_before": 1200,
+    "width_after": 1440
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/IMG_9129-800.avif",
+    "large": "/images/rafting-new/IMG_9129.webp",
+    "width_before": 800,
+    "width_after": 1152
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/IMG_9129-800.avif",
+    "large": "/images/rafting-new/IMG_9129.webp",
+    "width_before": 800,
+    "width_after": 1152
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/kayak-group-800.avif",
+    "large": "/images/kayak/kayak-group.webp",
+    "width_before": 800,
+    "width_after": 1120
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/kayak-group-800.avif",
+    "large": "/images/kayak/kayak-group.webp",
+    "width_before": 800,
+    "width_after": 1120
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/19-800-800.avif",
+    "large": "/images/19.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/19-800-800.avif",
+    "large": "/images/19.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/camping-1-800-800.avif",
+    "large": "/images/camping-1.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/camping-1-800-800.avif",
+    "large": "/images/camping-1.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/IMG_2604-800.avif",
+    "large": "/images/IMG_2604.webp",
+    "width_before": 800,
+    "width_after": 1152
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/IMG_2604-800.avif",
+    "large": "/images/IMG_2604.webp",
+    "width_before": 800,
+    "width_after": 1152
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/IMG_0310-800.avif",
+    "large": "/images/IMG_0310.webp",
+    "width_before": 800,
+    "width_after": 1152
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/IMG_0310-800.avif",
+    "large": "/images/IMG_0310.webp",
+    "width_before": 800,
+    "width_after": 1152
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/bab2-800-800.avif",
+    "large": "/images/bab2.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/bab2-800-800.avif",
+    "large": "/images/bab2.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/tubing-800-800.avif",
+    "large": "/images/tubing.webp",
+    "width_before": 800,
+    "width_after": 960
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/tubing-800-800.avif",
+    "large": "/images/tubing.webp",
+    "width_before": 800,
+    "width_after": 960
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/jetski-lake-800.avif",
+    "large": "/images/jetski-lake.webp",
+    "width_before": 800,
+    "width_after": 1000
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/jetski-lake-800.avif",
+    "large": "/images/jetski-lake.webp",
+    "width_before": 800,
+    "width_after": 1000
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/4x4-800-800.avif",
+    "large": "/images/4x4.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/4x4-800-800.avif",
+    "large": "/images/4x4.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/passage-800-800.avif",
+    "large": "/images/passage.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/passage-800-800.avif",
+    "large": "/images/passage.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/zrkan-800-800.avif",
+    "large": "/images/zrkan.webp",
+    "width_before": 800,
+    "width_after": 1311
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/zrkan-800-800.avif",
+    "large": "/images/zrkan.webp",
+    "width_before": 800,
+    "width_after": 1311
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/anergui-800-800.avif",
+    "large": "/images/anergui.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/anergui-800-800.avif",
+    "large": "/images/anergui.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/almo-800-800.avif",
+    "large": "/images/almo.webp",
+    "width_before": 800,
+    "width_after": 1310
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/almo-800-800.avif",
+    "large": "/images/almo.webp",
+    "width_before": 800,
+    "width_after": 1310
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/ahidous-800-800.avif",
+    "large": "/images/ahidous.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/ahidous-800-800.avif",
+    "large": "/images/ahidous.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/hero-1200.avif",
+    "large": "/images/hero.webp",
+    "width_before": 1200,
+    "width_after": 1440
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/hero-1200.avif",
+    "large": "/images/hero.webp",
+    "width_before": 1200,
+    "width_after": 1440
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/20-800-800.avif",
+    "large": "/images/20.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/20-800-800.avif",
+    "large": "/images/20.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/29-800-800.avif",
+    "large": "/images/29.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/29-800-800.avif",
+    "large": "/images/29.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/guide-800-800.avif",
+    "large": "/images/guide.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/index.html",
+    "small": "/images/optimized/guide-800-800.avif",
+    "large": "/images/guide.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/contact/index.html",
+    "small": "/images/24-800.webp",
+    "large": "/images/24.webp",
+    "width_before": 800,
+    "width_after": 1440
+  },
+  {
+    "page": "ar/quad/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/quad/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/quad/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/quad/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/quad/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/quad/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/quad/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/quad/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/quad/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/quad/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/quad/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/quad/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/quad/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/quad/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/hebergement/index.html",
+    "small": "/images/22-800.webp",
+    "large": "/images/22.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/hebergement/index.html",
+    "small": "/images/babmsfrane-800.webp",
+    "large": "/images/babmsfrane.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/hebergement/index.html",
+    "small": "/images/IMG_3580-800.webp",
+    "large": "/images/IMG_3580.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/hebergement/index.html",
+    "small": "/images/bab2-800.webp",
+    "large": "/images/bab2.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/hebergement/index.html",
+    "small": "/images/bab3-800.webp",
+    "large": "/images/bab3.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/about/index.html",
+    "small": "/images/camping-1-800.webp",
+    "large": "/images/camping-1.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/about/index.html",
+    "small": "/images/raft2-800.webp",
+    "large": "/images/raft2.webp",
+    "width_before": 800,
+    "width_after": 900
+  },
+  {
+    "page": "ar/about/index.html",
+    "small": "/images/camping-1-800.webp",
+    "large": "/images/camping-1.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/memories/index.html",
+    "small": "/images/22-800.webp",
+    "large": "/images/22.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/memories/index.html",
+    "small": "/images/19-800.webp",
+    "large": "/images/19.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/memories/index.html",
+    "small": "/images/IMG_5134-800.webp",
+    "large": "/images/IMG_5134.webp",
+    "width_before": 800,
+    "width_after": 900
+  },
+  {
+    "page": "ar/memories/index.html",
+    "small": "/images/4x4-800.webp",
+    "large": "/images/4x4.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/memories/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/memories/index.html",
+    "small": "/images/babmsfrane-800.webp",
+    "large": "/images/babmsfrane.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/memories/index.html",
+    "small": "/images/25-800.webp",
+    "large": "/images/25.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "ar/memories/index.html",
+    "small": "/images/21-800.webp",
+    "large": "/images/21.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/contact/index.html",
+    "small": "/images/24-800.webp",
+    "large": "/images/24.webp",
+    "width_before": 800,
+    "width_after": 1440
+  },
+  {
+    "page": "es/quad/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/quad/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/quad/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/quad/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/quad/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/quad/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/quad/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/quad/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/quad/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/quad/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/quad/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/quad/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/quad/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/quad/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/hebergement/index.html",
+    "small": "/images/22-800.webp",
+    "large": "/images/22.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/hebergement/index.html",
+    "small": "/images/babmsfrane-800.webp",
+    "large": "/images/babmsfrane.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/hebergement/index.html",
+    "small": "/images/IMG_3580-800.webp",
+    "large": "/images/IMG_3580.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/hebergement/index.html",
+    "small": "/images/bab2-800.webp",
+    "large": "/images/bab2.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/hebergement/index.html",
+    "small": "/images/bab3-800.webp",
+    "large": "/images/bab3.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/about/index.html",
+    "small": "/images/camping-1-800.webp",
+    "large": "/images/camping-1.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/about/index.html",
+    "small": "/images/raft2-800.webp",
+    "large": "/images/raft2.webp",
+    "width_before": 800,
+    "width_after": 900
+  },
+  {
+    "page": "es/about/index.html",
+    "small": "/images/camping-1-800.webp",
+    "large": "/images/camping-1.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/memories/index.html",
+    "small": "/images/22-800.webp",
+    "large": "/images/22.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/memories/index.html",
+    "small": "/images/19-800.webp",
+    "large": "/images/19.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/memories/index.html",
+    "small": "/images/IMG_5134-800.webp",
+    "large": "/images/IMG_5134.webp",
+    "width_before": 800,
+    "width_after": 900
+  },
+  {
+    "page": "es/memories/index.html",
+    "small": "/images/4x4-800.webp",
+    "large": "/images/4x4.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/memories/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/memories/index.html",
+    "small": "/images/babmsfrane-800.webp",
+    "large": "/images/babmsfrane.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/memories/index.html",
+    "small": "/images/25-800.webp",
+    "large": "/images/25.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "es/memories/index.html",
+    "small": "/images/21-800.webp",
+    "large": "/images/21.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/contact/index.html",
+    "small": "/images/24-800.webp",
+    "large": "/images/24.webp",
+    "width_before": 800,
+    "width_after": 1440
+  },
+  {
+    "page": "en/hebergement/index.html",
+    "small": "/images/22-800.webp",
+    "large": "/images/22.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/hebergement/index.html",
+    "small": "/images/babmsfrane-800.webp",
+    "large": "/images/babmsfrane.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/hebergement/index.html",
+    "small": "/images/IMG_3580-800.webp",
+    "large": "/images/IMG_3580.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/hebergement/index.html",
+    "small": "/images/bab2-800.webp",
+    "large": "/images/bab2.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/hebergement/index.html",
+    "small": "/images/bab3-800.webp",
+    "large": "/images/bab3.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/about/index.html",
+    "small": "/images/camping-1-800.webp",
+    "large": "/images/camping-1.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/about/index.html",
+    "small": "/images/raft2-800.webp",
+    "large": "/images/raft2.webp",
+    "width_before": 800,
+    "width_after": 900
+  },
+  {
+    "page": "en/about/index.html",
+    "small": "/images/camping-1-800.webp",
+    "large": "/images/camping-1.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/memories/index.html",
+    "small": "/images/22-800.webp",
+    "large": "/images/22.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/memories/index.html",
+    "small": "/images/19-800.webp",
+    "large": "/images/19.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/memories/index.html",
+    "small": "/images/IMG_5134-800.webp",
+    "large": "/images/IMG_5134.webp",
+    "width_before": 800,
+    "width_after": 900
+  },
+  {
+    "page": "en/memories/index.html",
+    "small": "/images/4x4-800.webp",
+    "large": "/images/4x4.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/memories/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/memories/index.html",
+    "small": "/images/babmsfrane-800.webp",
+    "large": "/images/babmsfrane.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/memories/index.html",
+    "small": "/images/25-800.webp",
+    "large": "/images/25.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "en/memories/index.html",
+    "small": "/images/21-800.webp",
+    "large": "/images/21.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/contact/index.html",
+    "small": "/images/24-800.webp",
+    "large": "/images/24.webp",
+    "width_before": 800,
+    "width_after": 1440
+  },
+  {
+    "page": "fr/hebergement/index.html",
+    "small": "/images/22-800.webp",
+    "large": "/images/22.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/hebergement/index.html",
+    "small": "/images/babmsfrane-800.webp",
+    "large": "/images/babmsfrane.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/hebergement/index.html",
+    "small": "/images/IMG_3580-800.webp",
+    "large": "/images/IMG_3580.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/hebergement/index.html",
+    "small": "/images/bab2-800.webp",
+    "large": "/images/bab2.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/hebergement/index.html",
+    "small": "/images/bab3-800.webp",
+    "large": "/images/bab3.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/about/index.html",
+    "small": "/images/camping-1-800.webp",
+    "large": "/images/camping-1.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/about/index.html",
+    "small": "/images/raft2-800.webp",
+    "large": "/images/raft2.webp",
+    "width_before": 800,
+    "width_after": 900
+  },
+  {
+    "page": "fr/about/index.html",
+    "small": "/images/camping-1-800.webp",
+    "large": "/images/camping-1.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/memories/index.html",
+    "small": "/images/22-800.webp",
+    "large": "/images/22.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/memories/index.html",
+    "small": "/images/19-800.webp",
+    "large": "/images/19.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/memories/index.html",
+    "small": "/images/IMG_5134-800.webp",
+    "large": "/images/IMG_5134.webp",
+    "width_before": 800,
+    "width_after": 900
+  },
+  {
+    "page": "fr/memories/index.html",
+    "small": "/images/4x4-800.webp",
+    "large": "/images/4x4.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/memories/index.html",
+    "small": "/images/quad-800.webp",
+    "large": "/images/quad.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/memories/index.html",
+    "small": "/images/babmsfrane-800.webp",
+    "large": "/images/babmsfrane.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/memories/index.html",
+    "small": "/images/25-800.webp",
+    "large": "/images/25.webp",
+    "width_before": 800,
+    "width_after": 1200
+  },
+  {
+    "page": "fr/memories/index.html",
+    "small": "/images/21-800.webp",
+    "large": "/images/21.webp",
+    "width_before": 800,
+    "width_after": 1200
+  }
+]
