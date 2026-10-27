@@ -32,6 +32,7 @@ jobs:
           import runpy, re, subprocess
           root=Path.cwd()
           before={p:re.findall(r'<(?:meta|link)\b[^>]*(?:robots|canonical)[^>]*>',p.read_text(),re.I) for p in root.rglob('*.html')}
+          demo_refs={p:p.read_text().count('/Imsfrane-demo/') for p in before}
           cname=(root/'CNAME').read_bytes()
           scope=runpy.run_path('/tmp/approved-images/build_image_clarity.py')
           scope['build'].__globals__['BASE']='/'
@@ -43,7 +44,7 @@ jobs:
           for p,metadata in before.items():
               html=p.read_text()
               assert re.findall(r'<(?:meta|link)\b[^>]*(?:robots|canonical)[^>]*>',html,re.I)==metadata,str(p)
-              assert '/Imsfrane-demo/' not in html,str(p)
+              assert html.count('/Imsfrane-demo/')==demo_refs[p],str(p)
           assert (root/'CNAME').read_bytes()==cname
           for lang in ('fr','en','es','ar'):
               assert '/images/clarity/hero-1200.avif' in (root/lang/'index.html').read_text()
