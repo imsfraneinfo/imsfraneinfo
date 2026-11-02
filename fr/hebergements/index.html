@@ -257,4 +257,36 @@ main.demo-rebuilt-page form button{background:#c46a45;color:#172c31;border:0;pad
   frame.addEventListener('load', attach);
   if (frame.contentDocument && frame.contentDocument.readyState === 'complete') attach();
 })();
+</script><script>(function () {
+  var frame = document.getElementById('apartmentExperienceFrame');
+  if (!frame) return;
+  var observer;
+  function attach() {
+    var doc = frame.contentDocument;
+    var main = doc && doc.querySelector('main');
+    if (!main) return;
+    function resize() {
+      var height = Math.ceil(main.getBoundingClientRect().height);
+      if (height > 0) frame.style.height = height + 'px';
+    }
+    if (observer) observer.disconnect();
+    observer = new ResizeObserver(resize);
+    observer.observe(main);
+    resize();
+    doc.querySelectorAll('img').forEach(function (img) {
+      if (!img.complete) img.addEventListener('load', resize, {once:true});
+    });
+    if (doc.fonts) doc.fonts.ready.then(resize);
+    doc.querySelectorAll('a[href^="#"]').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        var target = doc.getElementById(link.getAttribute('href').slice(1));
+        if (!target) return;
+        event.preventDefault();
+        window.scrollTo({top:frame.getBoundingClientRect().top + window.scrollY + target.getBoundingClientRect().top - 80, behavior:'smooth'});
+      });
+    });
+  }
+  frame.addEventListener('load', attach);
+  if (frame.contentDocument && frame.contentDocument.readyState === 'complete') attach();
+})();
 </script></body></html>
