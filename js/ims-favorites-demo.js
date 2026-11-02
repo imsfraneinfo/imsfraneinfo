@@ -3,7 +3,7 @@
 "use strict";
 const m=location.pathname.match(/^\/(fr|en|ar|es)\//);
 if(!m)return;
-const lang=m[1],catalog=["gite-atlas","gite-atlas","gite-atlas","rafting","kayak","camping","randonnee","vtt","quad","hebergement","tubing","jetski","4x4","passage","zrkan","anergui","almou","ahidous"],tags={
+const lang=m[1],catalog=["gite-atlas","gite-atlas","gite-atlas","gite-atlas","rafting","kayak","camping","randonnee","vtt","quad","hebergement","tubing","jetski","4x4","passage","zrkan","anergui","almou","ahidous"],tags={
  fr:{save:"Ajouter aux favoris",remove:"Retirer des favoris",login:"Connectez-vous pour enregistrer vos favoris.",saved:"Ajouté à vos favoris",removed:"Retiré de vos favoris",error:"Impossible d’enregistrer ce favori."},
  en:{save:"Add to favorites",remove:"Remove from favorites",login:"Sign in to save your favorites.",saved:"Added to favorites",removed:"Removed from favorites",error:"Could not save this favorite."},
  ar:{save:"إضافة إلى المفضلة",remove:"إزالة من المفضلة",login:"سجّل الدخول لحفظ الأنشطة المفضلة.",saved:"أُضيف إلى المفضلة",removed:"أُزيل من المفضلة",error:"تعذّر حفظ النشاط المفضل."},
@@ -40,6 +40,19 @@ function button(slug,detail){
 function addHeart(slug,target){if(!target||target.querySelector(":scope > .ims-fav-heart"))return;target.classList.add("ims-fav-target");target.append(button(slug,false))}
 
 function place(){
+      const frame=document.getElementById("giteExperienceFrame");
+      function placeGite(){
+        const doc=frame?.contentDocument,actions=doc?.querySelector(".hero-acts");
+        if(!actions||doc.getElementById("imsGiteFavorite"))return;
+        const b=button("gite-atlas",true);b.id="imsGiteFavorite";
+        b.classList.add("btn","btn-line-light");actions.append(b);
+        const style=doc.createElement("style");
+        style.textContent=".ims-fav-detail{display:inline-flex;align-items:center;gap:8px;cursor:pointer;background:transparent}.ims-fav-detail svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8}.ims-fav-detail[aria-pressed=true] svg{fill:currentColor}";
+        doc.head.append(style);
+      }
+      if(frame&&!frame.dataset.favoriteHook){frame.dataset.favoriteHook="1";frame.addEventListener("load",placeGite);}
+      placeGite();
+    
       const frame=document.getElementById("giteExperienceFrame");
       function placeGite(){
         const doc=frame?.contentDocument,actions=doc?.querySelector(".hero-acts");
