@@ -80,7 +80,7 @@ print(f'Repaired accommodation navigation on {repaired} pages')
 # Repeated releases must not duplicate the gite favorite hook.
 favorite=root/'js/ims-favorites-demo.js'
 code=favorite.read_text()
-hook=re.compile(r'      const frame=document.getElementById\("giteExperienceFrame"\);.*?      placeGite\(\);\s*',re.S)
+hook=re.compile(r'      const frame=document.getElementById\("giteExperienceFrame"\);.*?      placeGite\(\);',re.S)
 matches=list(hook.finditer(code))
 if len(matches)>1:
  first=matches[0].start()
