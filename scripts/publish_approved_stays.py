@@ -58,5 +58,5 @@ def inline_icon(match):
 for page in root.rglob('*.html'):
  if '.git' in page.parts:continue
  html=page.read_text()
- html=re.sub(r'<i\\b[^>]*class="([^"]*)"[^>]*>\\s*</i>',inline_icon,html)
+ html=re.sub(r'<i\b[^>]*class="([^"]*)"[^>]*>\s*</i>',inline_icon,html)
  page.write_text(html)
