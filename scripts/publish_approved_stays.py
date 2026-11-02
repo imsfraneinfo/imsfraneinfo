@@ -76,3 +76,21 @@ for page in root.rglob('*.html'):
   section=re.search(r'<section class="stay-menu">.*?</section>',fixed,re.S)[0]
   assert section.count('class="atnav-submenu-link"')==2,page
 print(f'Repaired accommodation navigation on {repaired} pages')
+
+# Repeated releases must not duplicate the gite favorite hook.
+favorite=root/'js/ims-favorites-demo.js'
+code=favorite.read_text()
+hook=re.compile(r'      const frame=document.getElementById\("giteExperienceFrame"\);.*?      placeGite\(\);\s*',re.S)
+matches=list(hook.finditer(code))
+if len(matches)>1:
+ first=matches[0].start()
+ code=code[:first]+matches[0][0]+hook.sub('',code[matches[0].end():])
+favorite.write_text(code)
+subprocess.run(['node','--check',str(favorite)],check=True)
+nav=root/'navigation-pro.js'
+nav.write_text(re.sub(r'ims-favorites-demo\.js\?[^"]*','ims-favorites-demo.js?v=menu-fix-20261102',nav.read_text()))
+for page in root.rglob('*.html'):
+ if '.git' in page.parts:continue
+ html=page.read_text()
+ html=re.sub(r'navigation-pro\.js\?[^"\s>]*','navigation-pro.js?v=menu-fix-20261102',html)
+ page.write_text(html)
