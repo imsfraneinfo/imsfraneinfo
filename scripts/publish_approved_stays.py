@@ -40,3 +40,23 @@ for lang in ['fr','en','es','ar']:
 for p in (root/'images/gite-atlas').glob('*.webp'):assert p.stat().st_size>0,p
 assert (root/'CNAME').read_text().strip()=='imsfrane.com'
 print('Approved stays and booking release validated for imsfrane.com')
+
+# Inline social icons remain visible when the external icon font is unavailable.
+icons={
+ 'fa-facebook-f':'<path d="M14 21v-8h3l.5-4H14V7c0-1 .4-1.5 1.7-1.5H18V2.2C17.3 2.1 16.2 2 15 2c-3 0-5 1.8-5 5v2H7v4h3v8z"/>',
+ 'fa-instagram':'<rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2"/>',
+ 'fa-tiktok':'<path d="M14 2h3c.3 2.2 1.8 3.7 4 4v3a9 9 0 0 1-4-1v8a6 6 0 1 1-6-6v3a3 3 0 1 0 3 3z"/>',
+ 'fa-whatsapp':'<path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.4 14.7l-.4-.3-2.3.6.6-2.2-.3-.5A8 8 0 0 1 12 4z"/><path d="M8.1 6.8c-.4 0-1.1.7-1.1 1.8 0 2.4 3.3 6.1 6.5 7.3 1.6.6 3.1-.2 3.5-1.5.1-.4-.1-.6-.5-.8l-1.9-.9c-.3-.1-.5 0-.7.3l-.7.9c-.2.2-.4.2-.7.1-1.3-.6-2.5-1.6-3.2-2.9-.2-.3-.1-.4.1-.6l.6-.8c.2-.2.2-.4.1-.7l-.9-2c-.2-.3-.4-.3-1.1-.2z"/>',
+ 'fa-chevron-up':'<path d="m5 15 7-7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>'
+}
+def inline_icon(match):
+ classes=match[1].split()
+ for key,paths in icons.items():
+  if key in classes:
+   return '<svg xmlns="http://www.w3.org/2000/svg" class="ims-inline-social" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true" focusable="false" style="display:inline-block;flex-shrink:0;vertical-align:middle">'+paths+'</svg>'
+ return match[0]
+for page in root.rglob('*.html'):
+ if '.git' in page.parts:continue
+ html=page.read_text()
+ html=re.sub(r'<i\\b[^>]*class="([^"]*)"[^>]*>\\s*</i>',inline_icon,html)
+ page.write_text(html)
