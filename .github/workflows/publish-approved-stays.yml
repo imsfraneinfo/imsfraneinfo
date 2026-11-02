@@ -1,0 +1,38 @@
+name: Publish approved accommodation and booking
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/publish-approved-stays.yml'
+      - 'scripts/publish_approved_stays.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: imsfrane-production-publish
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Back up current production
+        run: git push origin "HEAD:refs/heads/backup-before-stays-${GITHUB_RUN_ID}"
+      - name: Fetch approved demo sources
+        run: |
+          git clone --filter=blob:none --no-checkout https://github.com/imsfraneinfo/Imsfrane-demo.git "$RUNNER_TEMP/approved-demo"
+          git -C "$RUNNER_TEMP/approved-demo" sparse-checkout set --no-cone '/build_stays_demo.py' '/build_apartment_demo.py' '/build_gite_demo.py' '/build_booking_demo.py' '/apartment-assets/' '/gite-assets/'
+          git -C "$RUNNER_TEMP/approved-demo" checkout b0be11f21ba01d8015fff407448226d7169e9d2b
+      - name: Build and validate approved production release
+        run: python3 scripts/publish_approved_stays.py "$RUNNER_TEMP/approved-demo"
+      - name: Publish approved pages
+        run: |
+          git config user.name "imsfrane-official-publisher"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish approved accommodation, real photos, favorites and booking"
+            git push origin HEAD:main
+          fi
