@@ -60,3 +60,19 @@ for page in root.rglob('*.html'):
  html=page.read_text()
  html=re.sub(r'<i\b[^>]*class="([^"]*)"[^>]*>\s*</i>',inline_icon,html)
  page.write_text(html)
+
+# Repair duplicated accommodation fragments left by repeated older builds.
+# Keep the first complete section; the next label belongs inside the same nav.
+menu_pattern=re.compile(r'(<section class="stay-menu">.*?</section>).*?(?=<span class="atnav-label atnav-label-separated">)',re.S)
+repaired=0
+for page in root.rglob('*.html'):
+ if '.git' in page.parts:continue
+ html=page.read_text()
+ fixed=menu_pattern.sub(lambda m:m[1],html)
+ if fixed!=html:
+  page.write_text(fixed);repaired+=1
+ if 'id="atnavAccommodation"' in fixed:
+  assert fixed.count('id="atnavAccommodation"')==1,page
+  section=re.search(r'<section class="stay-menu">.*?</section>',fixed,re.S)[0]
+  assert section.count('class="atnav-submenu-link"')==2,page
+print(f'Repaired accommodation navigation on {repaired} pages')
