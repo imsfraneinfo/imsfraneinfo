@@ -1,3 +1,4 @@
+# Owner-approved publication: Programme and footer only.
 name: Publish approved Programme and shared footer
 on:
   push:
