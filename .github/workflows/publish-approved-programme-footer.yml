@@ -1,0 +1,42 @@
+name: Publish approved Programme and shared footer
+on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/publish_approved_programme_footer.py
+      - .github/workflows/publish-approved-programme-footer.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: imsfrane-production-publish
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - name: Preserve the current official revision
+        run: git push origin "HEAD:refs/heads/backup-before-programme-footer-${GITHUB_RUN_ID}"
+      - name: Get the exact approved source
+        run: |
+          git clone https://github.com/imsfraneinfo/Imsfrane-demo.git "$RUNNER_TEMP/approved-demo"
+          git -C "$RUNNER_TEMP/approved-demo" checkout 5303f808ff19bacbbd550806d53a116d507e3f2d
+      - name: Build and verify only the approved changes
+        run: |
+          python3 -m pip install Pillow==11.3.0 beautifulsoup4==4.14.3
+          python3 scripts/publish_approved_programme_footer.py "$RUNNER_TEMP/approved-demo"
+      - name: Publish the verified official files
+        run: |
+          git config user.name "imsfrane-approved-publisher"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Approved Programme and footer are already published."
+          else
+            git commit -m "Publish approved weekend Programme and unified four-language footer"
+            git push origin HEAD:main
+          fi
