@@ -160,7 +160,7 @@ main.demo-rebuilt-page form{margin-top:28px;display:grid;gap:12px;max-width:100%
 main.demo-rebuilt-page form :is(input,textarea,select){padding:12px;max-width:100%;border:1px solid #d9d4ca;background:white;color:#15333b;border-radius:6px}
 main.demo-rebuilt-page form button{background:#c46a45;color:#172c31;border:0;padding:13px 22px;border-radius:5px;font-weight:800;background:#a94f30;color:#fff!important;}
 @media(max-width:800px){main.demo-rebuilt-page .demo-editorial-hero,main.demo-rebuilt-page .demo-rebuild-inner{grid-template-columns:1fr}main.demo-rebuilt-page .demo-editorial-photo{grid-row:1;min-height:300px}main.demo-rebuilt-page .demo-editorial-copy{padding:42px 25px}main.demo-rebuilt-page .demo-rebuild-alt .demo-rebuild-photo{order:0}main.demo-rebuilt-page .demo-rebuild-photo{min-height:300px;max-height:460px}main.demo-rebuilt-page .demo-rebuild-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}main.demo-rebuilt-page .demo-rebuild-gallery img{height:165px}}
-</style><link href="/store-pro.css?identity=contrast8" rel="stylesheet"/><link href="https://imsfrane.com/fr/store/" hreflang="fr" rel="alternate"/><link href="https://imsfrane.com/en/store/" hreflang="en" rel="alternate"/><link href="https://imsfrane.com/ar/store/" hreflang="ar" rel="alternate"/><link href="https://imsfrane.com/es/store/" hreflang="es" rel="alternate"/><link href="/navigation-pro.css?identity=contrast8" rel="stylesheet"/><link as="font" crossorigin="" href="/fonts/arabic/Alexandria-VF.woff2" rel="preload" type="font/woff2"/><link href="/arabic-pro.css?v=rtl-arabic-20261011e-price1&amp;identity=contrast8" rel="stylesheet"/><link href="https://imsfrane.com/ar/store/" rel="canonical"/><link href="/visual-identity.css?v=contrast8" rel="stylesheet"/><link href="/stays-demo.css?v=4" rel="stylesheet"/><link rel="stylesheet" href="/footer-pro.css?v=1"></head><body class="page-store atnav-ready" data-lang="ar" data-nav-active="store.html">
+</style><link href="/store-pro.css?identity=contrast8" rel="stylesheet"/><link href="https://imsfrane.com/fr/store/" hreflang="fr" rel="alternate"/><link href="https://imsfrane.com/en/store/" hreflang="en" rel="alternate"/><link href="https://imsfrane.com/ar/store/" hreflang="ar" rel="alternate"/><link href="https://imsfrane.com/es/store/" hreflang="es" rel="alternate"/><link href="/navigation-pro.css?identity=contrast8" rel="stylesheet"/><link as="font" crossorigin="" href="/fonts/arabic/Alexandria-VF.woff2" rel="preload" type="font/woff2"/><link href="/arabic-pro.css?v=rtl-arabic-20261011e-price1&amp;identity=contrast8" rel="stylesheet"/><link href="https://imsfrane.com/ar/store/" rel="canonical"/><link href="/visual-identity.css?v=contrast8" rel="stylesheet"/><link href="/stays-demo.css?v=4" rel="stylesheet"/><link rel="stylesheet" href="/footer-pro.css?v=1"><link rel="stylesheet" href="/website-enquiry.css?v=6"></head><body class="page-store atnav-ready" data-lang="ar" data-nav-active="store.html">
 <nav aria-label="Navigation principale" class="main-navigation" id="mainNavigation" inert="">
 <div class="navigation-header"><strong class="editable" data-cms-text="store-t2">Imsfrane Cathédrale</strong><button aria-label="Fermer le menu de navigation" class="navigation-close" id="navigationClose" type="button"><i class="fa-solid fa-xmark"></i></button></div>
 <ul class="navigation-list">
@@ -265,7 +265,86 @@ main.demo-rebuilt-page form button{background:#c46a45;color:#172c31;border:0;pad
 </aside>
 <div aria-live="polite" class="sp-toast" hidden="" id="sp-toast" role="status"></div>
 <button class="sp-mobile-cart" id="sp-mobile-cart" type="button"><i aria-hidden="true" class="fa-solid fa-basket-shopping"></i><span>عرض السلة</span><b id="sp-mobile-count">0</b></button>
-</main>
+<section class="embedded-enquiry" aria-labelledby="enquiryTitle"><form class="contact-form" id="contactForm" aria-labelledby="enquiryTitle"><div class="enquiry-intro"><h2 id="enquiryTitle">أرسل استفسارك</h2><p>اختر موضوعاً وأخبرنا بما ترغب في القيام به في مسفران.</p></div>
+<div class="contact-field">
+<label for="contactName">
+<i class="fa-solid fa-user"></i>
+<span class="editable" data-cms-text="contact-t38">
+                                    الاسم الكامل
+                                </span>
+</label>
+<input autocomplete="name" class="contact-input" id="contactName" maxlength="100" minlength="2" name="contactName" required="" type="text"/>
+</div>
+<div class="contact-field">
+<label for="contactPhone">
+<i class="fa-solid fa-phone"></i>
+<span class="editable" data-cms-text="contact-t39">
+                                    الهاتف / واتساب
+                                </span>
+</label>
+<input autocomplete="tel" class="contact-input" id="contactPhone" inputmode="tel" maxlength="25" minlength="7" name="contactPhone" placeholder="+212 6…" type="tel"/>
+</div>
+<div class="contact-field">
+<label for="contactEmail">
+<i class="fa-solid fa-envelope"></i>
+<span class="editable" data-cms-text="contact-t40">
+                                    البريد الإلكتروني
+                                </span>
+</label>
+<input autocomplete="email" class="contact-input" id="contactEmail" required name="contactEmail" placeholder="name@example.com" type="email"/>
+<small class="contact-field-note editable" data-cms-text="contact-t41">مطلوب للإرسال بالبريد الإلكتروني، واختياري لواتساب.</small>
+</div>
+<div class="contact-field">
+<label for="contactCountry">
+<i class="fa-solid fa-earth-africa"></i>
+<span class="editable" data-cms-text="contact-t42">
+                                    البلد
+                                </span>
+</label>
+<input autocomplete="country-name" class="contact-input" id="contactCountry" name="contactCountry" type="text"/>
+</div>
+<div class="contact-field contact-field-full">
+<label for="contactSubject">
+<i class="fa-solid fa-tag"></i>
+<span class="editable" data-cms-text="contact-t43">
+                                    الموضوع
+                                </span>
+</label>
+<select class="contact-select" id="contactSubject" name="contactSubject" required=""><option value="" disabled>اختر موضوعاً</option><optgroup label="الأنشطة في الهواء الطلق"><option value="rafting">التجديف النهري</option><option value="kayak">الكاياك في المياه السريعة</option><option value="hiking">المشي الجبلي مع مرشد</option><option value="mountain-bike">الدراجات الجبلية</option><option value="quad">الدراجات الرباعية</option><option value="camping">التخييم في الطبيعة</option><option value="bivouac">المبيت في المخيم</option></optgroup><optgroup label="الإقامة"><option value="rental-house">منزل للإيجار</option><option value="gite-atlas">Gîte Atlas Cathédrale</option></optgroup><optgroup label="الرحلات والاستفسارات الأخرى"><option value="weekend">عطلة نهاية الأسبوع في مسفران</option><option value="custom-trip">رحلة حسب الطلب</option><option value="transfer">النقل والتنقلات</option><option value="route">الطريق وكيفية الوصول</option><option value="booking">متابعة حجز</option><option value="shop" selected>المتجر</option><option value="partnership">الشراكات</option><option value="other">استفسار آخر</option></optgroup></select>
+</div>
+<div class="contact-field">
+<label for="contactDate">
+<i class="fa-regular fa-calendar"></i>
+<span class="editable" data-cms-text="contact-t54">
+                                    التاريخ المقترح
+                                </span>
+</label>
+<input class="contact-input" id="contactDate" name="contactDate" type="date"/>
+<small class="contact-field-note editable" data-cms-text="contact-t55">
+                                اختياري
+                            </small>
+</div>
+<div class="contact-field">
+<label for="contactPeople">
+<i class="fa-solid fa-users"></i>
+<span class="editable" data-cms-text="contact-t56">
+                                    عدد الأشخاص
+                                </span>
+</label>
+<input class="contact-input" id="contactPeople" max="100" min="1" name="contactPeople" type="number" value="1"/>
+</div>
+<div class="contact-field contact-field-full">
+<label for="contactMessage">
+<i class="fa-solid fa-message"></i>
+<span class="editable" data-cms-text="contact-t57">
+                                    رسالتك
+                                </span>
+</label>
+<textarea class="contact-textarea" id="contactMessage" name="contactMessage" placeholder="اذكر مواعيد زيارتك والنشاط أو الإقامة التي تفضّلها وأي أسئلة لديك…" required=""></textarea>
+</div>
+<div aria-live="polite" class="contact-form-message enquiry-status" data-enquiry-status id="contactFormMessage" role="alert"></div>
+<div class="enquiry-actions"><button type="submit" id="sendEmail" class="enquiry-email" data-channel="email">إرسال بالبريد الإلكتروني</button><button type="submit" id="sendWhatsApp" class="enquiry-whatsapp" data-channel="whatsapp">إرسال عبر واتساب</button></div><p class="enquiry-hint">اختر إرسال طلبك بالبريد الإلكتروني أو عبر واتساب. رقم الهاتف اختياري عند الإرسال بالبريد الإلكتروني.</p>
+<label class="enquiry-trap" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label></form></section></main>
 <!-- =====================================================
          FOOTER
          ===================================================== -->
@@ -283,4 +362,4 @@ main.demo-rebuilt-page form button{background:#c46a45;color:#172c31;border:0;pad
 </div></footer>
 <a aria-label="Contacter sur WhatsApp" class="floating-whatsapp" href="https://wa.me/212667772551" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="ims-inline-social" fill="currentColor" focusable="false" height="24" style="display:inline-block;flex-shrink:0;vertical-align:middle" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.4 14.7l-.4-.3-2.3.6.6-2.2-.3-.5A8 8 0 0 1 12 4z"></path><path d="M8.1 6.8c-.4 0-1.1.7-1.1 1.8 0 2.4 3.3 6.1 6.5 7.3 1.6.6 3.1-.2 3.5-1.5.1-.4-.1-.6-.5-.8l-1.9-.9c-.3-.1-.5 0-.7.3l-.7.9c-.2.2-.4.2-.7.1-1.3-.6-2.5-1.6-3.2-2.9-.2-.3-.1-.4.1-.6l.6-.8c.2-.2.2-.4.1-.7l-.9-2c-.2-.3-.4-.3-1.1-.2z"></path></svg><span class="editable" data-cms-text="store-t125">WhatsApp</span></a>
 <button aria-label="Retour en haut" class="back-to-top" id="backToTop" type="button"><svg aria-hidden="true" class="ims-inline-social" fill="currentColor" focusable="false" height="24" style="display:inline-block;flex-shrink:0;vertical-align:middle" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m5 15 7-7 7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg></button>
-<script defer="" src="/js/core-multilingual-v2.js"></script><script defer="True" src="/js/image-controls.js"></script><script id="spCatalog" type="application/json">{"currency": "MAD", "whatsapp": "212667772551", "products": [{"id": "honey", "category": "honey", "nameFr": "Miel naturel de l’Atlas", "nameEn": "Natural Atlas honey", "shortFr": "Miel de montagne au goût authentique, issu de la région de l’Atlas.", "shortEn": "Mountain honey with an authentic flavour from the Atlas region.", "price": 700, "unitFr": "Prix affiché · quantité à confirmer", "unitEn": "Listed price · pack size to confirm", "image": "tamnt.webp", "imageAltFr": "Miel naturel de l’Atlas", "imageAltEn": "Natural honey of the Atlas"}, {"id": "oil", "category": "oil", "nameFr": "Zit Beldiya · Huile d’olive", "nameEn": "Zit Beldiya · Olive oil", "shortFr": "Huile d’olive traditionnelle aux saveurs locales.", "shortEn": "Traditional olive oil with an authentic local taste.", "price": 40, "unitFr": "Prix affiché · volume à confirmer", "unitEn": "Listed price · bottle size to confirm", "image": "zit.webp", "imageAltFr": "Huile d’olive traditionnelle de l’Atlas", "imageAltEn": "Traditional Atlas olive oil"}, {"id": "thyme", "category": "herbs", "nameFr": "Zaatar · Thym sauvage", "nameEn": "Zaatar · Wild thyme", "shortFr": "Thym sauvage de montagne, séché naturellement pour infusions et cuisine.", "shortEn": "Wild mountain thyme, naturally dried for herbal infusions and cooking.", "price": 45, "unitFr": "Par kilogramme", "unitEn": "Per kilogram", "image": "zaatar.webp", "imageAltFr": "Thym sauvage séché de l’Atlas", "imageAltEn": "Dried wild thyme from the Atlas"}]}</script><script defer="" src="/store-pro.js"></script><script defer="" src="/navigation-pro.js"></script><script defer="" src="/accommodation-menu.js?v=4"></script><script defer src="/footer-pro.js?v=1"></script></body></html>
+<script defer="" src="/js/core-multilingual-v2.js"></script><script defer="True" src="/js/image-controls.js"></script><script id="spCatalog" type="application/json">{"currency": "MAD", "whatsapp": "212667772551", "products": [{"id": "honey", "category": "honey", "nameFr": "Miel naturel de l’Atlas", "nameEn": "Natural Atlas honey", "shortFr": "Miel de montagne au goût authentique, issu de la région de l’Atlas.", "shortEn": "Mountain honey with an authentic flavour from the Atlas region.", "price": 700, "unitFr": "Prix affiché · quantité à confirmer", "unitEn": "Listed price · pack size to confirm", "image": "tamnt.webp", "imageAltFr": "Miel naturel de l’Atlas", "imageAltEn": "Natural honey of the Atlas"}, {"id": "oil", "category": "oil", "nameFr": "Zit Beldiya · Huile d’olive", "nameEn": "Zit Beldiya · Olive oil", "shortFr": "Huile d’olive traditionnelle aux saveurs locales.", "shortEn": "Traditional olive oil with an authentic local taste.", "price": 40, "unitFr": "Prix affiché · volume à confirmer", "unitEn": "Listed price · bottle size to confirm", "image": "zit.webp", "imageAltFr": "Huile d’olive traditionnelle de l’Atlas", "imageAltEn": "Traditional Atlas olive oil"}, {"id": "thyme", "category": "herbs", "nameFr": "Zaatar · Thym sauvage", "nameEn": "Zaatar · Wild thyme", "shortFr": "Thym sauvage de montagne, séché naturellement pour infusions et cuisine.", "shortEn": "Wild mountain thyme, naturally dried for herbal infusions and cooking.", "price": 45, "unitFr": "Par kilogramme", "unitEn": "Per kilogram", "image": "zaatar.webp", "imageAltFr": "Thym sauvage séché de l’Atlas", "imageAltEn": "Dried wild thyme from the Atlas"}]}</script><script defer="" src="/store-pro.js"></script><script defer="" src="/navigation-pro.js"></script><script defer="" src="/accommodation-menu.js?v=4"></script><script defer src="/footer-pro.js?v=1"></script><script defer src="/website-enquiry.js?v=1"></script></body></html>

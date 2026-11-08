@@ -161,7 +161,7 @@ main.demo-rebuilt-page form{margin-top:28px;display:grid;gap:12px;max-width:100%
 main.demo-rebuilt-page form :is(input,textarea,select){padding:12px;max-width:100%;border:1px solid #d9d4ca;background:white;color:#15333b;border-radius:6px}
 main.demo-rebuilt-page form button{background:#c46a45;color:#172c31;border:0;padding:13px 22px;border-radius:5px;font-weight:800;background:#a94f30;color:#fff!important;}
 @media(max-width:800px){main.demo-rebuilt-page .demo-editorial-hero,main.demo-rebuilt-page .demo-rebuild-inner{grid-template-columns:1fr}main.demo-rebuilt-page .demo-editorial-photo{grid-row:1;min-height:300px}main.demo-rebuilt-page .demo-editorial-copy{padding:42px 25px}main.demo-rebuilt-page .demo-rebuild-alt .demo-rebuild-photo{order:0}main.demo-rebuilt-page .demo-rebuild-photo{min-height:300px;max-height:460px}main.demo-rebuilt-page .demo-rebuild-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}main.demo-rebuilt-page .demo-rebuild-gallery img{height:165px}}
-</style><link rel="stylesheet" href="/guide-pro.css?identity=contrast8"><link rel="alternate" hreflang="ar" href="https://imsfrane.com/ar/guide/"><link rel="alternate" hreflang="es" href="https://imsfrane.com/es/guide/"><link rel="stylesheet" href="/navigation-pro.css?identity=contrast8"><link rel="canonical" href="https://imsfrane.com/en/guide/"/><link rel="stylesheet" href="/visual-identity.css?v=contrast8"><link rel="stylesheet" href="/stays-demo.css?v=4"><link rel="stylesheet" href="/footer-pro.css?v=1"></head><body class="page-guide atnav-ready" data-lang="en" data-nav-active="guide.html">
+</style><link rel="stylesheet" href="/guide-pro.css?identity=contrast8"><link rel="alternate" hreflang="ar" href="https://imsfrane.com/ar/guide/"><link rel="alternate" hreflang="es" href="https://imsfrane.com/es/guide/"><link rel="stylesheet" href="/navigation-pro.css?identity=contrast8"><link rel="canonical" href="https://imsfrane.com/en/guide/"/><link rel="stylesheet" href="/visual-identity.css?v=contrast8"><link rel="stylesheet" href="/stays-demo.css?v=4"><link rel="stylesheet" href="/footer-pro.css?v=1"><link rel="stylesheet" href="/website-enquiry.css?v=6"></head><body class="page-guide atnav-ready" data-lang="en" data-nav-active="guide.html">
 <nav aria-label="Main navigation" class="main-navigation" id="mainNavigation" inert="">
 <div class="navigation-header"><strong class="editable" data-cms-text="guide-t2">Imsfrane Cathédrale</strong><button aria-label="Close navigation menu" class="navigation-close" id="navigationClose" type="button"><i class="fa-solid fa-xmark"></i></button></div>
 <ul class="navigation-list">
@@ -228,7 +228,86 @@ main.demo-rebuilt-page form button{background:#c46a45;color:#172c31;border:0;pad
           <p class="gp-disclaimer"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Information is indicative. Check the weather, routes, prices and availability before travel.</p>
         </div>
       </div>
-    </div></main>
+    </div><section class="embedded-enquiry" aria-labelledby="enquiryTitle"><form class="contact-form" id="contactForm" aria-labelledby="enquiryTitle"><div class="enquiry-intro"><h2 id="enquiryTitle">Send an enquiry</h2><p>Choose a topic and tell us what you’d like to do in Imsfrane.</p></div>
+<div class="contact-field">
+<label for="contactName">
+<i class="fa-solid fa-user"></i>
+<span class="editable" data-cms-text="contact-t38">
+                                    Full name
+                                </span>
+</label>
+<input autocomplete="name" class="contact-input" id="contactName" maxlength="100" minlength="2" name="contactName" required="" type="text"/>
+</div>
+<div class="contact-field">
+<label for="contactPhone">
+<i class="fa-solid fa-phone"></i>
+<span class="editable" data-cms-text="contact-t39">
+                                    Phone / WhatsApp
+                                </span>
+</label>
+<input autocomplete="tel" class="contact-input" id="contactPhone" inputmode="tel" maxlength="25" minlength="7" name="contactPhone" placeholder="+212 6…" type="tel"/>
+</div>
+<div class="contact-field">
+<label for="contactEmail">
+<i class="fa-solid fa-envelope"></i>
+<span class="editable" data-cms-text="contact-t40">
+                                    Email address
+                                </span>
+</label>
+<input autocomplete="email" class="contact-input" id="contactEmail" required name="contactEmail" placeholder="name@example.com" type="email"/>
+<small class="contact-field-note editable" data-cms-text="contact-t41">Required for email, optional for WhatsApp.</small>
+</div>
+<div class="contact-field">
+<label for="contactCountry">
+<i class="fa-solid fa-earth-africa"></i>
+<span class="editable" data-cms-text="contact-t42">
+                                    Country
+                                </span>
+</label>
+<input autocomplete="country-name" class="contact-input" id="contactCountry" name="contactCountry" type="text"/>
+</div>
+<div class="contact-field contact-field-full">
+<label for="contactSubject">
+<i class="fa-solid fa-tag"></i>
+<span class="editable" data-cms-text="contact-t43">
+                                    Subject
+                                </span>
+</label>
+<select class="contact-select" id="contactSubject" name="contactSubject" required=""><option value="" disabled>Choose a topic</option><optgroup label="Outdoor activities"><option value="rafting">Rafting</option><option value="kayak">Whitewater kayaking</option><option value="hiking">Guided hiking</option><option value="mountain-bike">Mountain biking</option><option value="quad">Quad biking</option><option value="camping">Wild camping</option><option value="bivouac">Bivouac</option></optgroup><optgroup label="Accommodation"><option value="rental-house">Holiday home rental</option><option value="gite-atlas">Gîte Atlas Cathédrale</option></optgroup><optgroup label="Trip planning and other enquiries"><option value="weekend">Imsfrane weekend trip</option><option value="custom-trip">Custom itinerary</option><option value="transfer">Transport and transfers</option><option value="route" selected>Directions and access</option><option value="booking">Existing booking</option><option value="shop">Shop</option><option value="partnership">Partnership</option><option value="other">Other enquiry</option></optgroup></select>
+</div>
+<div class="contact-field">
+<label for="contactDate">
+<i class="fa-regular fa-calendar"></i>
+<span class="editable" data-cms-text="contact-t54">
+                                    Preferred date
+                                </span>
+</label>
+<input class="contact-input" id="contactDate" name="contactDate" type="date"/>
+<small class="contact-field-note editable" data-cms-text="contact-t55">
+                                Optional
+                            </small>
+</div>
+<div class="contact-field">
+<label for="contactPeople">
+<i class="fa-solid fa-users"></i>
+<span class="editable" data-cms-text="contact-t56">
+                                    Number of people
+                                </span>
+</label>
+<input class="contact-input" id="contactPeople" max="100" min="1" name="contactPeople" type="number" value="1"/>
+</div>
+<div class="contact-field contact-field-full">
+<label for="contactMessage">
+<i class="fa-solid fa-message"></i>
+<span class="editable" data-cms-text="contact-t57">
+                                    Your message
+                                </span>
+</label>
+<textarea class="contact-textarea" id="contactMessage" name="contactMessage" placeholder="Share your dates, preferred activities or accommodation, and any questions…" required=""></textarea>
+</div>
+<div aria-live="polite" class="contact-form-message enquiry-status" data-enquiry-status id="contactFormMessage" role="alert"></div>
+<div class="enquiry-actions"><button type="submit" id="sendEmail" class="enquiry-email" data-channel="email">Send by email</button><button type="submit" id="sendWhatsApp" class="enquiry-whatsapp" data-channel="whatsapp">Send on WhatsApp</button></div><p class="enquiry-hint">Send your enquiry by email or WhatsApp. A phone number is optional when sending by email.</p>
+<label class="enquiry-trap" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label></form></section></main>
 <!-- =====================================================
          FOOTER
          ===================================================== -->
@@ -246,4 +325,4 @@ main.demo-rebuilt-page form button{background:#c46a45;color:#172c31;border:0;pad
 </div></footer>
 <a aria-label="Contact on WhatsApp" class="floating-whatsapp" href="https://wa.me/212667772551" rel="noopener noreferrer" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" class="ims-inline-social" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true" focusable="false" style="display:inline-block;flex-shrink:0;vertical-align:middle"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.4 14.7l-.4-.3-2.3.6.6-2.2-.3-.5A8 8 0 0 1 12 4z"/><path d="M8.1 6.8c-.4 0-1.1.7-1.1 1.8 0 2.4 3.3 6.1 6.5 7.3 1.6.6 3.1-.2 3.5-1.5.1-.4-.1-.6-.5-.8l-1.9-.9c-.3-.1-.5 0-.7.3l-.7.9c-.2.2-.4.2-.7.1-1.3-.6-2.5-1.6-3.2-2.9-.2-.3-.1-.4.1-.6l.6-.8c.2-.2.2-.4.1-.7l-.9-2c-.2-.3-.4-.3-1.1-.2z"/></svg><span class="editable" data-cms-text="guide-t194">WhatsApp</span></a>
 <button aria-label="Back to top" class="back-to-top" id="backToTop" type="button"><svg xmlns="http://www.w3.org/2000/svg" class="ims-inline-social" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true" focusable="false" style="display:inline-block;flex-shrink:0;vertical-align:middle"><path d="m5 15 7-7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-<script defer="" src="/js/core.min.js"></script><script defer="True" src="/js/image-controls.js"></script><script defer src="/navigation-pro.js"></script><script defer src="/accommodation-menu.js?v=4"></script><script defer src="/footer-pro.js?v=1"></script></body></html>
+<script defer="" src="/js/core.min.js"></script><script defer="True" src="/js/image-controls.js"></script><script defer src="/navigation-pro.js"></script><script defer src="/accommodation-menu.js?v=4"></script><script defer src="/footer-pro.js?v=1"></script><script defer src="/website-enquiry.js?v=1"></script></body></html>

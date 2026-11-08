@@ -81,7 +81,7 @@ main.demo-rebuilt-page form{margin-top:28px;display:grid;gap:12px;max-width:100%
 main.demo-rebuilt-page form :is(input,textarea,select){padding:12px;max-width:100%;border:1px solid #d9d4ca;background:white;color:#15333b;border-radius:6px}
 main.demo-rebuilt-page form button{background:#c46a45;color:#172c31;border:0;padding:13px 22px;border-radius:5px;font-weight:800;background:#a94f30;color:#fff!important;}
 @media(max-width:800px){main.demo-rebuilt-page .demo-editorial-hero,main.demo-rebuilt-page .demo-rebuild-inner{grid-template-columns:1fr}main.demo-rebuilt-page .demo-editorial-photo{grid-row:1;min-height:300px}main.demo-rebuilt-page .demo-editorial-copy{padding:42px 25px}main.demo-rebuilt-page .demo-rebuild-alt .demo-rebuild-photo{order:0}main.demo-rebuilt-page .demo-rebuild-photo{min-height:300px;max-height:460px}main.demo-rebuilt-page .demo-rebuild-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}main.demo-rebuilt-page .demo-rebuild-gallery img{height:165px}}
-</style><link rel="stylesheet" href="/navigation-pro.css?identity=contrast8"><link rel="stylesheet" href="/visual-identity.css?v=contrast8"><link rel="stylesheet" href="/stays-demo.css?v=4"><link rel="stylesheet" href="/stays-demo.css?v=4"><link rel="canonical" href="https://imsfrane.com/fr/hebergements/"><link rel="stylesheet" href="/footer-pro.css?v=1"></head><body class="page-hebergement atnav-ready" data-lang="fr" data-nav-active="hebergement.html">
+</style><link rel="stylesheet" href="/navigation-pro.css?identity=contrast8"><link rel="stylesheet" href="/visual-identity.css?v=contrast8"><link rel="stylesheet" href="/stays-demo.css?v=4"><link rel="stylesheet" href="/stays-demo.css?v=4"><link rel="canonical" href="https://imsfrane.com/fr/hebergements/"><link rel="stylesheet" href="/footer-pro.css?v=1"><link rel="stylesheet" href="/website-enquiry.css?v=6"></head><body class="page-hebergement atnav-ready" data-lang="fr" data-nav-active="hebergement.html">
 <nav aria-label="Navigation principale" class="main-navigation" id="mainNavigation" inert="">
 <div class="navigation-header"><strong class="editable" data-cms-text="hebergement-t2">Imsfrane Cathédrale</strong><button aria-label="Fermer le menu de navigation" class="navigation-close" id="navigationClose" type="button"><i class="fa-solid fa-xmark"></i></button></div>
 <ul class="navigation-list">
@@ -129,7 +129,86 @@ main.demo-rebuilt-page form button{background:#c46a45;color:#172c31;border:0;pad
 <!-- =====================================================
          NAVIGATION
          ===================================================== -->
-<main class="stay-main" id="mainContent" dir="ltr"><div class="stay-wrap"><div class="stay-intro"><span class="stay-eyebrow">Hébergement · IMSFRANE</span><h1>Choisissez votre séjour</h1><h2>Deux façons de vivre Imsfrane.</h2><p>Retrouvez la maison à louer ou découvrez notre nouvelle page Gîte Atlas Cathédrale.</p></div><div class="stay-grid"><article class="stay-card"><img src="/images/apartment/balcony.webp" alt="Maison à louer"><div class="stay-card-body"><span class="stay-eyebrow">01 · IMSFRANE</span><h2>Maison à louer</h2><a class="stay-button" href="/fr/hebergement/">Voir la maison ↗</a></div></article><article class="stay-card"><img src="/images/gite-atlas/exterior.webp" alt="Gîte Atlas Cathédrale" loading="lazy"><div class="stay-card-body"><span class="stay-eyebrow">02 · GÎTE ATLAS</span><h2>Gîte Atlas Cathédrale</h2><p><strong>250 DH</strong> · par personne / nuit</p><p>Nuitée + dîner + petit-déjeuner</p><a class="stay-button" href="/fr/gite-atlas/">Découvrir ↗</a></div></article></div></div></main>
+<main class="stay-main" id="mainContent" dir="ltr"><div class="stay-wrap"><div class="stay-intro"><span class="stay-eyebrow">Hébergement · IMSFRANE</span><h1>Choisissez votre séjour</h1><h2>Deux façons de vivre Imsfrane.</h2><p>Retrouvez la maison à louer ou découvrez notre nouvelle page Gîte Atlas Cathédrale.</p></div><div class="stay-grid"><article class="stay-card"><img src="/images/apartment/balcony.webp" alt="Maison à louer"><div class="stay-card-body"><span class="stay-eyebrow">01 · IMSFRANE</span><h2>Maison à louer</h2><a class="stay-button" href="/fr/hebergement/">Voir la maison ↗</a></div></article><article class="stay-card"><img src="/images/gite-atlas/exterior.webp" alt="Gîte Atlas Cathédrale" loading="lazy"><div class="stay-card-body"><span class="stay-eyebrow">02 · GÎTE ATLAS</span><h2>Gîte Atlas Cathédrale</h2><p><strong>250 DH</strong> · par personne / nuit</p><p>Nuitée + dîner + petit-déjeuner</p><a class="stay-button" href="/fr/gite-atlas/">Découvrir ↗</a></div></article></div></div><section class="embedded-enquiry" aria-labelledby="enquiryTitle"><form class="contact-form" id="contactForm" aria-labelledby="enquiryTitle"><div class="enquiry-intro"><h2 id="enquiryTitle">Envoyer une demande</h2><p>Choisissez un sujet et indiquez-nous ce que vous aimeriez faire à Imsfrane.</p></div>
+<div class="contact-field">
+<label for="contactName">
+<i class="fa-solid fa-user"></i>
+<span class="editable" data-cms-text="contact-t38">
+                                    Nom complet
+                                </span>
+</label>
+<input autocomplete="name" class="contact-input" id="contactName" maxlength="100" minlength="2" name="contactName" required="" type="text"/>
+</div>
+<div class="contact-field">
+<label for="contactPhone">
+<i class="fa-solid fa-phone"></i>
+<span class="editable" data-cms-text="contact-t39">
+                                    Téléphone / WhatsApp
+                                </span>
+</label>
+<input autocomplete="tel" class="contact-input" id="contactPhone" inputmode="tel" maxlength="25" minlength="7" name="contactPhone" placeholder="+212 6…" type="tel"/>
+</div>
+<div class="contact-field">
+<label for="contactEmail">
+<i class="fa-solid fa-envelope"></i>
+<span class="editable" data-cms-text="contact-t40">
+                                    Adresse e-mail
+                                </span>
+</label>
+<input autocomplete="email" class="contact-input" id="contactEmail" required name="contactEmail" placeholder="name@example.com" type="email"/>
+<small class="contact-field-note editable" data-cms-text="contact-t41">Requise pour l’envoi par e-mail, facultative pour WhatsApp.</small>
+</div>
+<div class="contact-field">
+<label for="contactCountry">
+<i class="fa-solid fa-earth-africa"></i>
+<span class="editable" data-cms-text="contact-t42">
+                                    Pays
+                                </span>
+</label>
+<input autocomplete="country-name" class="contact-input" id="contactCountry" name="contactCountry" type="text"/>
+</div>
+<div class="contact-field contact-field-full">
+<label for="contactSubject">
+<i class="fa-solid fa-tag"></i>
+<span class="editable" data-cms-text="contact-t43">
+                                    Sujet
+                                </span>
+</label>
+<select class="contact-select" id="contactSubject" name="contactSubject" required=""><option value="" disabled>Choisir un sujet</option><optgroup label="Activités de plein air"><option value="rafting">Rafting</option><option value="kayak">Kayak en eau vive</option><option value="hiking">Randonnée guidée</option><option value="mountain-bike">VTT</option><option value="quad">Quad</option><option value="camping">Camping sauvage</option><option value="bivouac">Bivouac</option></optgroup><optgroup label="Hébergements"><option value="rental-house" selected>Maison à louer</option><option value="gite-atlas">Gîte Atlas Cathédrale</option></optgroup><optgroup label="Séjours et autres demandes"><option value="weekend">Week-end à Imsfrane</option><option value="custom-trip">Séjour sur mesure</option><option value="transfer">Transport et transferts</option><option value="route">Itinéraire et accès</option><option value="booking">Suivi d’une réservation</option><option value="shop">Boutique</option><option value="partnership">Partenariat</option><option value="other">Autre demande</option></optgroup></select>
+</div>
+<div class="contact-field">
+<label for="contactDate">
+<i class="fa-regular fa-calendar"></i>
+<span class="editable" data-cms-text="contact-t54">
+                                    Date souhaitée
+                                </span>
+</label>
+<input class="contact-input" id="contactDate" name="contactDate" type="date"/>
+<small class="contact-field-note editable" data-cms-text="contact-t55">
+                                Facultatif
+                            </small>
+</div>
+<div class="contact-field">
+<label for="contactPeople">
+<i class="fa-solid fa-users"></i>
+<span class="editable" data-cms-text="contact-t56">
+                                    Nombre de personnes
+                                </span>
+</label>
+<input class="contact-input" id="contactPeople" max="100" min="1" name="contactPeople" type="number" value="1"/>
+</div>
+<div class="contact-field contact-field-full">
+<label for="contactMessage">
+<i class="fa-solid fa-message"></i>
+<span class="editable" data-cms-text="contact-t57">
+                                    Votre message
+                                </span>
+</label>
+<textarea class="contact-textarea" id="contactMessage" name="contactMessage" placeholder="Vos dates, l’activité ou l’hébergement souhaité et vos questions…" required=""></textarea>
+</div>
+<div aria-live="polite" class="contact-form-message enquiry-status" data-enquiry-status id="contactFormMessage" role="alert"></div>
+<div class="enquiry-actions"><button type="submit" id="sendEmail" class="enquiry-email" data-channel="email">Envoyer par e-mail</button><button type="submit" id="sendWhatsApp" class="enquiry-whatsapp" data-channel="whatsapp">Envoyer sur WhatsApp</button></div><p class="enquiry-hint">Choisissez l’e-mail ou WhatsApp pour envoyer votre demande. Le téléphone est facultatif pour l’envoi par e-mail.</p>
+<label class="enquiry-trap" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label></form></section></main>
 <!-- =====================================================
          FOOTER
          ===================================================== -->
@@ -275,4 +354,4 @@ main.demo-rebuilt-page form button{background:#c46a45;color:#172c31;border:0;pad
   frame.addEventListener('load', attach);
   if (frame.contentDocument && frame.contentDocument.readyState === 'complete') attach();
 })();
-</script><script defer src="/footer-pro.js?v=1"></script></body></html>
+</script><script defer src="/footer-pro.js?v=1"></script><script defer src="/website-enquiry.js?v=1"></script></body></html>

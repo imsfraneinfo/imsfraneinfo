@@ -29,6 +29,8 @@ form.addEventListener('submit',e=>{
  if(form.querySelector('[value="camping"]:checked')&&c.people<10){$('bookingError').textContent=t[38];return;}
  if($('arrival').value<date){$('arrival').focus();return;}
  const msg=['IMSFRANE · '+t[6],t[10]+': '+$('name').value,t[11]+': '+$('phone').value,t[12]+': '+$('email').value,t[8]+': '+$('arrival').value,t[9]+': '+$('departure').value,t[7]+': '+c.people,'',t[56]+':',...c.lines.map(a=>'- '+a.name+' | '+a.detail+' | '+(a.amount===null?t[30]:a.amount+' DH')),'',t[28]+': '+(c.quotes&&c.total===0?t[30]:c.total+' DH'+(c.quotes?' + '+t[40]:'')),t[13]+': '+$('notes').value,t[35]].join('\n');
- window.open('https://wa.me/212667772551?text='+encodeURIComponent(msg),'_blank','noopener');
+ if(e.submitter?.dataset.channel==='email'){
+ window.ImsEnquiry.send(form,{kind:'booking',name:$('name').value.trim(),email:$('email').value.trim(),subject:t[6],message:msg},$('bookingSendStatus'),e.submitter);
+ }else{window.open('https://wa.me/212667772551?text='+encodeURIComponent(msg),'_blank','noopener');}
 });calculate();
 })();
