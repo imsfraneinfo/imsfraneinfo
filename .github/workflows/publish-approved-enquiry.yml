@@ -1,0 +1,38 @@
+name: Publish approved enquiry forms
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/publish-approved-enquiry.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: imsfrane-production-publish
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Build approved enquiry forms and contact pages
+        run: |
+          git clone https://github.com/imsfraneinfo/Imsfrane-demo.git "$RUNNER_TEMP/approved-demo"
+          git -C "$RUNNER_TEMP/approved-demo" checkout e9a9668339c11d7e26085134305567df90dca6c2
+          python3 "$RUNNER_TEMP/approved-demo/build_email_forms.py" "$GITHUB_WORKSPACE"
+          for lang in fr en es ar; do
+            grep -q 'class="embedded-enquiry"' "$lang/index.html"
+            grep -q 'class="contact-landing"' "$lang/contact/index.html"
+            grep -q 'value="rafting" selected' "$lang/rafting/index.html"
+          done
+          git diff --check
+      - name: Publish verified changes
+        run: |
+          git config user.name imsfrane-approved-publisher
+          git config user.email actions@users.noreply.github.com
+          git add -- '*.html' website-enquiry.css website-enquiry.js booking-new.js
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish approved contact page and embedded enquiry forms"
+            git push origin HEAD:main
+          fi
