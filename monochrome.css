@@ -1,0 +1,39 @@
+
+html body { background-color: #fff; color: #151515; }
+body.atnav-ready #siteHeader,
+body.atnav-ready .atnav-article-header,
+#atnavDrawer,
+#ims-footer,
+.site-footer {
+  background: #111 !important;
+  border-color: #333 !important;
+}
+body.atnav-ready #siteHeader .brand-content small { color: #d1d1d1 !important; }
+body.atnav-ready #siteHeader .atnav-desktop a[aria-current="page"],
+body.atnav-ready #siteHeader .atnav-desktop a:hover {
+  color: #fff !important;
+  text-decoration: underline;
+  text-underline-offset: .35em;
+}
+body.atnav-ready #siteHeader .atnav-open {
+  background: #242424;
+  border-color: #777;
+  color: #fff;
+}
+#atnavDrawer .atnav-book,
+#ims-footer .fp-cta {
+  background: #fff !important;
+  border-color: #fff !important;
+  color: #111 !important;
+}
+#atnavDrawer .atnav-book:hover,
+#ims-footer .fp-cta:hover { background: #dedede !important; }
+#atnavDrawer .atnav-drawer-brand:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 5px;
+}
+#atnavDrawer .atnav-drawer-brand:hover strong {
+  text-decoration: underline;
+  text-underline-offset: .25em;
+}
+::selection { background: #191919; color: #fff; }
