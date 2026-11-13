@@ -1,0 +1,42 @@
+name: Publish approved monochrome palette
+on:
+  push:
+    branches: [main]
+    paths: ['scripts/build_monochrome.py', '.github/workflows/publish-monochrome.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: imsfrane-production-publish
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Apply and verify the approved style
+        run: |
+          python3 scripts/build_monochrome.py
+          python3 - <<'PY'
+          from pathlib import Path
+
+          for lang in ('ar', 'en', 'es', 'fr'):
+              for route in ('', 'gite-atlas', 'guide', 'rafting'):
+                  html = (Path(lang) / route / 'index.html').read_text()
+                  assert f'class="atnav-drawer-brand" href="/{lang}/"' in html, (lang, route)
+                  assert '/monochrome.css?v=1' in html, (lang, route)
+          assert Path('CNAME').read_text().strip() == 'imsfrane.com'
+          PY
+          git diff --check
+      - name: Publish the official static pages
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name "imsfrane-style-publisher"
+          git config user.email "actions@users.noreply.github.com"
+          git commit -m "Publish monochrome styling and localized menu home links"
+          git push origin HEAD:main
