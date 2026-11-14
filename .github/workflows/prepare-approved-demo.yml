@@ -1,0 +1,68 @@
+name: Prepare approved Demo for the official site
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/prepare-approved-demo.yml']
+permissions:
+  contents: write
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare and validate the approved site snapshot
+        run: |
+          git clone --no-checkout --depth 1 --branch gh-pages https://github.com/imsfraneinfo/Imsfrane-demo.git "$RUNNER_TEMP/demo"
+          git -C "$RUNNER_TEMP/demo" fetch --depth 1 origin fc10742b72d3ae11546d339e9e81695bc1ffd13d
+          git -C "$RUNNER_TEMP/demo" checkout --detach FETCH_HEAD
+          rsync -a --exclude='/.git/' --exclude='/.github/' --exclude='/CNAME' --exclude='/robots.txt' --exclude='/demo-source.json' --exclude='/scripts/' --exclude='/ads.txt' --exclude='/admin/' "$RUNNER_TEMP/demo/" ./
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          import subprocess
+          import xml.etree.ElementTree as ET
+
+          robot_meta = re.compile(r"""<meta\b(?=[^>]*\bname\s*=\s*['"](?:robots|googlebot)['"])[^>]*>""", re.I)
+          demo_noindex = re.compile(r"""<meta\b(?=[^>]*\bname\s*=\s*['"]robots['"])(?=[^>]*\bcontent\s*=\s*['"]noindex,follow['"])[^>]*>""", re.I)
+          formats = {'.html', '.css', '.js', '.json', '.xml', '.svg', '.webmanifest', '.txt'}
+          changed = subprocess.check_output(['git','diff','--name-only','-z']).decode().split('\0')
+          added = subprocess.check_output(['git','ls-files','--others','--exclude-standard','-z']).decode().split('\0')
+          for name in set(changed + added) - {''}:
+              path = Path(name)
+              if path.suffix not in formats or not path.is_file() or path.parts[0] in ('.github','admin','scripts'):
+                  continue
+              text = path.read_text(encoding='utf-8')
+              text = text.replace('https://imsfraneinfo.github.io/Imsfrane-demo','https://imsfrane.com')
+              text = text.replace('/Imsfrane-demo/', '/').replace(r'\/Imsfrane-demo\/', r'\/')
+              if path.suffix == '.html':
+                  baseline = subprocess.run(['git','show',f'HEAD:{name}'],capture_output=True,text=True)
+                  existing = robot_meta.findall(baseline.stdout)
+                  if not re.search(r'<meta\b[^>]*http-equiv=["\']refresh',text,re.I):
+                      text = demo_noindex.sub('',text)
+                      if existing and not robot_meta.search(text):
+                          text = text.replace('</head>', '\n'.join(existing)+'\n</head>', 1)
+                  assert '/Imsfrane-demo/' not in text, name
+              path.write_text(text,encoding='utf-8')
+
+          assert Path('CNAME').read_text().strip() == 'imsfrane.com'
+          assert 'https://imsfrane.com/sitemap.xml' in Path('robots.txt').read_text()
+          urls = [e.text for e in ET.parse('sitemap.xml').iter() if e.tag.endswith('}loc')]
+          assert len(urls) >= 160 and all(u.startswith('https://imsfrane.com/') for u in urls)
+          for lang in ('ar','en','es','fr'):
+              for route in ('','programme/','booking/','contact/','quad/'):
+                  page = Path(lang,route,'index.html').read_text()
+                  assert '/atlas-identity.css?v=forest6' in page and not robot_meta.search(page), (lang,route)
+              home = Path(lang,'index.html').read_text()
+              assert 'hp-hero-picture-note' in home and 'hp-hero-altitude' in home
+          css = Path('atlas-identity.css').read_text()
+          assert 'bottom: calc(72px' in css and '.article-hero-text' in css
+          PY
+          git diff --check
+      - name: Save a backup and stage the validated release
+        run: |
+          git push origin HEAD:refs/heads/backup-before-approved-demo-${GITHUB_RUN_ID}
+          git config user.name 'imsfrane-official-publisher'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git commit -m 'Publish the approved Imsfrane Demo on the official site'
+          git push origin HEAD:refs/heads/ready-approved-demo-fc10742
