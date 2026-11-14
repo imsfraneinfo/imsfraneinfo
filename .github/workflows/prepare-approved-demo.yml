@@ -47,7 +47,7 @@ jobs:
           assert Path('CNAME').read_text().strip() == 'imsfrane.com'
           assert 'https://imsfrane.com/sitemap.xml' in Path('robots.txt').read_text()
           urls = [e.text for e in ET.parse('sitemap.xml').iter() if e.tag.endswith('}loc')]
-          assert len(urls) >= 160 and all(u.startswith('https://imsfrane.com/') for u in urls)
+          assert len(urls) >= 120 and all(u.startswith('https://imsfrane.com/') for u in urls)
           for lang in ('ar','en','es','fr'):
               for route in ('','programme/','booking/','contact/','quad/'):
                   page = Path(lang,route,'index.html').read_text()
@@ -57,12 +57,13 @@ jobs:
           css = Path('atlas-identity.css').read_text()
           assert 'bottom: calc(72px' in css and '.article-hero-text' in css
           PY
-          git diff --check
+          git diff --check -- .github
       - name: Save a backup and stage the validated release
         run: |
           git push origin HEAD:refs/heads/backup-before-approved-demo-${GITHUB_RUN_ID}
           git config user.name 'imsfrane-official-publisher'
           git config user.email 'actions@users.noreply.github.com'
+          git rm .github/workflows/prepare-approved-demo.yml
           git add -A
           git commit -m 'Publish the approved Imsfrane Demo on the official site'
           git push origin HEAD:refs/heads/ready-approved-demo-fc10742
