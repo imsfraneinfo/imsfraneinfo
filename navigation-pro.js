@@ -88,6 +88,18 @@ function initLanguageMenus(){
  menus.forEach(function(menu){
    var b=menu.querySelector(".atnav-langmini-trigger"),p=menu.querySelector(".atnav-langmini-panel");
    if(!b||!p)return;
+   if(document.documentElement.lang.toLowerCase().split("-")[0]==="ar"){
+     var labels={fr:"الفرنسية",en:"الإنجليزية",ar:"العربية",es:"الإسبانية"};
+     p.querySelectorAll("a[lang]").forEach(function(link){
+       var label=labels[link.lang];
+       if(!label)return;
+       var name=document.createElement("span");
+       name.lang="ar";
+       name.dir="rtl";
+       name.textContent=label;
+       link.replaceChildren(name);
+     });
+   }
    b.addEventListener("click",function(e){e.preventDefault();e.stopPropagation();var open=p.hidden;close();p.hidden=!open;b.setAttribute("aria-expanded",String(open));});
    menu.addEventListener("keydown",function(e){if(e.key==="Escape"&&!p.hidden){e.preventDefault();p.hidden=true;b.setAttribute("aria-expanded","false");b.focus()}});
  });
