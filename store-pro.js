@@ -5,8 +5,12 @@ var root=document.getElementById("imsfrane-shop"),catalog=document.getElementByI
 if(!root||!catalog)return;
 var config;
 try{config=JSON.parse(catalog.textContent)}catch(e){return}
-var language=(document.documentElement.lang||"fr").toLowerCase().startsWith("en")?"en":"fr";
-var i18n=language==="fr"?{
+var pageLanguage=(document.documentElement.lang||"fr").toLowerCase().slice(0,2); var language=pageLanguage==="ar"||pageLanguage==="en"?pageLanguage:"fr";
+var i18n=language==="ar"?{
+ count:"منتجات",single:"منتج",cartEmpty:"سلة التسوق فارغة.",qty:"الكمية",remove:"إزالة",
+ added:"أُضيف المنتج إلى السلة",removed:"أُزيل المنتج من السلة",messageTitle:"طلب شراء من متجر مسفران",
+ confirmation:"يرجى تأكيد التوفر والكميات والتعبئة والسعر النهائي والتوصيل."
+}:language==="fr"?{
  count:"produits",single:"produit",cartEmpty:"Votre panier attend ses premières découvertes.",
  qty:"Quantité",remove:"Retirer",added:"Produit ajouté au panier",removed:"Produit retiré du panier",
  messageTitle:"DEMANDE DE COMMANDE — BOUTIQUE IMSFRANE",confirmation:"Merci de confirmer la disponibilité, les quantités, le conditionnement, le prix final et la livraison."
@@ -22,11 +26,11 @@ var qtyById=Object.create(null),currentCategory="all",cards=[].slice.call(root.q
 var search=$("#sp-search"),sort=$("#sp-sort"),results=$("#sp-results"),grid=$("#sp-grid"),empty=$("#sp-no-results");
 var cart=$("#sp-cart"),backdrop=$("#sp-backdrop"),cartItems=$("#sp-cart-list"),toast=$("#sp-toast");
 var lastFocus=null,toastTimer=null;
-function money(number){return new Intl.NumberFormat(language==="fr"?"fr-FR":"en-GB",{maximumFractionDigits:0}).format(number)+" MAD"}
+function money(number){return new Intl.NumberFormat(language==="fr"?"fr-FR":"en-GB",{maximumFractionDigits:0}).format(number)+(language==="ar"?" درهم":" MAD")}
 function count(){return products.reduce(function(total,p){return total+(qtyById[p.id]||0)},0)}
 function sum(){return products.reduce(function(total,p){return total+(qtyById[p.id]||0)*p.price},0)}
-function nameOf(p){return p[language==="fr"?"nameFr":"nameEn"]}
-function unitOf(p){return p[language==="fr"?"unitFr":"unitEn"]}
+function nameOf(p){return p[language==="ar"?"nameAr":language==="en"?"nameEn":"nameFr"]}
+function unitOf(p){return p[language==="ar"?"unitAr":language==="en"?"unitEn":"unitFr"]}
 function node(tag,className,text){
   var el=document.createElement(tag);
   if(className)el.className=className;
@@ -98,7 +102,7 @@ function renderCart(){
  if(!chosen.length){cartItems.appendChild(node("p","sp-cart-empty",i18n.cartEmpty));return}
  chosen.forEach(function(p){
    var item=node("div","sp-cart-line");
-   var picture=node("img");picture.src="../images/"+p.image;picture.alt=nameOf(p);picture.loading="lazy";
+   var picture=node("img");picture.src="/images/"+p.image;picture.alt=nameOf(p);picture.loading="lazy";
    item.appendChild(picture);
    var details=node("div");
    details.appendChild(node("div","sp-cart-product-title",nameOf(p)));
@@ -140,7 +144,7 @@ $("#sp-checkout").addEventListener("click",function(){
  if(!chosen.length)return;
  var lines=["*"+i18n.messageTitle+"*",""];
  chosen.forEach(function(p){lines.push("• "+nameOf(p)+" × "+qtyById[p.id]+" — "+money(qtyById[p.id]*p.price)+" ("+unitOf(p)+")")});
- lines.push("","*TOTAL "+(language==="fr"?"INDICATIF":"ESTIMATE")+": "+money(sum())+"*","",i18n.confirmation);
+ lines.push("",(language==="ar"?"*المجموع التقريبي":"*TOTAL "+(language==="fr"?"INDICATIF":"ESTIMATE"))+": "+money(sum())+"*","",i18n.confirmation);
  window.location.assign("https://wa.me/"+config.whatsapp+"?text="+encodeURIComponent(lines.join("\n")))
 });
 updateFilters();renderCart()

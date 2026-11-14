@@ -36,10 +36,10 @@ updateTranslatedLabels(language);
 }
 function updateTranslatedLabels(language) {
 if (menuButton) menuButton.setAttribute("aria-label", language === "fr" ? "Ouvrir le menu de navigation" : language === "ar" ? "افتح قائمة التنقل" : language === "es" ? "Abrir el menú de navegación" : "Open navigation menu");
-if (navigationClose) navigationClose.setAttribute("aria-label", language === "fr" ? "Fermer le menu de navigation" : "Close navigation menu");
-if (backToTopButton) backToTopButton.setAttribute("aria-label", language === "fr" ? "Retour en haut" : "Back to top");
-if (previousSlideButton) previousSlideButton.setAttribute("aria-label", language === "fr" ? "Image précédente" : "Previous image");
-if (nextSlideButton) nextSlideButton.setAttribute("aria-label", language === "fr" ? "Image suivante" : "Next image");
+if (navigationClose) navigationClose.setAttribute("aria-label", language === "fr" ? "Fermer le menu de navigation" : language === "ar" ? "إغلاق قائمة التنقل" : "Close navigation menu");
+if (backToTopButton) backToTopButton.setAttribute("aria-label", language === "fr" ? "Retour en haut" : language === "ar" ? "العودة إلى أعلى الصفحة" : "Back to top");
+if (previousSlideButton) previousSlideButton.setAttribute("aria-label", language === "fr" ? "Image précédente" : language === "ar" ? "الصورة السابقة" : "Previous image");
+if (nextSlideButton) nextSlideButton.setAttribute("aria-label", language === "fr" ? "Image suivante" : language === "ar" ? "الصورة التالية" : "Next image");
 }
 function openMenu() {
 if (!mainNavigation || !siteOverlay || !menuButton) {
@@ -137,7 +137,7 @@ heroSlides.forEach((slide, index) => {
 const dot = document.createElement("button");
 dot.type = "button";
 dot.className = "dot";
-dot.setAttribute("aria-label", `${getPageLanguage() === "fr" ? "Image" : "Image"} ${index + 1}`);
+dot.setAttribute("aria-label", `${getPageLanguage() === "ar" ? "صورة" : "Image"} ${index + 1}`);
 if (index === 0) {
 dot.classList.add("active");
 dot.setAttribute("aria-current", "true");

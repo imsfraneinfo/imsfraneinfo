@@ -48,7 +48,7 @@ function init() {
  if(date){const now=new Date();date.min=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');}
  const value=id=>(document.getElementById(id)?.value || '').trim();
  const select=document.getElementById('contactSubject');
- const message=()=>['IMSFRANE',...['contactName','contactPhone','contactEmail','contactCountry','contactDate','contactPeople'].map(id=>{
+ const message=()=>[language==='ar'?'مسفران':'IMSFRANE',...['contactName','contactPhone','contactEmail','contactCountry','contactDate','contactPeople'].map(id=>{
   const label=form.querySelector('label[for="'+id+'"]')?.textContent.trim() || id;return label+': '+value(id);
  }),select.options[select.selectedIndex]?.textContent.trim() || '',value('contactMessage')].join('\n');
  form.addEventListener('submit',event=>{

@@ -1,7 +1,7 @@
 /* Demo-wide account favorites: all 15 home activities, activity listings and detail pages. */
 (function(){
 "use strict";
-const m=location.pathname.match(/^\/(fr|en|ar|es)\//);
+const m=location.pathname.match(/^\/(?:Imsfrane-demo\/)?(fr|en|ar|es)\//);
 if(!m)return;
 const lang=m[1],catalog=["gite-atlas","gite-atlas","gite-atlas","gite-atlas","gite-atlas","rafting","kayak","camping","randonnee","vtt","quad","hebergement","tubing","jetski","4x4","passage","zrkan","anergui","almou","ahidous"],tags={
  fr:{save:"Ajouter aux favoris",remove:"Retirer des favoris",login:"Connectez-vous pour enregistrer vos favoris.",saved:"Ajouté à vos favoris",removed:"Retiré de vos favoris",error:"Impossible d’enregistrer ce favori."},

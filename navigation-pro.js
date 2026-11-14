@@ -1,7 +1,7 @@
 /* Imsfrane Cathédrale production navigation with multilingual activity favorites. */
 (function(){
 "use strict";
-try{if(/^\/Imsfrane-demo\/(?:fr|en|ar|es)\//.test(location.pathname))sessionStorage.setItem("ims-demo-lastpage",location.href)}catch(e){}
+try{if(/^\/(?:fr|en|ar|es)\//.test(location.pathname))sessionStorage.setItem("ims-demo-lastpage",location.href)}catch(e){}
 /* Kayak page link in every activity menu, Demo only. */
 function ensureKayakLinks(){
  var path=location.pathname;
@@ -88,18 +88,6 @@ function initLanguageMenus(){
  menus.forEach(function(menu){
    var b=menu.querySelector(".atnav-langmini-trigger"),p=menu.querySelector(".atnav-langmini-panel");
    if(!b||!p)return;
-   if(document.documentElement.lang.toLowerCase().split("-")[0]==="ar"){
-     var labels={fr:"الفرنسية",en:"الإنجليزية",ar:"العربية",es:"الإسبانية"};
-     p.querySelectorAll("a[lang]").forEach(function(link){
-       var label=labels[link.lang];
-       if(!label)return;
-       var name=document.createElement("span");
-       name.lang="ar";
-       name.dir="rtl";
-       name.textContent=label;
-       link.replaceChildren(name);
-     });
-   }
    b.addEventListener("click",function(e){e.preventDefault();e.stopPropagation();var open=p.hidden;close();p.hidden=!open;b.setAttribute("aria-expanded",String(open));});
    menu.addEventListener("keydown",function(e){if(e.key==="Escape"&&!p.hidden){e.preventDefault();p.hidden=true;b.setAttribute("aria-expanded","false");b.focus()}});
  });
@@ -159,7 +147,7 @@ function initAccountModal(){
  var labels={
  fr:["VOTRE ESPACE IMSFRANE","Heureux de vous revoir","Retrouvez votre communauté et les aventures de l’Atlas.","Se connecter","Créer un compte","Se connecter avec Google","ou avec votre email","Adresse email","Mot de passe","Mot de passe oublié ?","Se connecter","Créer mon compte","Vos informations sont protégées.","Fermer","Consultez votre boîte email pour confirmer le compte.","Un lien de réinitialisation a été envoyé.","Mon compte","Se déconnecter"],
  en:["YOUR IMSFRANE SPACE","Welcome back","Discover your Atlas adventure community.","Sign in","Create account","Continue with Google","or with your email","Email address","Password","Forgot password?","Sign in","Create my account","Your information is protected.","Close","Check your email to confirm your account.","Check your inbox for a reset link.","My account","Sign out"],
- ar:["فضاؤك في مسفران","مرحباً بعودتك","انضم إلى مجتمع محبي المغامرة في جبال الأطلس.","تسجيل الدخول","إنشاء حساب","المتابعة باستخدام Google","أو بواسطة البريد الإلكتروني","البريد الإلكتروني","كلمة المرور","هل نسيت كلمة المرور؟","تسجيل الدخول","إنشاء حساب","معلوماتك محمية.","إغلاق","يرجى تأكيد الحساب عبر بريدك الإلكتروني.","تم إرسال رابط استعادة كلمة المرور.","حسابي","تسجيل الخروج"],
+ ar:["فضاؤك في مسفران","مرحباً بعودتك","انضم إلى مجتمع محبي المغامرة في جبال الأطلس.","تسجيل الدخول","إنشاء حساب","المتابعة باستخدام غوغل","أو بواسطة البريد الإلكتروني","البريد الإلكتروني","كلمة المرور","هل نسيت كلمة المرور؟","تسجيل الدخول","إنشاء حساب","معلوماتك محمية.","إغلاق","يرجى تأكيد الحساب عبر بريدك الإلكتروني.","تم إرسال رابط استعادة كلمة المرور.","حسابي","تسجيل الخروج"],
  es:["TU ESPACIO IMSFRANE","¡Bienvenido de nuevo!","Disfruta de nuestra comunidad del Atlas.","Iniciar sesión","Crear cuenta","Continuar con Google","o con tu correo","Correo electrónico","Contraseña","¿Olvidaste tu contraseña?","Iniciar sesión","Crear mi cuenta","Tus datos están protegidos.","Cerrar","Confirma tu cuenta desde el correo.","Revisa el correo para cambiar la contraseña.","Mi cuenta","Cerrar sesión"]
  }[lang]||[];
  var css=document.createElement("style");css.textContent='.ims-login-overlay[hidden]{display:none!important}.ims-login-overlay{position:fixed;inset:0;z-index:2147483000;background:#09251db5;backdrop-filter:blur(5px);display:grid;place-items:center;padding:15px}.ims-login-dialog{width:min(100%,490px);max-height:calc(100dvh - 30px);overflow:auto;border-radius:23px;background:white;color:#102f2a;box-shadow:0 30px 90px #09261f66;font:500 14px/1.5 system-ui,sans-serif;direction:inherit}.ims-login-head{display:flex;gap:13px;align-items:flex-start;padding:25px;border-bottom:1px solid #e2e9e7;background:#fafeff}.ims-login-mark{background:#e7f5f6;color:#099baf;border-radius:15px;padding:14px;font-size:24px}.ims-login-head-copy{flex:1}.ims-login-head small{font-weight:800;color:#18aab6;letter-spacing:.08em}.ims-login-head h2{font:800 23px/1.25 system-ui,sans-serif;color:#102f2a;margin:5px 0}.ims-login-head p{font-size:12px;color:#647c78;margin:0}.ims-login-close{background:white;border:1px solid #dbe3dc;border-radius:12px;width:41px;height:41px;cursor:pointer;font-size:26px;color:#193c30}.ims-login-body{padding:25px}.ims-login-tabs{display:flex;gap:5px;padding:5px;border-radius:14px;background:#f2f6f5;margin-bottom:20px}.ims-login-tab{flex:1;border:0;border-radius:10px;background:none;color:#64746f;padding:12px;cursor:pointer;font-weight:800}.ims-login-tab[aria-selected=true]{background:white;color:#11362c;box-shadow:0 3px 9px #193b2618}.ims-login-google{width:100%;background:white;border:1px solid #dce3de;border-radius:10px;padding:14px;display:flex;gap:14px;align-items:center;justify-content:center;font-size:14px;color:#2e3e36;cursor:pointer}.ims-login-divider{display:flex;gap:12px;align-items:center;color:#798b86;margin:21px 0}.ims-login-divider:before,.ims-login-divider:after{content:"";height:1px;flex:1;background:#e0e7e1}.ims-login-form label{display:block;margin:14px 0 7px;font-size:13px;font-weight:700}.ims-login-form input{width:100%;box-sizing:border-box;border:1px solid #d7e0d9;border-radius:11px;padding:14px;color:#122f25;background:white;font:inherit}.ims-login-submit{width:100%;margin-top:19px;border:0;border-radius:12px;background:#1ab4c2;color:white;padding:15px;font-weight:800;cursor:pointer;font-size:14px}.ims-login-forgot{display:block;margin:12px 0 0 auto;background:none;border:0;color:#128b98;cursor:pointer;font-size:12px;font-weight:700}.ims-login-state{color:#37756e;font-size:12px;margin-top:12px;white-space:pre-wrap}.ims-login-security{border-top:1px solid #e1e8e3;padding-top:14px;margin-top:20px;color:#70847b;font-size:11px}.ims-login-dialog button:focus-visible{outline:3px solid #19aab2;outline-offset:2px}@media(max-width:490px){.ims-login-head{padding:19px 15px}.ims-login-body{padding:20px 17px}.ims-login-dialog{border-radius:20px}.ims-login-head h2{font-size:21px}}';css.textContent+="\n/* IMSFRANE DESIGN SYSTEM — forest and gold account modal */\n.ims-login-overlay{background:#071f1acc!important}\n.ims-login-head{background:linear-gradient(120deg,#123a30,#0d2c25)!important;border-bottom:1px solid #bb9a56!important}\n.ims-login-head h2,.ims-login-head p{color:#fff!important}\n.ims-login-head small{color:#e8c978!important}\n.ims-login-mark{background:#e6cc8129!important;color:#f3d78b!important}\n.ims-login-close{background:#f4e7c7!important;color:#193629!important;border-color:#d1b478!important}\n.ims-login-tab[aria-selected=true]{color:#143e2d!important;border:1px solid #c6a43f88!important}\n.ims-login-google:hover{border-color:#bba05e!important;background:#fcfaf4!important}\n.ims-login-submit{background:#183e30!important;box-shadow:0 9px 22px #183e3026!important}\n.ims-login-submit:hover{background:#265b43!important}\n.ims-login-forgot{color:#9b7834!important}\n.ims-login-form input:focus{outline:2px solid #c6a43f!important;outline-offset:1px}\n.ims-login-dialog button:focus-visible{outline-color:#c6a43f!important}\n.ims-login-security{color:#6c7a6d!important}\n";document.head.appendChild(css);
@@ -216,7 +204,7 @@ function refreshAccount(u){
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",initAccountModal,{once:true});else initAccountModal();
 
-function loadFavoriteHearts(){if(!/^\/(fr|en|ar|es)\//.test(location.pathname))return;if(document.querySelector('script[data-ims-fav]'))return;var script=document.createElement("script");script.src="/js/ims-favorites-demo.js?v=menu-fix-20261102";script.defer=true;script.dataset.imsFav="yes";document.head.append(script)}
+function loadFavoriteHearts(){if(!/^\/(?:Imsfrane-demo\/)?(fr|en|ar|es)\//.test(location.pathname))return;if(document.querySelector('script[data-ims-fav]'))return;var script=document.createElement("script");script.src="/js/ims-favorites-demo.js?gite=2&demo=mirror-paths-v3&v=menu-fix-20261102";script.defer=true;script.dataset.imsFav="yes";document.head.append(script)}
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",loadFavoriteHearts,{once:true});else loadFavoriteHearts();
 
 /* Site header: no notification bell. The full inbox stays on members.html. */

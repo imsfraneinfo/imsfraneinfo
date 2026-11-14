@@ -62,7 +62,7 @@ function build(){
  };
  return {adbox}
 }
-function safeLink(path){if(!path||!/^\/(fr|en|ar|es)\/[a-z0-9/_-]*$/.test(path))return null;return base+path.replace(/^\/(fr|en|ar|es)\//,"/"+current()+"/").slice(1)}
+function safeLink(path){if(!path||!/^\/(fr|en|ar|es)\/[a-z0-9/_-]*$/.test(path))return null;return base+path.replace(/^\/(?:Imsfrane-demo\/)?(fr|en|ar|es)\//,"/"+current()+"/").slice(1)}
 function paint(){
  if(!btn)return;
  const badge=btn.querySelector(".ims-notif-badge"),unread=rows.filter(r=>!r.read_at).length;

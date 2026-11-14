@@ -10,7 +10,7 @@
   const words = {
     fr: {reviews:"avis sur Google", fallback:"Consulter les avis sur Google", source:"Avis Google Maps", stars:"étoiles sur 5"},
     en: {reviews:"Google reviews",fallback:"See reviews on Google",source:"Google Maps reviews",stars:"stars out of 5"},
-    ar: {reviews:"تقييماً على Google",fallback:"شاهد التقييمات على Google",source:"تقييمات Google Maps",stars:"نجوم من 5"},
+    ar: {reviews:"تقييمًا على غوغل",fallback:"شاهد التقييمات على غوغل",source:"تقييمات خرائط غوغل",stars:"نجوم من 5"},
     es: {reviews:"reseñas de Google",fallback:"Ver reseñas en Google",source:"Reseñas de Google Maps",stars:"estrellas de 5"}
   };
   const tx = words[lang] || words.fr;
@@ -216,7 +216,7 @@ html[lang="ar"] .hp-home .hp-reviews-unified .hp-live-review-list{padding:0 28px
       const score = Math.max(0, Math.min(5, Math.round(Number(r.rating) || 0)));
       card.appendChild(node("div", "hp-live-review-stars", "★".repeat(score) + "☆".repeat(5-score)));
       if (r.text) card.appendChild(node("p", "hp-live-review-text", r.text));
-      card.appendChild(link(tx.source + " ↗", r.googleMapsURI || maps || section.querySelector(".hp-google-link").href, "hp-live-review-credit"));
+      card.appendChild(link(tx.source + "", r.googleMapsURI || maps || section.querySelector(".hp-google-link").href, "hp-live-review-credit"));
       cards.push(card);
     }
     if (!cards.length) {

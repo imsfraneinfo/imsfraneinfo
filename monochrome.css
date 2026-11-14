@@ -1,39 +1,39 @@
 
-html body { background-color: #fff; color: #151515; }
+html body { background-color: #ffffff; color: #022012; }
 body.atnav-ready #siteHeader,
 body.atnav-ready .atnav-article-header,
 #atnavDrawer,
 #ims-footer,
 .site-footer {
-  background: #111 !important;
-  border-color: #333 !important;
+  background: #011a0f !important;
+  border-color: #1d3f30 !important;
 }
-body.atnav-ready #siteHeader .brand-content small { color: #d1d1d1 !important; }
+body.atnav-ready #siteHeader .brand-content small { color: #d7d4c9 !important; }
 body.atnav-ready #siteHeader .atnav-desktop a[aria-current="page"],
 body.atnav-ready #siteHeader .atnav-desktop a:hover {
-  color: #fff !important;
+  color: #ffffff !important;
   text-decoration: underline;
   text-underline-offset: .35em;
 }
 body.atnav-ready #siteHeader .atnav-open {
-  background: #242424;
-  border-color: #777;
-  color: #fff;
+  background: #0e3021;
+  border-color: #747877;
+  color: #ffffff;
 }
 #atnavDrawer .atnav-book,
 #ims-footer .fp-cta {
-  background: #fff !important;
-  border-color: #fff !important;
-  color: #111 !important;
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #011a0f !important;
 }
 #atnavDrawer .atnav-book:hover,
-#ims-footer .fp-cta:hover { background: #dedede !important; }
+#ims-footer .fp-cta:hover { background: #e4e1d6 !important; }
 #atnavDrawer .atnav-drawer-brand:focus-visible {
-  outline: 2px solid #fff;
+  outline: 2px solid #ffffff;
   outline-offset: 5px;
 }
 #atnavDrawer .atnav-drawer-brand:hover strong {
   text-decoration: underline;
   text-underline-offset: .25em;
 }
-::selection { background: #191919; color: #fff; }
+::selection { background: #032516; color: #ffffff; }

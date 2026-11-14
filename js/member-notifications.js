@@ -46,7 +46,7 @@ function renderNotes(root,compact){
   const controls=el("div","ims-notify-actions");
   if(!n.read_at){let bt=el("button","ims-notify-small-action",tr().read);bt.type="button";bt.addEventListener("click",()=>markOne(n.id));controls.append(bt)}
   const href=localizedLink(n.link_path);
-  if(href){const link=el("a","ims-notify-view",tr().see+" ↗");link.href=href;controls.append(link)}
+  if(href){const link=el("a","ims-notify-view",tr().see+"");link.href=href;controls.append(link)}
   box.append(meta,title,body,controls);card.append(icon,box);root.append(card)
  }
  if(compact){const more=el("a","ims-notify-all",tr().showAll+" →");more.href=accountUrl();root.append(more)}

@@ -1,0 +1,314 @@
+
+html body { background-color: #fff; color: #151515; }
+
+body.atnav-ready #siteHeader,
+body.atnav-ready .atnav-article-header,
+#atnavDrawer,
+body.atnav-ready .atnav-langmini-panel {
+  background: #fff !important;
+  border-color: #d5d5d5 !important;
+  color: #151515 !important;
+}
+#ims-footer,
+.site-footer {
+  background: #111 !important;
+  border-color: #333 !important;
+}
+body.atnav-ready #siteHeader .brand-content strong,
+body.atnav-ready .atnav-article-brand,
+body.atnav-ready #siteHeader .atnav-desktop a,
+body.atnav-ready .atnav-langmini-panel a,
+#atnavDrawer :is(.atnav-drawer-brand strong, .atnav-intro-title, .atnav-item, .atnav-submenu a, .atnav-languages a) {
+  color: #151515 !important;
+}
+body.atnav-ready #siteHeader .brand-content small,
+#atnavDrawer :is(.atnav-drawer-brand small, .atnav-label, .atnav-mark, .atnav-item-icon, .atnav-subicon, .atnav-chevron) {
+  color: #464646 !important;
+}
+#atnavDrawer :is(.atnav-drawer-top, .atnav-label-separated, .atnav-actions) {
+  border-color: #dedede;
+}
+body.atnav-ready :is(.atnav-open, .atnav-langmini-trigger, .ims-member-entry),
+#atnavDrawer :is(.atnav-close, .atnav-whatsapp, .atnav-languages a) {
+  background: #fff !important;
+  border-color: #b5b5b5 !important;
+  color: #151515 !important;
+}
+body.atnav-ready :is(.atnav-open, .atnav-langmini-trigger, .ims-member-entry):hover,
+body.atnav-ready .atnav-langmini-trigger[aria-expanded="true"],
+body.atnav-ready .atnav-langmini-panel a:is(:hover, :focus-visible, [aria-current="page"]),
+#atnavDrawer :is(.atnav-close, .atnav-whatsapp):hover {
+  background: #eee !important;
+  color: #151515 !important;
+}
+body.atnav-ready #siteHeader .header-book-button,
+body.atnav-ready .atnav-article-book,
+#atnavDrawer .atnav-book {
+  background: #171717 !important;
+  border-color: #171717 !important;
+  color: #fff !important;
+}
+body.atnav-ready #siteHeader .atnav-desktop a:is(:hover, [aria-current="page"]),
+#atnavDrawer :is(.atnav-item, .atnav-submenu a):is(:hover, [aria-current="page"]),
+#atnavDrawer .atnav-drawer-brand:hover strong {
+  text-decoration: underline;
+  text-underline-offset: .25em;
+}
+#atnavDrawer .atnav-drawer-brand:focus-visible {
+  outline: 2px solid #333;
+  outline-offset: 5px;
+}
+#ims-footer .fp-cta {
+  background: #fff !important;
+  border-color: #fff !important;
+  color: #111 !important;
+}
+#ims-footer .fp-cta:hover { background: #dedede !important; }
+
+/* Give labels over busy photographs an opaque reading surface. */
+html body main.rando .mosaic .stamp,
+html body .hp-home .hp-activity-grid > .hp-activity-card > .hp-activity-image > .hp-photo-tag,
+html body .hp-home .hp-destination-label,
+html body .hero-badge {
+  background: #fff !important;
+  color: #151515 !important;
+  border-color: #dedede !important;
+  text-shadow: none;
+}
+html body :is(.hp-destination-label, .hero .hero-badge) { border-radius: 4px; }
+html body .hp-destination-label { padding: .45em .7em; }
+html body .hero-badge :is(b, span, strong) { color: #151515 !important; }
+::selection { background: #191919; color: #fff; }
+
+/* Imsfrane forest green, gold and cream. */
+:root {
+  --atlas-paper: #f8f6ef;
+  --atlas-nav: #09291d;
+  --atlas-nav-panel: #113726;
+  --atlas-nav-line: #d5b45a88;
+  --atlas-white: #fffdf7;
+  --atlas-ink: #17392e;
+  --atlas-forest: #12473c;
+  --atlas-muted: #4c6458;
+  --atlas-line: #e5e8dc;
+  --atlas-gold: #e5b946;
+  --atlas-gold-hover: #f1d995;
+}
+html body {
+  background: var(--atlas-paper);
+  color: var(--atlas-ink);
+}
+::selection {
+  background: var(--atlas-forest);
+  color: #fff;
+}
+body.atnav-ready #siteHeader,
+body.atnav-ready .atnav-article-header,
+html body .ims-sitebar,
+html body #header.header,
+body #atnavDrawer {
+  background: var(--atlas-nav) !important;
+  border-color: var(--atlas-nav-line) !important;
+  color: var(--atlas-white) !important;
+}
+body #atnavDrawer {
+  --atnav-green: var(--atlas-nav);
+  --atnav-gold: #e3b63d;
+  --atnav-ink: #f0f4eb;
+}
+body.atnav-ready #siteHeader .brand-content strong,
+body.atnav-ready .atnav-article-brand,
+body.atnav-ready #siteHeader .atnav-desktop a,
+body.atnav-ready #siteHeader .language-button,
+html body .ims-sitebar :is(a, strong),
+html body #header.header :is(a, strong),
+#atnavDrawer :is(.atnav-drawer-brand strong, .atnav-intro-title, .atnav-item, .atnav-submenu a, .atnav-languages a),
+body.atnav-ready .atnav-langmini-panel a {
+  color: var(--atlas-white) !important;
+}
+body.atnav-ready #siteHeader .brand-content small,
+body.atnav-ready #siteHeader .language-button.active,
+body.atnav-ready #siteHeader .atnav-desktop a:is(:hover, [aria-current="page"]),
+#atnavDrawer :is(.atnav-drawer-brand small, .atnav-label, .atnav-mark, .atnav-item-icon, .atnav-subicon, .atnav-chevron),
+#atnavDrawer :is(.atnav-item, .atnav-submenu a):is(:hover, .is-active, [aria-current="page"]) {
+  color: #f2cd6d !important;
+}
+body.atnav-ready :is(.atnav-open, .atnav-langmini-trigger, .ims-member-entry, .atnav-langmini-panel),
+#atnavDrawer :is(.atnav-close, .atnav-whatsapp, .atnav-languages a) {
+  background: var(--atlas-nav-panel) !important;
+  color: var(--atlas-white) !important;
+  border-color: var(--atlas-nav-line) !important;
+}
+body.atnav-ready :is(.atnav-open, .atnav-langmini-trigger, .ims-member-entry):hover,
+body.atnav-ready .atnav-langmini-trigger[aria-expanded="true"],
+body.atnav-ready .atnav-langmini-panel a:is(:hover, :focus-visible),
+#atnavDrawer :is(.atnav-close, .atnav-whatsapp, .atnav-languages a):hover {
+  background: #24513b !important;
+  color: var(--atlas-gold-hover) !important;
+}
+#atnavDrawer .atnav-drawer-brand:focus-visible { outline-color: var(--atlas-gold); }
+#atnavDrawer :is(.atnav-drawer-top, .atnav-actions, .atnav-label-separated) {
+  border-color: var(--atlas-nav-line);
+}
+body.atnav-ready .atnav-langmini-panel a[aria-current="page"],
+#atnavDrawer :is(.atnav-book, .atnav-languages a[aria-current="page"]) {
+  background: var(--atlas-gold) !important;
+  border-color: var(--atlas-gold) !important;
+  color: var(--atlas-nav) !important;
+}
+html body :is(#ims-footer, .site-footer) {
+  --fp-bg: #0d3028;
+  --fp-ink: #fffaf0;
+  --fp-muted: #dce8dc;
+  --fp-accent: #e3c67e;
+  background: #0d3028 !important;
+  color: #fffaf0 !important;
+}
+#ims-footer .fp-cta {
+  background: #e3c67e !important;
+  border-color: #e3c67e !important;
+  color: var(--atlas-nav) !important;
+}
+#ims-footer .fp-cta:hover,
+#atnavDrawer .atnav-book:hover { background: var(--atlas-gold-hover) !important; }
+html body :is(.embedded-enquiry form, #contactForm, .bk-panel, .sp-catalog, .hp-activities, .journal-index) {
+  background-color: var(--atlas-paper);
+}
+html body :is(#siteHeader .header-book-button, .atnav-article-book, .hp-button-gold, .hp-button-primary,
+  .quad-r-gold, .btn-gold, .enquiry-email, .wo-btn, .wk-btn-primary, .ky-btn-primary,
+  .gp-btn-primary, .sp-cart-add, .camp-btn:not(.ghost)) {
+  background: var(--atlas-gold) !important;
+  color: var(--atlas-nav) !important;
+  border-color: var(--atlas-gold) !important;
+}
+html body :is(#siteHeader .header-book-button, .atnav-article-book, .hp-button-gold, .hp-button-primary,
+  .quad-r-gold, .btn-gold, .enquiry-email, .wo-btn, .wk-btn-primary, .ky-btn-primary,
+  .gp-btn-primary, .sp-cart-add, .camp-btn:not(.ghost)):hover {
+  background: var(--atlas-gold-hover) !important;
+  border-color: var(--atlas-gold-hover) !important;
+}
+html body main.rando .mosaic .stamp,
+html body .hp-home .hp-activity-grid > .hp-activity-card > .hp-activity-image > .hp-photo-tag,
+html body :is(.hp-destination-label, .hero-badge, .hp-hero-picture-note, .hp-hero-altitude) {
+  background: var(--atlas-white) !important;
+  color: var(--atlas-ink) !important;
+  border-color: var(--atlas-line) !important;
+}
+html body :is(.hp-hero-picture-note, .hp-hero-altitude, .hero-badge) :is(b, span, strong) {
+  color: var(--atlas-ink) !important;
+}
+html body .hp-home {
+  --hp-night: #0d2926;
+  --hp-forest: var(--atlas-forest);
+  --hp-mint: #dbe7d9;
+  --hp-gold: #d7b66e;
+  --hp-cream: var(--atlas-paper);
+  --hp-ink: var(--atlas-ink);
+  --hp-border: var(--atlas-line);
+}
+html body :is(.journal-page, .gp-main, .sp-main, .stay-main, .memories-showcase,
+  .ims-weekend, .ky-prep-section, .rando .section.light, .camp-section.camp-offer) {
+  background-color: var(--atlas-paper);
+}
+html body :is(.hp-activity-body, .gp-card, .gp-hike, .sp-card, .vt-card, .ky-service, .wk-stage) {
+  background-color: var(--atlas-white);
+}
+html body :is(.rando .hero, .quad-r-hero, .ky-hero, .camp-hero, .wk-hero, .gp-hero,
+  .bk-hero, .ky-season, .pricebox, .team-about .company-block) {
+  background-color: var(--atlas-forest);
+}
+html body :is(.rando .hero, .quad-r-hero, .ky-hero, .camp-hero, .wk-hero, .gp-hero,
+  .bk-hero, .ky-season, .pricebox) :is(.eyebrow, .kicker, .camp-ey, .ky-eyebrow, .gp-section-label, .wk-kicker) {
+  color: #f1d995 !important;
+}
+html body :is(.gp-card, .stay-card, .journal-card, .sp-card, .rando .card) :is(h2, h3) {
+  color: var(--atlas-ink);
+}
+html body :is(.atnav-close, .atnav-whatsapp, .atnav-langmini-trigger, .atnav-open) svg {
+  color: inherit;
+}
+html body .hp-hero :is(.hp-slide-arrow, .hp-slide-dot) {
+  border-color: #f8f6ef;
+}
+html body .hp-hero .hp-slide-dot.is-active {
+  background: #f8f6ef;
+}
+html body .hp-home .hp-hero-content {
+  background-image: radial-gradient(ellipse at 100% 50%, #27534144, transparent 65%),
+    linear-gradient(110deg, #103a32, #0c2e29);
+}
+html body .hp-home .hp-hero h1 em { color: #e3c67e !important; }
+html body .hp-home .hp-hero :is(.hp-eyebrow, .hp-hero-foot, .hp-hero-picture-note > span) {
+  color: #f1d995 !important;
+}
+html body .hp-home .hp-hero .hp-hero-picture-note > span { color: var(--atlas-ink) !important; }
+
+/* Keep hero photographs clear of decorative labels and captions. */
+html body :is(
+  .ky-hero-photo > .ky-hero-photo-label,
+  .quad-r-media :is(.quad-r-badge, .quad-r-vertical),
+  .hero-media :is(.hero-badge, .hero-vert),
+  main.rando .hero .mosaic .stamp,
+  .founder-hero .founder-photo figcaption,
+  .members-cover > :is(#heroEyebrow, #heroTitle, #heroDescription)
+) {
+  display: none !important;
+}
+
+/* Keep headings and actions in their own row below full-bleed photos. */
+html body :is(.article-hero, .ims-weekend .wk-hero, .team-about .founder-hero, .error-page) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  padding: 0;
+  min-height: 0;
+  align-items: start;
+}
+html body :is(.article-hero > img, .ims-weekend .wk-hero > img, .team-about .founder-hero .founder-photo, .error-background) {
+  position: relative;
+  inset: auto;
+  z-index: auto;
+  grid-row: 1;
+  width: 100%;
+  height: clamp(240px, 52vw, 580px);
+}
+html body :is(.error-background img, .team-about .founder-photo img) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+html body .article-shade {
+  display: none;
+}
+html body :is(.ims-weekend .wk-hero, .team-about .founder-hero, .error-background, .members-cover)::after,
+html body .members-cover::before {
+  content: none;
+}
+html body :is(.article-hero-text, .ims-weekend .wk-hero > .wk-wrap, .team-about .founder-hero .team-heading) {
+  grid-row: 2;
+  width: min(1120px, calc(100% - 40px));
+  max-width: none;
+  margin: 0 auto;
+  padding: clamp(24px, 5vw, 58px) 0;
+}
+html body .article-hero {
+  background: var(--atlas-nav);
+}
+html body .error-content {
+  grid-row: 2;
+  margin: clamp(20px, 5vw, 56px) auto;
+}
+
+/* Keep the back-to-top button below WhatsApp, with room for the safe area. */
+html body a.floating-whatsapp {
+  background: #25d366 !important;
+  color: #fff !important;
+}
+
+html body:has(.back-to-top) a.floating-whatsapp {
+  bottom: calc(72px + env(safe-area-inset-bottom));
+}
+
+html body .back-to-top {
+  bottom: calc(18px + env(safe-area-inset-bottom));
+}
