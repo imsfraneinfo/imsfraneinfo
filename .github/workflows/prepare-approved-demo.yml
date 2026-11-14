@@ -51,7 +51,7 @@ jobs:
           for lang in ('ar','en','es','fr'):
               for route in ('','programme/','booking/','contact/','quad/'):
                   page = Path(lang,route,'index.html').read_text()
-                  assert '/atlas-identity.css?v=forest6' in page and not robot_meta.search(page), (lang,route)
+                  assert '/atlas-identity.css?v=forest6' in page and not demo_noindex.search(page), (lang,route)
               home = Path(lang,'index.html').read_text()
               assert 'hp-hero-picture-note' in home and 'hp-hero-altitude' in home
           css = Path('atlas-identity.css').read_text()
