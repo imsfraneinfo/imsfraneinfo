@@ -10,19 +10,47 @@ if(!slides.length||slides.length!==dots.length)return;
 var index=0, timer=null, paused=false, engaged=false, requested=0;
 var motion=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)");
 var observer=null, inView=true, touchStart=null;
+const pending = new WeakMap();
+async function waitForPhoto(image) {
+ if(typeof image.decode==="function"){
+  try{await image.decode();return true}catch(error){return image.complete&&image.naturalWidth>0}
+ }
+ if(image.complete)return image.naturalWidth>0;
+ return new Promise(function(resolve){
+  function finish(){
+   image.removeEventListener("load",finish);
+   image.removeEventListener("error",finish);
+   resolve(image.naturalWidth>0);
+  }
+  image.addEventListener("load",finish);
+  image.addEventListener("error",finish);
+ });
+}
+function loadPhoto(image){
+ if(!image)return Promise.resolve(false);
+ if(pending.has(image))return pending.get(image);
+ image.loading="eager";
+ if(image.dataset.src){
+  if(image.dataset.srcset)image.srcset=image.dataset.srcset;
+  image.src=image.dataset.src;
+  delete image.dataset.src;
+ }
+ const photo=waitForPhoto(image).then(async function(ready){
+  if(ready||!image.srcset||!image.hasAttribute("src")||image.closest("picture"))return ready;
+  // Try the original full-size source if a responsive variant cannot load.
+  image.removeAttribute("srcset");
+  return waitForPhoto(image);
+ }).finally(function(){pending.delete(image)});
+ pending.set(image,photo);
+ return photo;
+}
 async function show(next){
  const target=((next%slides.length)+slides.length)%slides.length;
  const ticket=++requested;
- const image=slides[target].querySelector('img');
- if(image&&image.dataset.src){
-  image.sizes=image.getAttribute('sizes')||'100vw';
-  image.srcset=image.dataset.srcset||'';
-  image.src=image.dataset.src;
-  delete image.dataset.src;
-  try{await image.decode()}catch(e){}
- }
- if(ticket!==requested)return;
- index=((next%slides.length)+slides.length)%slides.length;
+ if(target===index)return;
+ const ready=await loadPhoto(slides[target].querySelector("img"));
+ if(!ready||ticket!==requested)return;
+ index=target;
  slides.forEach(function(slide,i){
    var on=i===index;
    slide.classList.toggle("is-active",on);
@@ -80,9 +108,16 @@ if("IntersectionObserver" in window){
 }
 // Hidden slide photos are fetched only when needed; autoplay follows the
 // visitor's first interaction, saving data during an unattended initial load.
-function engage(){if(engaged)return;engaged=true;start()}
+function engage(){
+ if(engaged)return;
+ engaged=true;
+ if(!(motion&&motion.matches)){
+  loadPhoto(slides[(index+1)%slides.length].querySelector("img"));
+ }
+ start();
+}
 window.addEventListener('pointerdown',engage,{once:true,passive:true});
 window.addEventListener('keydown',engage,{once:true});
 window.addEventListener('scroll',engage,{once:true,passive:true});
-show(0);start()
+start()
 })();

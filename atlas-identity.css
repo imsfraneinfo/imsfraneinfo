@@ -233,9 +233,11 @@ html body .hp-hero :is(.hp-slide-arrow, .hp-slide-dot) {
 html body .hp-hero .hp-slide-dot.is-active {
   background: #f8f6ef;
 }
-html body .hp-home .hp-hero-content {
-  background-image: radial-gradient(ellipse at 100% 50%, #27534144, transparent 65%),
-    linear-gradient(110deg, #103a32, #0c2e29);
+@media (min-width: 861px) {
+  html body .hp-home .hp-hero-content {
+    background-image: radial-gradient(ellipse at 100% 50%, #27534144, transparent 65%),
+      linear-gradient(110deg, #103a32, #0c2e29);
+  }
 }
 html body .hp-home .hp-hero h1 em { color: #e3c67e !important; }
 html body .hp-home .hp-hero :is(.hp-eyebrow, .hp-hero-foot, .hp-hero-picture-note > span) {
@@ -311,4 +313,10 @@ html body:has(.back-to-top) a.floating-whatsapp {
 
 html body .back-to-top {
   bottom: calc(18px + env(safe-area-inset-bottom));
+}
+
+@media (max-width: 860px) {
+  html body .hp-home .hp-hero-content {
+    background: transparent;
+  }
 }
