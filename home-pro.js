@@ -6,7 +6,9 @@ if(!hero)return;
 var slides=Array.prototype.slice.call(hero.querySelectorAll(".hp-slide"));
 var dots=Array.prototype.slice.call(hero.querySelectorAll(".hp-slide-dot"));
 var arrows=Array.prototype.slice.call(hero.querySelectorAll(".hp-slide-arrow"));
-if(!slides.length||slides.length!==dots.length)return;
+const progress=hero.querySelectorAll(".hp-slide-progress-segment");
+const rtl=document.documentElement.dir==="rtl";
+if(!slides.length)return;
 var index=0, timer=null, paused=false, engaged=false, requested=0;
 var motion=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)");
 var observer=null, inView=true, touchStart=null;
@@ -51,6 +53,7 @@ async function show(next){
  const ready=await loadPhoto(slides[target].querySelector("img"));
  if(!ready||ticket!==requested)return;
  index=target;
+ progress.forEach(function(segment,i){segment.classList.toggle("is-active",i===index)});
  slides.forEach(function(slide,i){
    var on=i===index;
    slide.classList.toggle("is-active",on);
@@ -63,7 +66,7 @@ async function show(next){
  });
 }
 function stop(){if(timer!==null){window.clearInterval(timer);timer=null}}
-function shouldPlay(){return engaged&&!paused&&inView&&!document.hidden&&!(motion&&motion.matches)}
+function shouldPlay(){return engaged&&!paused&&!touchStart&&inView&&!document.hidden&&!(motion&&motion.matches)}
 function start(){
  stop();
  if(shouldPlay()){timer=window.setInterval(function(){show(index+1)},5500)}
@@ -87,19 +90,47 @@ hero.addEventListener("focusout",function(ev){if(!hero.contains(ev.relatedTarget
 hero.addEventListener("keydown",function(ev){
  if(ev.target.closest("button")&&(ev.key==="ArrowRight"||ev.key==="ArrowLeft")){
    ev.preventDefault();
-   show(index+(ev.key==="ArrowRight"?1:-1));start()
+   show(index+((ev.key==="ArrowRight")!==rtl?1:-1));start()
  }
 });
-hero.addEventListener("touchstart",function(ev){
- if(ev.touches.length===1)touchStart={x:ev.touches[0].clientX,y:ev.touches[0].clientY}
-},{passive:true});
-hero.addEventListener("touchend",function(ev){
- if(!touchStart||!ev.changedTouches.length)return;
- var dx=ev.changedTouches[0].clientX-touchStart.x;
- var dy=ev.changedTouches[0].clientY-touchStart.y;
+function swipeDirection(dx){return (dx>0)===rtl?1:-1}
+function finishSwipe(ev){
+ if(!touchStart)return;
+ const startPoint=touchStart;
  touchStart=null;
- if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.3){show(index+(dx<0?1:-1));start()}
+ hero.classList.remove("is-dragging");
+ hero.style.removeProperty("--hp-drag-x");
+ const point=ev.type==="touchend"&&ev.changedTouches[0];
+ if(point&&startPoint.horizontal){
+  const dx=point.clientX-startPoint.x;
+  if(Math.abs(dx)>=Math.min(65,hero.clientWidth*.14))show(index+swipeDirection(dx));
+ }
+ start();
+}
+hero.addEventListener("touchstart",function(ev){
+ if(ev.touches.length!==1||ev.target.closest("button,a"))return;
+ touchStart={x:ev.touches[0].clientX,y:ev.touches[0].clientY,horizontal:false};
+ stop();
 },{passive:true});
+hero.addEventListener("touchmove",function(ev){
+ if(!touchStart||ev.touches.length!==1)return;
+ const dx=ev.touches[0].clientX-touchStart.x;
+ const dy=ev.touches[0].clientY-touchStart.y;
+ if(!touchStart.horizontal){
+  if(Math.max(Math.abs(dx),Math.abs(dy))<9)return;
+  if(Math.abs(dx)<=Math.abs(dy)*1.2){finishSwipe(ev);return}
+  touchStart.horizontal=true;
+  hero.classList.add("is-dragging");
+ }
+ const next=(index+swipeDirection(dx)+slides.length)%slides.length;
+ if(touchStart.next!==next){
+  touchStart.next=next;
+  loadPhoto(slides[next].querySelector("img"));
+ }
+ hero.style.setProperty("--hp-drag-x",Math.max(-84,Math.min(84,dx*.45))+"px");
+},{passive:true});
+hero.addEventListener("touchend",finishSwipe,{passive:true});
+hero.addEventListener("touchcancel",finishSwipe,{passive:true});
 document.addEventListener("visibilitychange",start);
 if(motion&&motion.addEventListener)motion.addEventListener("change",start);
 if("IntersectionObserver" in window){
