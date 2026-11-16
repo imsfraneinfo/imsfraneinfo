@@ -34,5 +34,15 @@ form.addEventListener('submit',e=>{
  if(e.submitter?.dataset.channel==='email'){
  window.ImsEnquiry.send(form,{kind:'booking',name:$('name').value.trim(),email:$('email').value.trim(),subject:t[6],message:msg},$('bookingSendStatus'),e.submitter);
  }else{window.open('https://wa.me/212667772551?text='+encodeURIComponent(msg),'_blank','noopener');}
-});calculate();
+});
+const selection = new URLSearchParams(location.search);
+const selectedStay = selection.get('stay');
+if (Array.from($('stay').options).some(option => option.value === selectedStay)) {
+  $('stay').value = selectedStay;
+}
+const selectedActivity = selection.get('activity');
+const activity = Array.from(form.querySelectorAll('[data-service]'))
+  .find(input => input.value === selectedActivity);
+if (activity) activity.checked = true;
+calculate();
 })();
