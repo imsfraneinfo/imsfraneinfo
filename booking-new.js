@@ -11,12 +11,15 @@ function calculate(){
  const nights=start&&end?Math.round((Date.parse(end)-Date.parse(start))/86400000):1;
  const lines=[];let total=0,quotes=false;
  const stay=$('stay').value;$('departure').required=stay!=='none';
+ const limit=stay==='house'?6:stay==='none'?60:30;
+ $('guests').max=limit;
+ const accommodationFits=people<=limit;
  function add(name,amount,detail){lines.push({name,amount,detail});if(amount===null)quotes=true;else total+=amount;}
- if(stay==='house')add(t[19],300*Math.max(nights,1),'300 × '+Math.max(nights,1)+' '+t[33]);
- if(stay==='gite250')add(t[21],250*people*Math.max(nights,1),'250 × '+people+' × '+Math.max(nights,1)+' '+t[33]);
- if(stay==='gite350')add(t[23],nights===1?350*people:null,t[24]+(nights!==1?' · '+t[30]:''));
- if(stay==='weekend')add(t[25],null,t[26]);
- form.querySelectorAll('[data-service]:checked').forEach(input=>{const a=services.find(a=>a.id===input.value);let qty=a.unit==='person'?people:a.unit==='duo'?Math.ceil(people/2):a.unit==='quad'?people:1;add(a.name,a.price===null?null:a.price*qty,a.price===null?t[30]:a.price+' × '+qty);});
+ if(accommodationFits&&stay==='house')add(t[19],300*Math.max(nights,1),'300 × '+Math.max(nights,1)+' '+t[33]);
+ if(accommodationFits&&stay==='gite250')add(t[21],250*people*Math.max(nights,1),'250 × '+people+' × '+Math.max(nights,1)+' '+t[33]);
+ if(accommodationFits&&stay==='gite350')add(t[23],nights===1?350*people:null,t[24]+(nights!==1?' · '+t[30]:''));
+ if(accommodationFits&&stay==='weekend')add(t[25],null,t[26]);
+ form.querySelectorAll('[data-service]:checked').forEach(input=>{const a=services.find(a=>a.id===input.value);let qty=a.unit==='person'?people:a.unit==='duo'?Math.ceil(people/2):a.unit==='quad'?people:1;const needsQuote = a.price === null || (a.maxGuests && people > a.maxGuests); add(a.name,needsQuote?null:a.price*qty,needsQuote?t[30]:a.price+' × '+qty);});
  $('summaryList').replaceChildren();lines.forEach(a=>{const li=document.createElement('li'),strong=document.createElement('strong'),small=document.createElement('div');strong.textContent=a.name;small.textContent=a.detail+' · '+(a.amount===null?t[30]:a.amount+currency);li.append(strong,small);$('summaryList').append(li)});
  $('emptySummary').hidden=lines.length>0;$('total').textContent=quotes&&total===0?t[30]:total.toLocaleString()+currency;$('quoteNote').hidden=!quotes;
  $('campNote').hidden=!form.querySelector('[value="camping"]:checked');$('raftNote').hidden=!form.querySelector('[value^="raft"]:checked');
