@@ -142,9 +142,6 @@ if("IntersectionObserver" in window){
 function engage(){
  if(engaged)return;
  engaged=true;
- if(!(motion&&motion.matches)){
-  loadPhoto(slides[(index+1)%slides.length].querySelector("img"));
- }
  start();
 }
 window.addEventListener('pointerdown',engage,{once:true,passive:true});
