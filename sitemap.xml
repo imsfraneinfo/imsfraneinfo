@@ -1080,4 +1080,36 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://imsfrane.com/ar/rafting/4-jours-marrakech/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://imsfrane.com/en/rafting/4-jours-marrakech/" />
   </url>
+  <url>
+    <loc>https://imsfrane.com/fr/programme/ouzoud/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://imsfrane.com/fr/programme/ouzoud/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://imsfrane.com/en/programme/ouzoud/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://imsfrane.com/es/programme/ouzoud/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://imsfrane.com/ar/programme/ouzoud/" />
+  </url>
+  <url>
+    <loc>https://imsfrane.com/en/programme/ouzoud/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://imsfrane.com/fr/programme/ouzoud/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://imsfrane.com/en/programme/ouzoud/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://imsfrane.com/es/programme/ouzoud/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://imsfrane.com/ar/programme/ouzoud/" />
+  </url>
+  <url>
+    <loc>https://imsfrane.com/es/programme/ouzoud/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://imsfrane.com/fr/programme/ouzoud/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://imsfrane.com/en/programme/ouzoud/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://imsfrane.com/es/programme/ouzoud/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://imsfrane.com/ar/programme/ouzoud/" />
+  </url>
+  <url>
+    <loc>https://imsfrane.com/ar/programme/ouzoud/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://imsfrane.com/fr/programme/ouzoud/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://imsfrane.com/en/programme/ouzoud/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://imsfrane.com/es/programme/ouzoud/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://imsfrane.com/ar/programme/ouzoud/" />
+  </url>
 </urlset>
