@@ -11,11 +11,15 @@ function calculate(){
  const nights=start&&end?Math.round((Date.parse(end)-Date.parse(start))/86400000):1;
  const lines=[];let total=0,quotes=false;
  const stay=$('stay').value;$('departure').required=stay!=='none';
- const limit=stay==='house'?6:stay==='none'?60:30;
+ const limit=stay==='house'?6:stay==='apartment2'?4:stay==='none'?60:30;
  $('guests').max=limit;
  const accommodationFits=people<=limit;
  function add(name,amount,detail){lines.push({name,amount,detail});if(amount===null)quotes=true;else total+=amount;}
- if(accommodationFits&&stay==='house')add(t[19],300*Math.max(nights,1),'300 × '+Math.max(nights,1)+' '+t[33]);
+ if(accommodationFits&&(stay==='house'||stay==='apartment2')){
+  const rate=stay==='house'?300:250;
+  const label=$('stay').selectedOptions[0].textContent.split(' · ')[0];
+  add(label,rate*Math.max(nights,1),rate+' × '+Math.max(nights,1)+' '+t[33]);
+ }
  if(accommodationFits&&stay==='gite250')add(t[21],250*people*Math.max(nights,1),'250 × '+people+' × '+Math.max(nights,1)+' '+t[33]);
  if(accommodationFits&&stay==='gite350')add(t[23],nights===1?350*people:null,t[24]+(nights!==1?' · '+t[30]:''));
  if(accommodationFits&&stay==='weekend')add(t[25],null,t[26]);
