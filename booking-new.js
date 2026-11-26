@@ -4,14 +4,14 @@ const t=JSON.parse(document.getElementById('bookingWords').textContent),form=doc
 const $=id=>document.getElementById(id),today=new Date();
 const date=[today.getFullYear(),String(today.getMonth()+1).padStart(2,'0'),String(today.getDate()).padStart(2,'0')].join('-');$('arrival').min=date;$('departure').min=date;
 const arabic = document.documentElement.lang === 'ar';
-const currency = arabic ? ' درهم' : ' DH';
+const currency = arabic ? ' درهم' : document.documentElement.lang === 'fr' ? ' DH' : ' MAD';
 const services=JSON.parse(document.getElementById('bookingServices').textContent);
 function calculate(){
  const people=Number($('guests').value)||1,start=$('arrival').value,end=$('departure').value;
  const nights=start&&end?Math.round((Date.parse(end)-Date.parse(start))/86400000):1;
  const lines=[];let total=0,quotes=false;
  const stay=$('stay').value;$('departure').required=stay!=='none';
- const limit=stay==='house'?6:stay==='apartment2'?4:stay==='none'?60:30;
+ const limit=stay==='house'?4:stay==='apartment2'?7:stay==='none'?60:30;
  $('guests').max=limit;
  const accommodationFits=people<=limit;
  function add(name,amount,detail){lines.push({name,amount,detail});if(amount===null)quotes=true;else total+=amount;}
@@ -32,6 +32,9 @@ function calculate(){
 form.addEventListener('input',calculate);form.addEventListener('change',calculate);
 form.addEventListener('submit',e=>{
  e.preventDefault();const c=calculate();$('bookingError').textContent='';
+ const emailChannel = e.submitter?.dataset.channel === 'email';
+ $('email').required = emailChannel;
+ $('phone').required = !emailChannel;
  if(!form.reportValidity())return;
  if(!c.lines.length){$('bookingError').textContent=t[36];return;}
  if(c.stay!=='none'&&(!Number.isInteger(c.nights)||c.nights<1||c.nights>45)){$('bookingError').textContent=t[37];return;}
