@@ -25,7 +25,7 @@ function calculate(){
   add(label,rate*Math.max(nights,1),rate+' × '+Math.max(nights,1)+' '+t[33]);
  }
  if(accommodationFits&&stay==='gite250')add(t[21],250*people*Math.max(nights,1),'250 × '+people+' × '+Math.max(nights,1)+' '+t[33]);
- if(accommodationFits&&stay==='gite350')add(t[23],nights===1?350*people:null,t[24]+(nights!==1?' · '+t[30]:''));
+ if(accommodationFits&&stay==='gite350')add(t[23],350*people*Math.max(nights,1),'350 × '+people+' × '+Math.max(nights,1)+' '+t[33]);
  if(accommodationFits&&stay==='weekend')add(t[25],null,t[26]);
  selectedServices.forEach(a=>{if(people < (a.minGuests || 1) || minGuests > limit)return;let qty=a.unit==='person'?people:a.unit==='duo'?Math.ceil(people/2):a.unit==='quad'?people:1;const needsQuote = a.price === null || (a.maxGuests && people > a.maxGuests); add(a.name,needsQuote?null:a.price*qty,needsQuote?t[30]:a.price+' × '+qty);});
  $('summaryList').replaceChildren();lines.forEach(a=>{const li=document.createElement('li'),strong=document.createElement('strong'),small=document.createElement('div');strong.textContent=a.name;small.textContent=a.detail+' · '+(a.amount===null?t[30]:a.amount+currency);li.append(strong,small);$('summaryList').append(li)});
