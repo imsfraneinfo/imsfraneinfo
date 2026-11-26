@@ -8,7 +8,7 @@ const currency = arabic ? ' درهم' : document.documentElement.lang === 'fr' ?
 const services=JSON.parse(document.getElementById('bookingServices').textContent);
 function calculate(){
  const people=Number($('guests').value)||1,start=$('arrival').value,end=$('departure').value;
- const nights=start&&end?Math.round((Date.parse(end)-Date.parse(start))/86400000):1;
+ const nights=start&&end?Math.round((Date.parse(end)-Date.parse(start))/86400000):0;
  const lines=[];let total=0,quotes=false;
  const stay=$('stay').value;$('departure').required=stay!=='none';
  const limit=stay==='house'?4:stay==='apartment2'?7:stay==='none'?60:30;
@@ -17,7 +17,21 @@ function calculate(){
    .map(input => services.find(service => service.id === input.value));
  const minGuests = Math.max(1, ...selectedServices.map(service => service.minGuests || 1));
  $('guests').min = minGuests;
- const accommodationFits=people<=limit;
+ const datesInvalid = Boolean(start && end && (nights < 1 || (stay !== 'none' && nights > 45)));
+ const dateError = $('bookingDateError');
+ dateError.hidden = !datesInvalid;
+ dateError.textContent = datesInvalid ? dateError.dataset.message : '';
+ $('departure').setCustomValidity(dateError.textContent);
+ const accommodationFits = people <= limit && start >= date && nights >= 1 && nights <= 45;
+ const quadQuantities = {};
+ for (const service of ['quadSolo', 'quadDuo']) {
+   const input = $(service + 'Quantity');
+   const selected = selectedServices.some(offer => offer.id === service);
+   input.disabled = !selected;
+   input.required = selected;
+   input.closest('.bk-quad-quantity').hidden = !selected;
+   quadQuantities[service] = selected && input.validity.valid ? Number(input.value) : 0;
+ }
  function add(name,amount,detail){lines.push({name,amount,detail});if(amount===null)quotes=true;else total+=amount;}
  if(accommodationFits&&(stay==='house'||stay==='apartment2')){
   const rate=stay==='house'?300:250;
@@ -27,11 +41,26 @@ function calculate(){
  if(accommodationFits&&stay==='gite250')add(t[21],250*people*Math.max(nights,1),'250 × '+people+' × '+Math.max(nights,1)+' '+t[33]);
  if(accommodationFits&&stay==='gite350')add(t[23],350*people*Math.max(nights,1),'350 × '+people+' × '+Math.max(nights,1)+' '+t[33]);
  if(accommodationFits&&stay==='weekend')add(t[25],null,t[26]);
- selectedServices.forEach(a=>{if(people < (a.minGuests || 1) || minGuests > limit)return;let qty=a.unit==='person'?people:a.unit==='duo'?Math.ceil(people/2):a.unit==='quad'?people:1;const needsQuote = a.price === null || (a.maxGuests && people > a.maxGuests); add(a.name,needsQuote?null:a.price*qty,needsQuote?t[30]:a.price+' × '+qty);});
+ selectedServices.forEach(a=>{if(people < (a.minGuests || 1) || minGuests > limit)return;const qty = a.unit === 'person' ? people : (quadQuantities[a.id] ?? 1); if (!qty) return;const needsQuote = a.price === null || (a.maxGuests && people > a.maxGuests); add(a.name,needsQuote?null:a.price*qty,needsQuote?t[30]:a.price+' × '+qty);});
  $('summaryList').replaceChildren();lines.forEach(a=>{const li=document.createElement('li'),strong=document.createElement('strong'),small=document.createElement('div');strong.textContent=a.name;small.textContent=a.detail+' · '+(a.amount===null?t[30]:a.amount+currency);li.append(strong,small);$('summaryList').append(li)});
  $('emptySummary').hidden=lines.length>0;$('total').textContent=quotes&&total===0?t[30]:total.toLocaleString()+currency;$('quoteNote').hidden=!quotes;
  $('campNote').hidden=!form.querySelector('[value="camping"]:checked');$('raftNote').hidden=!form.querySelector('[value^="raft"]:checked');
+ syncBookingLanguageLinks(stay, selectedServices, quadQuantities);
  return {people,nights,lines,total,quotes,stay};
+}
+function syncBookingLanguageLinks(stay, selectedServices, quantities) {
+ const bookingState = new URLSearchParams();
+ if (stay !== 'none') bookingState.set('stay', stay);
+ for (const service of selectedServices) {
+   bookingState.append('activity', service.id);
+   if (quantities[service.id]) bookingState.set(service.id, quantities[service.id]);
+ }
+ for (const link of document.querySelectorAll('a[lang][href], a[hreflang][href]')) {
+   const url = new URL(link.href);
+   if (url.origin !== location.origin || !url.pathname.endsWith('/booking/')) continue;
+   url.search = bookingState.toString();
+   link.href = url.href;
+ }
 }
 form.addEventListener('input',calculate);form.addEventListener('change',calculate);
 form.addEventListener('submit',e=>{
@@ -54,9 +83,15 @@ const selectedStay = selection.get('stay');
 if (Array.from($('stay').options).some(option => option.value === selectedStay)) {
   $('stay').value = selectedStay;
 }
-const selectedActivity = selection.get('activity');
-const activity = Array.from(form.querySelectorAll('[data-service]'))
-  .find(input => input.value === selectedActivity);
-if (activity) activity.checked = true;
+const selectedActivities = selection.getAll('activity');
+for (const input of form.querySelectorAll('[data-service]')) {
+  if (selectedActivities.includes(input.value)) input.checked = true;
+}
+for (const service of ['quadSolo', 'quadDuo']) {
+  const quantity = Number(selection.get(service));
+  if (Number.isInteger(quantity) && quantity >= 1 && quantity <= 60) {
+    $(service + 'Quantity').value = quantity;
+  }
+}
 calculate();
 })();
