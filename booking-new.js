@@ -5,6 +5,13 @@ const $=id=>document.getElementById(id),today=new Date();
 const date=[today.getFullYear(),String(today.getMonth()+1).padStart(2,'0'),String(today.getDate()).padStart(2,'0')].join('-');$('arrival').min=date;$('departure').min=date;
 const arabic = document.documentElement.lang === 'ar';
 const currency = arabic ? ' درهم' : document.documentElement.lang === 'fr' ? ' DH' : ' MAD';
+const groupConflictMessages = {
+ fr: (max, min) => `Cet hébergement accueille au maximum ${max} personnes. Une activité sélectionnée exige au moins ${min} personnes. Modifiez l’hébergement ou retirez cette activité.`,
+ en: (max, min) => `This accommodation sleeps up to ${max} people. A selected activity requires at least ${min} people. Change accommodation or remove that activity.`,
+ es: (max, min) => `Este alojamiento admite hasta ${max} personas. Una actividad seleccionada requiere al menos ${min} personas. Cambia de alojamiento o elimina esa actividad.`,
+ ar: (max, min) => `يتسع مكان الإقامة لـ${max} أشخاص كحد أقصى، ويتطلب أحد الأنشطة المختارة ${min} أشخاص على الأقل. غيّر مكان الإقامة أو أزل هذا النشاط.`,
+};
+const groupConflictMessage = groupConflictMessages[document.documentElement.lang] || groupConflictMessages.en;
 const services=JSON.parse(document.getElementById('bookingServices').textContent);
 function calculate(){
  const stay = $('stay').value;
@@ -21,7 +28,10 @@ function calculate(){
  const selectedServices = [...form.querySelectorAll('[data-service]:checked')]
    .map(input => services.find(service => service.id === input.value));
  const minGuests = Math.max(1, ...selectedServices.map(service => service.minGuests || 1));
- $('guests').min = minGuests;
+ const groupConflict = minGuests > limit;
+ $('guests').min = groupConflict ? 1 : minGuests;
+ const conflictMessage = groupConflict ? groupConflictMessage(limit, minGuests) : '';
+ $('guests').setCustomValidity(conflictMessage);
  const datesInvalid = Boolean(start && end && (nights < 1 || nights > 45));
  const dateError = $('bookingDateError');
  dateError.hidden = !datesInvalid;
@@ -46,23 +56,25 @@ function calculate(){
  if(accommodationFits&&stay==='gite250')add(t[21],250*people*Math.max(nights,1),'250 × '+people+' × '+Math.max(nights,1)+' '+t[33]);
  if(accommodationFits&&stay==='gite350')add(t[23],350*people*Math.max(nights,1),'350 × '+people+' × '+Math.max(nights,1)+' '+t[33]);
  if(accommodationFits&&stay==='weekend')add(t[25],null,t[26]);
- selectedServices.forEach(a=>{if(people < (a.minGuests || 1) || minGuests > limit)return;const qty = a.unit === 'person' ? people : (quadQuantities[a.id] ?? 1); if (!qty) return;const needsQuote = a.price === null || (a.maxGuests && people > a.maxGuests); add(a.name,needsQuote?null:a.price*qty,needsQuote?t[30]:a.price+' × '+qty);});
+ selectedServices.forEach(a=>{if(people < (a.minGuests || 1) || (a.minGuests || 1) > limit)return;const qty = a.unit === 'person' ? people : (quadQuantities[a.id] ?? 1); if (!qty) return;const needsQuote = a.price === null || (a.maxGuests && people > a.maxGuests); add(a.name,needsQuote?null:a.price*qty,needsQuote?t[30]:a.price+' × '+qty);});
  $('summaryList').replaceChildren();lines.forEach(a=>{const li=document.createElement('li'),strong=document.createElement('strong'),small=document.createElement('div');strong.textContent=a.name;small.textContent=a.detail+' · '+(a.amount===null?t[30]:a.amount+currency);li.append(strong,small);$('summaryList').append(li)});
  const campingTooSmall = selectedServices.some(service => service.id === 'camping' && people < service.minGuests);
- if (campingTooSmall) {
+ if (groupConflict || campingTooSmall) {
    const notice = document.createElement('li');
-   notice.textContent = t[38];
+   notice.textContent = conflictMessage || t[38];
    $('summaryList').append(notice);
  }
- $('emptySummary').hidden=lines.length>0 || campingTooSmall;$('total').textContent=quotes&&total===0?t[30]:total.toLocaleString()+currency;$('quoteNote').hidden=!quotes;
+ $('emptySummary').hidden=lines.length>0 || campingTooSmall || groupConflict;$('total').textContent=quotes&&total===0?t[30]:total.toLocaleString()+currency;$('quoteNote').hidden=!quotes;
  $('campNote').hidden=!form.querySelector('[value="camping"]:checked');$('raftNote').hidden=!form.querySelector('[value^="raft"]:checked');
- syncBookingLanguageLinks(stay, people, selectedServices, quadQuantities);
+ syncBookingLanguageLinks(stay, people, start, end, selectedServices, quadQuantities);
  return {people,nights,lines,total,quotes,stay};
 }
-function syncBookingLanguageLinks(stay, people, selectedServices, quantities) {
+function syncBookingLanguageLinks(stay, people, arrival, departure, selectedServices, quantities) {
  const bookingState = new URLSearchParams();
  if (Number.isInteger(people) && people >= 1 && people <= 60) bookingState.set('guests', people);
  if (stay !== 'none') bookingState.set('stay', stay);
+ if (arrival) bookingState.set('arrival', arrival);
+ if (departure) bookingState.set('departure', departure);
  for (const service of selectedServices) {
    bookingState.append('activity', service.id);
    if (quantities[service.id]) bookingState.set(service.id, quantities[service.id]);
@@ -90,6 +102,10 @@ form.addEventListener('submit',e=>{
  }else{window.open('https://wa.me/212667772551?text='+encodeURIComponent(msg),'_blank','noopener');}
 });
 const selection = new URLSearchParams(location.search);
+for (const field of ['arrival', 'departure']) {
+  const value = selection.get(field);
+  if (value && /^\d{4}-\d{2}-\d{2}$/.test(value)) $(field).value = value;
+}
 const selectedGuests = Number(selection.get('guests'));
 if (Number.isInteger(selectedGuests) && selectedGuests >= 1 && selectedGuests <= 60) {
   $('guests').value = selectedGuests;
