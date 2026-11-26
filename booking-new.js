@@ -13,6 +13,10 @@ function calculate(){
  const stay=$('stay').value;$('departure').required=stay!=='none';
  const limit=stay==='house'?4:stay==='apartment2'?7:stay==='none'?60:30;
  $('guests').max=limit;
+ const selectedServices = [...form.querySelectorAll('[data-service]:checked')]
+   .map(input => services.find(service => service.id === input.value));
+ const minGuests = Math.max(1, ...selectedServices.map(service => service.minGuests || 1));
+ $('guests').min = minGuests;
  const accommodationFits=people<=limit;
  function add(name,amount,detail){lines.push({name,amount,detail});if(amount===null)quotes=true;else total+=amount;}
  if(accommodationFits&&(stay==='house'||stay==='apartment2')){
@@ -23,7 +27,7 @@ function calculate(){
  if(accommodationFits&&stay==='gite250')add(t[21],250*people*Math.max(nights,1),'250 × '+people+' × '+Math.max(nights,1)+' '+t[33]);
  if(accommodationFits&&stay==='gite350')add(t[23],nights===1?350*people:null,t[24]+(nights!==1?' · '+t[30]:''));
  if(accommodationFits&&stay==='weekend')add(t[25],null,t[26]);
- form.querySelectorAll('[data-service]:checked').forEach(input=>{const a=services.find(a=>a.id===input.value);let qty=a.unit==='person'?people:a.unit==='duo'?Math.ceil(people/2):a.unit==='quad'?people:1;const needsQuote = a.price === null || (a.maxGuests && people > a.maxGuests); add(a.name,needsQuote?null:a.price*qty,needsQuote?t[30]:a.price+' × '+qty);});
+ selectedServices.forEach(a=>{if(people < (a.minGuests || 1) || minGuests > limit)return;let qty=a.unit==='person'?people:a.unit==='duo'?Math.ceil(people/2):a.unit==='quad'?people:1;const needsQuote = a.price === null || (a.maxGuests && people > a.maxGuests); add(a.name,needsQuote?null:a.price*qty,needsQuote?t[30]:a.price+' × '+qty);});
  $('summaryList').replaceChildren();lines.forEach(a=>{const li=document.createElement('li'),strong=document.createElement('strong'),small=document.createElement('div');strong.textContent=a.name;small.textContent=a.detail+' · '+(a.amount===null?t[30]:a.amount+currency);li.append(strong,small);$('summaryList').append(li)});
  $('emptySummary').hidden=lines.length>0;$('total').textContent=quotes&&total===0?t[30]:total.toLocaleString()+currency;$('quoteNote').hidden=!quotes;
  $('campNote').hidden=!form.querySelector('[value="camping"]:checked');$('raftNote').hidden=!form.querySelector('[value^="raft"]:checked');
