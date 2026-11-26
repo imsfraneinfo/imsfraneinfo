@@ -7,21 +7,26 @@ const arabic = document.documentElement.lang === 'ar';
 const currency = arabic ? ' درهم' : document.documentElement.lang === 'fr' ? ' DH' : ' MAD';
 const services=JSON.parse(document.getElementById('bookingServices').textContent);
 function calculate(){
- const people=Number($('guests').value)||1,start=$('arrival').value,end=$('departure').value;
+ const stay = $('stay').value;
+ const hasStay = stay !== 'none';
+ const departure = $('departure');
+ departure.required = hasStay;
+ departure.disabled = !hasStay;
+ departure.closest('label').style.display = hasStay ? '' : 'none';
+ const people=Number($('guests').value)||1,start=$('arrival').value,end=hasStay?departure.value:'';
  const nights=start&&end?Math.round((Date.parse(end)-Date.parse(start))/86400000):0;
  const lines=[];let total=0,quotes=false;
- const stay=$('stay').value;$('departure').required=stay!=='none';
  const limit=stay==='house'?4:stay==='apartment2'?7:stay==='none'?60:30;
  $('guests').max=limit;
  const selectedServices = [...form.querySelectorAll('[data-service]:checked')]
    .map(input => services.find(service => service.id === input.value));
  const minGuests = Math.max(1, ...selectedServices.map(service => service.minGuests || 1));
  $('guests').min = minGuests;
- const datesInvalid = Boolean(start && end && (nights < 1 || (stay !== 'none' && nights > 45)));
+ const datesInvalid = Boolean(start && end && (nights < 1 || nights > 45));
  const dateError = $('bookingDateError');
  dateError.hidden = !datesInvalid;
  dateError.textContent = datesInvalid ? dateError.dataset.message : '';
- $('departure').setCustomValidity(dateError.textContent);
+ departure.setCustomValidity(dateError.textContent);
  const accommodationFits = people <= limit && start >= date && nights >= 1 && nights <= 45;
  const quadQuantities = {};
  for (const service of ['quadSolo', 'quadDuo']) {
@@ -43,13 +48,20 @@ function calculate(){
  if(accommodationFits&&stay==='weekend')add(t[25],null,t[26]);
  selectedServices.forEach(a=>{if(people < (a.minGuests || 1) || minGuests > limit)return;const qty = a.unit === 'person' ? people : (quadQuantities[a.id] ?? 1); if (!qty) return;const needsQuote = a.price === null || (a.maxGuests && people > a.maxGuests); add(a.name,needsQuote?null:a.price*qty,needsQuote?t[30]:a.price+' × '+qty);});
  $('summaryList').replaceChildren();lines.forEach(a=>{const li=document.createElement('li'),strong=document.createElement('strong'),small=document.createElement('div');strong.textContent=a.name;small.textContent=a.detail+' · '+(a.amount===null?t[30]:a.amount+currency);li.append(strong,small);$('summaryList').append(li)});
- $('emptySummary').hidden=lines.length>0;$('total').textContent=quotes&&total===0?t[30]:total.toLocaleString()+currency;$('quoteNote').hidden=!quotes;
+ const campingTooSmall = selectedServices.some(service => service.id === 'camping' && people < service.minGuests);
+ if (campingTooSmall) {
+   const notice = document.createElement('li');
+   notice.textContent = t[38];
+   $('summaryList').append(notice);
+ }
+ $('emptySummary').hidden=lines.length>0 || campingTooSmall;$('total').textContent=quotes&&total===0?t[30]:total.toLocaleString()+currency;$('quoteNote').hidden=!quotes;
  $('campNote').hidden=!form.querySelector('[value="camping"]:checked');$('raftNote').hidden=!form.querySelector('[value^="raft"]:checked');
- syncBookingLanguageLinks(stay, selectedServices, quadQuantities);
+ syncBookingLanguageLinks(stay, people, selectedServices, quadQuantities);
  return {people,nights,lines,total,quotes,stay};
 }
-function syncBookingLanguageLinks(stay, selectedServices, quantities) {
+function syncBookingLanguageLinks(stay, people, selectedServices, quantities) {
  const bookingState = new URLSearchParams();
+ if (Number.isInteger(people) && people >= 1 && people <= 60) bookingState.set('guests', people);
  if (stay !== 'none') bookingState.set('stay', stay);
  for (const service of selectedServices) {
    bookingState.append('activity', service.id);
@@ -71,14 +83,17 @@ form.addEventListener('submit',e=>{
  if(!form.reportValidity())return;
  if(!c.lines.length){$('bookingError').textContent=t[36];return;}
  if(c.stay!=='none'&&(!Number.isInteger(c.nights)||c.nights<1||c.nights>45)){$('bookingError').textContent=t[37];return;}
- if(form.querySelector('[value="camping"]:checked')&&c.people<10){$('bookingError').textContent=t[38];return;}
  if($('arrival').value<date){$('arrival').focus();return;}
- const msg=[(arabic ? 'مسفران · ' : 'IMSFRANE · ')+t[6],t[10]+': '+$('name').value,t[11]+': '+$('phone').value,t[12]+': '+$('email').value,t[8]+': '+$('arrival').value,t[9]+': '+$('departure').value,t[7]+': '+c.people,'',t[56]+':',...c.lines.map(a=>'- '+a.name+' | '+a.detail+' | '+(a.amount===null?t[30]:a.amount+currency)),'',t[28]+': '+(c.quotes&&c.total===0?t[30]:c.total+currency+(c.quotes?' + '+t[40]:'')),t[13]+': '+$('notes').value,t[35]].join('\n');
+ const msg=[(arabic ? 'مسفران · ' : 'IMSFRANE · ')+t[6],t[10]+': '+$('name').value,t[11]+': '+$('phone').value,t[12]+': '+$('email').value,t[8]+': '+$('arrival').value,t[9]+': '+(c.stay==='none'?'':$('departure').value),t[7]+': '+c.people,'',t[56]+':',...c.lines.map(a=>'- '+a.name+' | '+a.detail+' | '+(a.amount===null?t[30]:a.amount+currency)),'',t[28]+': '+(c.quotes&&c.total===0?t[30]:c.total+currency+(c.quotes?' + '+t[40]:'')),t[13]+': '+$('notes').value,t[35]].join('\n');
  if(e.submitter?.dataset.channel==='email'){
  window.ImsEnquiry.send(form,{kind:'booking',name:$('name').value.trim(),email:$('email').value.trim(),subject:t[6],message:msg},$('bookingSendStatus'),e.submitter);
  }else{window.open('https://wa.me/212667772551?text='+encodeURIComponent(msg),'_blank','noopener');}
 });
 const selection = new URLSearchParams(location.search);
+const selectedGuests = Number(selection.get('guests'));
+if (Number.isInteger(selectedGuests) && selectedGuests >= 1 && selectedGuests <= 60) {
+  $('guests').value = selectedGuests;
+}
 const selectedStay = selection.get('stay');
 if (Array.from($('stay').options).some(option => option.value === selectedStay)) {
   $('stay').value = selectedStay;
